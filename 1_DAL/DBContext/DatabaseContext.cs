@@ -13,8 +13,8 @@ namespace _1_DAL.DBContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Data Source=KANCHOU\\SQLEXPRESS;Initial Catalog=DA1_862_QLPM_Karaoke;Persist Security Info=True;User ID=kienctph17436;Password=16092002");
-        }
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-0SU4UQQ\\SQLEXPRESS;Initial Catalog=DA1_862_QLPM_Karaoke;Persist Security Info=True;User ID=hieuptph18134;Password=123");
+        }//Data Source=DESKTOP-0SU4UQQ\SQLEXPRESS;Initial Catalog=DA1_862_QLPM_Karaoke;Persist Security Info=True;User ID=hieuptph18134;Password=123
 
         public virtual DbSet<ChiTietHoaDonBan> ChiTietHoaDonBans { get; set; }
         public virtual DbSet<ChiTietHoaDonNhap> ChiTietHoaDonNhaps { get; set; }
