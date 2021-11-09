@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /1_DAL/DBContext/DatabaseContext.cs
+/1_DAL/DBContext/DatabaseContext.cs
