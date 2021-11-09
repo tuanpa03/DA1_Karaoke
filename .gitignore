@@ -363,4 +363,3 @@ MigrationBackup/
 FodyWeavers.xsd
 
 /1_DAL/DBContext/DatabaseContext.cs
-/1_DAL/DBContext
