@@ -53,6 +53,9 @@ namespace _3_GUI_PresentationLayer
             this.dgv_QLMatHang.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.NullValue = null;
             this.dgv_QLMatHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_QLMatHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_QLMatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_QLMatHang.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -78,6 +81,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // txt_TenMH
             // 
+            this.txt_TenMH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TenMH.Location = new System.Drawing.Point(42, 131);
             this.txt_TenMH.Multiline = true;
             this.txt_TenMH.Name = "txt_TenMH";
@@ -86,6 +90,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // txt_DonGia
             // 
+            this.txt_DonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_DonGia.Location = new System.Drawing.Point(597, 131);
             this.txt_DonGia.Multiline = true;
             this.txt_DonGia.Name = "txt_DonGia";
@@ -94,6 +99,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
@@ -105,6 +111,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Red;
@@ -116,6 +123,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Red;
@@ -127,6 +135,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_Them
             // 
+            this.btn_Them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Them.BackColor = System.Drawing.Color.Aqua;
             this.btn_Them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_Them.Location = new System.Drawing.Point(844, 12);
@@ -139,6 +148,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
             this.btn_Sua.Location = new System.Drawing.Point(844, 68);
             this.btn_Sua.Name = "btn_Sua";
@@ -150,6 +160,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_Xoa
             // 
+            this.btn_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
             this.btn_Xoa.Location = new System.Drawing.Point(844, 124);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -161,6 +172,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // cmb_IDDvTinh
             // 
+            this.cmb_IDDvTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_IDDvTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_IDDvTinh.FormattingEnabled = true;
             this.cmb_IDDvTinh.Location = new System.Drawing.Point(321, 131);
@@ -170,6 +182,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_close
             // 
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_close.BackColor = System.Drawing.Color.Red;
             this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_close.ForeColor = System.Drawing.SystemColors.Window;
@@ -182,6 +195,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_Luu
             // 
+            this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Luu.BackColor = System.Drawing.Color.Red;
             this.btn_Luu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Luu.ForeColor = System.Drawing.SystemColors.Window;

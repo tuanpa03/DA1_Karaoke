@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _3_GUI_PresentationLayer;
 
 namespace _3_GUI
 {
@@ -17,7 +18,7 @@ namespace _3_GUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new frm_QLMatHang());
         }
     }
 }
