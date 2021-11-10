@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,13 @@ namespace _2_BUS.IBUS_Service
 {
    public interface IBUS_Phong_Service
     {
+        void GetlstPhong();
+        List<Phong> sendlstPhong();
+        bool Add(Phong Phong);
+        List<Phong> FindName(string name);
+        List<Phong> Find(string id);
+        bool Remove(Phong Phong);
+        bool Update(Phong Phong);
+        bool Save();
     }
 }
