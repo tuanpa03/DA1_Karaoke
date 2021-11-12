@@ -18,7 +18,7 @@ namespace _3_GUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Phong());
+            Application.Run(new frm_Main());
         }
     }
 }

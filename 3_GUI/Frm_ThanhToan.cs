@@ -49,7 +49,7 @@ namespace _3_GUI_PresentationLayer
         private DataGridViewColumn c;
         private void dgv_MatHang_Click(object sender, EventArgs e)
         {
-            textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
+            //textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
         }
     }
 }
