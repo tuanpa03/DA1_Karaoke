@@ -29,6 +29,16 @@ namespace _3_GUI
                 //gbx_phong.cap
             }
         }
-        
+
+        private void hệThốngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+
+        }
+
+        private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+        }
     }
 }
