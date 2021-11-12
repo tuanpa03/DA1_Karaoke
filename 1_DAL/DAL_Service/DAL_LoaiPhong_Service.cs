@@ -17,6 +17,7 @@ namespace _1_DAL.DAL_Service
         {
             _dbContext = new DatabaseContext();
             _lstLoaiPhong = new List<LoaiPhong>();
+            _lstLoaiPhong = _dbContext.LoaiPhongs.ToList();
         }
         public bool Add(LoaiPhong loaiPhong)
         {

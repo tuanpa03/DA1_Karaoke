@@ -46,7 +46,7 @@ namespace _3_GUI
             this.gbx_phong.TabIndex = 0;
             this.gbx_phong.TabStop = false;
             this.gbx_phong.Text = "Phòng";
-           
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -61,7 +61,7 @@ namespace _3_GUI
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 24);
             this.toolStripMenuItem1.Text = "Đặt phòng";
-            
+            // 
             // trảPhòngToolStripMenuItem
             // 
             this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";

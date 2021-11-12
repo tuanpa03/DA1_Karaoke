@@ -17,6 +17,8 @@ namespace _1_DAL.DAL_Service
         {
             _dbContext = new DatabaseContext();
             _lstPhong = new List<Phong>();
+            _lstPhong = _dbContext.Phongs.ToList();
+
         }
         public bool Add(Phong Phong)
         {
@@ -43,10 +45,10 @@ namespace _1_DAL.DAL_Service
             _lstPhong = _dbContext.Phongs.ToList();
         }
 
-        public bool Remove(Phong Phong)
+        public bool Remove(string idphong)
         {
-            //var temp = _lstLoaiPhong.Where(c => c.MaHang == maHang).FirstOrDefault();
-            _dbContext.Phongs.Remove(Phong);
+            var temp = _lstPhong.Where(c => c.Id == idphong).FirstOrDefault();
+            _dbContext.Phongs.Remove(temp);
             _dbContext.SaveChanges();
             GetlstPhong();
             return true;

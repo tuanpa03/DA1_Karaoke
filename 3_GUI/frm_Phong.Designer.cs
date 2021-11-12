@@ -124,9 +124,11 @@ namespace _3_GUI
             this.tbx_nguoiTao.Name = "tbx_nguoiTao";
             this.tbx_nguoiTao.Size = new System.Drawing.Size(143, 27);
             this.tbx_nguoiTao.TabIndex = 34;
+            this.tbx_nguoiTao.Text = "Admin";
             // 
             // tbx_ngayCapNhap
             // 
+            this.tbx_ngayCapNhap.Enabled = false;
             this.tbx_ngayCapNhap.Location = new System.Drawing.Point(649, 89);
             this.tbx_ngayCapNhap.Name = "tbx_ngayCapNhap";
             this.tbx_ngayCapNhap.Size = new System.Drawing.Size(151, 27);
@@ -138,9 +140,11 @@ namespace _3_GUI
             this.tbx_nguoiCapNhap.Name = "tbx_nguoiCapNhap";
             this.tbx_nguoiCapNhap.Size = new System.Drawing.Size(151, 27);
             this.tbx_nguoiCapNhap.TabIndex = 32;
+            this.tbx_nguoiCapNhap.Text = "Admin";
             // 
             // tbx_ngayTao
             // 
+            this.tbx_ngayTao.Enabled = false;
             this.tbx_ngayTao.Location = new System.Drawing.Point(366, 89);
             this.tbx_ngayTao.Name = "tbx_ngayTao";
             this.tbx_ngayTao.Size = new System.Drawing.Size(143, 27);
