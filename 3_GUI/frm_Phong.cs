@@ -23,6 +23,7 @@ namespace _3_GUI
             InitializeComponent();
             _iBUS_Phong_Service = new BUS_Phong_Service();
             _phong = new Phong();
+            LoadData();
             //tbx_ngayCapNhap.Visible = false;
             //tbx_ngayTao.Visible = false;
         }
@@ -48,7 +49,7 @@ namespace _3_GUI
         }
         private bool checkForm()
         {
-            if (tbx_tenPhong.Text.Length == 0 || tbx_SucChua.Text.Length == 0 || tbx_nguoiTao.Text.Length == 0 || tbx_ngayTao.Text.Length == 0 || tbx_nguoiCapNhap.Text.Length == 0 || tbx_ngayCapNhap.Text.Length == 0)
+            if (tbx_tenPhong.Text.Length == 0 || tbx_SucChua.Text.Length == 0 || tbx_nguoiTao.Text.Length == 0 || tbx_nguoiCapNhap.Text.Length == 0)
             {
                 MessageBox.Show("Không được để trống thông tin");
                 return true;
@@ -94,7 +95,7 @@ namespace _3_GUI
             tbx_nguoiTao.Text = row.Cells[5].Value + "";
             tbx_ngayTao.Text = row.Cells[6].Value + "";
             tbx_nguoiCapNhap.Text = row.Cells[7].Value + "";
-            tbx_ngayCapNhap.Text = row.Cells[7].Value + "";
+            tbx_ngayCapNhap.Text = row.Cells[8].Value + "";
 
             _idPhong = row.Cells[0].Value + "";
             // Enabled button
@@ -164,8 +165,8 @@ namespace _3_GUI
             DialogResult hoi;
             hoi = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo);
             if (hoi == DialogResult.Yes)
-            {
-                //MessageBox.Show(_iQLKhachHangServices.DeleteKhachHang(_DienThoai).ToString(), "thông báo");
+            {               
+                MessageBox.Show(_iBUS_Phong_Service.Remove(_idPhong).ToString(), "thông báo");
                 LoadData();
                 ClearForm();
             }

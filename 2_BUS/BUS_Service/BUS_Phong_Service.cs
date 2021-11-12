@@ -37,9 +37,9 @@ namespace _2_BUS.BUS_Service
             _iDAL_Phong_Service.GetlstPhong();
         }
 
-        public bool Remove(Phong Phong)
+        public bool Remove(string idphong)
         {
-            return _iDAL_Phong_Service.Remove(Phong);
+            return _iDAL_Phong_Service.Remove(idphong);
         }
 
         public bool Save()

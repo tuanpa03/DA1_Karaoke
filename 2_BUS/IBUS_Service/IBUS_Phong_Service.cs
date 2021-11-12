@@ -14,7 +14,7 @@ namespace _2_BUS.IBUS_Service
         bool Add(Phong Phong);
         List<Phong> FindName(string name);
         List<Phong> Find(string id);
-        bool Remove(Phong Phong);
+        bool Remove(string idPhong);
         bool Update(Phong Phong);
         bool Save();
     }
