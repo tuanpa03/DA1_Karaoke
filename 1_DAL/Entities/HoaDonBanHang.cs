@@ -24,7 +24,7 @@ namespace _1_DAL.Entities
         public int IdhoaDon { get; set; }
         [Column("IDPhong")]
         [StringLength(20)]
-        public string Idphong { get; set; }
+        public int? Idphong { get; set; }
         [Column("IDMaNV")]
         [StringLength(30)]
         public string IdmaNv { get; set; }

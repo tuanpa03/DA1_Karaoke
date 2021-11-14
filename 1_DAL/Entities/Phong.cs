@@ -20,7 +20,7 @@ namespace _1_DAL.Entities
         [Key]
         [Column("ID")]
         [StringLength(20)]
-        public string Id { get; set; }
+        public int Id { get; set; }
         [Column("IDLoaiPhong")]
         public int? IdloaiPhong { get; set; }
         [Required]

@@ -91,10 +91,10 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Entities.ChiTietThietBi", b =>
                 {
-                    b.Property<string>("Idphong")
+                    b.Property<int?>("Idphong")
                         .HasMaxLength(20)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("int")
                         .HasColumnName("IDPhong");
 
                     b.Property<string>("IdmaTb")
@@ -216,10 +216,10 @@ namespace _1_DAL.Migrations
                         .HasColumnType("varchar(30)")
                         .HasColumnName("IDMaNV");
 
-                    b.Property<string>("Idphong")
+                    b.Property<int?>("Idphong")
                         .HasMaxLength(20)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
+                        .HasColumnType("int")
                         .HasColumnName("IDPhong");
 
                     b.Property<int?>("IdtranngThai")
@@ -618,11 +618,13 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Entities.Phong", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(20)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(20)")
-                        .HasColumnName("ID");
+                        .HasColumnType("int")
+                        .HasColumnName("ID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("IdloaiPhong")
                         .HasColumnType("int")

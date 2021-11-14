@@ -22,7 +22,7 @@ namespace _2_BUS.BUS_Service
             return _iDAL_Phong_Service.Add(Phong);
         }
 
-        public List<Phong> Find(string id)
+        public List<Phong> Find(int id)
         {
             return _iDAL_Phong_Service.Find(id);
         }
@@ -37,7 +37,7 @@ namespace _2_BUS.BUS_Service
             _iDAL_Phong_Service.GetlstPhong();
         }
 
-        public bool Remove(string idphong)
+        public bool Remove(int idphong)
         {
             return _iDAL_Phong_Service.Remove(idphong);
         }

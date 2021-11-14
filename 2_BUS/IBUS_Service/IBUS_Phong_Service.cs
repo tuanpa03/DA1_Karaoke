@@ -13,8 +13,8 @@ namespace _2_BUS.IBUS_Service
         List<Phong> sendlstPhong();
         bool Add(Phong Phong);
         List<Phong> FindName(string name);
-        List<Phong> Find(string id);
-        bool Remove(string idPhong);
+        List<Phong> Find(int id);
+        bool Remove(int idPhong);
         bool Update(Phong Phong);
         bool Save();
     }

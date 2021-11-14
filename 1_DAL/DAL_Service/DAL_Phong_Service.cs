@@ -28,7 +28,7 @@ namespace _1_DAL.DAL_Service
             return true;
         }
 
-        public List<Phong> Find(string id)
+        public List<Phong> Find(int id)
         {
             if (_lstPhong.Where(c => c.Id == id).FirstOrDefault() == null) return null;
             return _lstPhong.Where(c => c.Id == id).ToList();
@@ -45,7 +45,7 @@ namespace _1_DAL.DAL_Service
             _lstPhong = _dbContext.Phongs.ToList();
         }
 
-        public bool Remove(string idphong)
+        public bool Remove(int idphong)
         {
             var temp = _lstPhong.Where(c => c.Id == idphong).FirstOrDefault();
             _dbContext.Phongs.Remove(temp);

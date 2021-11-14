@@ -17,7 +17,7 @@ namespace _3_GUI
     {
         private IBUS_Phong_Service _iBUS_Phong_Service;
         private Phong _phong;
-        private string _idPhong;
+        private int _idPhong;
         public frm_Phong()
         {
             InitializeComponent();
@@ -97,7 +97,7 @@ namespace _3_GUI
             tbx_nguoiCapNhap.Text = row.Cells[7].Value + "";
             tbx_ngayCapNhap.Text = row.Cells[8].Value + "";
 
-            _idPhong = row.Cells[0].Value + "";
+            _idPhong = Convert.ToInt32(row.Cells[0].Value + "");
             // Enabled button
             btn_them.Enabled = false;
 

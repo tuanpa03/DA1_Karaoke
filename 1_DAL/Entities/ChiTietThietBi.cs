@@ -14,7 +14,7 @@ namespace _1_DAL.Entities
         [Key]
         [Column("IDPhong")]
         [StringLength(20)]
-        public string Idphong { get; set; }
+        public int? Idphong { get; set; }
         [Key]
         [Column("IDMaTB")]
         [StringLength(30)]

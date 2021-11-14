@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class DA1_862_QLPM_Karaoke_V1_ : Migration
+    public partial class DA1_862_QLPM_Karaoke_V1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -166,7 +166,8 @@ namespace _1_DAL.Migrations
                 name: "Phong",
                 columns: table => new
                 {
-                    ID = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false),
+                    ID = table.Column<int>(type: "int", unicode: false, maxLength: 20, nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IDLoaiPhong = table.Column<int>(type: "int", nullable: true),
                     TenPhong = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     TrangThai = table.Column<byte>(type: "tinyint", nullable: true, defaultValueSql: "((1))"),
@@ -251,7 +252,7 @@ namespace _1_DAL.Migrations
                     IDHoaDon = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IDMaKH = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
-                    IDPhong = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: true),
+                    IDPhong = table.Column<int>(type: "int", unicode: false, maxLength: 20, nullable: true),
                     IDMaNV = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: true),
                     ThoiGianBatDau = table.Column<DateTime>(type: "datetime", nullable: true),
                     ThoiGianKetThuc = table.Column<DateTime>(type: "datetime", nullable: true),
@@ -290,7 +291,7 @@ namespace _1_DAL.Migrations
                 name: "ChiTietThietBi",
                 columns: table => new
                 {
-                    IDPhong = table.Column<string>(type: "varchar(20)", unicode: false, maxLength: 20, nullable: false),
+                    IDPhong = table.Column<int>(type: "int", unicode: false, maxLength: 20, nullable: false),
                     IDMaTB = table.Column<string>(type: "varchar(30)", unicode: false, maxLength: 30, nullable: false),
                     DonGia = table.Column<double>(type: "float", nullable: true),
                     SoLuong = table.Column<int>(type: "int", nullable: true),
