@@ -1,5 +1,7 @@
-﻿using _2_BUS.BUS_Service;
+﻿using _1_DAL.Entities;
+using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_Service;
+using _3_GUI_PresentationLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,44 +18,64 @@ namespace _3_GUI
     {
         private IBUS_Phong_Service _iBUS_Phong_Service;
         string _idPhong;
+        List<Phong> _lstPhong = new List<Phong>();
         public frm_Main()
         {
             InitializeComponent();
             _iBUS_Phong_Service = new BUS_Phong_Service();
+            _lstPhong = _iBUS_Phong_Service.sendlstPhong();
             showRoom();
         }
         void showRoom()
         {
             //tableLayoutPanel1.Controls.Clear();
-            tableLayoutPanel1.RowCount = 5;
-            for (int i = 0; i < 5; i++)
+            //tableLayoutPanel1.RowCount = 5;
+            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            tableLayoutPanel1.RowCount = tang;
+            for (int i = 0; i < tang; i++)
             {
-                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x=>x.TenPhong.StartsWith(Convert.ToString(j+1))).ToList().Count; j++)
+                for (int j = 0; j < 5/*_iBUS_Phong_Service.sendlstPhong().Count*/; j++)
                 {
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
-                    lb.Text = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].TenPhong;
-                    lb.Name = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].TenPhong;
-                    _idPhong = lb.Text;
+                    lb.Text = _iBUS_Phong_Service.sendlstPhong().ToList()[j].TenPhong;
+                    //lb.Name = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].TenPhong;
+                    //_idPhong = lb.Text;
                     lb.BackColor = Color.Red;
-                    if ((_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].IdtranngThai) =="1")
+                    if (_iBUS_Phong_Service.sendlstPhong().ToList()[j].IdtranngThai == Convert.ToString(1))
                     {
-                        lb.BackColor = Color.Red;
+                        lb.BackColor = Color.Yellow;
                     }
-                    if ((_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].IdtranngThai) == "2")
-                    {
-                        lb.BackColor = Color.Blue;
-                    }
-                    tableLayoutPanel1.Controls.Add(lb,j,i);
+                    //else
+                    //{
+                    //    lb.BackColor = Color.Blue;
+                    //}
+                    //if ((_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].IdtranngThai) == "2")
+                    //{
+                    //    lb.BackColor = Color.Blue;
+                    //}
+                    tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
                 }
             }
+
+
         }
 
         private void stripMenu_datPhong_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_idPhong);
+            try
+            {
+                this.Hide();
+                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan();
+                //frm_Login.MdiParent = this.MdiParent;
+                frm_thanhToan.Show();
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+            }
         }
 
         private void tableLayoutPanel1_Click(object sender, EventArgs e)

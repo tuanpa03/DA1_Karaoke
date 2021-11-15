@@ -51,5 +51,20 @@ namespace _3_GUI_PresentationLayer
         {
             //textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
