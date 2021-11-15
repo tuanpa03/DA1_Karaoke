@@ -17,7 +17,7 @@ namespace _3_GUI
     public partial class frm_Main : Form
     {
         private IBUS_Phong_Service _iBUS_Phong_Service;
-        string _idPhong;
+        string _tenPhong;
         List<Phong> _lstPhong = new List<Phong>();
         public frm_Main()
         {
@@ -34,35 +34,42 @@ namespace _3_GUI
             tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
-                for (int j = 0; j < 5/*_iBUS_Phong_Service.sendlstPhong().Count*/; j++)
+                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x=>x.TenPhong.Substring(0, 1) == Convert.ToString(i+1)).ToList().Count; j++)
                 {
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
-                    lb.Text = _iBUS_Phong_Service.sendlstPhong().ToList()[j].TenPhong;
-                    //lb.Name = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].TenPhong;
-                    //_idPhong = lb.Text;
+                    lb.Text = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].TenPhong;
+                    //_tenPhong = lb.Text;
                     lb.BackColor = Color.Red;
-                    if (_iBUS_Phong_Service.sendlstPhong().ToList()[j].IdtranngThai == Convert.ToString(1))
+                    int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].IdtranngThai);
+                    if (_idTrangThai== 1)
                     {
-                        lb.BackColor = Color.Yellow;
+                        lb.BackColor = Color.Red;//có khách
                     }
-                    //else
-                    //{
-                    //    lb.BackColor = Color.Blue;
-                    //}
-                    //if ((_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(j + 1))).ToList()[j].IdtranngThai) == "2")
-                    //{
-                    //    lb.BackColor = Color.Blue;
-                    //}
+                    else if (_idTrangThai == 2)
+                    {
+                        lb.BackColor = Color.Yellow;//đang dọn
+                    }
+                    else if (_idTrangThai == 3)
+                    {
+                        lb.BackColor = Color.Gray;//đang sửa chữa
+                    }
+                    else
+                    {
+                        lb.BackColor = Color.Blue;//phòng trống
+                    }
+                    lb.Click += new System.EventHandler(this.lb_Click);
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
                 }
             }
-
-
         }
-
+        private void lb_Click(object sender, EventArgs e)
+        {
+            _tenPhong = e.ToString();
+            MessageBox.Show(_tenPhong);
+        }
         private void stripMenu_datPhong_Click(object sender, EventArgs e)
         {
             try
@@ -80,7 +87,18 @@ namespace _3_GUI
 
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
-            //_idPhong =
+            //_tenPhong = tableLayoutPanel1.ro
+            for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
+            {
+                for (int j = 0; j < tableLayoutPanel1.ColumnCount; j++)
+                {
+                    Control Control = tableLayoutPanel1.GetControlFromPosition(j, i);
+                    _tenPhong = Control.Text;
+                    //_idPhong = Convert.ToString(tableLayoutPanel1.GetCellPosition()).Text;
+
+                    //_tenPhong = Control.Name;
+                }
+            }
         }
 
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -109,6 +127,26 @@ namespace _3_GUI
             //        _idPhong = Control.Name;
             //    }
             //}
+        }
+
+        private void stripMenu_capNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan();
+                //frm_Login.MdiParent = this.MdiParent;
+                frm_thanhToan.Show();
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+            }
+        }
+
+        private void stripMenu_donPhong_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_tenPhong);
         }
     }
 }
