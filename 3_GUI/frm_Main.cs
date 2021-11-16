@@ -29,8 +29,8 @@ namespace _3_GUI
         void showRoom()
         {
             //tableLayoutPanel1.Controls.Clear();
-            //tableLayoutPanel1.RowCount = 5;
             int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            //int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x=>x.TenPhong.Substring(0, 1).Count );
             tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
@@ -39,7 +39,7 @@ namespace _3_GUI
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
                     lb.Text = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].TenPhong;
-                    //_tenPhong = lb.Text;
+                    _tenPhong = lb.Text;
                     lb.BackColor = Color.Red;
                     int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].IdtranngThai);
                     if (_idTrangThai== 1)
@@ -87,18 +87,18 @@ namespace _3_GUI
 
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
-            //_tenPhong = tableLayoutPanel1.ro
-            for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
-            {
-                for (int j = 0; j < tableLayoutPanel1.ColumnCount; j++)
-                {
-                    Control Control = tableLayoutPanel1.GetControlFromPosition(j, i);
-                    _tenPhong = Control.Text;
-                    //_idPhong = Convert.ToString(tableLayoutPanel1.GetCellPosition()).Text;
+            
+            //for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
+            //{
+            //    for (int j = 0; j < tableLayoutPanel1.ColumnCount; j++)
+            //    {
+            //        Control Control = tableLayoutPanel1.GetControlFromPosition(j, i);
+            //        _tenPhong = Control.Text;
+            //        //_idPhong = Convert.ToString(tableLayoutPanel1.GetCellPosition()).Text;
 
-                    //_tenPhong = Control.Name;
-                }
-            }
+            //        //_tenPhong = Control.Name;
+            //    }
+            //}
         }
 
         private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -147,6 +147,21 @@ namespace _3_GUI
         private void stripMenu_donPhong_Click(object sender, EventArgs e)
         {
             MessageBox.Show(_tenPhong);
+        }
+
+        private void đătPhongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                frm_Phong frm_phong = new frm_Phong();
+                //frm_Login.MdiParent = this.MdiParent;
+                frm_phong.Show();
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+            }
         }
     }
 }

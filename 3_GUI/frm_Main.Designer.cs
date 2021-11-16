@@ -137,6 +137,7 @@ namespace _3_GUI
             this.đătPhongToolStripMenuItem.Name = "đătPhongToolStripMenuItem";
             this.đătPhongToolStripMenuItem.Size = new System.Drawing.Size(227, 36);
             this.đătPhongToolStripMenuItem.Text = "Phòng hát";
+            this.đătPhongToolStripMenuItem.Click += new System.EventHandler(this.đătPhongToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 

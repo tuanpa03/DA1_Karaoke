@@ -111,7 +111,7 @@ namespace _3_GUI
                 if (checkForm()) return;
                 
                 _phong = new Phong();
-                _phong.Id = _iBUS_Phong_Service.sendlstPhong().Max(x => x.Id+ 1);
+                //_phong.Id = _iBUS_Phong_Service.sendlstPhong().Max(x => x.Id+ 1);
                 _phong.TenPhong = tbx_tenPhong.Text;
                 _phong.IdloaiPhong = Convert.ToInt32(tbx_maLoaiPhong.Text);
                 if (rbt_khongCoKhach.Checked == true)
@@ -179,7 +179,9 @@ namespace _3_GUI
 
         private void btn_dong_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            frm_Main frm_Main = new frm_Main();
+            frm_Main.Show();
         }
 
         private void frm_Phong_Load(object sender, EventArgs e)
