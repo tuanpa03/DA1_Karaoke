@@ -11,6 +11,7 @@ using _2_BUS.BUS_MatHang_Service;
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
+using _3_GUI;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -18,9 +19,10 @@ namespace _3_GUI_PresentationLayer
     {
         private IBUS_MatHang_Service _matHangService;
         private IBUS_DonViTinh_Service _donViTinhService;
-        public Frm_ThanhToan()
+        public Frm_ThanhToan(string idPhong)
         {
             InitializeComponent();
+            tbx_idPhong.Text = idPhong;
             _matHangService = new BUS_MatHang_Service();
             _donViTinhService = new BUS_DonViTinh_Service();
         }
@@ -52,19 +54,21 @@ namespace _3_GUI_PresentationLayer
             //textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        
+
+        private void btn_thoat_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.Hide();
+                frm_Main frm_Main = new frm_Main();
 
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+                frm_Main.Show();
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+            }
         }
     }
 }

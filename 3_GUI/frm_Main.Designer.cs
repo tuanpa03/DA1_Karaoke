@@ -55,22 +55,22 @@ namespace _3_GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this._stripMenu_datPhong = new System.Windows.Forms.ToolStripMenuItem();
-            this._stripMenu_capNhap = new System.Windows.Forms.ToolStripMenuItem();
-            this._stripMenu_donPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.stripMenu_datPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenu_capNhap = new System.Windows.Forms.ToolStripMenuItem();
             this.stripMenu_donPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this._stripMenu_datPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this._stripMenu_capNhap = new System.Windows.Forms.ToolStripMenuItem();
+            this._stripMenu_donPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -200,7 +200,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(706, 18);
+            this.label1.Location = new System.Drawing.Point(743, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 46);
             this.label1.TabIndex = 0;
@@ -312,6 +312,7 @@ namespace _3_GUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.78307F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.71975F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.3964F));
+            this.tableLayoutPanel1.ContextMenuStrip = this.contextMenuStrip1;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 64);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -320,39 +321,7 @@ namespace _3_GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1194, 549);
             this.tableLayoutPanel1.TabIndex = 8;
-            this.tableLayoutPanel1.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tableLayoutPanel1_CellPaint);
             this.tableLayoutPanel1.Click += new System.EventHandler(this.tableLayoutPanel1_Click);
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._stripMenu_datPhong,
-            this._stripMenu_capNhap,
-            this._stripMenu_donPhong});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1218, 28);
-            this.menuStrip2.TabIndex = 9;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // _stripMenu_datPhong
-            // 
-            this._stripMenu_datPhong.Name = "_stripMenu_datPhong";
-            this._stripMenu_datPhong.Size = new System.Drawing.Size(94, 24);
-            this._stripMenu_datPhong.Text = "Đặt phòng";
-            // 
-            // _stripMenu_capNhap
-            // 
-            this._stripMenu_capNhap.Name = "_stripMenu_capNhap";
-            this._stripMenu_capNhap.Size = new System.Drawing.Size(139, 24);
-            this._stripMenu_capNhap.Text = "Cập nhập Dịch vụ";
-            // 
-            // _stripMenu_donPhong
-            // 
-            this._stripMenu_donPhong.Name = "_stripMenu_donPhong";
-            this._stripMenu_donPhong.Size = new System.Drawing.Size(98, 24);
-            this._stripMenu_donPhong.Text = "Dọn phòng";
             // 
             // contextMenuStrip1
             // 
@@ -385,13 +354,44 @@ namespace _3_GUI
             this.stripMenu_donPhong.Text = "Dọn Phòng";
             this.stripMenu_donPhong.Click += new System.EventHandler(this.stripMenu_donPhong_Click);
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._stripMenu_datPhong,
+            this._stripMenu_capNhap,
+            this._stripMenu_donPhong});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1218, 28);
+            this.menuStrip2.TabIndex = 9;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // _stripMenu_datPhong
+            // 
+            this._stripMenu_datPhong.Name = "_stripMenu_datPhong";
+            this._stripMenu_datPhong.Size = new System.Drawing.Size(94, 24);
+            this._stripMenu_datPhong.Text = "Đặt phòng";
+            // 
+            // _stripMenu_capNhap
+            // 
+            this._stripMenu_capNhap.Name = "_stripMenu_capNhap";
+            this._stripMenu_capNhap.Size = new System.Drawing.Size(139, 24);
+            this._stripMenu_capNhap.Text = "Cập nhập Dịch vụ";
+            // 
+            // _stripMenu_donPhong
+            // 
+            this._stripMenu_donPhong.Name = "_stripMenu_donPhong";
+            this._stripMenu_donPhong.Size = new System.Drawing.Size(98, 24);
+            this._stripMenu_donPhong.Text = "Dọn phòng";
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1218, 771);
-            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -412,9 +412,9 @@ namespace _3_GUI
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
