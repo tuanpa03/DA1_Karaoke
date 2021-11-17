@@ -266,7 +266,7 @@ namespace _3_GUI
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Controls.Add(this.label23);
             this.panel3.Location = new System.Drawing.Point(12, 69);
             this.panel3.Name = "panel3";
@@ -286,7 +286,7 @@ namespace _3_GUI
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.label22);
             this.panel2.Location = new System.Drawing.Point(12, 9);
             this.panel2.Name = "panel2";

@@ -39,7 +39,11 @@ namespace _3_GUI
                 {
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
-                    lb.Text = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].TenPhong;
+                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].TenPhong;
+                    string maKh = "Mã khách hàng";
+                    string gioVao = "Giờ Bắt Đầu";
+                    string str = tenPhong + "\n" + maKh +"\n" + gioVao; 
+                    lb.Text = str;
                     _tenPhong = lb.Text;
                     lb.Name = Convert.ToString( _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].Id);
                     
@@ -47,7 +51,7 @@ namespace _3_GUI
                     int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].IdtranngThai);
                     if (_idTrangThai== 1)
                     {
-                        lb.BackColor = Color.Red;//có khách
+                        lb.BackColor = Color.Red;//phòng trống
                     }
                     else if (_idTrangThai == 2)
                     {
@@ -55,24 +59,18 @@ namespace _3_GUI
                     }
                     else if (_idTrangThai == 3)
                     {
-                        lb.BackColor = Color.Gray;//đang sửa chữa
+                        lb.BackColor = Color.Blue;//có khách
                     }
                     else
                     {
-                        lb.BackColor = Color.Blue;//phòng trống
+                        lb.BackColor = Color.Gray;//đang sửa chữa
                     }
-                    //lb.Click += new System.EventHandler(this.lb_Click);
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
                 }
             }
         }
-        //private void lb_Click(object sender, EventArgs e)
-        //{
-        //    _tenPhong = e.ToString();
-        //    MessageBox.Show(_tenPhong);
-        //}
         private void stripMenu_datPhong_Click(object sender, EventArgs e)
         {
             try
@@ -89,51 +87,6 @@ namespace _3_GUI
                 Console.WriteLine("Error");
             }
         }
-
-        //private void tableLayoutPanel1_Click(object sender, EventArgs e)
-        //{
-            
-        //    //for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
-        //    //{
-        //    //    for (int j = 0; j < tableLayoutPanel1.ColumnCount; j++)
-        //    //    {
-        //    //        Control Control = tableLayoutPanel1.GetControlFromPosition(j, i);
-        //    //        _tenPhong = Control.Text;
-        //    //        //_idPhong = Convert.ToString(tableLayoutPanel1.GetCellPosition()).Text;
-
-        //    //        //_tenPhong = Control.Name;
-        //    //    }
-        //    //}
-        //}
-
-        //private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        //{
-        //    ////int indexRow = e.Row;
-        //    //int indexcolumn = e.Column;
-        //    ////if (indexRow < 0) return;
-        //    ////var row = tableLayoutPanel1.RowCount[indexRow];/*indexRow,indexcolumn*/
-        //    ////_idPhong = row.ToString();
-        //    //for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
-        //    //{
-        //    //    var control = tableLayoutPanel1.GetControlFromPosition(i, indexcolumn);
-        //    //    control.Text = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(i))).ToList()[i].TenPhong;
-        //    //    //_idPhong = Convert.ToString(tableLayoutPanel1.GetControlFromPosition(i, indexcolumn));
-        //    //    //var temp = _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.StartsWith(Convert.ToString(i))).ToList()[i].TenPhong;
-        //    //    _idPhong = control.Text;
-        //    //}
-
-        //    //for (int i = 0; i < tableLayoutPanel1.RowCount; i++)
-        //    //{
-        //    //    for (int j = 0; j < tableLayoutPanel1.ColumnCount; j++)
-        //    //    {
-        //    //        Control Control = tableLayoutPanel1.GetControlFromPosition(j, i);
-        //    //        //_idPhong = Convert.ToString(tableLayoutPanel1.GetCellPosition()).Text;
-                    
-        //    //        _idPhong = Control.Name;
-        //    //    }
-        //    //}
-        //}
-
         private void stripMenu_capNhap_Click(object sender, EventArgs e)
         {
             try
@@ -198,16 +151,5 @@ namespace _3_GUI
 
             return new Point(col, row);
         }
-
-        //private void contextMenuStrip1_Click(object sender, EventArgs e)
-        //{
-        //    //Point point = tableLayoutPanel1.PointToClient(Control.MousePosition);
-        //    ////RibbonHitInfo
-        //    //string tenphong = tableLayoutPanel1.PointToClient(Control.MousePosition).ToString();
-        //    //MessageBox.Show(tenphong);
-        //    _idPhong = this.l
-
-
-        //}
     }
 }
