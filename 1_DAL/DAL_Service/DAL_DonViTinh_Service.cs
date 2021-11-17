@@ -13,10 +13,11 @@ namespace _1_DAL.DAL_Service
     public class DAL_DonViTinh_Service:IDAL_DonViTinh_Service
     {
         private DatabaseContext db;
-        private List<DonViTinh> DvTinh = new List<DonViTinh>();
+        private List<DonViTinh> DvTinh;
         public DAL_DonViTinh_Service()
         {
             db = new DatabaseContext();
+            DvTinh = new List<DonViTinh>();
             GetlstDvTinh();
         }
 
