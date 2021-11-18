@@ -180,7 +180,7 @@ namespace _3_GUI
         private void btn_dong_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm_Main frm_Main = new frm_Main();
+            frm_datphong frm_Main = new frm_datphong();
             frm_Main.Show();
         }
 

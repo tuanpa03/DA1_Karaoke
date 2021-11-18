@@ -46,9 +46,7 @@ namespace _3_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbx_tenPhong = new System.Windows.Forms.TextBox();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.label10 = new System.Windows.Forms.Label();
             this.tbx_SucChua = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
@@ -56,6 +54,8 @@ namespace _3_GUI
             this.rbt_khongCoKhach = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.tbx_maLoaiPhong = new System.Windows.Forms.TextBox();
+            this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -215,29 +215,12 @@ namespace _3_GUI
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // hệThốngToolStripMenuItem
-            // 
-            this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.hệThốngToolStripMenuItem.Text = "Hệ Thống";
-            // 
             // tbx_tenPhong
             // 
             this.tbx_tenPhong.Location = new System.Drawing.Point(116, 42);
             this.tbx_tenPhong.Name = "tbx_tenPhong";
             this.tbx_tenPhong.Size = new System.Drawing.Size(145, 27);
             this.tbx_tenPhong.TabIndex = 29;
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hệThốngToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip2.TabIndex = 21;
-            this.menuStrip2.Text = "menuStrip2";
             // 
             // label10
             // 
@@ -303,12 +286,29 @@ namespace _3_GUI
             this.tbx_maLoaiPhong.Size = new System.Drawing.Size(143, 27);
             this.tbx_maLoaiPhong.TabIndex = 49;
             // 
+            // hệThốngToolStripMenuItem
+            // 
+            this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.hệThốngToolStripMenuItem.Text = "Hệ Thống";
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hệThốngToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1690, 28);
+            this.menuStrip2.TabIndex = 21;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
             // frm_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1690, 788);
             this.Controls.Add(this.tbx_maLoaiPhong);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.rbt_khongCoKhach);
@@ -365,9 +365,7 @@ namespace _3_GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.TextBox tbx_tenPhong;
-        private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbx_SucChua;
         private System.Windows.Forms.Button btn_clear;
@@ -375,5 +373,7 @@ namespace _3_GUI
         private System.Windows.Forms.RadioButton rbt_khongCoKhach;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbx_maLoaiPhong;
+        private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
     }
 }
