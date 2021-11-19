@@ -151,7 +151,7 @@ namespace _3_GUI
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::_3_GUI.Properties.Resources.KeyLogin;
+            
             this.pictureBox1.Location = new System.Drawing.Point(272, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(172, 148);

@@ -28,7 +28,7 @@ namespace _3_GUI
             string passwork = _ibus_Login_Service.MaHoaPass(txt_Passwork.Text);
             if (_ibus_Login_Service.NhanVienLogin(username, passwork))
             {
-                frm_Main main = new frm_Main();
+                Frm_Main main = new Frm_Main();
                 dn = MessageBox.Show("Đăng nhập thành công 🤗🤗🤗", "Thông Báo ❗", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 main.Show();
                 this.Hide();

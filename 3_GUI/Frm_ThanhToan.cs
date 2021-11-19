@@ -114,9 +114,9 @@ namespace _3_GUI_PresentationLayer
             try
             {
                 this.Hide();
-                frm_datphong frm_Main = new frm_datphong();
+                Frm_Main _frm_Main = new Frm_Main();
 
-                frm_Main.Show();
+                _frm_Main.Show();
             }
             catch
             {
