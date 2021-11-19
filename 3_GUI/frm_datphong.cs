@@ -56,6 +56,7 @@ namespace _3_GUI
                     else if (_idTrangThai == 2)
                     {
                         lb.BackColor = Color.Yellow;//đang dọn
+                        lb.ForeColor = Color.Gray;
                     }
                     else if (_idTrangThai == 3)
                     {
@@ -151,7 +152,65 @@ namespace _3_GUI
 
             return new Point(col, row);
         }
-
+        private void thongKe(int a)
+        {
+            tableLayoutPanel1.Controls.Clear();
+            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            tableLayoutPanel1.RowCount = tang;
+            for (int i = 0; i < tang; i++)
+            {
+                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList().Count; j++)
+                {
+                    Label lb = new Label();
+                    lb.Size = new Size(150, 150);
+                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList()[j].TenPhong;
+                    string maKh = "Mã khách hàng";
+                    string gioVao = "Giờ Bắt Đầu";
+                    string str = tenPhong + "\n" + maKh + "\n" + gioVao;
+                    lb.Text = str;
+                    _tenPhong = lb.Text;
+                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList()[j].Id);
+                    tableLayoutPanel1.Controls.Add(lb, j, i);
+                    lb.Margin = new Padding(5, 5, 5, 5);
+                    if (a == 1)
+                    {
+                        lb.BackColor = Color.Red;//phòng trống
+                    }
+                    else if (a == 2)
+                    {
+                        lb.BackColor = Color.Yellow;//đang dọn
+                        lb.ForeColor = Color.Gray;
+                    }
+                    else if (a == 3)
+                    {
+                        lb.BackColor = Color.Blue;//có khách
+                    }
+                    else
+                    {
+                        lb.BackColor = Color.Gray;//đang sửa chữa
+                    }
+                }
+            }
+        }
         
+
+        private void btn_sanSangDonKhach_Click(object sender, EventArgs e)
+        {
+            thongKe(1);
+        }
+
+        private void btn_phongDangDon_Click(object sender, EventArgs e)
+        {
+            thongKe(2);
+        }
+        private void btn_phongCoKhach_Click(object sender, EventArgs e)
+        {
+            thongKe(3);           
+        }
+
+        private void btn_phongdangSuaChua_Click(object sender, EventArgs e)
+        {
+            thongKe(4);
+        }
     }
 }

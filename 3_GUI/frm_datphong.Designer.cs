@@ -36,24 +36,16 @@ namespace _3_GUI
             this.stripMenu_donPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
+            this.btn_phongdangSuaChua = new System.Windows.Forms.Button();
+            this.btn_phongDangDon = new System.Windows.Forms.Button();
+            this.btn_sanSangDonKhach = new System.Windows.Forms.Button();
+            this.btn_phongCoKhach = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,10 +105,10 @@ namespace _3_GUI
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btn_phongdangSuaChua);
+            this.panel1.Controls.Add(this.btn_phongDangDon);
+            this.panel1.Controls.Add(this.btn_sanSangDonKhach);
+            this.panel1.Controls.Add(this.btn_phongCoKhach);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -125,85 +117,62 @@ namespace _3_GUI
             this.panel1.Size = new System.Drawing.Size(1728, 142);
             this.panel1.TabIndex = 9;
             // 
-            // panel5
+            // btn_phongdangSuaChua
             // 
-            this.panel5.BackColor = System.Drawing.Color.Gray;
-            this.panel5.Controls.Add(this.label25);
-            this.panel5.Location = new System.Drawing.Point(278, 69);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(243, 48);
-            this.panel5.TabIndex = 7;
+            this.btn_phongdangSuaChua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_phongdangSuaChua.BackColor = System.Drawing.Color.Gray;
+            this.btn_phongdangSuaChua.Location = new System.Drawing.Point(283, 83);
+            this.btn_phongdangSuaChua.Name = "btn_phongdangSuaChua";
+            this.btn_phongdangSuaChua.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongdangSuaChua.TabIndex = 11;
+            this.btn_phongdangSuaChua.Text = "Phòng đang sửa chữa : ";
+            this.btn_phongdangSuaChua.UseVisualStyleBackColor = false;
+            this.btn_phongdangSuaChua.Click += new System.EventHandler(this.btn_phongdangSuaChua_Click);
             // 
-            // label25
+            // btn_phongDangDon
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.Navy;
-            this.label25.Location = new System.Drawing.Point(3, 9);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(229, 28);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Phòng đang sửa chữa: 1";
+            this.btn_phongDangDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_phongDangDon.BackColor = System.Drawing.Color.Yellow;
+            this.btn_phongDangDon.ForeColor = System.Drawing.Color.Gray;
+            this.btn_phongDangDon.Location = new System.Drawing.Point(283, 18);
+            this.btn_phongDangDon.Name = "btn_phongDangDon";
+            this.btn_phongDangDon.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongDangDon.TabIndex = 10;
+            this.btn_phongDangDon.Text = "Phòng đang dọn : ";
+            this.btn_phongDangDon.UseVisualStyleBackColor = false;
+            this.btn_phongDangDon.Click += new System.EventHandler(this.btn_phongDangDon_Click);
             // 
-            // panel4
+            // btn_sanSangDonKhach
             // 
-            this.panel4.BackColor = System.Drawing.Color.Yellow;
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Location = new System.Drawing.Point(278, 9);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(243, 48);
-            this.panel4.TabIndex = 7;
+            this.btn_sanSangDonKhach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_sanSangDonKhach.BackColor = System.Drawing.Color.Red;
+            this.btn_sanSangDonKhach.Location = new System.Drawing.Point(3, 83);
+            this.btn_sanSangDonKhach.Name = "btn_sanSangDonKhach";
+            this.btn_sanSangDonKhach.Size = new System.Drawing.Size(243, 48);
+            this.btn_sanSangDonKhach.TabIndex = 9;
+            this.btn_sanSangDonKhach.Text = "Sẵn sàng đón khách : ";
+            this.btn_sanSangDonKhach.UseVisualStyleBackColor = false;
+            this.btn_sanSangDonKhach.Click += new System.EventHandler(this.btn_sanSangDonKhach_Click);
             // 
-            // label24
+            // btn_phongCoKhach
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(3, 9);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(185, 28);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Phòng đang dọn: 1";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Location = new System.Drawing.Point(12, 69);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 48);
-            this.panel3.TabIndex = 6;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label23.Location = new System.Drawing.Point(3, 9);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(215, 28);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Sẵn sàng đón khách: 1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.label22);
-            this.panel2.Location = new System.Drawing.Point(12, 9);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(243, 48);
-            this.panel2.TabIndex = 6;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(3, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(233, 28);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Phòng đang có khách: 3";
+            this.btn_phongCoKhach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_phongCoKhach.BackColor = System.Drawing.Color.Blue;
+            this.btn_phongCoKhach.Location = new System.Drawing.Point(3, 18);
+            this.btn_phongCoKhach.Name = "btn_phongCoKhach";
+            this.btn_phongCoKhach.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongCoKhach.TabIndex = 8;
+            this.btn_phongCoKhach.Text = "Phòng đang có khách : ";
+            this.btn_phongCoKhach.UseVisualStyleBackColor = false;
+            this.btn_phongCoKhach.Click += new System.EventHandler(this.btn_phongCoKhach_Click);
             // 
             // label1
             // 
@@ -264,14 +233,6 @@ namespace _3_GUI
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -284,17 +245,13 @@ namespace _3_GUI
         private System.Windows.Forms.ToolStripMenuItem stripMenu_donPhong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_phongdangSuaChua;
+        private System.Windows.Forms.Button btn_phongDangDon;
+        private System.Windows.Forms.Button btn_sanSangDonKhach;
+        private System.Windows.Forms.Button btn_phongCoKhach;
     }
 }
