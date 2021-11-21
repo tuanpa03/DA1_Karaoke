@@ -30,9 +30,9 @@ namespace _3_GUI
         void showRoom()
         {
             //tableLayoutPanel1.Controls.Clear();
-            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
-            //int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x=>x.TenPhong.Substring(0, 1).Count );
-            tableLayoutPanel1.RowCount = tang;
+            //int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Max(x=>x.TenPhong.Substring(0, 1)));
+            //tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
                 for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x=>x.TenPhong.Substring(0, 1) == Convert.ToString(i+1)).ToList().Count; j++)
@@ -69,7 +69,9 @@ namespace _3_GUI
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
+                    //tableLayoutPanel1.RowCount++;
                 }
+                //tableLayoutPanel1.RowCount++;
             }
         }
         private void stripMenu_datPhong_Click(object sender, EventArgs e)
