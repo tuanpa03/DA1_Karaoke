@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +21,9 @@ namespace _3_GUI
         string _tenPhong;
         int _idPhong;
         List<Phong> _lstPhong = new List<Phong>();
+        private System.Windows.Forms.Timer aTimer;
+
+        private int counter = 10;
         public frm_datphong()
         {
             InitializeComponent();
@@ -29,9 +33,10 @@ namespace _3_GUI
         }
         void showRoom()
         {
-            //tableLayoutPanel1.Controls.Clear();
-            //int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
-            int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Max(x=>x.TenPhong.Substring(0, 1)));
+            tableLayoutPanel1.Controls.Clear();
+            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            //int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Max(x=>x.TenPhong.Substring(0, 1)));
+            //int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) );
             //tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
@@ -45,33 +50,58 @@ namespace _3_GUI
                     string str = tenPhong + "\n" + maKh +"\n" + gioVao; 
                     lb.Text = str;
                     _tenPhong = lb.Text;
-                    lb.Name = Convert.ToString( _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].Id);
+                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].Id);
+                    
                     
                     lb.BackColor = Color.Red;
                     int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1)).ToList()[j].IdtranngThai);
-                    if (_idTrangThai== 1)
+                    if (_idTrangThai == 1)
                     {
                         lb.BackColor = Color.Red;//phòng trống
+                        //stripMenu_capNhap.Enabled = false;
                     }
                     else if (_idTrangThai == 2)
                     {
                         lb.BackColor = Color.Yellow;//đang dọn
-                        lb.ForeColor = Color.Gray;
+                        lb.ForeColor = Color.Gray;//màu chữ
+                        //stripMenu_datPhong.Enabled = false;
+                        //stripMenu_capNhap.Enabled = false;
+                        //stripMenu_donPhong.Enabled = false;
                     }
                     else if (_idTrangThai == 3)
                     {
                         lb.BackColor = Color.Blue;//có khách
+                        //stripMenu_datPhong.Enabled = false;
+                        //stripMenu_donPhong.Enabled = false;
                     }
-                    else
+                    else if (_idTrangThai == 4)
                     {
                         lb.BackColor = Color.Gray;//đang sửa chữa
+                        //stripMenu_datPhong.Enabled = false;
+                        //stripMenu_capNhap.Enabled = false;
+                        //stripMenu_donPhong.Enabled = false;
+                        //contextMenuStrip1.ItemAdded += "Sửa thành công";
                     }
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
+                    //tìm lb nào có name id == id bên kia thì truyền sửa lại text
+                    if (lb.Name == _idPhong.ToString())//sửa _idPhong=truyền id bên thanh toán hóa đơn
+                    {
+                        //tìm hóa đơn giống idphong lấy mã kh , thời gian bắt đầu
+                    }
+
+
+                    if (lb.Name == _idPhong.ToString())//dọn phòng
+                    {
+                        string thoiGian = counter.ToString();
+                        DateTime thoiGianbg = DateTime.Now;
+                        lb.Text = tenPhong + "\n"+"Tgian bắt đầu don:"+ thoiGianbg+ "\n" + "Thời gian dọn:" + thoiGian +"giây";
+                        //Thread.Sleep(2000);
+                        //lb.Text = str;
+                    }
                     //tableLayoutPanel1.RowCount++;
                 }
-                //tableLayoutPanel1.RowCount++;
             }
         }
         private void stripMenu_datPhong_Click(object sender, EventArgs e)
@@ -107,7 +137,45 @@ namespace _3_GUI
 
         private void stripMenu_donPhong_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(_tenPhong);
+            
+            var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
+            _idPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+            if (Convert.ToInt32( _lstPhong.FirstOrDefault(x => x.Id == _idPhong).IdtranngThai) ==2)
+            {
+                MessageBox.Show("Phòng đang dọn", "Thông báo"/*,Thread.Sleep(3000)*/);
+                return;
+            }
+            var phong = _iBUS_Phong_Service.Find(_idPhong).FirstOrDefault();
+            phong.IdtranngThai = 2.ToString();
+            _iBUS_Phong_Service.Update(phong);
+            showRoom();
+            aTimer = new System.Windows.Forms.Timer();
+
+            aTimer.Tick += new EventHandler(aTimer_Tick);
+
+            aTimer.Interval = 1000; // 1 second
+
+            aTimer.Start();
+
+            label1.Text = counter.ToString();
+            
+        }
+        private void aTimer_Tick(object sender, EventArgs e)
+
+        {            
+            counter--;          
+            if (counter == 0 || counter == -10 ||counter == -20)
+            {
+                aTimer.Stop();
+                MessageBox.Show("Phòng" + _lstPhong.FirstOrDefault(x => x.Id == _idPhong).TenPhong + "đã dọn phòng xong", "Thông báo");
+                var phong = _iBUS_Phong_Service.Find(_idPhong).FirstOrDefault();
+                phong.IdtranngThai = 1.ToString();
+                _iBUS_Phong_Service.Update(phong);
+                showRoom();
+
+            }
+            label1.Text = counter.ToString();
+
         }
 
         private void đătPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,7 +197,7 @@ namespace _3_GUI
         {
             var index = GetRowColIndex(tableLayoutPanel1,tableLayoutPanel1.PointToClient(Cursor.Position));
             _idPhong = Convert.ToInt32( tableLayoutPanel1.GetControlFromPosition(index.X,index.Y).Name);
-            MessageBox.Show(Convert.ToString( _idPhong));
+            MessageBox.Show(Convert.ToString(_idPhong));
 
         }
          public Point GetRowColIndex(TableLayoutPanel tlp, Point point)
