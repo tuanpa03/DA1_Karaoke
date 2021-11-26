@@ -16,35 +16,56 @@ namespace _3_GUI
     public partial class frm_Phong : Form
     {
         private IBUS_Phong_Service _iBUS_Phong_Service;
+        private IBUS_LoaiPhong_Service _iBUS_LoaiPhong_Service;
+        private IBUS_Tang_Service _iBUS_Tang_Service;
         private Phong _phong;
         private int _idPhong;
         public frm_Phong()
         {
             InitializeComponent();
             _iBUS_Phong_Service = new BUS_Phong_Service();
+            _iBUS_LoaiPhong_Service = new BUS_LoaiPhong_Service();
+            _iBUS_Tang_Service = new BUS_Tang_Service();
             _phong = new Phong();
+            rbt_khongCoKhach.Checked = true;
             LoadData();
+            loadcmbLoaiPhong();
+            loadcmbTang();
             //tbx_ngayCapNhap.Visible = false;
             //tbx_ngayTao.Visible = false;
         }
         private void LoadData()
         {
-            dataGridView1.ColumnCount = 9;
+            dataGridView1.ColumnCount = 10;
             dataGridView1.Columns[0].Name = "Id";
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Name = "Mã Loại Phòng";
-            dataGridView1.Columns[2].Name = "Tên Phòng";
-            dataGridView1.Columns[3].Name = "Trạng thái";
-            dataGridView1.Columns[4].Name = "Sức chứa";
-            dataGridView1.Columns[5].Name = "Người Tạo";
-            dataGridView1.Columns[6].Name = "Ngày tạo";
-            dataGridView1.Columns[7].Name = "Người cập nhập";
-            dataGridView1.Columns[8].Name = "Ngày cập nhập";
-            
+            dataGridView1.Columns[1].Name = "Tên Loại Phòng";
+            dataGridView1.Columns[2].Name = "Tên Tầng";
+            dataGridView1.Columns[3].Name = "Tên Phòng";
+            dataGridView1.Columns[4].Name = "Trạng thái";
+            dataGridView1.Columns[5].Name = "Sức chứa";
+            dataGridView1.Columns[6].Name = "Người Tạo";
+            dataGridView1.Columns[7].Name = "Ngày tạo";
+            dataGridView1.Columns[8].Name = "Người cập nhập";
+            dataGridView1.Columns[9].Name = "Ngày cập nhập";           
             dataGridView1.Rows.Clear();
             foreach (var x in _iBUS_Phong_Service.sendlstPhong())
             {
-                dataGridView1.Rows.Add(x.Id, x.IdloaiPhong, x.TenPhong, x.TrangThai, x.SucChua, x.NguoiTao, x.NgayTao, x.NguoiCapNhap, x.NgayCapNhap);
+                dataGridView1.Rows.Add(x.Id, _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(y=>y.Id == x.IdloaiPhong).TenLoaiPhong ,x.Idtang, x.TenPhong, x.TrangThai, x.SucChua, x.NguoiTao, x.NgayTao, x.NguoiCapNhap, x.NgayCapNhap);
+            }
+        }
+        private void loadcmbLoaiPhong()
+        {
+            foreach (var x in _iBUS_LoaiPhong_Service.sendlstLoaiPhong())
+            {
+                cmb_loaiPhong.Items.Add(x.TenLoaiPhong);
+            }
+        }
+        private void loadcmbTang()
+        {
+            foreach (var x in _iBUS_Tang_Service.sendlstTang())
+            {
+                cbb_idtang.Items.Add(x.Idtang);
             }
         }
         private bool checkForm()
@@ -59,13 +80,22 @@ namespace _3_GUI
                 MessageBox.Show("Bạn chưa chọn trạng thái");
                 return true;
             }
-            
+            if (cmb_loaiPhong.Text == null)
+            {
+                MessageBox.Show("Bạn chưa chọn Loại Phòng");
+                return true;
+            }
+            if (cbb_idtang.Text == null)
+            {
+                MessageBox.Show("Bạn chưa chọn Tầng");
+                return true;
+            }
+
             return false;
         }
         private void ClearForm()
         {
             tbx_tenPhong.Text = "";
-            tbx_maLoaiPhong.Text = "";
             tbx_SucChua.Text = "";
             tbx_nguoiTao.Text = "";
             tbx_ngayTao.Text = "";
@@ -81,21 +111,23 @@ namespace _3_GUI
             int indexRow = e.RowIndex;
             if (indexRow < 0) return;
             var row = dataGridView1.Rows[indexRow];
-            tbx_maLoaiPhong.Text = row.Cells[1].Value + "";
-            tbx_tenPhong.Text = row.Cells[2].Value + "";
-            if (row.Cells[3].Value + "" == "Có khách")
+            //tbx_maLoaiPhong.Text = row.Cells[1].Value + "";
+            cmb_loaiPhong.Text = row.Cells[1].Value + "";
+            cbb_idtang.Text = row.Cells[2].Value + "";
+            tbx_tenPhong.Text = row.Cells[3].Value + "";
+            if (row.Cells[4].Value + "" == "Có khách")
             {
                 rbt_coKhach.Checked = true;
             }
-            if (row.Cells[3].Value + "" == "Không có khách")
+            if (row.Cells[4].Value + "" == "Không có khách")
             {
                 rbt_khongCoKhach.Checked = true;
             }
-            tbx_SucChua.Text = row.Cells[4].Value + "";           
-            tbx_nguoiTao.Text = row.Cells[5].Value + "";
-            tbx_ngayTao.Text = row.Cells[6].Value + "";
-            tbx_nguoiCapNhap.Text = row.Cells[7].Value + "";
-            tbx_ngayCapNhap.Text = row.Cells[8].Value + "";
+            tbx_SucChua.Text = row.Cells[5].Value + "";           
+            tbx_nguoiTao.Text = row.Cells[6].Value + "";
+            tbx_ngayTao.Text = row.Cells[7].Value + "";
+            tbx_nguoiCapNhap.Text = row.Cells[8].Value + "";
+            tbx_ngayCapNhap.Text = row.Cells[9].Value + "";
 
             _idPhong = Convert.ToInt32(row.Cells[0].Value + "");
             // Enabled button
@@ -113,7 +145,7 @@ namespace _3_GUI
                 _phong = new Phong();
                 //_phong.Id = _iBUS_Phong_Service.sendlstPhong().Max(x => x.Id+ 1);
                 _phong.TenPhong = tbx_tenPhong.Text;
-                _phong.IdloaiPhong = Convert.ToInt32(tbx_maLoaiPhong.Text);
+                _phong.IdloaiPhong = _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(x=>x.TenLoaiPhong == cmb_loaiPhong.Text).Id;
                 if (rbt_khongCoKhach.Checked == true)
                 {
                     rbt_coKhach.Checked = false;
@@ -122,6 +154,7 @@ namespace _3_GUI
                 {
                     rbt_khongCoKhach.Checked = false;
                 }
+                _phong.Idtang = Convert.ToInt32( cbb_idtang.Text);
                 _phong.SucChua = Convert.ToInt32(tbx_SucChua.Text);
                 _phong.NguoiTao = tbx_nguoiTao.Text;
                 _phong.NgayTao = DateTime.Now;
@@ -142,10 +175,12 @@ namespace _3_GUI
             {
                 if (checkForm()) return;
                 var phong = _iBUS_Phong_Service.Find(_idPhong).FirstOrDefault();//tìm kiếm
-                phong.IdloaiPhong = Convert.ToInt32( tbx_maLoaiPhong.Text);
+                phong.IdloaiPhong = _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(x => x.TenLoaiPhong == cmb_loaiPhong.Text).Id;
                 phong.TenPhong = tbx_tenPhong.Text;
+                phong.Idtang = Convert.ToInt32( cbb_idtang.Text);
                 phong.SucChua = Convert.ToInt32( tbx_SucChua.Text);
                 phong.NguoiCapNhap = tbx_nguoiCapNhap.Text;
+                phong.NgayCapNhap = DateTime.Now;
                 if (rbt_khongCoKhach.Checked == true)
                 {
                     rbt_coKhach.Checked = false;
@@ -188,5 +223,7 @@ namespace _3_GUI
         {
 
         }
+
+        
     }
 }

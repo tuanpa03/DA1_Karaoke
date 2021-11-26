@@ -33,7 +33,6 @@ namespace _3_GUI
             this.btn_xóa = new System.Windows.Forms.Button();
             this.btn_dong = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbx_nguoiTao = new System.Windows.Forms.TextBox();
             this.tbx_ngayCapNhap = new System.Windows.Forms.TextBox();
@@ -53,16 +52,15 @@ namespace _3_GUI
             this.rbt_coKhach = new System.Windows.Forms.RadioButton();
             this.rbt_khongCoKhach = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbx_maLoaiPhong = new System.Windows.Forms.TextBox();
-            this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.cmb_loaiPhong = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbb_idtang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(249, 177);
+            this.btn_sua.Location = new System.Drawing.Point(206, 302);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(94, 29);
             this.btn_sua.TabIndex = 40;
@@ -72,7 +70,7 @@ namespace _3_GUI
             // 
             // btn_xóa
             // 
-            this.btn_xóa.Location = new System.Drawing.Point(401, 177);
+            this.btn_xóa.Location = new System.Drawing.Point(403, 302);
             this.btn_xóa.Name = "btn_xóa";
             this.btn_xóa.Size = new System.Drawing.Size(94, 29);
             this.btn_xóa.TabIndex = 39;
@@ -82,7 +80,7 @@ namespace _3_GUI
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(694, 177);
+            this.btn_dong.Location = new System.Drawing.Point(801, 302);
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.Size = new System.Drawing.Size(94, 29);
             this.btn_dong.TabIndex = 38;
@@ -92,7 +90,7 @@ namespace _3_GUI
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(101, 177);
+            this.btn_them.Location = new System.Drawing.Point(41, 302);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(94, 29);
             this.btn_them.TabIndex = 37;
@@ -100,27 +98,17 @@ namespace _3_GUI
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(151, 426);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(21, 20);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "!!!";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(68, 426);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Nhân Viên :";
             // 
             // tbx_nguoiTao
             // 
-            this.tbx_nguoiTao.Location = new System.Drawing.Point(366, 42);
+            this.tbx_nguoiTao.Location = new System.Drawing.Point(517, 53);
             this.tbx_nguoiTao.Name = "tbx_nguoiTao";
             this.tbx_nguoiTao.Size = new System.Drawing.Size(143, 27);
             this.tbx_nguoiTao.TabIndex = 34;
@@ -129,14 +117,14 @@ namespace _3_GUI
             // tbx_ngayCapNhap
             // 
             this.tbx_ngayCapNhap.Enabled = false;
-            this.tbx_ngayCapNhap.Location = new System.Drawing.Point(649, 89);
+            this.tbx_ngayCapNhap.Location = new System.Drawing.Point(878, 150);
             this.tbx_ngayCapNhap.Name = "tbx_ngayCapNhap";
             this.tbx_ngayCapNhap.Size = new System.Drawing.Size(151, 27);
             this.tbx_ngayCapNhap.TabIndex = 33;
             // 
             // tbx_nguoiCapNhap
             // 
-            this.tbx_nguoiCapNhap.Location = new System.Drawing.Point(649, 42);
+            this.tbx_nguoiCapNhap.Location = new System.Drawing.Point(878, 49);
             this.tbx_nguoiCapNhap.Name = "tbx_nguoiCapNhap";
             this.tbx_nguoiCapNhap.Size = new System.Drawing.Size(151, 27);
             this.tbx_nguoiCapNhap.TabIndex = 32;
@@ -145,7 +133,7 @@ namespace _3_GUI
             // tbx_ngayTao
             // 
             this.tbx_ngayTao.Enabled = false;
-            this.tbx_ngayTao.Location = new System.Drawing.Point(366, 89);
+            this.tbx_ngayTao.Location = new System.Drawing.Point(517, 150);
             this.tbx_ngayTao.Name = "tbx_ngayTao";
             this.tbx_ngayTao.Size = new System.Drawing.Size(143, 27);
             this.tbx_ngayTao.TabIndex = 30;
@@ -153,7 +141,7 @@ namespace _3_GUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(285, 140);
+            this.label6.Location = new System.Drawing.Point(383, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 20);
             this.label6.TabIndex = 28;
@@ -162,7 +150,7 @@ namespace _3_GUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 49);
+            this.label5.Location = new System.Drawing.Point(388, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 27;
@@ -171,7 +159,7 @@ namespace _3_GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(283, 96);
+            this.label4.Location = new System.Drawing.Point(388, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 26;
@@ -180,7 +168,7 @@ namespace _3_GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(527, 49);
+            this.label3.Location = new System.Drawing.Point(704, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 20);
             this.label3.TabIndex = 25;
@@ -189,7 +177,7 @@ namespace _3_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(534, 96);
+            this.label2.Location = new System.Drawing.Point(711, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 24;
@@ -207,11 +195,11 @@ namespace _3_GUI
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 222);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 364);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 201);
+            this.dataGridView1.Size = new System.Drawing.Size(1137, 418);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -225,7 +213,7 @@ namespace _3_GUI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 142);
+            this.label10.Location = new System.Drawing.Point(9, 160);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 42;
@@ -233,14 +221,14 @@ namespace _3_GUI
             // 
             // tbx_SucChua
             // 
-            this.tbx_SucChua.Location = new System.Drawing.Point(116, 139);
+            this.tbx_SucChua.Location = new System.Drawing.Point(118, 153);
             this.tbx_SucChua.Name = "tbx_SucChua";
             this.tbx_SucChua.Size = new System.Drawing.Size(143, 27);
             this.tbx_SucChua.TabIndex = 44;
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(549, 177);
+            this.btn_clear.Location = new System.Drawing.Point(596, 302);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(94, 29);
             this.btn_clear.TabIndex = 45;
@@ -251,7 +239,7 @@ namespace _3_GUI
             // rbt_coKhach
             // 
             this.rbt_coKhach.AutoSize = true;
-            this.rbt_coKhach.Location = new System.Drawing.Point(366, 139);
+            this.rbt_coKhach.Location = new System.Drawing.Point(517, 218);
             this.rbt_coKhach.Name = "rbt_coKhach";
             this.rbt_coKhach.Size = new System.Drawing.Size(90, 24);
             this.rbt_coKhach.TabIndex = 46;
@@ -262,7 +250,7 @@ namespace _3_GUI
             // rbt_khongCoKhach
             // 
             this.rbt_khongCoKhach.AutoSize = true;
-            this.rbt_khongCoKhach.Location = new System.Drawing.Point(471, 139);
+            this.rbt_khongCoKhach.Location = new System.Drawing.Point(669, 218);
             this.rbt_khongCoKhach.Name = "rbt_khongCoKhach";
             this.rbt_khongCoKhach.Size = new System.Drawing.Size(135, 24);
             this.rbt_khongCoKhach.TabIndex = 47;
@@ -279,29 +267,30 @@ namespace _3_GUI
             this.label9.TabIndex = 48;
             this.label9.Text = "Mã loại phòng";
             // 
-            // tbx_maLoaiPhong
+            // cmb_loaiPhong
             // 
-            this.tbx_maLoaiPhong.Location = new System.Drawing.Point(116, 89);
-            this.tbx_maLoaiPhong.Name = "tbx_maLoaiPhong";
-            this.tbx_maLoaiPhong.Size = new System.Drawing.Size(143, 27);
-            this.tbx_maLoaiPhong.TabIndex = 49;
+            this.cmb_loaiPhong.FormattingEnabled = true;
+            this.cmb_loaiPhong.Location = new System.Drawing.Point(116, 93);
+            this.cmb_loaiPhong.Name = "cmb_loaiPhong";
+            this.cmb_loaiPhong.Size = new System.Drawing.Size(151, 28);
+            this.cmb_loaiPhong.TabIndex = 50;
             // 
-            // hệThốngToolStripMenuItem
+            // label8
             // 
-            this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.hệThốngToolStripMenuItem.Text = "Hệ Thống";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 227);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 20);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Tầng";
             // 
-            // menuStrip2
+            // cbb_idtang
             // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hệThốngToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1690, 28);
-            this.menuStrip2.TabIndex = 21;
-            this.menuStrip2.Text = "menuStrip2";
+            this.cbb_idtang.FormattingEnabled = true;
+            this.cbb_idtang.Location = new System.Drawing.Point(118, 219);
+            this.cbb_idtang.Name = "cbb_idtang";
+            this.cbb_idtang.Size = new System.Drawing.Size(151, 28);
+            this.cbb_idtang.TabIndex = 52;
             // 
             // frm_Phong
             // 
@@ -309,7 +298,9 @@ namespace _3_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1690, 788);
-            this.Controls.Add(this.tbx_maLoaiPhong);
+            this.Controls.Add(this.cbb_idtang);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cmb_loaiPhong);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.rbt_khongCoKhach);
             this.Controls.Add(this.rbt_coKhach);
@@ -320,7 +311,6 @@ namespace _3_GUI
             this.Controls.Add(this.btn_xóa);
             this.Controls.Add(this.btn_dong);
             this.Controls.Add(this.btn_them);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbx_nguoiTao);
             this.Controls.Add(this.tbx_ngayCapNhap);
@@ -334,13 +324,10 @@ namespace _3_GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbx_tenPhong);
-            this.Controls.Add(this.menuStrip2);
             this.Name = "frm_Phong";
             this.Text = "frm_Phong";
             this.Load += new System.EventHandler(this.frm_Phong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +339,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_xóa;
         private System.Windows.Forms.Button btn_dong;
         private System.Windows.Forms.Button btn_them;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbx_nguoiTao;
         private System.Windows.Forms.TextBox tbx_ngayCapNhap;
@@ -372,8 +358,8 @@ namespace _3_GUI
         private System.Windows.Forms.RadioButton rbt_coKhach;
         private System.Windows.Forms.RadioButton rbt_khongCoKhach;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbx_maLoaiPhong;
-        private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ComboBox cmb_loaiPhong;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbb_idtang;
     }
 }
