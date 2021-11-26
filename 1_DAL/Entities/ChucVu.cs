@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace _1_DAL.Entities
 {
     [Table("ChucVu")]
-    public class ChucVu
+    public partial class ChucVu
     {
         public ChucVu()
         {

@@ -5,29 +5,34 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("HoaDonBanHang")]
-    public class HoaDonBanHang
+    [Index(nameof(IdmaKh), Name = "IX_HoaDonBanHang_IDMaKH")]
+    [Index(nameof(IdmaNv), Name = "IX_HoaDonBanHang_IDMaNV")]
+    [Index(nameof(Idphong), Name = "IX_HoaDonBanHang_IDPhong")]
+    public partial class HoaDonBanHang
     {
         public HoaDonBanHang()
         {
             ChiTietHoaDonBans = new HashSet<ChiTietHoaDonBan>();
         }
 
-        [Column("IDMaKH")]
-        [StringLength(30)]
-        public string IdmaKh { get; set; }
         [Key]
         [Column("IDHoaDon")]
         public int IdhoaDon { get; set; }
+        [Column("IDMaKH")]
+        [StringLength(30)]
+        public string IdmaKh { get; set; }
         [Column("IDPhong")]
-        [StringLength(20)]
         public int? Idphong { get; set; }
         [Column("IDMaNV")]
         [StringLength(30)]
         public string IdmaNv { get; set; }
+        [Column("IDCongThucTinh")]
+        public int? IdcongThucTinh { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? ThoiGianBatDau { get; set; }
         [Column(TypeName = "datetime")]
@@ -46,6 +51,9 @@ namespace _1_DAL.Entities
         [Column("IDTranngThai")]
         public int? IdtranngThai { get; set; }
 
+        [ForeignKey(nameof(IdcongThucTinh))]
+        [InverseProperty(nameof(CongThucTinh.HoaDonBanHangs))]
+        public virtual CongThucTinh IdcongThucTinhNavigation { get; set; }
         [ForeignKey(nameof(IdmaKh))]
         [InverseProperty(nameof(KhachHang.HoaDonBanHangs))]
         public virtual KhachHang IdmaKhNavigation { get; set; }

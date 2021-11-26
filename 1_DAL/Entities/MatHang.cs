@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("MatHang")]
-    public class MatHang
+    [Index(nameof(IddonViTinh), Name = "IX_MatHang_IDDonViTinh")]
+    public partial class MatHang
     {
         public MatHang()
         {
@@ -25,6 +27,7 @@ namespace _1_DAL.Entities
         public string TenMatHang { get; set; }
         [Column("IDDonViTinh")]
         public int? IddonViTinh { get; set; }
+        public int? SoLuong { get; set; }
         public double DonGia { get; set; }
         [StringLength(50)]
         public string NguoiTao { get; set; }

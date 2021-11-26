@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("NhanVien")]
-    public class NhanVien
+    [Index(nameof(IdchucVu), Name = "IX_NhanVien_IDChucVu")]
+    public partial class NhanVien
     {
         public NhanVien()
         {
@@ -17,15 +19,15 @@ namespace _1_DAL.Entities
             HoaDonNhaps = new HashSet<HoaDonNhap>();
         }
 
+        [Key]
+        [Column("MaNV")]
+        [StringLength(30)]
+        public string MaNv { get; set; }
         [StringLength(30)]
         public string Username { get; set; }
         public string Password { get; set; }
         [Column("IDChucVu")]
         public int? IdchucVu { get; set; }
-        [Key]
-        [Column("MaNV")]
-        [StringLength(30)]
-        public string MaNv { get; set; }
         [StringLength(20)]
         public string Ho { get; set; }
         [StringLength(20)]

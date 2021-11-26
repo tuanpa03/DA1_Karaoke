@@ -15,13 +15,19 @@ namespace _1_DAL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("_1_DAL.Entities.ChiTietHoaDonBan", b =>
                 {
+                    b.Property<int>("IdchiTietHoaDonBan")
+                        .HasColumnType("int")
+                        .HasColumnName("IDChiTietHoaDonBan");
+
+                    b.Property<double?>("DonGia")
+                        .HasColumnType("float");
+
                     b.Property<int>("IdhoaDon")
                         .HasColumnType("int")
                         .HasColumnName("IDHoaDon");
@@ -29,9 +35,6 @@ namespace _1_DAL.Migrations
                     b.Property<int>("IdmatHang")
                         .HasColumnType("int")
                         .HasColumnName("IDMatHang");
-
-                    b.Property<double?>("DonGia")
-                        .HasColumnType("float");
 
                     b.Property<string>("IdtranngThai")
                         .ValueGeneratedOnAdd()
@@ -50,15 +53,24 @@ namespace _1_DAL.Migrations
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
-                    b.HasKey("IdhoaDon", "IdmatHang");
+                    b.HasKey("IdchiTietHoaDonBan");
 
-                    b.HasIndex("IdmatHang");
+                    b.HasIndex("IdhoaDon");
+
+                    b.HasIndex(new[] { "IdmatHang" }, "IX_ChiTietHoaDonBan_IDMatHang");
 
                     b.ToTable("ChiTietHoaDonBan");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.ChiTietHoaDonNhap", b =>
                 {
+                    b.Property<int>("IdchiTietHoaDonNhap")
+                        .HasColumnType("int")
+                        .HasColumnName("IDChiTietHoaDonNhap");
+
+                    b.Property<double?>("DonGiaNhap")
+                        .HasColumnType("float");
+
                     b.Property<int>("IdhoaDon")
                         .HasColumnType("int")
                         .HasColumnName("IDHoaDon");
@@ -66,9 +78,6 @@ namespace _1_DAL.Migrations
                     b.Property<int>("IdmatHang")
                         .HasColumnType("int")
                         .HasColumnName("IDMatHang");
-
-                    b.Property<double?>("DonGiaNhap")
-                        .HasColumnType("float");
 
                     b.Property<string>("IdtranngThai")
                         .ValueGeneratedOnAdd()
@@ -81,30 +90,34 @@ namespace _1_DAL.Migrations
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
-                    b.HasKey("IdhoaDon", "IdmatHang")
-                        .HasName("PK_ChiTietHoaDonNhap_1");
+                    b.HasKey("IdchiTietHoaDonNhap");
 
-                    b.HasIndex("IdmatHang");
+                    b.HasIndex("IdhoaDon");
+
+                    b.HasIndex(new[] { "IdmatHang" }, "IX_ChiTietHoaDonNhap_IDMatHang");
 
                     b.ToTable("ChiTietHoaDonNhap");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.ChiTietThietBi", b =>
                 {
-                    b.Property<int?>("Idphong")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
+                    b.Property<int>("IdchiTietThietBi")
                         .HasColumnType("int")
-                        .HasColumnName("IDPhong");
+                        .HasColumnName("IDChiTietThietBi");
+
+                    b.Property<double?>("DonGia")
+                        .HasColumnType("float");
 
                     b.Property<string>("IdmaTb")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .IsUnicode(false)
                         .HasColumnType("varchar(30)")
                         .HasColumnName("IDMaTB");
 
-                    b.Property<double?>("DonGia")
-                        .HasColumnType("float");
+                    b.Property<int>("Idphong")
+                        .HasColumnType("int")
+                        .HasColumnName("IDPhong");
 
                     b.Property<int?>("IdtranngThai")
                         .ValueGeneratedOnAdd()
@@ -115,9 +128,11 @@ namespace _1_DAL.Migrations
                     b.Property<int?>("SoLuong")
                         .HasColumnType("int");
 
-                    b.HasKey("Idphong", "IdmaTb");
+                    b.HasKey("IdchiTietThietBi");
 
-                    b.HasIndex("IdmaTb");
+                    b.HasIndex("Idphong");
+
+                    b.HasIndex(new[] { "IdmaTb" }, "IX_ChiTietThietBi_IDMaTB");
 
                     b.ToTable("ChiTietThietBi");
                 });
@@ -145,13 +160,50 @@ namespace _1_DAL.Migrations
                     b.ToTable("ChucVu");
                 });
 
+            modelBuilder.Entity("_1_DAL.Entities.CongThucTinh", b =>
+                {
+                    b.Property<int>("IdcongThucTinh")
+                        .HasColumnType("int")
+                        .HasColumnName("IDCongThucTinh");
+
+                    b.Property<double?>("ThoiGianNhanUuDai1")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValueSql("((0))");
+
+                    b.Property<double?>("ThoiGianNhanUuDai2")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValueSql("((0))");
+
+                    b.Property<double?>("ThoiGianNhanUuDai3")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValueSql("((0))");
+
+                    b.Property<double?>("UuDai1")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValueSql("((0))");
+
+                    b.Property<double?>("UuDai2")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("float")
+                        .HasDefaultValueSql("((0))");
+
+                    b.Property<double?>("UuDai3")
+                        .HasColumnType("float");
+
+                    b.HasKey("IdcongThucTinh");
+
+                    b.ToTable("CongThucTinh");
+                });
+
             modelBuilder.Entity("_1_DAL.Entities.DonViTinh", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("ID");
 
                     b.Property<string>("IdtranngThai")
                         .ValueGeneratedOnAdd()
@@ -196,13 +248,15 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.HoaDonBanHang", b =>
                 {
                     b.Property<int>("IdhoaDon")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("IDHoaDon")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("IDHoaDon");
 
                     b.Property<double?>("DonGiaPhong")
                         .HasColumnType("float");
+
+                    b.Property<int?>("IdcongThucTinh")
+                        .HasColumnType("int")
+                        .HasColumnName("IDCongThucTinh");
 
                     b.Property<string>("IdmaKh")
                         .HasMaxLength(30)
@@ -217,8 +271,6 @@ namespace _1_DAL.Migrations
                         .HasColumnName("IDMaNV");
 
                     b.Property<int?>("Idphong")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
                         .HasColumnType("int")
                         .HasColumnName("IDPhong");
 
@@ -254,11 +306,13 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("IdhoaDon");
 
-                    b.HasIndex("IdmaKh");
+                    b.HasIndex("IdcongThucTinh");
 
-                    b.HasIndex("IdmaNv");
+                    b.HasIndex(new[] { "IdmaKh" }, "IX_HoaDonBanHang_IDMaKH");
 
-                    b.HasIndex("Idphong");
+                    b.HasIndex(new[] { "IdmaNv" }, "IX_HoaDonBanHang_IDMaNV");
+
+                    b.HasIndex(new[] { "Idphong" }, "IX_HoaDonBanHang_IDPhong");
 
                     b.ToTable("HoaDonBanHang");
                 });
@@ -266,10 +320,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.HoaDonNhap", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("ID");
 
                     b.Property<int?>("IdnhaCc")
                         .HasColumnType("int")
@@ -323,9 +375,9 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdnhaCc");
+                    b.HasIndex(new[] { "IdnhaCc" }, "IX_HoaDonNhap_IDNhaCC");
 
-                    b.HasIndex("IdnhanVienNhap");
+                    b.HasIndex(new[] { "IdnhanVienNhap" }, "IX_HoaDonNhap_IDNhanVienNhap");
 
                     b.ToTable("HoaDonNhap");
                 });
@@ -372,10 +424,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.LoaiPhong", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("ID");
 
                     b.Property<double?>("DonGia")
                         .HasColumnType("float");
@@ -482,6 +532,9 @@ namespace _1_DAL.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasDefaultValueSql("('admin')");
 
+                    b.Property<int?>("SoLuong")
+                        .HasColumnType("int");
+
                     b.Property<string>("TenMatHang")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -489,7 +542,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IddonViTinh");
+                    b.HasIndex(new[] { "IddonViTinh" }, "IX_MatHang_IDDonViTinh");
 
                     b.ToTable("MatHang");
                 });
@@ -497,10 +550,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.NhaCungCap", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("ID");
 
                     b.Property<string>("DiaChi")
                         .HasMaxLength(150)
@@ -611,7 +662,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaNv");
 
-                    b.HasIndex("IdchucVu");
+                    b.HasIndex(new[] { "IdchucVu" }, "IX_NhanVien_IDChucVu");
 
                     b.ToTable("NhanVien");
                 });
@@ -619,16 +670,16 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.Phong", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnName("ID");
 
                     b.Property<int?>("IdloaiPhong")
                         .HasColumnType("int")
                         .HasColumnName("IDLoaiPhong");
+
+                    b.Property<int?>("Idtang")
+                        .HasColumnType("int")
+                        .HasColumnName("IDTang");
 
                     b.Property<string>("IdtranngThai")
                         .ValueGeneratedOnAdd()
@@ -675,9 +726,34 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdloaiPhong");
+                    b.HasIndex("Idtang");
+
+                    b.HasIndex(new[] { "IdloaiPhong" }, "IX_Phong_IDLoaiPhong");
 
                     b.ToTable("Phong");
+                });
+
+            modelBuilder.Entity("_1_DAL.Entities.Tang", b =>
+                {
+                    b.Property<int>("Idtang")
+                        .HasColumnType("int")
+                        .HasColumnName("IDTang");
+
+                    b.Property<int?>("IdtrangThai")
+                        .HasColumnType("int")
+                        .HasColumnName("IDTrangThai");
+
+                    b.Property<int?>("SoLuongPhong")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenTang")
+                        .HasMaxLength(40)
+                        .HasColumnType("nchar(40)")
+                        .IsFixedLength(true);
+
+                    b.HasKey("Idtang");
+
+                    b.ToTable("Tang");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.ThietBi", b =>
@@ -718,7 +794,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaTb");
 
-                    b.HasIndex("IdmaLoaiTb");
+                    b.HasIndex(new[] { "IdmaLoaiTb" }, "IX_ThietBi_IDMaLoaiTB");
 
                     b.ToTable("ThietBi");
                 });
@@ -782,6 +858,11 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Entities.HoaDonBanHang", b =>
                 {
+                    b.HasOne("_1_DAL.Entities.CongThucTinh", "IdcongThucTinhNavigation")
+                        .WithMany("HoaDonBanHangs")
+                        .HasForeignKey("IdcongThucTinh")
+                        .HasConstraintName("FK_HoaDonBanHang_CongThucTinh");
+
                     b.HasOne("_1_DAL.Entities.KhachHang", "IdmaKhNavigation")
                         .WithMany("HoaDonBanHangs")
                         .HasForeignKey("IdmaKh")
@@ -796,6 +877,8 @@ namespace _1_DAL.Migrations
                         .WithMany("HoaDonBanHangs")
                         .HasForeignKey("Idphong")
                         .HasConstraintName("FK_HoaDonBanHang_Phong");
+
+                    b.Navigation("IdcongThucTinhNavigation");
 
                     b.Navigation("IdmaKhNavigation");
 
@@ -849,7 +932,14 @@ namespace _1_DAL.Migrations
                         .HasForeignKey("IdloaiPhong")
                         .HasConstraintName("FK_Phong_LoaiPhong");
 
+                    b.HasOne("_1_DAL.Entities.Tang", "IdtangNavigation")
+                        .WithMany("Phongs")
+                        .HasForeignKey("Idtang")
+                        .HasConstraintName("FK_Phong_Tang");
+
                     b.Navigation("IdloaiPhongNavigation");
+
+                    b.Navigation("IdtangNavigation");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.ThietBi", b =>
@@ -865,6 +955,11 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Entities.ChucVu", b =>
                 {
                     b.Navigation("NhanViens");
+                });
+
+            modelBuilder.Entity("_1_DAL.Entities.CongThucTinh", b =>
+                {
+                    b.Navigation("HoaDonBanHangs");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.DonViTinh", b =>
@@ -921,6 +1016,11 @@ namespace _1_DAL.Migrations
                     b.Navigation("ChiTietThietBis");
 
                     b.Navigation("HoaDonBanHangs");
+                });
+
+            modelBuilder.Entity("_1_DAL.Entities.Tang", b =>
+                {
+                    b.Navigation("Phongs");
                 });
 
             modelBuilder.Entity("_1_DAL.Entities.ThietBi", b =>

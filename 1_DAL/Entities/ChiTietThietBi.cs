@@ -5,17 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("ChiTietThietBi")]
-    public class ChiTietThietBi
+    [Index(nameof(IdmaTb), Name = "IX_ChiTietThietBi_IDMaTB")]
+    public partial class ChiTietThietBi
     {
         [Key]
+        [Column("IDChiTietThietBi")]
+        public int IdchiTietThietBi { get; set; }
         [Column("IDPhong")]
-        [StringLength(20)]
-        public int? Idphong { get; set; }
-        [Key]
+        public int Idphong { get; set; }
+        [Required]
         [Column("IDMaTB")]
         [StringLength(30)]
         public string IdmaTb { get; set; }

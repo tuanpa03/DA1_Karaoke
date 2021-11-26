@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace _1_DAL.Entities
 {
     [Table("LoaiPhong")]
-    public class LoaiPhong
+    public partial class LoaiPhong
     {
         public LoaiPhong()
         {

@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("ThietBi")]
-    public class ThietBi
+    [Index(nameof(IdmaLoaiTb), Name = "IX_ThietBi_IDMaLoaiTB")]
+    public partial class ThietBi
     {
         public ThietBi()
         {

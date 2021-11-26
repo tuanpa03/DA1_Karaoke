@@ -5,11 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("HoaDonNhap")]
-    public class HoaDonNhap
+    [Index(nameof(IdnhaCc), Name = "IX_HoaDonNhap_IDNhaCC")]
+    [Index(nameof(IdnhanVienNhap), Name = "IX_HoaDonNhap_IDNhanVienNhap")]
+    public partial class HoaDonNhap
     {
         public HoaDonNhap()
         {

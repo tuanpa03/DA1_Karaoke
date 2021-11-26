@@ -5,16 +5,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("ChiTietHoaDonBan")]
-    public class ChiTietHoaDonBan
+    [Index(nameof(IdmatHang), Name = "IX_ChiTietHoaDonBan_IDMatHang")]
+    public partial class ChiTietHoaDonBan
     {
         [Key]
+        [Column("IDChiTietHoaDonBan")]
+        public int IdchiTietHoaDonBan { get; set; }
         [Column("IDHoaDon")]
         public int IdhoaDon { get; set; }
-        [Key]
         [Column("IDMatHang")]
         public int IdmatHang { get; set; }
         [Column("IDUsername")]

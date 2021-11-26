@@ -21,6 +21,7 @@ namespace _1_DAL.DBContext
         public virtual DbSet<ChiTietHoaDonNhap> ChiTietHoaDonNhaps { get; set; }
         public virtual DbSet<ChiTietThietBi> ChiTietThietBis { get; set; }
         public virtual DbSet<ChucVu> ChucVus { get; set; }
+        public virtual DbSet<CongThucTinh> CongThucTinhs { get; set; }
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
         public virtual DbSet<HoaDonBanHang> HoaDonBanHangs { get; set; }
         public virtual DbSet<HoaDonNhap> HoaDonNhaps { get; set; }
@@ -31,15 +32,14 @@ namespace _1_DAL.DBContext
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
+        public virtual DbSet<Tang> Tangs { get; set; }
         public virtual DbSet<ThietBi> ThietBis { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
             modelBuilder.Entity<ChiTietHoaDonBan>(entity =>
             {
-                entity.HasKey(e => new { e.IdhoaDon, e.IdmatHang });
+                entity.Property(e => e.IdchiTietHoaDonBan).ValueGeneratedNever();
 
                 entity.Property(e => e.IdtranngThai)
                     .HasDefaultValueSql("((1))")
@@ -62,8 +62,7 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<ChiTietHoaDonNhap>(entity =>
             {
-                entity.HasKey(e => new { e.IdhoaDon, e.IdmatHang })
-                    .HasName("PK_ChiTietHoaDonNhap_1");
+                entity.Property(e => e.IdchiTietHoaDonNhap).ValueGeneratedNever();
 
                 entity.Property(e => e.IdtranngThai)
                     .HasDefaultValueSql("((1))")
@@ -84,9 +83,7 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<ChiTietThietBi>(entity =>
             {
-                entity.HasKey(e => new { e.Idphong, e.IdmaTb });
-
-                entity.Property(e => e.Idphong).IsUnicode(false);
+                entity.Property(e => e.IdchiTietThietBi).ValueGeneratedNever();
 
                 entity.Property(e => e.IdmaTb).IsUnicode(false);
 
@@ -114,8 +111,25 @@ namespace _1_DAL.DBContext
                     .IsFixedLength(true);
             });
 
+            modelBuilder.Entity<CongThucTinh>(entity =>
+            {
+                entity.Property(e => e.IdcongThucTinh).ValueGeneratedNever();
+
+                entity.Property(e => e.ThoiGianNhanUuDai1).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.ThoiGianNhanUuDai2).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.ThoiGianNhanUuDai3).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.UuDai1).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.UuDai2).HasDefaultValueSql("((0))");
+            });
+
             modelBuilder.Entity<DonViTinh>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.Property(e => e.IdtranngThai)
                     .HasDefaultValueSql("((1))")
                     .IsFixedLength(true);
@@ -131,13 +145,18 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<HoaDonBanHang>(entity =>
             {
+                entity.Property(e => e.IdhoaDon).ValueGeneratedNever();
+
                 entity.Property(e => e.IdmaKh).IsUnicode(false);
 
                 entity.Property(e => e.IdmaNv).IsUnicode(false);
 
-                entity.Property(e => e.Idphong).IsUnicode(false);
-
                 entity.Property(e => e.IdtranngThai).HasDefaultValueSql("((1))");
+
+                entity.HasOne(d => d.IdcongThucTinhNavigation)
+                    .WithMany(p => p.HoaDonBanHangs)
+                    .HasForeignKey(d => d.IdcongThucTinh)
+                    .HasConstraintName("FK_HoaDonBanHang_CongThucTinh");
 
                 entity.HasOne(d => d.IdmaKhNavigation)
                     .WithMany(p => p.HoaDonBanHangs)
@@ -157,6 +176,8 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<HoaDonNhap>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.Property(e => e.IdnhanVienNhap).IsUnicode(false);
 
                 entity.Property(e => e.IdtranngThai)
@@ -196,6 +217,8 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<LoaiPhong>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.Property(e => e.IdtranngThai)
                     .HasDefaultValueSql("((1))")
                     .IsFixedLength(true);
@@ -232,6 +255,8 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<NhaCungCap>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.Property(e => e.Email).IsUnicode(false);
 
                 entity.Property(e => e.IdtranngThai).HasDefaultValueSql("((1))");
@@ -263,7 +288,7 @@ namespace _1_DAL.DBContext
 
             modelBuilder.Entity<Phong>(entity =>
             {
-                entity.Property(e => e.Id).IsUnicode(false);
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.IdtranngThai)
                     .HasDefaultValueSql("((1))")
@@ -283,6 +308,18 @@ namespace _1_DAL.DBContext
                     .WithMany(p => p.Phongs)
                     .HasForeignKey(d => d.IdloaiPhong)
                     .HasConstraintName("FK_Phong_LoaiPhong");
+
+                entity.HasOne(d => d.IdtangNavigation)
+                    .WithMany(p => p.Phongs)
+                    .HasForeignKey(d => d.Idtang)
+                    .HasConstraintName("FK_Phong_Tang");
+            });
+
+            modelBuilder.Entity<Tang>(entity =>
+            {
+                entity.Property(e => e.Idtang).ValueGeneratedNever();
+
+                entity.Property(e => e.TenTang).IsFixedLength(true);
             });
 
             modelBuilder.Entity<ThietBi>(entity =>

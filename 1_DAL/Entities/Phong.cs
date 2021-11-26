@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Entities
 {
     [Table("Phong")]
-    public class Phong
+    [Index(nameof(IdloaiPhong), Name = "IX_Phong_IDLoaiPhong")]
+    public partial class Phong
     {
         public Phong()
         {
@@ -19,8 +21,9 @@ namespace _1_DAL.Entities
 
         [Key]
         [Column("ID")]
-        [StringLength(20)]
         public int Id { get; set; }
+        [Column("IDTang")]
+        public int? Idtang { get; set; }
         [Column("IDLoaiPhong")]
         public int? IdloaiPhong { get; set; }
         [Required]
@@ -43,6 +46,9 @@ namespace _1_DAL.Entities
         [ForeignKey(nameof(IdloaiPhong))]
         [InverseProperty(nameof(LoaiPhong.Phongs))]
         public virtual LoaiPhong IdloaiPhongNavigation { get; set; }
+        [ForeignKey(nameof(Idtang))]
+        [InverseProperty(nameof(Tang.Phongs))]
+        public virtual Tang IdtangNavigation { get; set; }
         [InverseProperty(nameof(ChiTietThietBi.IdphongNavigation))]
         public virtual ICollection<ChiTietThietBi> ChiTietThietBis { get; set; }
         [InverseProperty(nameof(HoaDonBanHang.IdphongNavigation))]
