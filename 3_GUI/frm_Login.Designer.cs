@@ -29,6 +29,7 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_DangNhap = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
@@ -36,10 +37,9 @@ namespace _3_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Passwork = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbx_NhoPasswork = new System.Windows.Forms.CheckBox();
-            this.lbl_QuenMatKhau = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(13, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 53);
@@ -57,8 +57,9 @@ namespace _3_GUI
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_DangNhap.BackColor = System.Drawing.Color.Black;
             this.btn_DangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_DangNhap.ForeColor = System.Drawing.Color.White;
             this.btn_DangNhap.Location = new System.Drawing.Point(11, 318);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(205, 56);
@@ -69,8 +70,9 @@ namespace _3_GUI
             // 
             // btn_Thoat
             // 
-            this.btn_Thoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Thoat.BackColor = System.Drawing.Color.Black;
             this.btn_Thoat.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Thoat.ForeColor = System.Drawing.Color.White;
             this.btn_Thoat.Location = new System.Drawing.Point(10, 380);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(205, 56);
@@ -117,58 +119,53 @@ namespace _3_GUI
             this.txt_Passwork.Size = new System.Drawing.Size(440, 34);
             this.txt_Passwork.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(37, 280);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 26);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ghi nhớ mật khẩu";
-            // 
-            // cbx_NhoPasswork
-            // 
-            this.cbx_NhoPasswork.AutoSize = true;
-            this.cbx_NhoPasswork.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbx_NhoPasswork.Location = new System.Drawing.Point(13, 283);
-            this.cbx_NhoPasswork.Name = "cbx_NhoPasswork";
-            this.cbx_NhoPasswork.Size = new System.Drawing.Size(18, 17);
-            this.cbx_NhoPasswork.TabIndex = 4;
-            this.cbx_NhoPasswork.UseVisualStyleBackColor = true;
-            // 
-            // lbl_QuenMatKhau
-            // 
-            this.lbl_QuenMatKhau.AutoSize = true;
-            this.lbl_QuenMatKhau.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_QuenMatKhau.Location = new System.Drawing.Point(287, 280);
-            this.lbl_QuenMatKhau.Name = "lbl_QuenMatKhau";
-            this.lbl_QuenMatKhau.Size = new System.Drawing.Size(165, 26);
-            this.lbl_QuenMatKhau.TabIndex = 3;
-            this.lbl_QuenMatKhau.Text = "Quên mật khẩu?";
-            this.lbl_QuenMatKhau.Click += new System.EventHandler(this.lbl_QuenMatKhau_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(272, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(187, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linkLabel1.Location = new System.Drawing.Point(286, 280);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(173, 26);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Quên mật khẩu?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(10, 281);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(199, 30);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Hiển thị mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(461, 443);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbx_NhoPasswork);
-            this.Controls.Add(this.lbl_QuenMatKhau);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Passwork);
@@ -176,6 +173,7 @@ namespace _3_GUI
             this.Controls.Add(this.btn_Thoat);
             this.Controls.Add(this.btn_DangNhap);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -194,9 +192,8 @@ namespace _3_GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Passwork;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox cbx_NhoPasswork;
-        private System.Windows.Forms.Label lbl_QuenMatKhau;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

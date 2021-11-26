@@ -17,8 +17,8 @@ namespace _3_GUI
         private IBUS_Login_Service _ibus_Login_Service;
         public frm_Login()
         {
-            _ibus_Login_Service = new BUS_Login_Service();
             InitializeComponent();
+            _ibus_Login_Service = new BUS_Login_Service();
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
@@ -47,9 +47,23 @@ namespace _3_GUI
                 this.Close();
         }
 
-        private void lbl_QuenMatKhau_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (txt_Passwork.PasswordChar == '*' )
+            {
+                txt_Passwork.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_Passwork.PasswordChar = '*';
+            }
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_QuenMatKhau quen = new frm_QuenMatKhau();
+            this.Hide();
+            quen.Show();
         }
     }
 }
