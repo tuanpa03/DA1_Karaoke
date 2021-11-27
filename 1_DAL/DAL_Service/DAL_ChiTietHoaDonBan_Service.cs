@@ -44,9 +44,9 @@ namespace _1_DAL.DAL_Service
             _lstchiTietHoaDonBans = _dbContext.ChiTietHoaDonBans.ToList();
         }
 
-        public bool Remove(int idHoaDon)
+        public bool Remove(int idctHD)
         {
-            var temp = _lstchiTietHoaDonBans.Where(c => c.IdhoaDon == idHoaDon).FirstOrDefault();
+            var temp = _lstchiTietHoaDonBans.Where(c => c.IdchiTietHoaDonBan == idctHD).FirstOrDefault();
             _dbContext.ChiTietHoaDonBans.Remove(temp);
             _dbContext.SaveChanges();
             GetlstChiTietHoaDonBan();

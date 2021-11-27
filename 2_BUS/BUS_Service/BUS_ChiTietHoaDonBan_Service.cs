@@ -19,9 +19,39 @@ namespace _2_BUS.BUS_Service
         }
         public bool Add(ChiTietHoaDonBan chiTietHoaDonBan)
         {
-            return _iDAL_ChiTietHoaDonBan_Service.Add(chiTietHoaDonBan);
+            if (getdatabyidhoadon(chiTietHoaDonBan))
+            {
+                if (sendlstChiTietHoaDonBan().Count == 0)
+                {
+                    chiTietHoaDonBan.IdchiTietHoaDonBan = 1;
+                }
+                else
+                {
+                    chiTietHoaDonBan.IdchiTietHoaDonBan = sendlstChiTietHoaDonBan().Max(x => x.IdchiTietHoaDonBan) + 1;
+                }
+                chiTietHoaDonBan.SoLuong = 1;
+                return _iDAL_ChiTietHoaDonBan_Service.Add(chiTietHoaDonBan);
+            }
+            else
+            {
+                var cthd = sendlstChiTietHoaDonBan().Where(x => x.IdhoaDon == chiTietHoaDonBan.IdhoaDon)
+                    .Where(c => c.IdmatHang == chiTietHoaDonBan.IdmatHang).FirstOrDefault();
+                cthd.SoLuong += 1;
+                return _iDAL_ChiTietHoaDonBan_Service.Update(cthd);
+            }
         }
 
+        private bool getdatabyidhoadon(ChiTietHoaDonBan chiTietHoaDonBan)
+        {
+            foreach (var x in sendlstChiTietHoaDonBan())
+            {
+                if (x.IdhoaDon==chiTietHoaDonBan.IdhoaDon && x.IdmatHang==chiTietHoaDonBan.IdmatHang)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public List<ChiTietHoaDonBan> Find(int id)
         {
             return _iDAL_ChiTietHoaDonBan_Service.Find(id);
