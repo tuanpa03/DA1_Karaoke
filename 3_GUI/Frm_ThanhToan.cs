@@ -284,7 +284,7 @@ namespace _3_GUI_PresentationLayer
 
 
                 var phong = _phong_Service.Find(Convert.ToInt32( tbx_idPhong.Text)).FirstOrDefault();
-                phong.IdtranngThai = 3.ToString();
+                phong.TrangThai = 3;
                 _phong_Service.Update(phong);
 
 
@@ -304,7 +304,7 @@ namespace _3_GUI_PresentationLayer
                 MessageBox.Show(_ihoaDonBanHang_Service.Add(_hoaDonBanHang).ToString());
 
                 var phong = _phong_Service.Find(Convert.ToInt32(tbx_idPhong.Text)).FirstOrDefault();
-                phong.IdtranngThai = 1.ToString();
+                phong.TrangThai = 1;
                 _phong_Service.Update(phong);
             }
         }

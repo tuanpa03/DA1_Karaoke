@@ -77,25 +77,25 @@ namespace _3_GUI
                     lb.Text = str;
                     lb.Text =tenPhong;
                     lb.BackColor = Color.Red;
-                    int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].IdtranngThai);
-                    if (_idTrangThai == 1)
+                    int _trangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TrangThai);
+                    if (_trangThai == 1)
                     {
                         lb.BackColor = Color.Red;//phòng trống
                         
                         
                         //stripMenu_capNhap.Enabled = false;
                     }
-                    else if (_idTrangThai == 2)
+                    else if (_trangThai == 2)
                     {
                         lb.BackColor = Color.Yellow;//đang dọn
                         lb.ForeColor = Color.Gray;//màu chữ
                     }
-                    else if (_idTrangThai == 3)
+                    else if (_trangThai == 3)
                     {
                         lb.BackColor = Color.Blue;//có khách
                         
                     }
-                    else if (_idTrangThai == 4)
+                    else if (_trangThai == 4)
                     {
                         lb.BackColor = Color.Gray;//đang sửa chữa
                     }
@@ -174,7 +174,7 @@ namespace _3_GUI
 
             var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
             _idPhongDonPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
-            if (Convert.ToInt32(_lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).IdtranngThai) == 2)
+            if (Convert.ToInt32(_lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).TrangThai) == 2)
             {
                 MessageBox.Show("Phòng đang dọn", "Thông báo"/*,Thread.Sleep(3000)*/);
                 return;
@@ -182,14 +182,14 @@ namespace _3_GUI
  
             foreach (var x in _lstPhong)
             {
-                if (Convert.ToInt32(x.IdtranngThai) ==2)
+                if (Convert.ToInt32(x.TrangThai) ==2)
                 {
                     MessageBox.Show("Không thể dọn ! Có Phòng đang dọn", "Thông báo");
                     return;
                 }
             }
             var phong = _iBUS_Phong_Service.Find(_idPhongDonPhong).FirstOrDefault();
-            phong.IdtranngThai = 2.ToString();
+            phong.TrangThai = 2;
             _iBUS_Phong_Service.Update(phong);
             //showRoom();
             aTimer = new System.Windows.Forms.Timer();
@@ -216,7 +216,7 @@ namespace _3_GUI
                 aTimer.Stop();
                 MessageBox.Show("Phòng" + _lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).TenPhong + "đã dọn phòng xong", "Thông báo");
                 var phong = _iBUS_Phong_Service.Find(_idPhongDonPhong).FirstOrDefault();
-                phong.IdtranngThai = 1.ToString();
+                phong.TrangThai = 1;
                 _iBUS_Phong_Service.Update(phong);
                 showRoom();
                 
@@ -277,17 +277,17 @@ namespace _3_GUI
             tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
-                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList().Count; j++)
+                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList().Count; j++)
                 {
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
-                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList()[j].TenPhong;
+                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList()[j].TenPhong;
                     string maKh = "Mã khách hàng";
                     string gioVao = "Giờ Bắt Đầu";
                     string str = tenPhong + "\n" + maKh + "\n" + gioVao;
                     lb.Text = str;
                     _tenPhong = lb.Text;
-                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.IdtranngThai) == a).ToList()[j].Id);
+                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList()[j].Id);
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     if (a == 1)
