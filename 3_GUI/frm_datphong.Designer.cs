@@ -230,6 +230,7 @@ namespace _3_GUI
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "frm_datphong";
             this.Text = "frm_Main";
+            this.Load += new System.EventHandler(this.frm_datphong_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

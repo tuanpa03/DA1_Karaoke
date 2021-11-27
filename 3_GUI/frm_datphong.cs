@@ -19,8 +19,14 @@ namespace _3_GUI
     {
         private IBUS_Phong_Service _iBUS_Phong_Service;
         private IBUS_Tang_Service _iBUS_Tang_Service;
+        private IBUS_HoaDonBanHang_Service _ihoaDonBanHang_Service;
         string _tenPhong;
-        int _idPhong;
+        int _idPhongDatPhong;
+        int _idPhongDonPhong;
+        string _idHoaDonTruyenThanhToan;
+        string _khachhangTruyenThanhToan;
+        string _tGianBDTruyenThanhToan;
+        string _idPhongTruyenThanhToan;
         //string _giodonphong;
         List<Phong> _lstPhong = new List<Phong>();
         private System.Windows.Forms.Timer aTimer;
@@ -32,10 +38,26 @@ namespace _3_GUI
             _iBUS_Phong_Service = new BUS_Phong_Service();
             _lstPhong = _iBUS_Phong_Service.sendlstPhong();
             _iBUS_Tang_Service = new BUS_Tang_Service();
+            _ihoaDonBanHang_Service = new BUS_HoaDonBanHang_Service();
             showRoom();
+        }
+        public frm_datphong(string idHoaDon111 /*, string khachHang111, string tgianBD111*/,string idPhong111)
+        {
+            InitializeComponent();
+            _iBUS_Phong_Service = new BUS_Phong_Service();
+            _lstPhong = _iBUS_Phong_Service.sendlstPhong();
+            _iBUS_Tang_Service = new BUS_Tang_Service();
+            _ihoaDonBanHang_Service = new BUS_HoaDonBanHang_Service();
+            _idHoaDonTruyenThanhToan = idHoaDon111;
+            //_khachhangTruyenThanhToan = khachHang111;
+            //_tGianBDTruyenThanhToan = tgianBD111;
+            _idPhongTruyenThanhToan = idHoaDon111;
+            showRoom();
+            
         }
         void showRoom()
         {
+            
             tableLayoutPanel1.Controls.Clear();
             int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9+2);
             //int tang = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Max(x=>x.TenPhong.Substring(0, 1)));
@@ -49,18 +71,18 @@ namespace _3_GUI
                     lb.Size = new Size(150, 150);
                     string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TenPhong;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].Id);
-                    string maKh = "Mkh";
-                    string gioVao = "Giờ BĐ";
-                    string str = tenPhong + "\n" + "Mã khách hàng" + maKh + "\n" + "Giờ Bắt Đầu" + gioVao;
+                    string maKh;
+                    string gioVao;
+                    string str = tenPhong + "\n" + "Mã khách hàng" /*+ maKh*/ + "\n" + "Giờ Bắt Đầu" /*+ gioVao*/;
                     lb.Text = str;
-                    lb.Text =_tenPhong;
+                    lb.Text =tenPhong;
                     lb.BackColor = Color.Red;
                     int _idTrangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].IdtranngThai);
                     if (_idTrangThai == 1)
                     {
                         lb.BackColor = Color.Red;//phòng trống
                         
-                        lb.Text = tenPhong;
+                        
                         //stripMenu_capNhap.Enabled = false;
                     }
                     else if (_idTrangThai == 2)
@@ -71,6 +93,7 @@ namespace _3_GUI
                     else if (_idTrangThai == 3)
                     {
                         lb.BackColor = Color.Blue;//có khách
+                        
                     }
                     else if (_idTrangThai == 4)
                     {
@@ -80,16 +103,31 @@ namespace _3_GUI
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
                     //tìm lb nào có name id == id bên kia thì truyền sửa lại text
-                    //if (lb.Name == _idPhong.ToString())//sửa _idPhong=truyền id bên thanh toán hóa đơn
+
+                    //if (_idHoaDonTruyenThanhToan == null)//sửa _idPhong=truyền id bên thanh toán hóa đơn                    
                     //{
-                    //    //tìm hóa đơn giống idphong lấy mã kh , thời gian bắt đầu
+                    //    lb.Text = _tenPhong;
+                    //}
+                    //else if (_idHoaDonTruyenThanhToan != null)
+                    //{
+                    //    if (lb.Name == _idPhongTruyenThanhToan)//sửa _idPhong=truyền id bên thanh toán hóa đơn
+                    //    {
+                    //        var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(x => x.IdhoaDon == Convert.ToInt32(_idHoaDonTruyenThanhToan));
+                    //        maKh = hoaDon.IdmaKh;
+                    //        gioVao = hoaDon.ThoiGianBatDau.ToString();
+                    //        lb.Text = tenPhong + "\n" + "Mã khách hàng" + maKh + "\n" + "Giờ Bắt Đầu" + gioVao;
+                    //        //tìm hóa đơn giống idphong lấy mã kh , thời gian bắt đầu
+                    //        MessageBox.Show(lb.Text);
+                    //    }
+                    //    else
+                    //    {
+                    //        lb.Text = "bbbbbbbbbbb";
+                    //    }
                     //}
 
-                    //foreach (var x in lb.Name.)
-                    //{
 
-
-                        if (lb.Name == _idPhong.ToString())//dọn phòng
+                    //dọn phòng
+                    if (lb.Name == _idPhongDonPhong.ToString())//dọn phòng
                         {
                             //string thoiGian = counter.ToString();
                             DateTime thoiGianbg = DateTime.Now;
@@ -105,9 +143,9 @@ namespace _3_GUI
             try
             {
                 var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
-                _idPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+                _idPhongDatPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
                 this.Hide();
-                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhong.ToString());
+                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhongDatPhong.ToString());
                 //frm_Login.MdiParent = this.MdiParent;
                 frm_thanhToan.Show();
             }
@@ -121,7 +159,7 @@ namespace _3_GUI
             try
             {
                 this.Hide();
-                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhong.ToString());
+                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhongDatPhong.ToString());
                 //frm_Login.MdiParent = this.MdiParent;
                 frm_thanhToan.Show();
             }
@@ -135,8 +173,8 @@ namespace _3_GUI
         {
 
             var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
-            _idPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
-            if (Convert.ToInt32(_lstPhong.FirstOrDefault(x => x.Id == _idPhong).IdtranngThai) == 2)
+            _idPhongDonPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+            if (Convert.ToInt32(_lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).IdtranngThai) == 2)
             {
                 MessageBox.Show("Phòng đang dọn", "Thông báo"/*,Thread.Sleep(3000)*/);
                 return;
@@ -150,7 +188,7 @@ namespace _3_GUI
                     return;
                 }
             }
-            var phong = _iBUS_Phong_Service.Find(_idPhong).FirstOrDefault();
+            var phong = _iBUS_Phong_Service.Find(_idPhongDonPhong).FirstOrDefault();
             phong.IdtranngThai = 2.ToString();
             _iBUS_Phong_Service.Update(phong);
             //showRoom();
@@ -162,7 +200,8 @@ namespace _3_GUI
 
             aTimer.Start();
 
-           // label1.Text = counter.ToString();
+            // label1.Text = counter.ToString();
+            counter = 10;
             showRoom();
             counter=10;
             
@@ -175,8 +214,8 @@ namespace _3_GUI
             if (counter == 0 || counter == -10 || counter == -20)
             {
                 aTimer.Stop();
-                MessageBox.Show("Phòng" + _lstPhong.FirstOrDefault(x => x.Id == _idPhong).TenPhong + "đã dọn phòng xong", "Thông báo");
-                var phong = _iBUS_Phong_Service.Find(_idPhong).FirstOrDefault();
+                MessageBox.Show("Phòng" + _lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).TenPhong + "đã dọn phòng xong", "Thông báo");
+                var phong = _iBUS_Phong_Service.Find(_idPhongDonPhong).FirstOrDefault();
                 phong.IdtranngThai = 1.ToString();
                 _iBUS_Phong_Service.Update(phong);
                 showRoom();
@@ -205,8 +244,8 @@ namespace _3_GUI
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
             var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
-            _idPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
-            MessageBox.Show(Convert.ToString(_idPhong));
+            _idPhongDatPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+            MessageBox.Show(Convert.ToString(_idPhongDatPhong));
 
         }
         public Point GetRowColIndex(TableLayoutPanel tlp, Point point)
@@ -290,6 +329,11 @@ namespace _3_GUI
         private void btn_phongdangSuaChua_Click(object sender, EventArgs e)
         {
             thongKe(4);
+        }
+
+        private void frm_datphong_Load(object sender, EventArgs e)
+        {
+            showRoom();
         }
     }
 }
