@@ -25,6 +25,8 @@ namespace _1_DAL.Entities
         public double? ThoiGianNhanUuDai1 { get; set; }
         public double? ThoiGianNhanUuDai2 { get; set; }
         public double? ThoiGianNhanUuDai3 { get; set; }
+        public string GhiChu { get; set; }
+        public int? IdtrangThai { get; set; }
 
         [InverseProperty(nameof(HoaDonBanHang.IdcongThucTinhNavigation))]
         public virtual ICollection<HoaDonBanHang> HoaDonBanHangs { get; set; }
