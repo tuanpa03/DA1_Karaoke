@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using _1_DAL.DAL_Service;
 using _1_DAL.Entities;
+using _1_DAL.IDAL_Service;
 using _2_BUS.IBUS_Service;
 
 namespace _2_BUS.BUS_Service
 {
     public class BUS_NhaCungCap_Service : IBUS_NhaCungCap_Service
     {
-        private DAL_NhaCungCap_Service _nhaCungCapService;
+        private IDAL_NhaCungCap_Service _nhaCungCapService;
         private List<NhaCungCap> _lsNhaCungCaps;
 
         public BUS_NhaCungCap_Service()
@@ -30,6 +31,14 @@ namespace _2_BUS.BUS_Service
             try
             {
                 NhaCungCap ncc = new NhaCungCap();
+                if (_lsNhaCungCaps == null)
+                {
+                    ncc.Id = 1;
+                }
+                else
+                {
+                    ncc.Id = _lsNhaCungCaps.Max(c => c.Id) + 1;
+                }
                 ncc.TenNcc = tenNcc;
                 ncc.NguoiTao = nguoiTao;
                 ncc.NguoiCapNhap = nguoiCapNhat;
