@@ -26,6 +26,16 @@ namespace _3_GUI
             DialogResult dn;
             string username = txt_DangNhap.Text;
             string passwork = _ibus_Login_Service.MaHoaPass(txt_Passwork.Text);
+            if (lbl_Captcha.Text == txt_Captcha.Text)
+            {
+                dn = MessageBox.Show("Mã code chính xác 🤗🤗🤗", "Thông Báo ❗");
+            }
+            else
+            {
+                dn = MessageBox.Show("Mã code không chính xác 🤗🤗🤗\nVui lòng nhập lại ", "Thông Báo ❗", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.OnLoad(e);
+                return;
+            }
             if (_ibus_Login_Service.NhanVienLogin(username, passwork))
             {
                 Frm_Main main = new Frm_Main();
@@ -46,24 +56,74 @@ namespace _3_GUI
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txt_Passwork.PasswordChar == '*' )
-            {
-                txt_Passwork.PasswordChar = '\0';
-            }
-            else
-            {
-                txt_Passwork.PasswordChar = '*';
-            }
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frm_QuenMatKhau quen = new frm_QuenMatKhau();
             this.Hide();
             quen.Show();
+        }
+
+        //Nhớ account
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_DangNhap.Text != "" && txt_Passwork.Text != "")
+            {
+                if (cbx_NhoAccount.Checked == true)
+                {
+                    string user = txt_DangNhap.Text;
+                    Properties.Settings.Default.username = user;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
+            }
+        }
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            int numb = rand.Next(6, 8);
+            int total = 0;
+            string captcha = "";
+            txt_DangNhap.Text = Properties.Settings.Default.username;
+            if (Properties.Settings.Default.username != "")
+            {
+                cbx_NhoAccount.Checked = true;
+            }
+            do
+            {
+                int chr = rand.Next(48, 132);
+                if ((chr >= 48 && chr <=57) || (chr >= 65 && chr <= 90) || (chr >= 97 && chr <= 122))
+                {
+                    captcha = captcha + (char)chr;
+                    total++;
+                    if (total == numb)
+                        break;
+                    {
+
+                    }
+                }
+
+            } while (true);
+            lbl_Captcha.Text = captcha;
+        }
+
+        private void p_hide_Click(object sender, EventArgs e)
+        {
+            if (txt_Passwork.PasswordChar == '*')
+            {
+                p_eye.BringToFront();
+                txt_Passwork.PasswordChar = '\0';
+            }
+        }
+        private void p_eye_Click(object sender, EventArgs e)
+        {
+            if (txt_Passwork.PasswordChar == '\0')
+            {
+                p_hide.BringToFront();
+                txt_Passwork.PasswordChar = '*';
+            }
         }
     }
 }
