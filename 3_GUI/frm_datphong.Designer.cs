@@ -57,8 +57,8 @@ namespace _3_GUI
             this.stripMenu_capNhap,
             this.stripMenu_donPhong});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 104);
-            this.contextMenuStrip1.Click += new System.EventHandler(this.contextMenuStrip1_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 76);
+            
             // 
             // stripMenu_datPhong
             // 
@@ -100,6 +100,7 @@ namespace _3_GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1702, 823);
             this.tableLayoutPanel1.TabIndex = 10;
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
             // panel1
             // 
