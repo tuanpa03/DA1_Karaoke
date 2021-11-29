@@ -82,23 +82,37 @@ namespace _3_GUI
                     if (_trangThai == 1)
                     {
                         lb.BackColor = Color.Red;//phòng trống
-                        
-                        
+
                         //stripMenu_capNhap.Enabled = false;
+                        //stripMenu_donPhong.Enabled = false;
+                        //stripMenu_datPhong.Enabled= true;
+
                     }
                     else if (_trangThai == 2)
                     {
                         lb.BackColor = Color.Yellow;//đang dọn
                         lb.ForeColor = Color.Gray;//màu chữ
+
+                        //stripMenu_capNhap.Enabled = false;
+                        //stripMenu_donPhong.Enabled = false;
+                        //stripMenu_datPhong.Enabled = false;
                     }
-                    else if (_trangThai == 3)
+                    else if(_trangThai == 3)
                     {
                         lb.BackColor = Color.Blue;//có khách
-                        
+
+                        //stripMenu_capNhap.Enabled= true;
+                        //stripMenu_donPhong.Enabled= false;
+                        //stripMenu_datPhong.Enabled = false;
+
                     }
-                    else if (_trangThai == 4)
+                    else if(_trangThai == 4)
                     {
                         lb.BackColor = Color.Gray;//đang sửa chữa      Phòng cần sửa
+
+                        //stripMenu_capNhap.Enabled =false ;
+                        //stripMenu_donPhong.Enabled =true ;
+                        //stripMenu_datPhong.Enabled = false;
                     }
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
@@ -284,21 +298,21 @@ namespace _3_GUI
         private void thongKe(int a)
         {
             tableLayoutPanel1.Controls.Clear();
-            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9);
+            int tang = Convert.ToInt32((_iBUS_Phong_Service.sendlstPhong().Count) / 5 + 0.9 + 2);
             tableLayoutPanel1.RowCount = tang;
             for (int i = 0; i < tang; i++)
             {
-                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList().Count; j++)
+                for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a).ToList().Count; j++)
                 {
                     Label lb = new Label();
                     lb.Size = new Size(150, 150);
-                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList()[j].TenPhong;
+                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a).ToList()[j].TenPhong;
                     string maKh = "Mã khách hàng";
                     string gioVao = "Giờ Bắt Đầu";
                     string str = tenPhong + "\n" + maKh + "\n" + gioVao;
                     lb.Text = str;
                     _tenPhong = lb.Text;
-                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.TenPhong.Substring(0, 1) == Convert.ToString(i + 1) && Convert.ToInt32(x.TrangThai) == a).ToList()[j].Id);
+                    lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a).ToList()[j].Id);
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     if (a == 1)
@@ -314,9 +328,18 @@ namespace _3_GUI
                     {
                         lb.BackColor = Color.Blue;//có khách
                     }
-                    else
+                    else if(a==4)
                     {
                         lb.BackColor = Color.Gray;//đang sửa chữa
+                    }
+
+
+                    //dọn phòng
+                    if (lb.Name == _idPhongDonPhong.ToString())//dọn phòng
+                    {
+                        //string thoiGian = counter.ToString();
+                        DateTime thoiGianbg = DateTime.Now;
+                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + counter /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                     }
                 }
             }
@@ -374,6 +397,54 @@ namespace _3_GUI
             //        stripMenu_datPhong.Enabled = false;
             //        stripMenu_capNhap.Enabled = false;
             //    }
+            //}
+        }
+
+        private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //if (e.Button == MouseButtons.Right /*e.Location == MouseButtons.Right*/)
+            //{
+                
+            //    int idphong;
+            //    var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
+            //    //if (index == null || index == new Point(0,0))
+            //    //{
+            //    //    return;
+            //    //}
+            //    //else
+            //    //{
+            //        idphong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+            //        this.tableLayoutPanel1.ContextMenuStrip = contextMenuStrip1;
+            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 1)
+            //        {
+            //            stripMenu_capNhap.Enabled = false;
+            //            stripMenu_donPhong.Enabled = false;
+            //            stripMenu_datPhong.Enabled = true;
+            //            return;
+            //        }
+            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 2)
+            //        {
+            //            stripMenu_capNhap.Enabled = false;
+            //            stripMenu_donPhong.Enabled = false;
+            //            stripMenu_datPhong.Enabled = false;
+            //            return;
+            //        }
+            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 3)
+            //        {
+            //            stripMenu_capNhap.Enabled = true;
+            //            stripMenu_donPhong.Enabled = false;
+            //            stripMenu_datPhong.Enabled = false;
+            //            return;
+            //        }
+            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 4)
+            //        {
+            //            stripMenu_capNhap.Enabled = false;
+            //            stripMenu_donPhong.Enabled = true;
+            //            stripMenu_datPhong.Enabled = false;
+            //            return;
+            //        }
+            //   // }
+
             //}
         }
     }
