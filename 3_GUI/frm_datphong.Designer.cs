@@ -57,7 +57,8 @@ namespace _3_GUI
             this.stripMenu_capNhap,
             this.stripMenu_donPhong});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip1.Click += new System.EventHandler(this.contextMenuStrip1_Click);
             // 
             // stripMenu_datPhong
             // 
@@ -127,7 +128,7 @@ namespace _3_GUI
             this.btn_phongdangSuaChua.Name = "btn_phongdangSuaChua";
             this.btn_phongdangSuaChua.Size = new System.Drawing.Size(243, 48);
             this.btn_phongdangSuaChua.TabIndex = 11;
-            this.btn_phongdangSuaChua.Text = "Phòng đang sửa chữa : ";
+            this.btn_phongdangSuaChua.Text = "Phòng cần dọn";
             this.btn_phongdangSuaChua.UseVisualStyleBackColor = false;
             this.btn_phongdangSuaChua.Click += new System.EventHandler(this.btn_phongdangSuaChua_Click);
             // 
@@ -142,7 +143,7 @@ namespace _3_GUI
             this.btn_phongDangDon.Name = "btn_phongDangDon";
             this.btn_phongDangDon.Size = new System.Drawing.Size(243, 48);
             this.btn_phongDangDon.TabIndex = 10;
-            this.btn_phongDangDon.Text = "Phòng đang dọn : ";
+            this.btn_phongDangDon.Text = "Phòng đang dọn ";
             this.btn_phongDangDon.UseVisualStyleBackColor = false;
             this.btn_phongDangDon.Click += new System.EventHandler(this.btn_phongDangDon_Click);
             // 
@@ -156,7 +157,7 @@ namespace _3_GUI
             this.btn_sanSangDonKhach.Name = "btn_sanSangDonKhach";
             this.btn_sanSangDonKhach.Size = new System.Drawing.Size(243, 48);
             this.btn_sanSangDonKhach.TabIndex = 9;
-            this.btn_sanSangDonKhach.Text = "Sẵn sàng đón khách : ";
+            this.btn_sanSangDonKhach.Text = "Sẵn sàng đón khách ";
             this.btn_sanSangDonKhach.UseVisualStyleBackColor = false;
             this.btn_sanSangDonKhach.Click += new System.EventHandler(this.btn_sanSangDonKhach_Click);
             // 
@@ -170,7 +171,7 @@ namespace _3_GUI
             this.btn_phongCoKhach.Name = "btn_phongCoKhach";
             this.btn_phongCoKhach.Size = new System.Drawing.Size(243, 48);
             this.btn_phongCoKhach.TabIndex = 8;
-            this.btn_phongCoKhach.Text = "Phòng đang có khách : ";
+            this.btn_phongCoKhach.Text = "Phòng đang có khách ";
             this.btn_phongCoKhach.UseVisualStyleBackColor = false;
             this.btn_phongCoKhach.Click += new System.EventHandler(this.btn_phongCoKhach_Click);
             // 
