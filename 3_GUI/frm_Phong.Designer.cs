@@ -49,12 +49,11 @@ namespace _3_GUI
             this.label10 = new System.Windows.Forms.Label();
             this.tbx_SucChua = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.rbt_coKhach = new System.Windows.Forms.RadioButton();
-            this.rbt_khongCoKhach = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_loaiPhong = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbb_idtang = new System.Windows.Forms.ComboBox();
+            this.cbb_trangThai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,28 +235,6 @@ namespace _3_GUI
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // rbt_coKhach
-            // 
-            this.rbt_coKhach.AutoSize = true;
-            this.rbt_coKhach.Location = new System.Drawing.Point(517, 218);
-            this.rbt_coKhach.Name = "rbt_coKhach";
-            this.rbt_coKhach.Size = new System.Drawing.Size(90, 24);
-            this.rbt_coKhach.TabIndex = 46;
-            this.rbt_coKhach.TabStop = true;
-            this.rbt_coKhach.Text = "Có khách";
-            this.rbt_coKhach.UseVisualStyleBackColor = true;
-            // 
-            // rbt_khongCoKhach
-            // 
-            this.rbt_khongCoKhach.AutoSize = true;
-            this.rbt_khongCoKhach.Location = new System.Drawing.Point(669, 218);
-            this.rbt_khongCoKhach.Name = "rbt_khongCoKhach";
-            this.rbt_khongCoKhach.Size = new System.Drawing.Size(135, 24);
-            this.rbt_khongCoKhach.TabIndex = 47;
-            this.rbt_khongCoKhach.TabStop = true;
-            this.rbt_khongCoKhach.Text = "Không có khách";
-            this.rbt_khongCoKhach.UseVisualStyleBackColor = true;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -292,18 +269,25 @@ namespace _3_GUI
             this.cbb_idtang.Size = new System.Drawing.Size(151, 28);
             this.cbb_idtang.TabIndex = 52;
             // 
+            // cbb_trangThai
+            // 
+            this.cbb_trangThai.FormattingEnabled = true;
+            this.cbb_trangThai.Location = new System.Drawing.Point(517, 219);
+            this.cbb_trangThai.Name = "cbb_trangThai";
+            this.cbb_trangThai.Size = new System.Drawing.Size(151, 28);
+            this.cbb_trangThai.TabIndex = 53;
+            // 
             // frm_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1690, 788);
+            this.Controls.Add(this.cbb_trangThai);
             this.Controls.Add(this.cbb_idtang);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmb_loaiPhong);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.rbt_khongCoKhach);
-            this.Controls.Add(this.rbt_coKhach);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.tbx_SucChua);
             this.Controls.Add(this.label10);
@@ -355,11 +339,10 @@ namespace _3_GUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbx_SucChua;
         private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.RadioButton rbt_coKhach;
-        private System.Windows.Forms.RadioButton rbt_khongCoKhach;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmb_loaiPhong;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbb_idtang;
+        private System.Windows.Forms.ComboBox cbb_trangThai;
     }
 }

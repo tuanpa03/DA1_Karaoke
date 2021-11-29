@@ -346,5 +346,35 @@ namespace _3_GUI
         {
             showRoom();
         }
+
+        private void contextMenuStrip1_Click(object sender, EventArgs e)
+        {
+            
+            //foreach (var x in _lstPhong)
+            //{
+            //    if (x.TrangThai == 1)//phòng trống
+            //    {
+            //        stripMenu_capNhap.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+            //    }                
+            //    else if (x.TrangThai == 2)//đang dọn
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_capNhap.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+            //    }
+            //    else if (x.TrangThai == 3)//có khách
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+
+            //    }
+            //    else if (x.TrangThai == 4)//Phòng cần dọn
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_capNhap.Enabled = false;
+            //    }
+            //}
+        }
     }
 }

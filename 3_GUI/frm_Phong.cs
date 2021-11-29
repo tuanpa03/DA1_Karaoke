@@ -27,10 +27,11 @@ namespace _3_GUI
             _iBUS_LoaiPhong_Service = new BUS_LoaiPhong_Service();
             _iBUS_Tang_Service = new BUS_Tang_Service();
             _phong = new Phong();
-            rbt_khongCoKhach.Checked = true;
+            cbb_trangThai.Enabled = false;
             LoadData();
             loadcmbLoaiPhong();
             loadcmbTang();
+            loadcmbTrangThai();
             //tbx_ngayCapNhap.Visible = false;
             //tbx_ngayTao.Visible = false;
         }
@@ -61,6 +62,15 @@ namespace _3_GUI
                 cmb_loaiPhong.Items.Add(x.TenLoaiPhong);
             }
         }
+        private void loadcmbTrangThai()
+        {
+            
+                cbb_trangThai.Items.Add("1-Phòng trống");
+                cbb_trangThai.Items.Add("2-Phòng đang dọn");
+                cbb_trangThai.Items.Add("3-Phòng có khách");
+                cbb_trangThai.Items.Add("4-Phòng cần dọn");
+            
+        }
         private void loadcmbTang()
         {
             foreach (var x in _iBUS_Tang_Service.sendlstTang())
@@ -70,16 +80,16 @@ namespace _3_GUI
         }
         private bool checkForm()
         {
-            if (tbx_tenPhong.Text.Length == 0 || tbx_SucChua.Text.Length == 0 || tbx_nguoiTao.Text.Length == 0 || tbx_nguoiCapNhap.Text.Length == 0)
+            if (tbx_tenPhong.Text.Length == 0 || tbx_SucChua.Text.Length == 0 || cmb_loaiPhong.Text.Length == 0 || cbb_idtang.Text.Length == 0)
             {
                 MessageBox.Show("Không được để trống thông tin");
                 return true;
             }
-            if (rbt_coKhach.Checked == false && rbt_khongCoKhach.Checked == false)
-            {
-                MessageBox.Show("Bạn chưa chọn trạng thái");
-                return true;
-            }
+            //if (rbt_coKhach.Checked == false && rbt_khongCoKhach.Checked == false)
+            //{
+            //    MessageBox.Show("Bạn chưa chọn trạng thái");
+            //    return true;
+            //}
             if (cmb_loaiPhong.Text == null)
             {
                 MessageBox.Show("Bạn chưa chọn Loại Phòng");
@@ -97,13 +107,15 @@ namespace _3_GUI
         {
             tbx_tenPhong.Text = "";
             tbx_SucChua.Text = "";
-            tbx_nguoiTao.Text = "";
-            tbx_ngayTao.Text = "";
-            tbx_nguoiCapNhap.Text = "";
-            tbx_ngayCapNhap.Text = ""; 
-            rbt_khongCoKhach.Checked = true;
-            rbt_coKhach.Checked = false;
+            //tbx_nguoiTao.Text = "";
+            //tbx_ngayTao.Text = "";
+            //tbx_nguoiCapNhap.Text = "";
+            //tbx_ngayCapNhap.Text = ""; 
+            //rbt_khongCoKhach.Checked = true;
+            //rbt_coKhach.Checked = false;
             btn_them.Enabled = true;
+            cbb_trangThai.Enabled = false;
+
 
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,14 +127,15 @@ namespace _3_GUI
             cmb_loaiPhong.Text = row.Cells[1].Value + "";
             cbb_idtang.Text = row.Cells[2].Value + "";
             tbx_tenPhong.Text = row.Cells[3].Value + "";
-            if (row.Cells[4].Value + "" == "Có khách")
-            {
-                rbt_coKhach.Checked = true;
-            }
-            if (row.Cells[4].Value + "" == "Không có khách")
-            {
-                rbt_khongCoKhach.Checked = true;
-            }
+            cbb_trangThai.Text = row.Cells[4].Value + "";
+            //if (row.Cells[4].Value + "" == "Có khách")
+            //{
+            //    rbt_coKhach.Checked = true;
+            //}
+            //if (row.Cells[4].Value + "" == "Không có khách")
+            //{
+            //    rbt_khongCoKhach.Checked = true;
+            //}
             tbx_SucChua.Text = row.Cells[5].Value + "";           
             tbx_nguoiTao.Text = row.Cells[6].Value + "";
             tbx_ngayTao.Text = row.Cells[7].Value + "";
@@ -132,6 +145,7 @@ namespace _3_GUI
             _idPhong = Convert.ToInt32(row.Cells[0].Value + "");
             // Enabled button
             btn_them.Enabled = false;
+            cbb_trangThai.Enabled = true;
 
         }
         private void btn_them_Click(object sender, EventArgs e)
@@ -143,17 +157,18 @@ namespace _3_GUI
                 if (checkForm()) return;
                 
                 _phong = new Phong();
-                //_phong.Id = _iBUS_Phong_Service.sendlstPhong().Max(x => x.Id+ 1);
+                _phong.Id = _iBUS_Phong_Service.sendlstPhong().Max(x => x.Id+ 1);
                 _phong.TenPhong = tbx_tenPhong.Text;
                 _phong.IdloaiPhong = _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(x=>x.TenLoaiPhong == cmb_loaiPhong.Text).Id;
-                if (rbt_khongCoKhach.Checked == true)
-                {
-                    rbt_coKhach.Checked = false;
-                }
-                if (rbt_coKhach.Checked == true)
-                {
-                    rbt_khongCoKhach.Checked = false;
-                }
+                //if (rbt_khongCoKhach.Checked == true)
+                //{
+                //    rbt_coKhach.Checked = false;
+                //}
+                //if (rbt_coKhach.Checked == true)
+                //{
+                //    rbt_khongCoKhach.Checked = false;
+                //}
+                _phong.TrangThai = 1;
                 _phong.Idtang = Convert.ToInt32( cbb_idtang.Text);
                 _phong.SucChua = Convert.ToInt32(tbx_SucChua.Text);
                 _phong.NguoiTao = tbx_nguoiTao.Text;
@@ -181,14 +196,30 @@ namespace _3_GUI
                 phong.SucChua = Convert.ToInt32( tbx_SucChua.Text);
                 phong.NguoiCapNhap = tbx_nguoiCapNhap.Text;
                 phong.NgayCapNhap = DateTime.Now;
-                if (rbt_khongCoKhach.Checked == true)
+                if (cbb_trangThai.Text == "1-Phòng trống")
                 {
-                    rbt_coKhach.Checked = false;
+                    phong.TrangThai = 1;
                 }
-                if (rbt_coKhach.Checked == true)
+                else if (cbb_trangThai.Text == "2-Phòng đang dọn")
                 {
-                    rbt_khongCoKhach.Checked = false;
+                    phong.TrangThai = 2;
                 }
+                else if (cbb_trangThai.Text == "3-Phòng có khách")
+                {
+                    phong.TrangThai = 3;
+                }
+                else if (cbb_trangThai.Text == "4-Phòng cần dọn")
+                {
+                    phong.TrangThai = 4;
+                }
+                //if (rbt_khongCoKhach.Checked == true)
+                //{
+                //    rbt_coKhach.Checked = false;
+                //}
+                //if (rbt_coKhach.Checked == true)
+                //{
+                //    rbt_khongCoKhach.Checked = false;
+                //}
                 MessageBox.Show(_iBUS_Phong_Service.Update(phong).ToString());
                 LoadData();
                 ClearForm();
