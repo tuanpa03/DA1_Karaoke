@@ -14,11 +14,11 @@ namespace _2_BUS.IBUS_Service
 
         //Phương thức thêm công thức tính
         public bool AddCongThucTinh(double uuDai1, double uuDai2, double uuDai3, double thoiGianNhanUuDai1,
-            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, string ghiChu);
+            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3,double giaPhong, double giaPhongVIP, string ghiChu);
 
         //Phương thức sửa công thức tính
         public bool UpdateCongThucTinh(int id, double uuDai1, double uuDai2, double uuDai3, double thoiGianNhanUuDai1,
-            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, string ghiChu);
+            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, double giaPhong, double giaPhongVIP, string ghiChu);
 
         //Phương thức xóa công thức tính
         public bool DeleteCongThucTinh(int id);

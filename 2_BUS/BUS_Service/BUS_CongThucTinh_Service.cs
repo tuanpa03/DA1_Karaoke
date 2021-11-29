@@ -26,7 +26,7 @@ namespace _2_BUS.BUS_Service
             return _lstCongThucTinhs;
         }
 
-        public bool AddCongThucTinh(double uuDai1, double uuDai2, double uuDai3, double thoiGianNhanUuDai1, double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, string ghiChu)
+        public bool AddCongThucTinh(double uuDai1, double uuDai2, double uuDai3, double thoiGianNhanUuDai1, double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, double giaPhong, double giaPhongVIP, string ghiChu)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace _2_BUS.BUS_Service
         }
 
         public bool UpdateCongThucTinh(int id, double uuDai1, double uuDai2, double uuDai3, double thoiGianNhanUuDai1,
-            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, string ghiChu)
+            double thoiGianNhanUuDai2, double thoiGianNhanUuDai3, double giaPhong, double giaPhongVIP,string ghiChu)
         {
             try
             {
@@ -76,6 +76,8 @@ namespace _2_BUS.BUS_Service
                     ctt.ThoiGianNhanUuDai1 = thoiGianNhanUuDai1;
                     ctt.ThoiGianNhanUuDai2 = thoiGianNhanUuDai2;
                     ctt.ThoiGianNhanUuDai3 = thoiGianNhanUuDai3;
+                    ctt.GiaPhong = giaPhong;
+                    ctt.GiaPhongVIP = giaPhongVIP;
                     ctt.GhiChu = ghiChu;
                     if (_congThucTinh_Service.UpdateCongThucTinh(ctt))
                     {
