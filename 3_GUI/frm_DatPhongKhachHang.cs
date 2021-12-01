@@ -50,7 +50,7 @@ namespace _3_GUI
         }
         private bool checkForm()
         {
-            if (tbx_idPhong.Text == null && cbx_congthucTinh.Text == null && cbx_khachhang.Text == null && cbx_nhanvien.Text == null)
+            if (tbx_idPhong.Text == null  && cbx_khachhang.Text == null && cbx_nhanvien.Text == null)
             {
                 MessageBox.Show("Bạn phải điền đầy đủ khách hàng , nhân viên, phòng , công thức tính ");
                 return true;
@@ -139,5 +139,7 @@ namespace _3_GUI
                 Console.WriteLine("Error");
             }
         }
+
+        
     }
 }

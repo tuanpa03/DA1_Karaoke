@@ -159,6 +159,25 @@ namespace _3_GUI
             {
                 var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
                 _idPhongDatPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+
+                var phongload = _lstPhong.FirstOrDefault(x => x.Id == _idPhongDatPhong);
+                if (phongload.TrangThai == 2)
+                {
+                    MessageBox.Show("Phòng đang dọn, không thể Đặt phòng", "Thông báo");
+                    return;
+                }
+                if (phongload.TrangThai == 3)
+                {
+                    MessageBox.Show("Phòng đang có khách, không thể Đặt phòng", "Thông báo");
+                    return; 
+                }
+                if (phongload.TrangThai == 4)
+                {
+                    MessageBox.Show("Phòng chưa dọn, không thể Đặt phòng", "Thông báo");
+                    return;
+                }
+
+
                 this.Hide();
                 frm_DatPhongKhachHang frm_DatPhongKhachHang = new frm_DatPhongKhachHang(_idPhongDatPhong.ToString());
                 //frm_Login.MdiParent = this.MdiParent;
@@ -175,8 +194,26 @@ namespace _3_GUI
             {
                 var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
                 _idPhongCapNhapPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
+
+
+                var phongload = _lstPhong.FirstOrDefault(x => x.Id == _idPhongCapNhapPhong);
+                if (phongload.TrangThai == 2)
+                {
+                    MessageBox.Show("Phòng đang dọn, không thể Cập nhập phòng", "Thông báo");
+                    return;
+                }
+                if (phongload.TrangThai == 1)
+                {
+                    MessageBox.Show("Phòng chưa được đặt, không thể Cập nhập phòng", "Thông báo");
+                    return;
+                }
+                if (phongload.TrangThai == 4)
+                {
+                    MessageBox.Show("Phòng chưa dọn, không thể Cập nhập phòng", "Thông báo");
+                    return;
+                }
                 this.Hide();
-                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhongCapNhapPhong.ToString());
+                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhongCapNhapPhong);
                 //frm_Login.MdiParent = this.MdiParent;
                 frm_thanhToan.Show();
             }
@@ -203,8 +240,26 @@ namespace _3_GUI
                 MessageBox.Show("Phòng đang dọn", "Thông báo"/*,Thread.Sleep(3000)*/);
                 return;
             }
-            
- 
+
+            var phongload = _lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong);
+            //if (phongload.TrangThai == 1)
+            //{
+            //    MessageBox.Show("Phòng đang dọn, không thể Đặt phòng", "Thông báo");
+            //    return;
+            //}
+            if (phongload.TrangThai == 3)
+            {
+                MessageBox.Show("Phòng đang có khách, không thể Dọn phòng phòng", "Thông báo");
+                return;
+            }
+            //if (phongload.TrangThai == 4)
+            //{
+            //    MessageBox.Show("Phòng chưa dọn, không thể Đặt phòng", "Thông báo");
+            //    return;
+            //}
+
+
+
             foreach (var x in _lstPhong)
             {
                 if (Convert.ToInt32(x.TrangThai) ==2)
@@ -373,31 +428,7 @@ namespace _3_GUI
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
             
-            //foreach (var x in _lstPhong)
-            //{
-            //    if (x.TrangThai == 1)//phòng trống
-            //    {
-            //        stripMenu_capNhap.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-            //    }                
-            //    else if (x.TrangThai == 2)//đang dọn
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_capNhap.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-            //    }
-            //    else if (x.TrangThai == 3)//có khách
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-
-            //    }
-            //    else if (x.TrangThai == 4)//Phòng cần dọn
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_capNhap.Enabled = false;
-            //    }
-            //}
+            
         }
 
         private void tableLayoutPanel1_MouseDown(object sender, MouseEventArgs e)

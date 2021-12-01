@@ -39,8 +39,6 @@ namespace _3_GUI
             this.label4 = new System.Windows.Forms.Label();
             this.tbx_idHoaĐon = new System.Windows.Forms.TextBox();
             this.tbx_idPhong = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbx_congthucTinh = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbx_tgianBĐ = new System.Windows.Forms.TextBox();
             this.lbl_giaPhong = new System.Windows.Forms.Label();
@@ -88,39 +86,40 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(238, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 42;
-            this.label1.Text = "IdHoaDon";
+            this.label1.Text = "Mã Hóa Đơn";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(236, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 43;
-            this.label2.Text = "ID Phòng";
+            this.label2.Text = "Mã Phòng";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(242, 144);
+            this.label3.Location = new System.Drawing.Point(215, 144);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 44;
-            this.label3.Text = "Mã KH";
+            this.label3.Text = "Mã Khách Hàng";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(242, 181);
+            this.label4.Location = new System.Drawing.Point(218, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 45;
-            this.label4.Text = "Ma NV";
-            // 
+            this.label4.Text = "Mã Nhân Viên";
+            
             // tbx_idHoaĐon
             // 
+            this.tbx_idHoaĐon.Enabled = false;
             this.tbx_idHoaĐon.Location = new System.Drawing.Point(354, 71);
             this.tbx_idHoaĐon.Name = "tbx_idHoaĐon";
             this.tbx_idHoaĐon.Size = new System.Drawing.Size(168, 27);
@@ -133,23 +132,6 @@ namespace _3_GUI
             this.tbx_idPhong.Size = new System.Drawing.Size(168, 27);
             this.tbx_idPhong.TabIndex = 47;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(207, 220);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 20);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "Công thức tính";
-            // 
-            // cbx_congthucTinh
-            // 
-            this.cbx_congthucTinh.FormattingEnabled = true;
-            this.cbx_congthucTinh.Location = new System.Drawing.Point(351, 212);
-            this.cbx_congthucTinh.Name = "cbx_congthucTinh";
-            this.cbx_congthucTinh.Size = new System.Drawing.Size(151, 28);
-            this.cbx_congthucTinh.TabIndex = 54;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -161,6 +143,7 @@ namespace _3_GUI
             // 
             // tbx_tgianBĐ
             // 
+            this.tbx_tgianBĐ.Enabled = false;
             this.tbx_tgianBĐ.Location = new System.Drawing.Point(351, 256);
             this.tbx_tgianBĐ.Name = "tbx_tgianBĐ";
             this.tbx_tgianBĐ.Size = new System.Drawing.Size(168, 27);
@@ -191,8 +174,6 @@ namespace _3_GUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_giaPhong);
             this.Controls.Add(this.lbl_tenPhong);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbx_congthucTinh);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbx_tgianBĐ);
             this.Controls.Add(this.btn_themKhachHang);
@@ -225,8 +206,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbx_idHoaĐon;
         private System.Windows.Forms.TextBox tbx_idPhong;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbx_congthucTinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbx_tgianBĐ;
         private System.Windows.Forms.Label lbl_giaPhong;
