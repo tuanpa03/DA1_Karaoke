@@ -66,7 +66,7 @@ namespace _3_GUI
             this.btn_DangNhap.BackColor = System.Drawing.Color.Black;
             this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_DangNhap.ForeColor = System.Drawing.Color.White;
-            this.btn_DangNhap.Location = new System.Drawing.Point(208, 325);
+            this.btn_DangNhap.Location = new System.Drawing.Point(208, 315);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(190, 58);
             this.btn_DangNhap.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace _3_GUI
             this.btn_Thoat.BackColor = System.Drawing.Color.Black;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Thoat.ForeColor = System.Drawing.Color.White;
-            this.btn_Thoat.Location = new System.Drawing.Point(465, 325);
+            this.btn_Thoat.Location = new System.Drawing.Point(465, 315);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(192, 58);
             this.btn_Thoat.TabIndex = 1;
@@ -222,7 +222,7 @@ namespace _3_GUI
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(679, 385);
+            this.ClientSize = new System.Drawing.Size(679, 376);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbx_NhoAccount);
