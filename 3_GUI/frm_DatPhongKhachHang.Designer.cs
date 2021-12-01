@@ -116,7 +116,7 @@ namespace _3_GUI
             this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 45;
             this.label4.Text = "Mã Nhân Viên";
-            
+            // 
             // tbx_idHoaĐon
             // 
             this.tbx_idHoaĐon.Enabled = false;
@@ -127,6 +127,7 @@ namespace _3_GUI
             // 
             // tbx_idPhong
             // 
+            this.tbx_idPhong.Enabled = false;
             this.tbx_idPhong.Location = new System.Drawing.Point(354, 108);
             this.tbx_idPhong.Name = "tbx_idPhong";
             this.tbx_idPhong.Size = new System.Drawing.Size(168, 27);

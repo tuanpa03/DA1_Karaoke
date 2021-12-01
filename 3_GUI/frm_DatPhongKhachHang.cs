@@ -118,11 +118,14 @@ namespace _3_GUI
                 tbx_tgianBĐ.Text = _hoaDonBanHang.ThoiGianBatDau.ToString();
                 lbl_giaPhong.Text = "Đơn giá :" + _hoaDonBanHang.DonGiaPhong;
                 tbx_idHoaĐon.Text = _hoaDonBanHang.IdhoaDon.ToString();
-
+                btn_themHoaDon.Enabled = false;
 
                 var phong = _phong_Service.Find(Convert.ToInt32(tbx_idPhong.Text)).FirstOrDefault();
                 phong.TrangThai = 3;
                 _phong_Service.Update(phong);
+
+                MessageBox.Show("Đặt phòng thành công","Thông báo");
+                this.Close();
             }
         }
 

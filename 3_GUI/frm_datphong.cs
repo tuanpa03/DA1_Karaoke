@@ -28,6 +28,7 @@ namespace _3_GUI
         string _khachhangTruyenThanhToan;
         string _tGianBDTruyenThanhToan;
         string _idPhongTruyenThanhToan;
+        string _tgianChayNguoc;
         //string _giodonphong;
         List<Phong> _lstPhong = new List<Phong>();
         private System.Windows.Forms.Timer aTimer;
@@ -146,7 +147,7 @@ namespace _3_GUI
                         {
                             //string thoiGian = counter.ToString();
                             DateTime thoiGianbg = DateTime.Now;
-                            lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + counter /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                            lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                         }
                         //tableLayoutPanel1.RowCount++;
                     //}
@@ -284,6 +285,7 @@ namespace _3_GUI
             counter = 10;
             showRoom();
             counter=10;
+            //_tgianChayNguoc = 10.ToString();
             
 
         }
@@ -427,7 +429,31 @@ namespace _3_GUI
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
+            //var phongload =  _lstPhong.FirstOrDefault(x => x.Id == _idPhongDatPhong || x.Id == _idPhongCapNhapPhong || x.Id == _idPhongDonPhong);
+
             
+            //    if (phongload.TrangThai == 1)//phòng trống
+            //    {
+            //        stripMenu_capNhap.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+            //    }
+            //    else if (phongload.TrangThai == 2)//đang dọn
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_capNhap.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+            //    }
+            //    else if (phongload.TrangThai == 3)//có khách
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_donPhong.Enabled = false;
+
+            //    }
+            //    else if (phongload.TrangThai == 4)//Phòng cần dọn
+            //    {
+            //        stripMenu_datPhong.Enabled = false;
+            //        stripMenu_capNhap.Enabled = false;
+            //    }
             
         }
 
