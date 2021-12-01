@@ -44,6 +44,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_themdvt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLMatHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@ namespace _3_GUI_PresentationLayer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_QLMatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_QLMatHang.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgv_QLMatHang.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgv_QLMatHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -68,33 +70,37 @@ namespace _3_GUI_PresentationLayer
             this.dgv_QLMatHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_QLMatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_QLMatHang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv_QLMatHang.Location = new System.Drawing.Point(12, 176);
+            this.dgv_QLMatHang.Location = new System.Drawing.Point(0, 260);
             this.dgv_QLMatHang.MultiSelect = false;
             this.dgv_QLMatHang.Name = "dgv_QLMatHang";
             this.dgv_QLMatHang.RowHeadersVisible = false;
             this.dgv_QLMatHang.RowHeadersWidth = 51;
             this.dgv_QLMatHang.RowTemplate.Height = 29;
             this.dgv_QLMatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_QLMatHang.Size = new System.Drawing.Size(926, 279);
+            this.dgv_QLMatHang.Size = new System.Drawing.Size(1701, 449);
             this.dgv_QLMatHang.TabIndex = 0;
             this.dgv_QLMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // txt_TenMH
             // 
             this.txt_TenMH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_TenMH.Location = new System.Drawing.Point(42, 131);
+            this.txt_TenMH.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_TenMH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_TenMH.Location = new System.Drawing.Point(477, 176);
             this.txt_TenMH.Multiline = true;
             this.txt_TenMH.Name = "txt_TenMH";
-            this.txt_TenMH.Size = new System.Drawing.Size(194, 28);
+            this.txt_TenMH.Size = new System.Drawing.Size(241, 39);
             this.txt_TenMH.TabIndex = 1;
             // 
             // txt_DonGia
             // 
             this.txt_DonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_DonGia.Location = new System.Drawing.Point(597, 131);
+            this.txt_DonGia.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_DonGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_DonGia.Location = new System.Drawing.Point(1097, 176);
             this.txt_DonGia.Multiline = true;
             this.txt_DonGia.Name = "txt_DonGia";
-            this.txt_DonGia.Size = new System.Drawing.Size(194, 28);
+            this.txt_DonGia.Size = new System.Drawing.Size(272, 39);
             this.txt_DonGia.TabIndex = 3;
             // 
             // label1
@@ -103,7 +109,7 @@ namespace _3_GUI_PresentationLayer
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(42, 104);
+            this.label1.Location = new System.Drawing.Point(477, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 4;
@@ -115,7 +121,7 @@ namespace _3_GUI_PresentationLayer
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(597, 108);
+            this.label2.Location = new System.Drawing.Point(1110, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 5;
@@ -127,7 +133,7 @@ namespace _3_GUI_PresentationLayer
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(321, 108);
+            this.label3.Location = new System.Drawing.Point(818, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 6;
@@ -138,9 +144,9 @@ namespace _3_GUI_PresentationLayer
             this.btn_Them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Them.BackColor = System.Drawing.Color.Aqua;
             this.btn_Them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Them.Location = new System.Drawing.Point(844, 12);
+            this.btn_Them.Location = new System.Drawing.Point(1519, 23);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(94, 35);
+            this.btn_Them.Size = new System.Drawing.Size(158, 53);
             this.btn_Them.TabIndex = 7;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
@@ -150,9 +156,9 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
-            this.btn_Sua.Location = new System.Drawing.Point(844, 68);
+            this.btn_Sua.Location = new System.Drawing.Point(1519, 99);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(94, 35);
+            this.btn_Sua.Size = new System.Drawing.Size(158, 53);
             this.btn_Sua.TabIndex = 8;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
@@ -162,9 +168,9 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
-            this.btn_Xoa.Location = new System.Drawing.Point(844, 124);
+            this.btn_Xoa.Location = new System.Drawing.Point(1519, 179);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(94, 35);
+            this.btn_Xoa.Size = new System.Drawing.Size(158, 53);
             this.btn_Xoa.TabIndex = 9;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
@@ -174,21 +180,24 @@ namespace _3_GUI_PresentationLayer
             // 
             this.cmb_IDDvTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_IDDvTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_IDDvTinh.FormattingEnabled = true;
-            this.cmb_IDDvTinh.Location = new System.Drawing.Point(321, 131);
+            this.cmb_IDDvTinh.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_IDDvTinh.IntegralHeight = false;
+            this.cmb_IDDvTinh.Location = new System.Drawing.Point(797, 176);
             this.cmb_IDDvTinh.Name = "cmb_IDDvTinh";
-            this.cmb_IDDvTinh.Size = new System.Drawing.Size(194, 28);
+            this.cmb_IDDvTinh.Size = new System.Drawing.Size(255, 39);
             this.cmb_IDDvTinh.TabIndex = 10;
+            this.cmb_IDDvTinh.Click += new System.EventHandler(this.cmb_IDDvTinh_Click);
             // 
             // btn_close
             // 
             this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_close.BackColor = System.Drawing.Color.Red;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_close.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_close.Location = new System.Drawing.Point(804, 471);
+            this.btn_close.Location = new System.Drawing.Point(1446, 735);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(134, 39);
+            this.btn_close.Size = new System.Drawing.Size(158, 61);
             this.btn_close.TabIndex = 11;
             this.btn_close.Text = "Đóng";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -197,11 +206,12 @@ namespace _3_GUI_PresentationLayer
             // 
             this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Luu.BackColor = System.Drawing.Color.Red;
+            this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Luu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Luu.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_Luu.Location = new System.Drawing.Point(643, 471);
+            this.btn_Luu.Location = new System.Drawing.Point(1238, 735);
             this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(134, 39);
+            this.btn_Luu.Size = new System.Drawing.Size(158, 61);
             this.btn_Luu.TabIndex = 12;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = false;
@@ -212,20 +222,36 @@ namespace _3_GUI_PresentationLayer
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(42, 23);
+            this.label4.Location = new System.Drawing.Point(64, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(425, 54);
             this.label4.TabIndex = 13;
             this.label4.Text = "QUẢN LÝ MẶT HÀNG";
+            // 
+            // btn_themdvt
+            // 
+            this.btn_themdvt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_themdvt.BackColor = System.Drawing.Color.Gray;
+            this.btn_themdvt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themdvt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_themdvt.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_themdvt.Location = new System.Drawing.Point(939, 221);
+            this.btn_themdvt.Name = "btn_themdvt";
+            this.btn_themdvt.Size = new System.Drawing.Size(113, 36);
+            this.btn_themdvt.TabIndex = 11;
+            this.btn_themdvt.Text = "Thêm";
+            this.btn_themdvt.UseVisualStyleBackColor = false;
+            this.btn_themdvt.Click += new System.EventHandler(this.btn_themdvt_Click_1);
             // 
             // frm_QLMatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(950, 522);
+            this.ClientSize = new System.Drawing.Size(1702, 818);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_Luu);
+            this.Controls.Add(this.btn_themdvt);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.cmb_IDDvTinh);
             this.Controls.Add(this.btn_Xoa);
@@ -261,5 +287,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_themdvt;
     }
 }

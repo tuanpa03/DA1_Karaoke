@@ -153,11 +153,40 @@ namespace _3_GUI_PresentationLayer
         }
         private void loadcmbIDDVT()
         {
-            _dvt = _donViTinhService.GetlstDonViTinhs();
             foreach (var x in _donViTinhService.GetlstDonViTinhs())
             {
                 cmb_IDDvTinh.Items.Add(x.TenDvt);
             }
+        }
+
+        private void btn_themdvt_Click(object sender, EventArgs e)
+        {
+            frm_DonViTinh frmDonViTinh = new frm_DonViTinh();
+            frmDonViTinh.ShowDialog();
+            frmDonViTinh.Dispose();
+        }
+
+        private void cmb_IDDvTinh_Click(object sender, EventArgs e)
+        {
+            cmb_IDDvTinh.Items.Clear();
+            loadcmbIDDVT();
+        }
+        private Form currentFormChild;
+        private void OpenChildForm(Form childform)
+        {
+            if (currentFormChild!=null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childform;
+            childform.TopLevel = false;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
+
+        }
+        private void btn_themdvt_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

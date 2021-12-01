@@ -67,9 +67,16 @@ namespace _2_BUS.BUS_Service
             _iDAL_ChiTietHoaDonBan_Service.GetlstChiTietHoaDonBan();
         }
 
-        public bool Remove(int idHoaDon)
+        public bool Remove(int idchitiethoadon)
         {
-            return _iDAL_ChiTietHoaDonBan_Service.Remove(idHoaDon);
+            if (sendlstChiTietHoaDonBan().Where(x=>x.IdchiTietHoaDonBan==idchitiethoadon).SingleOrDefault().SoLuong==1)
+            { 
+                return _iDAL_ChiTietHoaDonBan_Service.Remove(idchitiethoadon);
+            }
+
+            var newcthd = sendlstChiTietHoaDonBan().Where(x => x.IdchiTietHoaDonBan == idchitiethoadon).SingleOrDefault();
+            newcthd.SoLuong--;
+            return _iDAL_ChiTietHoaDonBan_Service.Update(newcthd);
         }
 
         public bool Save()

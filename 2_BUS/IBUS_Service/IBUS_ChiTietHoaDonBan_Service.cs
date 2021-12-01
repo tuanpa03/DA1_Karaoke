@@ -14,7 +14,7 @@ namespace _2_BUS.IBUS_Service
         bool Add(ChiTietHoaDonBan chiTietHoaDonBan);
         List<ChiTietHoaDonBan> FindName(int name);//tìm kiếm qua mã mặt hàng
         List<ChiTietHoaDonBan> Find(int id);
-        bool Remove(int idHoaDon);
+        bool Remove(int idchitiethoadon);
         bool Update(ChiTietHoaDonBan chiTietHoaDonBan);
         bool Save();
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _3_GUI_PresentationLayer;
 
 namespace _3_GUI
 {
@@ -37,6 +38,72 @@ namespace _3_GUI
             frmNhanVien.FormBorderStyle = FormBorderStyle.None;
             frmNhanVien.Dock = DockStyle.Fill;
             frmNhanVien.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_QLMatHang frmQlMatHang = new frm_QLMatHang();
+            frmQlMatHang.TopLevel = false;
+            loadform.Controls.Add(frmQlMatHang);
+            frmQlMatHang.FormBorderStyle = FormBorderStyle.None;
+            frmQlMatHang.Dock = DockStyle.Fill;
+            frmQlMatHang.Show();
+        }
+
+        private void btn_thietbi_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_ThietBi frmThietBi = new frm_ThietBi();
+            frmThietBi.TopLevel = false;
+            loadform.Controls.Add(frmThietBi);
+            frmThietBi.FormBorderStyle = FormBorderStyle.None;
+            frmThietBi.Dock = DockStyle.Fill;
+            frmThietBi.Show();
+        }
+
+        private void btn_nhacungcap_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_NhaCungCap frmNhaCungCap = new frm_NhaCungCap();
+            frmNhaCungCap.TopLevel = false;
+            loadform.Controls.Add(frmNhaCungCap);
+            frmNhaCungCap.FormBorderStyle = FormBorderStyle.None;
+            frmNhaCungCap.Dock = DockStyle.Fill;
+            frmNhaCungCap.Show();
+        }
+
+        private void btn_loaithietbi_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_LoaiThietBi frmLoaiThietBi = new frm_LoaiThietBi();
+            frmLoaiThietBi.TopLevel = false;
+            loadform.Controls.Add(frmLoaiThietBi);
+            frmLoaiThietBi.FormBorderStyle = FormBorderStyle.None;
+            frmLoaiThietBi.Dock = DockStyle.Fill;
+            frmLoaiThietBi.Show();
+        }
+
+        private void btn_dvt_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_DonViTinh frmDonViTinh = new frm_DonViTinh();
+            frmDonViTinh.TopLevel = false;
+            loadform.Controls.Add(frmDonViTinh);
+            frmDonViTinh.FormBorderStyle = FormBorderStyle.None;
+            frmDonViTinh.Dock = DockStyle.Fill;
+            frmDonViTinh.Show();
+        }
+
+        private void btn_loaiphong_Click(object sender, EventArgs e)
+        {
+            loadform.Controls.Clear();
+            frm_LoaiPhong frmLoaiPhong = new frm_LoaiPhong();
+            frmLoaiPhong.TopLevel = false;
+            loadform.Controls.Add(frmLoaiPhong);
+            frmLoaiPhong.FormBorderStyle = FormBorderStyle.None;
+            frmLoaiPhong.Dock = DockStyle.Fill;
+            frmLoaiPhong.Show();
         }
     }
 }
