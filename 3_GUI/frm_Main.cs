@@ -1,7 +1,4 @@
-﻿using _1_DAL.Entities;
-using _2_BUS.BUS_Service;
-using _2_BUS.IBUS_Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,23 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _3_GUI_PresentationLayer;
 
 namespace _3_GUI
 {
     public partial class Frm_Main : Form
     {
-        private IBUS_NhanVien_Service _ibus_NhanVien_Service;
-        private NhanVien nnv ;
+        public Frm_Main()
+        {
+            InitializeComponent();
+            load();
+            IsMdiContainer = true;
+        }
         public Frm_Main(string username)
         {
             InitializeComponent();
-            _ibus_NhanVien_Service = new BUS_NhanVien_Service();
-            nnv = new NhanVien();
-            nnv = _ibus_NhanVien_Service.GetlstNhanViens().Where(c => c.Username == username).FirstOrDefault();
             load();
+            IsMdiContainer = true;
         }
 
-        private void load()
+        public static void load()
         {
             loadform.Controls.Clear();
             frm_datphong frmDatphong = new frm_datphong();
@@ -75,24 +75,32 @@ namespace _3_GUI
 
         private void btn_doimk_Click(object sender, EventArgs e)
         {
-            frm_DoiMatKhau qn = new frm_DoiMatKhau(nnv.Username);
-            //this.Hide();
-            qn.Show();
+
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_Login frmlogin = new frm_Login();
-            this.Close();
+            this.Hide();
             frmlogin.Show();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("are you sure","cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
-            { 
+            if (MessageBox.Show("are you sure", "cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
                 Application.Exit();
             }
+        }
+        public static void loadthanhtoan(int idPhongCapNhapPhong)
+        {
+            loadform.Controls.Clear();
+            Frm_ThanhToan frmThanhToan = new Frm_ThanhToan(idPhongCapNhapPhong);
+            frmThanhToan.TopLevel = false;
+            loadform.Controls.Add(frmThanhToan);
+            frmThanhToan.FormBorderStyle = FormBorderStyle.None;
+            frmThanhToan.Dock = DockStyle.Fill;
+            frmThanhToan.Show();
         }
     }
 }

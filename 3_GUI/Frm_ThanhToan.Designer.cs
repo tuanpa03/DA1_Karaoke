@@ -46,12 +46,10 @@ namespace _3_GUI_PresentationLayer
             this.cbx_congthucTinh = new System.Windows.Forms.ComboBox();
             this.lbl_tenPhong = new System.Windows.Forms.Label();
             this.btn_fakethanhtoan = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chitietdichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MatHang)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_chitietdichvu
@@ -60,7 +58,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_chitietdichvu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_chitietdichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_chitietdichvu.EnableHeadersVisualStyles = false;
-            this.dgv_chitietdichvu.Location = new System.Drawing.Point(0, 0);
+            this.dgv_chitietdichvu.Location = new System.Drawing.Point(-1, 83);
             this.dgv_chitietdichvu.MultiSelect = false;
             this.dgv_chitietdichvu.Name = "dgv_chitietdichvu";
             this.dgv_chitietdichvu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -87,11 +85,11 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_thoat
             // 
-            this.btn_thoat.Location = new System.Drawing.Point(1558, 924);
+            this.btn_thoat.Location = new System.Drawing.Point(12, 12);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(162, 65);
             this.btn_thoat.TabIndex = 34;
-            this.btn_thoat.Text = "Thoát";
+            this.btn_thoat.Text = "Back";
             this.btn_thoat.UseVisualStyleBackColor = true;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
@@ -164,7 +162,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_MatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_MatHang.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_MatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MatHang.Location = new System.Drawing.Point(0, 464);
+            this.dgv_MatHang.Location = new System.Drawing.Point(-1, 547);
             this.dgv_MatHang.Name = "dgv_MatHang";
             this.dgv_MatHang.RowHeadersWidth = 51;
             this.dgv_MatHang.RowTemplate.Height = 29;
@@ -172,7 +170,6 @@ namespace _3_GUI_PresentationLayer
             this.dgv_MatHang.Size = new System.Drawing.Size(1327, 400);
             this.dgv_MatHang.TabIndex = 11;
             this.dgv_MatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MatHang_CellClick);
-            this.dgv_MatHang.Click += new System.EventHandler(this.dgv_MatHang_Click);
             // 
             // panel1
             // 
@@ -190,7 +187,7 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(1332, 54);
+            this.panel1.Location = new System.Drawing.Point(1332, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 864);
             this.panel1.TabIndex = 12;
@@ -234,20 +231,9 @@ namespace _3_GUI_PresentationLayer
             this.btn_fakethanhtoan.UseVisualStyleBackColor = false;
             this.btn_fakethanhtoan.Click += new System.EventHandler(this.btn_fakethanhtoan_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Controls.Add(this.txt_search);
-            this.panel2.Controls.Add(this.dgv_MatHang);
-            this.panel2.Controls.Add(this.dgv_chitietdichvu);
-            this.panel2.Location = new System.Drawing.Point(-1, 54);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1327, 864);
-            this.panel2.TabIndex = 13;
-            // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(13, 420);
+            this.txt_search.Location = new System.Drawing.Point(12, 496);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(372, 27);
             this.txt_search.TabIndex = 12;
@@ -259,9 +245,10 @@ namespace _3_GUI_PresentationLayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(1732, 996);
-            this.ControlBox = false;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dgv_MatHang);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dgv_chitietdichvu);
             this.Controls.Add(this.btn_thoat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_ThanhToan";
@@ -271,9 +258,8 @@ namespace _3_GUI_PresentationLayer
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MatHang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,7 +278,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_thoat;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbx_congthucTinh;

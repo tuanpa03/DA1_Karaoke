@@ -70,7 +70,7 @@ namespace _3_GUI
                 for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList().Count; j++)
                 {
                     Label lb = new Label();
-                    lb.Size = new Size(150, 150);
+                    lb.Size = new Size(200, 150);
                     string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TenPhong;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].Id);
                     string maKh;
@@ -179,7 +179,7 @@ namespace _3_GUI
                 }
 
 
-                this.Hide();
+                
                 frm_DatPhongKhachHang frm_DatPhongKhachHang = new frm_DatPhongKhachHang(_idPhongDatPhong.ToString());
                 //frm_Login.MdiParent = this.MdiParent;
                 frm_DatPhongKhachHang.Show();
@@ -213,10 +213,8 @@ namespace _3_GUI
                     MessageBox.Show("Phòng chưa dọn, không thể Cập nhập phòng", "Thông báo");
                     return;
                 }
-                this.Hide();
-                Frm_ThanhToan frm_thanhToan = new Frm_ThanhToan(_idPhongCapNhapPhong);
-                //frm_Login.MdiParent = this.MdiParent;
-                frm_thanhToan.Show();
+                
+                Frm_Main.loadthanhtoan(_idPhongCapNhapPhong);
             }
             catch
             {
@@ -504,5 +502,7 @@ namespace _3_GUI
 
             //}
         }
+
+        
     }
 }

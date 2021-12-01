@@ -58,7 +58,6 @@ namespace _3_GUI
             this.stripMenu_donPhong});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(200, 76);
-            
             // 
             // stripMenu_datPhong
             // 
@@ -106,7 +105,7 @@ namespace _3_GUI
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.btn_phongdangSuaChua);
             this.panel1.Controls.Add(this.btn_phongDangDon);
             this.panel1.Controls.Add(this.btn_sanSangDonKhach);
@@ -225,7 +224,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(1732, 992);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);

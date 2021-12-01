@@ -93,6 +93,16 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mainimage {
+            get {
+                object obj = ResourceManager.GetObject("mainimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SsDonKhach {
             get {
                 object obj = ResourceManager.GetObject("SsDonKhach", resourceCulture);
@@ -106,6 +116,16 @@ namespace _3_GUI.Properties {
         internal static System.Drawing.Bitmap tree {
             get {
                 object obj = ResourceManager.GetObject("tree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap what_does_the_number_862_mean {
+            get {
+                object obj = ResourceManager.GetObject("what-does-the-number-862-mean", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,6 +42,7 @@ namespace _3_GUI_PresentationLayer
             _dataMatHangs = new List<MatHang>();
             _hoaDonBanHang = new HoaDonBanHang();
             _hoaDonBanHang = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().Where(x => x.IdtranngThai == 1 && x.Idphong == idphong).SingleOrDefault();
+            txt_chiphikhac.Text = "0";
         }
         private void Frm_ThanhToan_Load(object sender, EventArgs e)
         {
@@ -153,16 +154,15 @@ namespace _3_GUI_PresentationLayer
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-            //Frm_Main frmmain = new Frm_Main();
-            //frmmain.Show();
-            this.Hide();
+            Frm_Main.load();
+            this.Close();
 
         }
 
         private void dgv_MatHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             r = dgv_MatHang.Rows[e.RowIndex];
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex != 2&&e.ColumnIndex != 3)
             {
                 adddichvu(r);
             }
@@ -171,7 +171,7 @@ namespace _3_GUI_PresentationLayer
         private void dgv_chitietdichvu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             r = dgv_chitietdichvu.Rows[e.RowIndex];
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex != 4&& e.ColumnIndex != 3&& e.ColumnIndex != 2)
             {
                 removedichvu(r);
             }
@@ -198,6 +198,7 @@ namespace _3_GUI_PresentationLayer
             phong.TrangThai = 4;
             _phong_Service.Update(phong);
             MessageBox.Show("thanh toán thành công", "thông báo", MessageBoxButtons.OK);
+            Frm_Main.load();
         }
     }
 }

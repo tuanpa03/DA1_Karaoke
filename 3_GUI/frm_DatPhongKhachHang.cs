@@ -126,6 +126,7 @@ namespace _3_GUI
 
                 MessageBox.Show("Đặt phòng thành công","Thông báo");
                 this.Close();
+                Frm_Main.load();
             }
         }
 
