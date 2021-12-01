@@ -17,11 +17,20 @@ namespace _3_GUI
     public partial class frm_DoiMatKhau : Form
     {
         private IBUS_Login_Service _ibus_Login_Service;
-        string username = frm_QuenMatKhau.to;
+        string username;
         public frm_DoiMatKhau()
         {
             InitializeComponent();
             _ibus_Login_Service = new BUS_Login_Service();
+            username = frm_QuenMatKhau.to;
+            button2.Visible = true;
+        }
+        public frm_DoiMatKhau(string usernamee)
+        {
+            InitializeComponent();
+            _ibus_Login_Service = new BUS_Login_Service();
+            username = usernamee;
+            button2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,8 +73,7 @@ namespace _3_GUI
             this.Hide();
             lg.Show();
         }
-
-        private void frm_DoiMatKhau_FormClosed(object sender, FormClosedEventArgs e)
+        private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dn;
             dn = MessageBox.Show("Bạn có muốn thoát không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -73,11 +81,6 @@ namespace _3_GUI
             {
                 this.Close();
             }
-        }
-
-        private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }

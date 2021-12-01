@@ -55,22 +55,22 @@ namespace _3_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(288, 39);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(239, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 37);
+            this.label1.Size = new System.Drawing.Size(357, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng nhập hệ thống \r\n";
+            this.label1.Text = "Đăng nhập hệ thống";
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_DangNhap.BackColor = System.Drawing.Color.Black;
             this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_DangNhap.ForeColor = System.Drawing.Color.Black;
-            this.btn_DangNhap.Location = new System.Drawing.Point(190, 354);
+            this.btn_DangNhap.ForeColor = System.Drawing.Color.White;
+            this.btn_DangNhap.Location = new System.Drawing.Point(190, 348);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(190, 49);
+            this.btn_DangNhap.Size = new System.Drawing.Size(190, 64);
             this.btn_DangNhap.TabIndex = 1;
             this.btn_DangNhap.Text = "LOGIN";
             this.btn_DangNhap.UseVisualStyleBackColor = false;
@@ -78,12 +78,12 @@ namespace _3_GUI
             // 
             // btn_Thoat
             // 
-            this.btn_Thoat.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_Thoat.BackColor = System.Drawing.Color.Black;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Thoat.ForeColor = System.Drawing.Color.Black;
-            this.btn_Thoat.Location = new System.Drawing.Point(404, 354);
+            this.btn_Thoat.ForeColor = System.Drawing.Color.White;
+            this.btn_Thoat.Location = new System.Drawing.Point(404, 348);
             this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(192, 49);
+            this.btn_Thoat.Size = new System.Drawing.Size(192, 64);
             this.btn_Thoat.TabIndex = 1;
             this.btn_Thoat.Text = "EXIT";
             this.btn_Thoat.UseVisualStyleBackColor = false;
@@ -91,7 +91,7 @@ namespace _3_GUI
             // 
             // txt_DangNhap
             // 
-            this.txt_DangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txt_DangNhap.BackColor = System.Drawing.Color.White;
             this.txt_DangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_DangNhap.Location = new System.Drawing.Point(190, 179);
             this.txt_DangNhap.Name = "txt_DangNhap";
@@ -122,7 +122,7 @@ namespace _3_GUI
             // 
             // txt_Passwork
             // 
-            this.txt_Passwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txt_Passwork.BackColor = System.Drawing.Color.White;
             this.txt_Passwork.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Passwork.Location = new System.Drawing.Point(190, 225);
             this.txt_Passwork.Name = "txt_Passwork";
@@ -162,7 +162,7 @@ namespace _3_GUI
             this.cbx_NhoAccount.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_NhoAccount.Location = new System.Drawing.Point(190, 264);
             this.cbx_NhoAccount.Name = "cbx_NhoAccount";
-            this.cbx_NhoAccount.Size = new System.Drawing.Size(166, 30);
+            this.cbx_NhoAccount.Size = new System.Drawing.Size(158, 29);
             this.cbx_NhoAccount.TabIndex = 8;
             this.cbx_NhoAccount.Text = "Nhớ tài khoản";
             this.cbx_NhoAccount.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@ namespace _3_GUI
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(190, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(478, 53);
@@ -185,7 +185,7 @@ namespace _3_GUI
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(84, 304);
+            this.label5.Location = new System.Drawing.Point(84, 302);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 29);
             this.label5.TabIndex = 3;
@@ -197,17 +197,17 @@ namespace _3_GUI
             this.lbl_Captcha.BackColor = System.Drawing.Color.Aqua;
             this.lbl_Captcha.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Captcha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lbl_Captcha.Location = new System.Drawing.Point(490, 304);
+            this.lbl_Captcha.Location = new System.Drawing.Point(490, 298);
             this.lbl_Captcha.Name = "lbl_Captcha";
-            this.lbl_Captcha.Size = new System.Drawing.Size(149, 38);
+            this.lbl_Captcha.Size = new System.Drawing.Size(143, 37);
             this.lbl_Captcha.TabIndex = 3;
             this.lbl_Captcha.Text = "Captcha ";
             // 
             // txt_Captcha
             // 
-            this.txt_Captcha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txt_Captcha.BackColor = System.Drawing.Color.White;
             this.txt_Captcha.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Captcha.Location = new System.Drawing.Point(190, 304);
+            this.txt_Captcha.Location = new System.Drawing.Point(190, 299);
             this.txt_Captcha.Name = "txt_Captcha";
             this.txt_Captcha.Size = new System.Drawing.Size(262, 34);
             this.txt_Captcha.TabIndex = 2;
@@ -240,9 +240,10 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(666, 417);
+            this.ClientSize = new System.Drawing.Size(665, 413);
             this.ControlBox = false;
             this.Controls.Add(this.cbx_NhoAccount);
             this.Controls.Add(this.linkLabel1);

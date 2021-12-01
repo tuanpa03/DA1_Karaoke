@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _1_DAL.Entities;
+using _2_BUS.BUS_Service;
+using _2_BUS.IBUS_Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,14 @@ namespace _3_GUI
 {
     public partial class Frm_Main : Form
     {
-        public Frm_Main()
+        private IBUS_NhanVien_Service _ibus_NhanVien_Service;
+        private NhanVien nnv ;
+        public Frm_Main(string username)
         {
             InitializeComponent();
+            _ibus_NhanVien_Service = new BUS_NhanVien_Service();
+            nnv = new NhanVien();
+            nnv = _ibus_NhanVien_Service.GetlstNhanViens().Where(c => c.Username == username).FirstOrDefault();
             load();
         }
 
@@ -67,13 +75,15 @@ namespace _3_GUI
 
         private void btn_doimk_Click(object sender, EventArgs e)
         {
-
+            frm_DoiMatKhau qn = new frm_DoiMatKhau(nnv.Username);
+            //this.Hide();
+            qn.Show();
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_Login frmlogin = new frm_Login();
-            this.Hide();
+            this.Close();
             frmlogin.Show();
         }
 

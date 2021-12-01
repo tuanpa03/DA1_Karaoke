@@ -1,4 +1,5 @@
-﻿using _2_BUS.BUS_Service;
+﻿using _1_DAL.Entities;
+using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_Service;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,12 @@ namespace _3_GUI
     public partial class frm_Login : Form
     {
         private IBUS_Login_Service _ibus_Login_Service;
+        private IBUS_NhanVien_Service _ibus_NhanVien_Service;
         public frm_Login()
         {
             InitializeComponent();
             _ibus_Login_Service = new BUS_Login_Service();
+            _ibus_NhanVien_Service = new BUS_NhanVien_Service();
         }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
@@ -38,7 +41,7 @@ namespace _3_GUI
             }
             if (_ibus_Login_Service.NhanVienLogin(username, passwork))
             {
-                Frm_Main main = new Frm_Main();
+                Frm_Main main = new Frm_Main(username);
                 dn = MessageBox.Show("Đăng nhập thành công 🤗🤗🤗", "Thông Báo ❗", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 main.Show();
                 this.Hide();

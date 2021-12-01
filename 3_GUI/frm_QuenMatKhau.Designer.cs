@@ -65,7 +65,7 @@ namespace _3_GUI
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(179, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -106,9 +106,9 @@ namespace _3_GUI
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(0, 180);
+            this.groupBox1.Location = new System.Drawing.Point(0, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 187);
+            this.groupBox1.Size = new System.Drawing.Size(721, 196);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "QUÊN MẬT KHẨU";
@@ -120,7 +120,7 @@ namespace _3_GUI
             this.btn_XacNhan.ForeColor = System.Drawing.Color.Black;
             this.btn_XacNhan.Location = new System.Drawing.Point(116, 139);
             this.btn_XacNhan.Name = "btn_XacNhan";
-            this.btn_XacNhan.Size = new System.Drawing.Size(210, 49);
+            this.btn_XacNhan.Size = new System.Drawing.Size(218, 49);
             this.btn_XacNhan.TabIndex = 3;
             this.btn_XacNhan.Text = "Xác Nhận";
             this.btn_XacNhan.UseVisualStyleBackColor = false;
@@ -169,7 +169,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(721, 367);
+            this.ClientSize = new System.Drawing.Size(721, 370);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);

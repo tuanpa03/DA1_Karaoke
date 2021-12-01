@@ -59,9 +59,9 @@ namespace _3_GUI
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(206, 302);
+            this.btn_sua.Location = new System.Drawing.Point(189, 302);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(94, 29);
+            this.btn_sua.Size = new System.Drawing.Size(111, 36);
             this.btn_sua.TabIndex = 40;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@ namespace _3_GUI
             // 
             // btn_xóa
             // 
-            this.btn_xóa.Location = new System.Drawing.Point(403, 302);
+            this.btn_xóa.Location = new System.Drawing.Point(376, 302);
             this.btn_xóa.Name = "btn_xóa";
-            this.btn_xóa.Size = new System.Drawing.Size(94, 29);
+            this.btn_xóa.Size = new System.Drawing.Size(121, 36);
             this.btn_xóa.TabIndex = 39;
             this.btn_xóa.Text = "Xóa";
             this.btn_xóa.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@ namespace _3_GUI
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(801, 302);
+            this.btn_dong.Location = new System.Drawing.Point(772, 302);
             this.btn_dong.Name = "btn_dong";
-            this.btn_dong.Size = new System.Drawing.Size(94, 29);
+            this.btn_dong.Size = new System.Drawing.Size(123, 36);
             this.btn_dong.TabIndex = 38;
             this.btn_dong.Text = "Đóng";
             this.btn_dong.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@ namespace _3_GUI
             // 
             this.btn_them.Location = new System.Drawing.Point(41, 302);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(94, 29);
+            this.btn_them.Size = new System.Drawing.Size(108, 36);
             this.btn_them.TabIndex = 37;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
@@ -193,12 +193,15 @@ namespace _3_GUI
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 364);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 370);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1137, 418);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1690, 418);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -227,9 +230,9 @@ namespace _3_GUI
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(596, 302);
+            this.btn_clear.Location = new System.Drawing.Point(566, 302);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(94, 29);
+            this.btn_clear.Size = new System.Drawing.Size(124, 36);
             this.btn_clear.TabIndex = 45;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = true;

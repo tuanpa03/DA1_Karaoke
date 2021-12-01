@@ -137,10 +137,10 @@ namespace _3_GUI
             this.cbx_Show_Pass.AutoSize = true;
             this.cbx_Show_Pass.BackColor = System.Drawing.Color.Transparent;
             this.cbx_Show_Pass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbx_Show_Pass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_Show_Pass.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbx_Show_Pass.Location = new System.Drawing.Point(12, 342);
             this.cbx_Show_Pass.Name = "cbx_Show_Pass";
-            this.cbx_Show_Pass.Size = new System.Drawing.Size(217, 35);
+            this.cbx_Show_Pass.Size = new System.Drawing.Size(219, 35);
             this.cbx_Show_Pass.TabIndex = 18;
             this.cbx_Show_Pass.Text = "Hiển thị mật khẩu";
             this.cbx_Show_Pass.UseVisualStyleBackColor = false;
@@ -161,6 +161,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(601, 448);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbx_Show_Pass);
@@ -176,7 +177,6 @@ namespace _3_GUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_DoiMatKhau";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DoiMatKhau_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_DoiMatKhau_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
