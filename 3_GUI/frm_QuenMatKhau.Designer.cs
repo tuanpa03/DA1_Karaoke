@@ -65,7 +65,7 @@ namespace _3_GUI
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(179, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -76,7 +76,7 @@ namespace _3_GUI
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Forte", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(194, 32);
+            this.label1.Location = new System.Drawing.Point(213, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(465, 55);
             this.label1.TabIndex = 2;
@@ -106,9 +106,9 @@ namespace _3_GUI
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(0, 174);
+            this.groupBox1.Location = new System.Drawing.Point(0, 180);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 193);
+            this.groupBox1.Size = new System.Drawing.Size(721, 187);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "QUÊN MẬT KHẨU";

@@ -56,7 +56,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(288, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 37);
@@ -70,7 +70,7 @@ namespace _3_GUI
             this.btn_DangNhap.ForeColor = System.Drawing.Color.Black;
             this.btn_DangNhap.Location = new System.Drawing.Point(190, 354);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(205, 49);
+            this.btn_DangNhap.Size = new System.Drawing.Size(190, 49);
             this.btn_DangNhap.TabIndex = 1;
             this.btn_DangNhap.Text = "LOGIN";
             this.btn_DangNhap.UseVisualStyleBackColor = false;
@@ -81,7 +81,7 @@ namespace _3_GUI
             this.btn_Thoat.BackColor = System.Drawing.Color.DarkGray;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Thoat.ForeColor = System.Drawing.Color.Black;
-            this.btn_Thoat.Location = new System.Drawing.Point(440, 354);
+            this.btn_Thoat.Location = new System.Drawing.Point(404, 354);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(192, 49);
             this.btn_Thoat.TabIndex = 1;
@@ -114,7 +114,7 @@ namespace _3_GUI
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(33, 224);
+            this.label3.Location = new System.Drawing.Point(33, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 29);
             this.label3.TabIndex = 3;
@@ -147,7 +147,7 @@ namespace _3_GUI
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.Location = new System.Drawing.Point(466, 268);
+            this.linkLabel1.Location = new System.Drawing.Point(466, 266);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(173, 26);
             this.linkLabel1.TabIndex = 6;
@@ -159,7 +159,7 @@ namespace _3_GUI
             // 
             this.cbx_NhoAccount.AutoSize = true;
             this.cbx_NhoAccount.BackColor = System.Drawing.Color.Transparent;
-            this.cbx_NhoAccount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_NhoAccount.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_NhoAccount.Location = new System.Drawing.Point(190, 264);
             this.cbx_NhoAccount.Name = "cbx_NhoAccount";
             this.cbx_NhoAccount.Size = new System.Drawing.Size(166, 30);
@@ -173,7 +173,7 @@ namespace _3_GUI
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(190, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(478, 53);
@@ -195,11 +195,11 @@ namespace _3_GUI
             // 
             this.lbl_Captcha.AutoSize = true;
             this.lbl_Captcha.BackColor = System.Drawing.Color.Aqua;
-            this.lbl_Captcha.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Captcha.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Captcha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lbl_Captcha.Location = new System.Drawing.Point(503, 304);
+            this.lbl_Captcha.Location = new System.Drawing.Point(490, 304);
             this.lbl_Captcha.Name = "lbl_Captcha";
-            this.lbl_Captcha.Size = new System.Drawing.Size(129, 35);
+            this.lbl_Captcha.Size = new System.Drawing.Size(149, 38);
             this.lbl_Captcha.TabIndex = 3;
             this.lbl_Captcha.Text = "Captcha ";
             // 
@@ -216,7 +216,7 @@ namespace _3_GUI
             // 
             this.p_eye.BackColor = System.Drawing.Color.Transparent;
             this.p_eye.Image = ((System.Drawing.Image)(resources.GetObject("p_eye.Image")));
-            this.p_eye.Location = new System.Drawing.Point(597, 229);
+            this.p_eye.Location = new System.Drawing.Point(597, 231);
             this.p_eye.Name = "p_eye";
             this.p_eye.Size = new System.Drawing.Size(35, 26);
             this.p_eye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -228,7 +228,7 @@ namespace _3_GUI
             // 
             this.p_hide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.p_hide.Image = ((System.Drawing.Image)(resources.GetObject("p_hide.Image")));
-            this.p_hide.Location = new System.Drawing.Point(597, 229);
+            this.p_hide.Location = new System.Drawing.Point(597, 231);
             this.p_hide.Name = "p_hide";
             this.p_hide.Size = new System.Drawing.Size(35, 26);
             this.p_hide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
