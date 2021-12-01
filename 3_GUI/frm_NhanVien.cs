@@ -20,6 +20,8 @@ namespace _3_GUI
         private NhanVien _tblNhanVien;
 
         private string erorr = "Aiizaaa... Lỗi rồi kìa 😂";
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
 
         public frm_NhanVien()
         {
@@ -349,6 +351,27 @@ namespace _3_GUI
         }
 
         #endregion
-
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 313)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 20)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }
