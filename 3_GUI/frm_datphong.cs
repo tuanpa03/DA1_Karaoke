@@ -353,7 +353,7 @@ namespace _3_GUI
                         if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 3)
                         {
 
-                            var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(y => y.Idphong.ToString() == lb.Name && y.IdtranngThai == 1;
+                            var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(y => y.Idphong.ToString() == lb.Name && y.IdtranngThai == 1);
                             var khachHang = _ibUS_KhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == hoaDon.IdmaKh);
                             lb.Text = tenPhong + "\n" + "Khách hàng :" + khachHang.Ho + khachHang.TenDem + khachHang.Ten + "\n" + "Thời gian vào:" + hoaDon.ThoiGianBatDau + "\n";
 
