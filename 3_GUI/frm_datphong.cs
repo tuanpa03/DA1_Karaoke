@@ -20,19 +20,19 @@ namespace _3_GUI
         private IBUS_Phong_Service _iBUS_Phong_Service;
         private IBUS_Tang_Service _iBUS_Tang_Service;
         private IBUS_HoaDonBanHang_Service _ihoaDonBanHang_Service;
+        private IBUS_KhachHang_Service _ibUS_KhachHang_Service;
+
+        Label lb;
+
         string _tenPhong;
         int _idPhongDatPhong;
         int _idPhongCapNhapPhong;
         int _idPhongDonPhong;
         string _idHoaDonTruyenThanhToan;
-        string _khachhangTruyenThanhToan;
-        string _tGianBDTruyenThanhToan;
         string _idPhongTruyenThanhToan;
-        string _tgianChayNguoc;
         //string _giodonphong;
         List<Phong> _lstPhong = new List<Phong>();
         private System.Windows.Forms.Timer aTimer;
-
         private int counter = 10;
         public frm_datphong()
         {
@@ -41,6 +41,7 @@ namespace _3_GUI
             _lstPhong = _iBUS_Phong_Service.sendlstPhong();
             _iBUS_Tang_Service = new BUS_Tang_Service();
             _ihoaDonBanHang_Service = new BUS_HoaDonBanHang_Service();
+            _ibUS_KhachHang_Service = new BUS_KhachHang_Service();
             showRoom();
         }
         public frm_datphong(string idHoaDon111 /*, string khachHang111, string tgianBD111*/,string idPhong111)
@@ -50,12 +51,10 @@ namespace _3_GUI
             _lstPhong = _iBUS_Phong_Service.sendlstPhong();
             _iBUS_Tang_Service = new BUS_Tang_Service();
             _ihoaDonBanHang_Service = new BUS_HoaDonBanHang_Service();
+            _ibUS_KhachHang_Service = new BUS_KhachHang_Service();
             _idHoaDonTruyenThanhToan = idHoaDon111;
-            //_khachhangTruyenThanhToan = khachHang111;
-            //_tGianBDTruyenThanhToan = tgianBD111;
             _idPhongTruyenThanhToan = idHoaDon111;
             showRoom();
-            
         }
         void showRoom()
         {
@@ -69,7 +68,8 @@ namespace _3_GUI
             {
                 for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList().Count; j++)
                 {
-                    Label lb = new Label();
+                    //Label
+                    lb = new Label();
                     lb.Size = new Size(200, 150);
                     string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TenPhong;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].Id);
@@ -83,64 +83,23 @@ namespace _3_GUI
                     if (_trangThai == 1)
                     {
                         lb.BackColor = Color.Red;//phòng trống
-
-                        //stripMenu_capNhap.Enabled = false;
-                        //stripMenu_donPhong.Enabled = false;
-                        //stripMenu_datPhong.Enabled= true;
-
                     }
                     else if (_trangThai == 2)
                     {
                         lb.BackColor = Color.Yellow;//đang dọn
                         lb.ForeColor = Color.Gray;//màu chữ
-
-                        //stripMenu_capNhap.Enabled = false;
-                        //stripMenu_donPhong.Enabled = false;
-                        //stripMenu_datPhong.Enabled = false;
                     }
                     else if(_trangThai == 3)
                     {
                         lb.BackColor = Color.Blue;//có khách
-
-                        //stripMenu_capNhap.Enabled= true;
-                        //stripMenu_donPhong.Enabled= false;
-                        //stripMenu_datPhong.Enabled = false;
-
                     }
                     else if(_trangThai == 4)
                     {
-                        lb.BackColor = Color.Gray;//đang sửa chữa      Phòng cần sửa
-
-                        //stripMenu_capNhap.Enabled =false ;
-                        //stripMenu_donPhong.Enabled =true ;
-                        //stripMenu_datPhong.Enabled = false;
+                        lb.BackColor = Color.Gray;//Phòng cần sửa
                     }
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
                     tableLayoutPanel1.ColumnCount++;
-                    //tìm lb nào có name id == id bên kia thì truyền sửa lại text
-
-                    //if (_idHoaDonTruyenThanhToan == null)//sửa _idPhong=truyền id bên thanh toán hóa đơn                    
-                    //{
-                    //    lb.Text = _tenPhong;
-                    //}
-                    //else if (_idHoaDonTruyenThanhToan != null)
-                    //{
-                    //    if (lb.Name == _idPhongTruyenThanhToan)//sửa _idPhong=truyền id bên thanh toán hóa đơn
-                    //    {
-                    //        var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(x => x.IdhoaDon == Convert.ToInt32(_idHoaDonTruyenThanhToan));
-                    //        maKh = hoaDon.IdmaKh;
-                    //        gioVao = hoaDon.ThoiGianBatDau.ToString();
-                    //        lb.Text = tenPhong + "\n" + "Mã khách hàng" + maKh + "\n" + "Giờ Bắt Đầu" + gioVao;
-                    //        //tìm hóa đơn giống idphong lấy mã kh , thời gian bắt đầu
-                    //        MessageBox.Show(lb.Text);
-                    //    }
-                    //    else
-                    //    {
-                    //        lb.Text = "bbbbbbbbbbb";
-                    //    }
-                    //}
-
 
                     //dọn phòng
                     if (lb.Name == _idPhongDonPhong.ToString())//dọn phòng
@@ -149,8 +108,18 @@ namespace _3_GUI
                             DateTime thoiGianbg = DateTime.Now;
                             lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                         }
-                        //tableLayoutPanel1.RowCount++;
-                    //}
+                    //tableLayoutPanel1.RowCount++;
+                    foreach (var x in _lstPhong)
+                    {
+                        if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 3)
+                        {
+
+                            var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(y => y.Idphong.ToString() == lb.Name && y.IdtranngThai ==1);
+                            var khachHang = _ibUS_KhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == hoaDon.IdmaKh);
+                            lb.Text = tenPhong + "\n" + "Khách hàng :" + khachHang.Ho + khachHang.TenDem + khachHang.Ten + "\n" + "Thời gian vào:" + hoaDon.ThoiGianBatDau + "\n";
+
+                        }
+                    }
                 }
             }
         }
@@ -177,9 +146,6 @@ namespace _3_GUI
                     MessageBox.Show("Phòng chưa dọn, không thể Đặt phòng", "Thông báo");
                     return;
                 }
-
-
-                
                 frm_DatPhongKhachHang frm_DatPhongKhachHang = new frm_DatPhongKhachHang(_idPhongDatPhong.ToString());
                 //frm_Login.MdiParent = this.MdiParent;
                 frm_DatPhongKhachHang.Show();
@@ -241,23 +207,12 @@ namespace _3_GUI
             }
 
             var phongload = _lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong);
-            //if (phongload.TrangThai == 1)
-            //{
-            //    MessageBox.Show("Phòng đang dọn, không thể Đặt phòng", "Thông báo");
-            //    return;
-            //}
+
             if (phongload.TrangThai == 3)
             {
                 MessageBox.Show("Phòng đang có khách, không thể Dọn phòng phòng", "Thông báo");
                 return;
             }
-            //if (phongload.TrangThai == 4)
-            //{
-            //    MessageBox.Show("Phòng chưa dọn, không thể Đặt phòng", "Thông báo");
-            //    return;
-            //}
-
-
 
             foreach (var x in _lstPhong)
             {
@@ -299,11 +254,8 @@ namespace _3_GUI
                 phong.TrangThai = 1;
                 _iBUS_Phong_Service.Update(phong);
                 showRoom();
-                
-
             }
-            label1.Text = counter.ToString();
-            
+            label1.Text = counter.ToString();           
         }
 
         private void đătPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -366,7 +318,7 @@ namespace _3_GUI
                     string gioVao = "Giờ Bắt Đầu";
                     string str = tenPhong + "\n" + maKh + "\n" + gioVao;
                     lb.Text = str;
-                    _tenPhong = lb.Text;
+                    lb.Text = _tenPhong ;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a).ToList()[j].Id);
                     tableLayoutPanel1.Controls.Add(lb, j, i);
                     lb.Margin = new Padding(5, 5, 5, 5);
@@ -395,6 +347,24 @@ namespace _3_GUI
                         //string thoiGian = counter.ToString();
                         DateTime thoiGianbg = DateTime.Now;
                         lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + counter /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                    }
+                    foreach (var x in _lstPhong)
+                    {
+                        if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 3)
+                        {
+
+                            var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(y => y.Idphong.ToString() == lb.Name && y.IdtranngThai == 1;
+                            var khachHang = _ibUS_KhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == hoaDon.IdmaKh);
+                            lb.Text = tenPhong + "\n" + "Khách hàng :" + khachHang.Ho + khachHang.TenDem + khachHang.Ten + "\n" + "Thời gian vào:" + hoaDon.ThoiGianBatDau + "\n";
+
+                        }
+                    }
+                    foreach (var x in _lstPhong)
+                    {
+                        if (_lstPhong.FirstOrDefault(x => x.Id.ToString() == lb.Name).TrangThai == 1)
+                        {
+                            lb.Text = tenPhong;
+                        }
                     }
                 }
             }
@@ -427,31 +397,7 @@ namespace _3_GUI
 
         private void contextMenuStrip1_Click(object sender, EventArgs e)
         {
-            //var phongload =  _lstPhong.FirstOrDefault(x => x.Id == _idPhongDatPhong || x.Id == _idPhongCapNhapPhong || x.Id == _idPhongDonPhong);
-
             
-            //    if (phongload.TrangThai == 1)//phòng trống
-            //    {
-            //        stripMenu_capNhap.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-            //    }
-            //    else if (phongload.TrangThai == 2)//đang dọn
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_capNhap.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-            //    }
-            //    else if (phongload.TrangThai == 3)//có khách
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_donPhong.Enabled = false;
-
-            //    }
-            //    else if (phongload.TrangThai == 4)//Phòng cần dọn
-            //    {
-            //        stripMenu_datPhong.Enabled = false;
-            //        stripMenu_capNhap.Enabled = false;
-            //    }
             
         }
 
@@ -471,36 +417,7 @@ namespace _3_GUI
             //        idphong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
             //        this.tableLayoutPanel1.ContextMenuStrip = contextMenuStrip1;
             //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 1)
-            //        {
-            //            stripMenu_capNhap.Enabled = false;
-            //            stripMenu_donPhong.Enabled = false;
-            //            stripMenu_datPhong.Enabled = true;
-            //            return;
-            //        }
-            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 2)
-            //        {
-            //            stripMenu_capNhap.Enabled = false;
-            //            stripMenu_donPhong.Enabled = false;
-            //            stripMenu_datPhong.Enabled = false;
-            //            return;
-            //        }
-            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 3)
-            //        {
-            //            stripMenu_capNhap.Enabled = true;
-            //            stripMenu_donPhong.Enabled = false;
-            //            stripMenu_datPhong.Enabled = false;
-            //            return;
-            //        }
-            //        if (_lstPhong.FirstOrDefault(x => x.Id == idphong).TrangThai == 4)
-            //        {
-            //            stripMenu_capNhap.Enabled = false;
-            //            stripMenu_donPhong.Enabled = true;
-            //            stripMenu_datPhong.Enabled = false;
-            //            return;
-            //        }
-            //   // }
-
-            //}
+            
         }
 
         
