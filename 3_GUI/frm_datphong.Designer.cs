@@ -84,6 +84,7 @@ namespace _3_GUI
             // 
             this.tableLayoutPanel1.AllowDrop = true;
             this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.70439F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.3964F));
@@ -91,13 +92,13 @@ namespace _3_GUI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.71975F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.3964F));
             this.tableLayoutPanel1.ContextMenuStrip = this.contextMenuStrip1;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 11);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1702, 823);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 907);
             this.tableLayoutPanel1.TabIndex = 10;
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
@@ -105,7 +106,7 @@ namespace _3_GUI
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btn_phongdangSuaChua);
             this.panel1.Controls.Add(this.btn_phongDangDon);
             this.panel1.Controls.Add(this.btn_sanSangDonKhach);
@@ -113,9 +114,9 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(3, 847);
+            this.panel1.Location = new System.Drawing.Point(3, 914);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1728, 142);
+            this.panel1.Size = new System.Drawing.Size(1612, 142);
             this.panel1.TabIndex = 9;
             // 
             // btn_phongdangSuaChua
@@ -126,7 +127,7 @@ namespace _3_GUI
             this.btn_phongdangSuaChua.BackColor = System.Drawing.Color.Gray;
             this.btn_phongdangSuaChua.Location = new System.Drawing.Point(283, 83);
             this.btn_phongdangSuaChua.Name = "btn_phongdangSuaChua";
-            this.btn_phongdangSuaChua.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongdangSuaChua.Size = new System.Drawing.Size(244, 48);
             this.btn_phongdangSuaChua.TabIndex = 11;
             this.btn_phongdangSuaChua.Text = "Phòng cần dọn";
             this.btn_phongdangSuaChua.UseVisualStyleBackColor = false;
@@ -139,9 +140,9 @@ namespace _3_GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_phongDangDon.BackColor = System.Drawing.Color.Yellow;
             this.btn_phongDangDon.ForeColor = System.Drawing.Color.Gray;
-            this.btn_phongDangDon.Location = new System.Drawing.Point(283, 18);
+            this.btn_phongDangDon.Location = new System.Drawing.Point(283, 20);
             this.btn_phongDangDon.Name = "btn_phongDangDon";
-            this.btn_phongDangDon.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongDangDon.Size = new System.Drawing.Size(244, 48);
             this.btn_phongDangDon.TabIndex = 10;
             this.btn_phongDangDon.Text = "Phòng đang dọn ";
             this.btn_phongDangDon.UseVisualStyleBackColor = false;
@@ -155,7 +156,7 @@ namespace _3_GUI
             this.btn_sanSangDonKhach.BackColor = System.Drawing.Color.Red;
             this.btn_sanSangDonKhach.Location = new System.Drawing.Point(3, 83);
             this.btn_sanSangDonKhach.Name = "btn_sanSangDonKhach";
-            this.btn_sanSangDonKhach.Size = new System.Drawing.Size(243, 48);
+            this.btn_sanSangDonKhach.Size = new System.Drawing.Size(244, 48);
             this.btn_sanSangDonKhach.TabIndex = 9;
             this.btn_sanSangDonKhach.Text = "Sẵn sàng đón khách ";
             this.btn_sanSangDonKhach.UseVisualStyleBackColor = false;
@@ -169,7 +170,7 @@ namespace _3_GUI
             this.btn_phongCoKhach.BackColor = System.Drawing.Color.Blue;
             this.btn_phongCoKhach.Location = new System.Drawing.Point(3, 18);
             this.btn_phongCoKhach.Name = "btn_phongCoKhach";
-            this.btn_phongCoKhach.Size = new System.Drawing.Size(243, 48);
+            this.btn_phongCoKhach.Size = new System.Drawing.Size(244, 48);
             this.btn_phongCoKhach.TabIndex = 8;
             this.btn_phongCoKhach.Text = "Phòng đang có khách ";
             this.btn_phongCoKhach.UseVisualStyleBackColor = false;
@@ -216,7 +217,7 @@ namespace _3_GUI
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(3, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1728, 840);
+            this.groupBox1.Size = new System.Drawing.Size(1612, 907);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -224,11 +225,12 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.ClientSize = new System.Drawing.Size(1732, 992);
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ClientSize = new System.Drawing.Size(1616, 1059);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_datphong";
             this.Text = "frm_Main";
             this.Load += new System.EventHandler(this.frm_datphong_Load);
