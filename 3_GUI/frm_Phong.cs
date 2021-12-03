@@ -20,6 +20,10 @@ namespace _3_GUI
         private IBUS_Tang_Service _iBUS_Tang_Service;
         private Phong _phong;
         private int _idPhong;
+
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
+
         public frm_Phong()
         {
             InitializeComponent();
@@ -243,18 +247,31 @@ namespace _3_GUI
             ClearForm();
         }
 
-        private void btn_dong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frm_datphong frm_Main = new frm_datphong();
-            frm_Main.Show();
-        }
-
         private void frm_Phong_Load(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 713)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 12)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

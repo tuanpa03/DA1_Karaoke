@@ -19,6 +19,8 @@ namespace _3_GUI
         private KhachHang _tblKhachHang;
         private IBUS_CheckEverything _icheck;
         private string erorr = "CHÚ Ý 🤔🤔🤔";
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
         public frm_KhachHang()
         {
             InitializeComponent();
@@ -114,7 +116,7 @@ namespace _3_GUI
             kha.Ho = txt_Ho.Text;
             kha.TenDem = txt_TenDem.Text;
             kha.Ten = txt_Ten.Text;
-            kha.GioiTinh = rbtn_Nam.Checked ? 1:0;
+            kha.GioiTinh = rbtn_Nam.Checked ? 1 : 0;
             kha.DienThoai = txt_DienThoai.Text;
             kha.IdtranngThai = cbx_HĐ.Checked ? 1 : 0;
             if (MessageBox.Show("Bạn có muốn 🤔 Thêm Khách Hàng 🤔 không ?", "Xác nhận",
@@ -180,6 +182,28 @@ namespace _3_GUI
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
             FindNameKhachHang(textBox1.Text);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 704)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 20)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

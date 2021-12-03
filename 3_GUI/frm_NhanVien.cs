@@ -358,12 +358,12 @@ namespace _3_GUI
             {
                 x += a;
                 lbl_Timer.Location = new Point(x, y);
-                if (x >= 313)
+                if (x >= 713)
                 {
                     a = -1;
                     lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
                 }
-                if (x <= 20)
+                if (x <= 12)
                 {
                     a = 1;
                     lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));

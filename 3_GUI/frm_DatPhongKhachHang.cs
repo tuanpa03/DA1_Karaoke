@@ -44,13 +44,12 @@ namespace _3_GUI
         private void frm_DatPhongKhachHang_Load(object sender, EventArgs e)
         {
             loadtenPhong();
-            loadcbxNhanVien();
             loadcbxkhachhang();
             loadcbxCongThucTinh();
         }
         private bool checkForm()
         {
-            if (tbx_idPhong.Text == null  && cbx_khachhang.Text == null && cbx_nhanvien.Text == null)
+            if (tbx_idPhong.Text == null  && cbx_khachhang.Text == null )
             {
                 MessageBox.Show("Bạn phải điền đầy đủ khách hàng , nhân viên, phòng , công thức tính ");
                 return true;
@@ -68,13 +67,6 @@ namespace _3_GUI
             foreach (var x in _ikhachHang_Service.GetlstKhachHangs())
             {
                 cbx_khachhang.Items.Add(x.MaKh);
-            }
-        }
-        private void loadcbxNhanVien()
-        {
-            foreach (var x in _inhanVien_Service.GetlstNhanViens())
-            {
-                cbx_nhanvien.Items.Add(x.MaNv);
             }
         }
 
@@ -105,7 +97,7 @@ namespace _3_GUI
                 
                 _hoaDonBanHang.Idphong = Convert.ToInt32(tbx_idPhong.Text);
                 _hoaDonBanHang.IdmaKh = cbx_khachhang.Text;/*_ikhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == cmb_loaiPhong.Text).Id;*/
-                _hoaDonBanHang.IdmaNv = cbx_nhanvien.Text;
+                //_hoaDonBanHang.IdmaNv = cbx_nhanvien.Text;
                 _hoaDonBanHang.IdcongThucTinh = /*Convert.ToInt32( cbx_congthucTinh.Text)*/1;
                 _hoaDonBanHang.ThoiGianBatDau = DateTime.Now;
                 _hoaDonBanHang.DonGiaPhong = _loaiphong_Service.sendlstLoaiPhong().FirstOrDefault(x => x.Id == _phong_Service.sendlstPhong().FirstOrDefault(x => x.Id == _hoaDonBanHang.Idphong).IdloaiPhong).DonGia;
