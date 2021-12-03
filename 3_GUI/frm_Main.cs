@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _1_DAL.Entities;
+using _2_BUS.BUS_Service;
+using _2_BUS.IBUS_Service;
 using _3_GUI_PresentationLayer;
 
 namespace _3_GUI
 {
     public partial class Frm_Main : Form
     {
+        private IBUS_NhanVien_Service _nhanVienService;
+        private NhanVien _nhanVien;
         public Frm_Main()
         {
             InitializeComponent();
@@ -21,6 +26,9 @@ namespace _3_GUI
         }
         public Frm_Main(string username)
         {
+            _nhanVienService = new BUS_NhanVien_Service();
+            _nhanVien = new NhanVien();
+            _nhanVien = _nhanVienService.GetlstNhanViens().Where(c => c.Username == username).SingleOrDefault();
             InitializeComponent();
             load();
             IsMdiContainer = true;
