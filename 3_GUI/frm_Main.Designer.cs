@@ -54,7 +54,7 @@ namespace _3_GUI
             this.grb_controls.Controls.Add(this.btn_Hethong);
             this.grb_controls.Location = new System.Drawing.Point(-5, 0);
             this.grb_controls.Name = "grb_controls";
-            this.grb_controls.Size = new System.Drawing.Size(297, 1059);
+            this.grb_controls.Size = new System.Drawing.Size(297, 1053);
             this.grb_controls.TabIndex = 0;
             this.grb_controls.TabStop = false;
             // 
@@ -72,7 +72,7 @@ namespace _3_GUI
             // 
             this.btn_doimk.BackColor = System.Drawing.Color.LightYellow;
             this.btn_doimk.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_doimk.Location = new System.Drawing.Point(43, 841);
+            this.btn_doimk.Location = new System.Drawing.Point(43, 819);
             this.btn_doimk.Name = "btn_doimk";
             this.btn_doimk.Size = new System.Drawing.Size(209, 60);
             this.btn_doimk.TabIndex = 5;
@@ -85,7 +85,7 @@ namespace _3_GUI
             this.btn_dangxuat.BackColor = System.Drawing.Color.LightYellow;
             this.btn_dangxuat.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_dangxuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_dangxuat.Location = new System.Drawing.Point(43, 907);
+            this.btn_dangxuat.Location = new System.Drawing.Point(43, 885);
             this.btn_dangxuat.Name = "btn_dangxuat";
             this.btn_dangxuat.Size = new System.Drawing.Size(209, 60);
             this.btn_dangxuat.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace _3_GUI
             this.btn_close.BackColor = System.Drawing.Color.LightYellow;
             this.btn_close.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_close.ForeColor = System.Drawing.Color.Red;
-            this.btn_close.Location = new System.Drawing.Point(43, 973);
+            this.btn_close.Location = new System.Drawing.Point(43, 951);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(209, 60);
             this.btn_close.TabIndex = 3;
@@ -158,7 +158,7 @@ namespace _3_GUI
             loadform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             loadform.Location = new System.Drawing.Point(292, 0);
             loadform.Name = "loadform";
-            loadform.Size = new System.Drawing.Size(1616, 1059);
+            loadform.Size = new System.Drawing.Size(1616, 1053);
             loadform.TabIndex = 1;
             // 
             // Frm_Main
@@ -170,7 +170,7 @@ namespace _3_GUI
             this.ControlBox = false;
             this.Controls.Add(loadform);
             this.Controls.Add(this.grb_controls);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

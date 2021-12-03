@@ -126,6 +126,7 @@ namespace _3_GUI_PresentationLayer
             dgv_chitietdichvu.Columns["Id"].Visible = false;
             dgv_chitietdichvu.Columns["IdchiTietHoaDonBan"].Visible = false;
             dgv_chitietdichvu.Columns.Add(btnxoa);
+
         }
         private void adddichvu(DataGridViewRow x)
         {
@@ -199,6 +200,10 @@ namespace _3_GUI_PresentationLayer
             _phong_Service.Update(phong);
             MessageBox.Show("thanh toán thành công", "thông báo", MessageBoxButtons.OK);
             Frm_Main.load();
+        }
+        void loadcongthuctinh()
+        {
+
         }
     }
 }

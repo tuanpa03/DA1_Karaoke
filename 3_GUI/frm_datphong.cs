@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -70,7 +71,7 @@ namespace _3_GUI
                 {
                     //Label
                     lb = new Label();
-                    lb.Size = new Size(200, 150);
+                    lb.Size = new Size(250, 200);
                     string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TenPhong;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].Id);
                     string maKh;
@@ -79,6 +80,8 @@ namespace _3_GUI
                     lb.Text = str;
                     lb.Text =tenPhong;
                     lb.BackColor = Color.Red;
+                    lb.Font = new Font("Arial", 14, FontStyle.Regular);
+                    lb.Padding = new Padding(10,10,10,10);
                     int _trangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TrangThai);
                     if (_trangThai == 1)
                     {
@@ -103,11 +106,11 @@ namespace _3_GUI
 
                     //dọn phòng
                     if (lb.Name == _idPhongDonPhong.ToString())//dọn phòng
-                        {
-                            //string thoiGian = counter.ToString();
-                            DateTime thoiGianbg = DateTime.Now;
-                            lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
-                        }
+                    {
+                        //string thoiGian = counter.ToString();
+                        DateTime thoiGianbg = DateTime.Now;
+                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                    }
                     //tableLayoutPanel1.RowCount++;
                     foreach (var x in _lstPhong)
                     {
@@ -116,7 +119,7 @@ namespace _3_GUI
 
                             var hoaDon = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().FirstOrDefault(y => y.Idphong.ToString() == lb.Name && y.IdtranngThai ==1);
                             var khachHang = _ibUS_KhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == hoaDon.IdmaKh);
-                            lb.Text = tenPhong + "\n" + "Khách hàng :" + khachHang.Ho + khachHang.TenDem + khachHang.Ten + "\n" + "Thời gian vào:" + hoaDon.ThoiGianBatDau + "\n";
+                            lb.Text = tenPhong + "\n" + "Khách hàng :\n" + khachHang.Ho + khachHang.TenDem + khachHang.Ten + "\n" + "Thời gian vào :\n" + hoaDon.ThoiGianBatDau + "\n";
 
                         }
                     }

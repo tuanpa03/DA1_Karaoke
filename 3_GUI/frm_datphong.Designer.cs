@@ -98,7 +98,7 @@ namespace _3_GUI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 907);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1612, 881);
             this.tableLayoutPanel1.TabIndex = 10;
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tableLayoutPanel1_MouseDown);
             // 
@@ -114,7 +114,7 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(3, 914);
+            this.panel1.Location = new System.Drawing.Point(3, 894);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1612, 142);
             this.panel1.TabIndex = 9;
@@ -217,7 +217,7 @@ namespace _3_GUI
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(3, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1612, 907);
+            this.groupBox1.Size = new System.Drawing.Size(1612, 887);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
