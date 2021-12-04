@@ -53,7 +53,7 @@ namespace _3_GUI_PresentationLayer
 
         private void loadtien()
         {
-            txt_tong.Text = null;
+            txt_tongtien.Text = null;
             lbl_tenPhong.Text = _phong_Service.sendlstPhong().Where(x => x.Id == _hoaDonBanHang.Idphong).SingleOrDefault().TenPhong.ToString();
             txt_tienphong.Text = _loaiphong_Service.sendlstLoaiPhong()
                 .Where(x => x.Id == _phong_Service.sendlstPhong()
@@ -188,7 +188,7 @@ namespace _3_GUI_PresentationLayer
         private void btn_fakethanhtoan_Click(object sender, EventArgs e)
         {
             double tientheogio = (DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour + 1) * 70000;
-            txt_tong.Text = (double.Parse(txt_tienphong.Text) + double.Parse(txt_tiendv.Text) + tientheogio +double.Parse(txt_chiphikhac.Text)).ToString();
+            txt_tongtien.Text = (double.Parse(txt_tienphong.Text) + double.Parse(txt_tiendv.Text) + tientheogio +double.Parse(txt_chiphikhac.Text)).ToString();
         }
 
         private void btn_thanhToanHoaDon_Click(object sender, EventArgs e)

@@ -20,10 +20,27 @@ namespace _3_GUI
         private IBUS_Tang_Service _iBUS_Tang_Service;
         private Phong _phong;
         private int _idPhong;
-
+        private IBUS_NhanVien_Service _nhanVienService;
+        private string _tennhanvien;
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
-
+        public frm_Phong(string manv)
+        {
+            InitializeComponent();
+            _iBUS_Phong_Service = new BUS_Phong_Service();
+            _iBUS_LoaiPhong_Service = new BUS_LoaiPhong_Service();
+            _iBUS_Tang_Service = new BUS_Tang_Service();
+            _nhanVienService = new BUS_NhanVien_Service();
+            _phong = new Phong();
+            cbb_trangThai.Enabled = false;
+            LoadData();
+            loadcmbLoaiPhong();
+            loadcmbTang();
+            loadcmbTrangThai();
+            _tennhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == manv).Ten;
+            //tbx_ngayCapNhap.Visible = false;
+            //tbx_ngayTao.Visible = false;
+        }
         public frm_Phong()
         {
             InitializeComponent();
@@ -141,10 +158,7 @@ namespace _3_GUI
             //    rbt_khongCoKhach.Checked = true;
             //}
             tbx_SucChua.Text = row.Cells[5].Value + "";           
-            tbx_nguoiTao.Text = row.Cells[6].Value + "";
-            tbx_ngayTao.Text = row.Cells[7].Value + "";
-            tbx_nguoiCapNhap.Text = row.Cells[8].Value + "";
-            tbx_ngayCapNhap.Text = row.Cells[9].Value + "";
+            
 
             _idPhong = Convert.ToInt32(row.Cells[0].Value + "");
             // Enabled button
@@ -175,9 +189,9 @@ namespace _3_GUI
                 _phong.TrangThai = 1;
                 _phong.Idtang = Convert.ToInt32( cbb_idtang.Text);
                 _phong.SucChua = Convert.ToInt32(tbx_SucChua.Text);
-                _phong.NguoiTao = tbx_nguoiTao.Text;
+                _phong.NguoiTao = _tennhanvien;
                 _phong.NgayTao = DateTime.Now;
-                _phong.NguoiCapNhap = tbx_nguoiCapNhap.Text;
+                _phong.NguoiCapNhap = _tennhanvien;
                 _phong.NgayCapNhap = DateTime.Now;
                 _phong.IdtranngThai = "1";
                 MessageBox.Show(_iBUS_Phong_Service.Add(_phong).ToString());
@@ -198,7 +212,7 @@ namespace _3_GUI
                 phong.TenPhong = tbx_tenPhong.Text;
                 phong.Idtang = Convert.ToInt32( cbb_idtang.Text);
                 phong.SucChua = Convert.ToInt32( tbx_SucChua.Text);
-                phong.NguoiCapNhap = tbx_nguoiCapNhap.Text;
+                phong.NguoiCapNhap = _tennhanvien;
                 phong.NgayCapNhap = DateTime.Now;
                 if (cbb_trangThai.Text == "1-Phòng trống")
                 {

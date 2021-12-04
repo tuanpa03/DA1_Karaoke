@@ -18,7 +18,15 @@ namespace _3_GUI
         private IBUS_ThietBi_Service _service;
         private IBUS_LoaiThietBi_Service _lTBservice;
         private List<LoaiThietBi> _ltb;
-        public frm_ThietBi()
+        public frm_ThietBi(string manv)
+        {
+            InitializeComponent();
+            _service = new BUS_ThietBi_Service();
+            _lTBservice = new BUS_LoaiThietBi_Service();
+            _ltb = new List<LoaiThietBi>();
+            LoadData();
+            loadcmbIDDVT();
+        } public frm_ThietBi()
         {
             InitializeComponent();
             _service = new BUS_ThietBi_Service();

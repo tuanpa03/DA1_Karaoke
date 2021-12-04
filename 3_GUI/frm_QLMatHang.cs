@@ -20,7 +20,20 @@ namespace _3_GUI_PresentationLayer
     {
         private IBUS_MatHang_Service _matHangService;
         private static IBUS_DonViTinh_Service _donViTinhService;
+        private IBUS_NhanVien_Service _nhanVienService;
         private List<DonViTinh> _dvt;
+        private string _manv;
+        private string _nhanvien;
+        public frm_QLMatHang(string manv)
+        {
+            InitializeComponent();
+            _matHangService = new BUS_MatHang_Service();
+            _donViTinhService = new BUS_DonViTinh_Service();
+            _nhanVienService = new BUS_NhanVien_Service();
+            _dvt = new List<DonViTinh>();
+            _manv = manv;
+            _nhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == manv).Ten;
+        }
         public frm_QLMatHang()
         {
             InitializeComponent();
@@ -34,7 +47,6 @@ namespace _3_GUI_PresentationLayer
             loadcmbIDDVT();
             dgv_QLMatHang.Columns["Id"].Visible = false;
         }
-        private string nhanvien = "admin";
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txt_TenMH.Text)||!string.IsNullOrEmpty(txt_DonGia.Text)) // nếu text box k null
@@ -44,7 +56,7 @@ namespace _3_GUI_PresentationLayer
                 matHang.TenMatHang = txt_TenMH.Text;
                 matHang.DonGia =Convert.ToInt32(txt_DonGia.Text);
                 matHang.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
-                matHang.NguoiTao = nhanvien;
+                matHang.NguoiTao = _nhanvien;
                 matHang.NgayTao = DateTime.Now;
                 _matHangService.AddMatHangh(matHang);
                 MessageBox.Show("Thêm mặt hàng thành công", "hoàn thành", MessageBoxButtons.OK,
@@ -90,7 +102,7 @@ namespace _3_GUI_PresentationLayer
                 mh.DonGia =int.Parse(txt_DonGia.Text);
                 mh.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
                 mh.NgayCapNhap=DateTime.Now;
-                mh.NguoiCapNhap = nhanvien;
+                mh.NguoiCapNhap = _nhanvien;
                 if (_matHangService.EditMatHang(mh))
                 {
                     MessageBox.Show("Sửa mặt hàng thành công", "thông báo", MessageBoxButtons.OK);
@@ -151,7 +163,7 @@ namespace _3_GUI_PresentationLayer
                 }).ToList();
             dgv_QLMatHang.DataSource = data;
         }
-        public static void loadcmbIDDVT()
+        public void loadcmbIDDVT()
         {
             foreach (var x in _donViTinhService.GetlstDonViTinhs())
             {

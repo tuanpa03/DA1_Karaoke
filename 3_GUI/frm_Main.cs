@@ -48,32 +48,16 @@ namespace _3_GUI
         {
             load();
         }
-        private Form currentFormChild;
-        private void OpenChildForm(Form childform)
-        {
-            if (currentFormChild != null)
-            {
-                currentFormChild.Close();
-            }
-            currentFormChild = childform;
-            childform.TopLevel = false;
-            childform.FormBorderStyle = FormBorderStyle.None;
-            childform.Dock = DockStyle.Fill;
-            loadform.Controls.Add(childform);
-            loadform.Tag = childform;
-            childform.BringToFront();
-            childform.Show();
-        }
+        
         private void btn_DanhMuc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frm_menuDanhMuc());
-            //loadform.Controls.Clear();
-            //frm_menuDanhMuc frmMenuDanhMuc = new frm_menuDanhMuc();
-            //frmMenuDanhMuc.TopLevel = false;
-            //loadform.Controls.Add(frmMenuDanhMuc);
-            //frmMenuDanhMuc.FormBorderStyle = FormBorderStyle.None;
-            //frmMenuDanhMuc.Dock = DockStyle.Fill;
-            //frmMenuDanhMuc.Show();
+            loadform.Controls.Clear();
+            frm_menuDanhMuc frmMenuDanhMuc = new frm_menuDanhMuc(_nhanVien.MaNv);
+            frmMenuDanhMuc.TopLevel = false;
+            loadform.Controls.Add(frmMenuDanhMuc);
+            frmMenuDanhMuc.FormBorderStyle = FormBorderStyle.None;
+            frmMenuDanhMuc.Dock = DockStyle.Fill;
+            frmMenuDanhMuc.Show();
         }
 
         private void btn_Thongke_Click(object sender, EventArgs e)

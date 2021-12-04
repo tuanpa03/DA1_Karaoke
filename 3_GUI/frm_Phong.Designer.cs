@@ -35,10 +35,6 @@ namespace _3_GUI
             this.btn_xóa = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbx_nguoiTao = new System.Windows.Forms.TextBox();
-            this.tbx_ngayCapNhap = new System.Windows.Forms.TextBox();
-            this.tbx_nguoiCapNhap = new System.Windows.Forms.TextBox();
-            this.tbx_ngayTao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tbx_tenPhong = new System.Windows.Forms.TextBox();
@@ -50,10 +46,6 @@ namespace _3_GUI
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -117,42 +109,6 @@ namespace _3_GUI
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 32);
             this.label7.TabIndex = 35;
-            // 
-            // tbx_nguoiTao
-            // 
-            this.tbx_nguoiTao.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_nguoiTao.Location = new System.Drawing.Point(867, 51);
-            this.tbx_nguoiTao.Name = "tbx_nguoiTao";
-            this.tbx_nguoiTao.Size = new System.Drawing.Size(338, 34);
-            this.tbx_nguoiTao.TabIndex = 34;
-            this.tbx_nguoiTao.Text = "Admin";
-            // 
-            // tbx_ngayCapNhap
-            // 
-            this.tbx_ngayCapNhap.Enabled = false;
-            this.tbx_ngayCapNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbx_ngayCapNhap.Location = new System.Drawing.Point(867, 171);
-            this.tbx_ngayCapNhap.Name = "tbx_ngayCapNhap";
-            this.tbx_ngayCapNhap.Size = new System.Drawing.Size(338, 34);
-            this.tbx_ngayCapNhap.TabIndex = 33;
-            // 
-            // tbx_nguoiCapNhap
-            // 
-            this.tbx_nguoiCapNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_nguoiCapNhap.Location = new System.Drawing.Point(867, 131);
-            this.tbx_nguoiCapNhap.Name = "tbx_nguoiCapNhap";
-            this.tbx_nguoiCapNhap.Size = new System.Drawing.Size(338, 34);
-            this.tbx_nguoiCapNhap.TabIndex = 32;
-            this.tbx_nguoiCapNhap.Text = "Admin";
-            // 
-            // tbx_ngayTao
-            // 
-            this.tbx_ngayTao.Enabled = false;
-            this.tbx_ngayTao.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbx_ngayTao.Location = new System.Drawing.Point(867, 91);
-            this.tbx_ngayTao.Name = "tbx_ngayTao";
-            this.tbx_ngayTao.Size = new System.Drawing.Size(338, 34);
-            this.tbx_ngayTao.TabIndex = 30;
             // 
             // label1
             // 
@@ -264,46 +220,6 @@ namespace _3_GUI
             this.label10.TabIndex = 23;
             this.label10.Text = "Tầng :";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(700, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 25);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Người Tạo :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(636, 136);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 25);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Người Cập Nhập :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(709, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 25);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Ngày Tạo :";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(645, 176);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(187, 25);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Ngày Cập Nhập :";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -357,23 +273,15 @@ namespace _3_GUI
             this.groupBox2.Controls.Add(this.cbb_trangThai);
             this.groupBox2.Controls.Add(this.btn_sua);
             this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cbb_idtang);
             this.groupBox2.Controls.Add(this.btn_them);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cmb_loaiPhong);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.tbx_SucChua);
-            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbx_nguoiTao);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.tbx_ngayCapNhap);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.tbx_nguoiCapNhap);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.tbx_ngayTao);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(0, 79);
@@ -465,10 +373,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_xóa;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbx_nguoiTao;
-        private System.Windows.Forms.TextBox tbx_ngayCapNhap;
-        private System.Windows.Forms.TextBox tbx_nguoiCapNhap;
-        private System.Windows.Forms.TextBox tbx_ngayTao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox tbx_tenPhong;
@@ -480,10 +384,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

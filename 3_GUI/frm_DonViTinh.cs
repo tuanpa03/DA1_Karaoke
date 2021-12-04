@@ -133,7 +133,7 @@ namespace _3_GUI_PresentationLayer
 
         private void frm_DonViTinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frm_QLMatHang.loadcmbIDDVT();
+            //frm_QLMatHang.loadcmbIDDVT();
         }
     }
 }

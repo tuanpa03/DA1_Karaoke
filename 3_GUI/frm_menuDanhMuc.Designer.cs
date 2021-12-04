@@ -35,7 +35,7 @@ namespace _3_GUI
             this.loadform = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btn_thietbi = new System.Windows.Forms.Button();
-            this.btn_dvt = new System.Windows.Forms.Button();
+            this.btn_ctt = new System.Windows.Forms.Button();
             this.btn_loaithietbi = new System.Windows.Forms.Button();
             this.btn_nhacungcap = new System.Windows.Forms.Button();
             this.btn_loaiphong = new System.Windows.Forms.Button();
@@ -114,21 +114,21 @@ namespace _3_GUI
             this.btn_thietbi.UseVisualStyleBackColor = false;
             this.btn_thietbi.Click += new System.EventHandler(this.btn_thietbi_Click);
             // 
-            // btn_dvt
+            // btn_ctt
             // 
-            this.btn_dvt.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_dvt.FlatAppearance.BorderSize = 0;
-            this.btn_dvt.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_dvt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dvt.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_dvt.ForeColor = System.Drawing.Color.Black;
-            this.btn_dvt.Location = new System.Drawing.Point(808, 0);
-            this.btn_dvt.Name = "btn_dvt";
-            this.btn_dvt.Size = new System.Drawing.Size(202, 87);
-            this.btn_dvt.TabIndex = 1;
-            this.btn_dvt.Text = "Đơn vị tính";
-            this.btn_dvt.UseVisualStyleBackColor = false;
-            this.btn_dvt.Click += new System.EventHandler(this.btn_dvt_Click);
+            this.btn_ctt.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_ctt.FlatAppearance.BorderSize = 0;
+            this.btn_ctt.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_ctt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ctt.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ctt.ForeColor = System.Drawing.Color.Black;
+            this.btn_ctt.Location = new System.Drawing.Point(1010, 0);
+            this.btn_ctt.Name = "btn_ctt";
+            this.btn_ctt.Size = new System.Drawing.Size(202, 87);
+            this.btn_ctt.TabIndex = 1;
+            this.btn_ctt.Text = "Công thức tính";
+            this.btn_ctt.UseVisualStyleBackColor = false;
+            this.btn_ctt.Click += new System.EventHandler(this.btn_ctt_Click);
             // 
             // btn_loaithietbi
             // 
@@ -154,7 +154,7 @@ namespace _3_GUI
             this.btn_nhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nhacungcap.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_nhacungcap.ForeColor = System.Drawing.Color.Black;
-            this.btn_nhacungcap.Location = new System.Drawing.Point(1010, 0);
+            this.btn_nhacungcap.Location = new System.Drawing.Point(808, 0);
             this.btn_nhacungcap.Name = "btn_nhacungcap";
             this.btn_nhacungcap.Size = new System.Drawing.Size(202, 87);
             this.btn_nhacungcap.TabIndex = 1;
@@ -180,10 +180,10 @@ namespace _3_GUI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_ctt);
             this.panel1.Controls.Add(this.btn_loaithietbi);
             this.panel1.Controls.Add(this.btn_thietbi);
             this.panel1.Controls.Add(this.btn_Phong);
-            this.panel1.Controls.Add(this.btn_dvt);
             this.panel1.Controls.Add(this.btn_nhacungcap);
             this.panel1.Controls.Add(this.btn_loaiphong);
             this.panel1.Controls.Add(this.btn_Nhanvien);
@@ -219,7 +219,7 @@ namespace _3_GUI
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_thietbi;
         private System.Windows.Forms.Button btn_nhacungcap;
-        private System.Windows.Forms.Button btn_dvt;
+        private System.Windows.Forms.Button btn_ctt;
         private System.Windows.Forms.Button btn_loaithietbi;
         private System.Windows.Forms.Button btn_loaiphong;
         private System.Windows.Forms.Panel panel1;

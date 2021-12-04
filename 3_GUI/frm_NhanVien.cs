@@ -18,18 +18,30 @@ namespace _3_GUI
         private IBUS_NhanVien_Service _ibusNhanVien;
         private IBUS_CheckEverything _icheck;
         private NhanVien _tblNhanVien;
-
+        private NhanVien _newNhanVien;
         private string erorr = "Aiizaaa... Lỗi rồi kìa 😂";
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
-
-        public frm_NhanVien()
+        public frm_NhanVien(string manv)
         {
             InitializeComponent();
             _ibusNhanVien = new BUS_NhanVien_Service();
             _icheck = new BUS_CheckEverything();
             _tblNhanVien = new NhanVien();
             LoadCbxChucVu();
+            _newNhanVien = new NhanVien();
+            _newNhanVien = _ibusNhanVien.GetlstNhanViens().Where(c => c.MaNv == manv).SingleOrDefault();
+            loadquyen();
+            LoadDgrNhanVien();
+        }
+        void loadquyen()
+        {
+            if (_newNhanVien.IdchucVu != 1)
+            {
+                groupBox1.Visible = false;
+                groupBox2.Visible = false;
+                panel_dgr_NhanVien.Location = new Point(0, 200);
+            }
         }
         void LoadCbxChucVu()
         {
@@ -68,13 +80,6 @@ namespace _3_GUI
         }
         void LoadDgrNhanVienByFindName(string tennv)
         {
-            DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
-            combo.HeaderText = "CHỨC NĂNG";
-            combo.Items.Add("Add");
-            combo.Items.Add("Update");
-            combo.Items.Add("Remove");
-            combo.Items.Add("Save");
-
             dgr_NhanVien.ColumnCount = 8;
             dgr_NhanVien.Columns[0].Name = "Mã NV";
             dgr_NhanVien.Columns[1].Name = "Họ Và Tên";
@@ -84,7 +89,6 @@ namespace _3_GUI
             dgr_NhanVien.Columns[5].Name = "Điện Thoại";
             dgr_NhanVien.Columns[6].Name = "CCCD";
             dgr_NhanVien.Columns[7].Name = "Địa Chỉ";
-            dgr_NhanVien.Columns.Add(combo);
             dgr_NhanVien.Rows.Clear();
             foreach (var x in _ibusNhanVien.FindName(tennv))
             {
@@ -193,10 +197,6 @@ namespace _3_GUI
             }
             LoadDgrNhanVien();
             ClearForm();
-        }
-        private void btn_DanhSach_Click(object sender, EventArgs e)
-        {
-            LoadDgrNhanVien();
         }
         private void btn_Luu_Click(object sender, EventArgs e)
         {

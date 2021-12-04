@@ -13,6 +13,12 @@ namespace _3_GUI
 {
     public partial class frm_menuDanhMuc : Form
     {
+        private string _manv;
+        public frm_menuDanhMuc(string manv)
+        {
+            _manv = manv;
+            InitializeComponent();
+        }
         public frm_menuDanhMuc()
         {
             InitializeComponent();
@@ -23,7 +29,7 @@ namespace _3_GUI
             buttomcolor();
             btn_Phong.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_Phong frmPhong = new frm_Phong();
+            frm_Phong frmPhong = new frm_Phong(_manv);
             frmPhong.TopLevel = false;
             loadform.Controls.Add(frmPhong);
             frmPhong.FormBorderStyle = FormBorderStyle.None;
@@ -36,7 +42,7 @@ namespace _3_GUI
             buttomcolor();
             btn_Nhanvien.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_NhanVien frmNhanVien = new frm_NhanVien();
+            frm_NhanVien frmNhanVien = new frm_NhanVien(_manv);
             frmNhanVien.TopLevel = false;
             loadform.Controls.Add(frmNhanVien);
             frmNhanVien.FormBorderStyle = FormBorderStyle.None;
@@ -48,21 +54,24 @@ namespace _3_GUI
         {
             buttomcolor();
             button3.BackColor = SystemColors.HotTrack;
+            loadmathang();
+        }
+        public void loadmathang()
+        {
             loadform.Controls.Clear();
-            frm_QLMatHang frmQlMatHang = new frm_QLMatHang();
+            frm_QLMatHang frmQlMatHang = new frm_QLMatHang(_manv);
             frmQlMatHang.TopLevel = false;
             loadform.Controls.Add(frmQlMatHang);
             frmQlMatHang.FormBorderStyle = FormBorderStyle.None;
             frmQlMatHang.Dock = DockStyle.Fill;
             frmQlMatHang.Show();
         }
-
         private void btn_thietbi_Click(object sender, EventArgs e)
         {
             buttomcolor();
             btn_thietbi.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_ThietBi frmThietBi = new frm_ThietBi();
+            frm_ThietBi frmThietBi = new frm_ThietBi(_manv);
             frmThietBi.TopLevel = false;
             loadform.Controls.Add(frmThietBi);
             frmThietBi.FormBorderStyle = FormBorderStyle.None;
@@ -96,17 +105,17 @@ namespace _3_GUI
             frmLoaiThietBi.Show();
         }
 
-        private void btn_dvt_Click(object sender, EventArgs e)
+        private void btn_ctt_Click(object sender, EventArgs e)
         {
             buttomcolor();
-            btn_dvt.BackColor = SystemColors.HotTrack;
+            btn_ctt.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_DonViTinh frmDonViTinh = new frm_DonViTinh();
-            frmDonViTinh.TopLevel = false;
-            loadform.Controls.Add(frmDonViTinh);
-            frmDonViTinh.FormBorderStyle = FormBorderStyle.None;
-            frmDonViTinh.Dock = DockStyle.Fill;
-            frmDonViTinh.Show();
+            frm_CongThucTinh frmCongThucTinh = new frm_CongThucTinh();
+            frmCongThucTinh.TopLevel = false;
+            loadform.Controls.Add(frmCongThucTinh);
+            frmCongThucTinh.FormBorderStyle = FormBorderStyle.None;
+            frmCongThucTinh.Dock = DockStyle.Fill;
+            frmCongThucTinh.Show();
         }
 
         private void btn_loaiphong_Click(object sender, EventArgs e)
@@ -131,8 +140,10 @@ namespace _3_GUI
             btn_thietbi.BackColor = SystemColors.MenuHighlight;
             btn_nhacungcap.BackColor = SystemColors.MenuHighlight;
             btn_loaithietbi.BackColor = SystemColors.MenuHighlight;
-            btn_dvt.BackColor = SystemColors.MenuHighlight;
+            btn_ctt.BackColor = SystemColors.MenuHighlight;
             btn_loaiphong.BackColor = SystemColors.MenuHighlight;
         }
+
+       
     }
 }

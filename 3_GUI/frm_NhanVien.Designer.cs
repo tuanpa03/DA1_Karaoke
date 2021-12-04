@@ -117,7 +117,6 @@ namespace _3_GUI
             this.panel_dgr_NhanVien.Controls.Add(this.rbtn_LocNone);
             this.panel_dgr_NhanVien.Controls.Add(this.label11);
             this.panel_dgr_NhanVien.Controls.Add(this.dgr_NhanVien);
-            this.panel_dgr_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_dgr_NhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel_dgr_NhanVien.Location = new System.Drawing.Point(0, 460);
             this.panel_dgr_NhanVien.Name = "panel_dgr_NhanVien";
@@ -157,9 +156,9 @@ namespace _3_GUI
             this.txt_SearchNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_SearchNhanVien.Location = new System.Drawing.Point(1084, 0);
             this.txt_SearchNhanVien.Name = "txt_SearchNhanVien";
+            this.txt_SearchNhanVien.PlaceholderText = "nhập tên nhân viên";
             this.txt_SearchNhanVien.Size = new System.Drawing.Size(532, 34);
             this.txt_SearchNhanVien.TabIndex = 3;
-            this.txt_SearchNhanVien.Text = "Nhập tên nhân viên...";
             this.txt_SearchNhanVien.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_SearchNhanVien_KeyUp);
             // 
             // rbtn_LocNhanvien
@@ -243,7 +242,6 @@ namespace _3_GUI
             this.groupBox2.Controls.Add(this.btn_Xoa);
             this.groupBox2.Controls.Add(this.btn_Sua);
             this.groupBox2.Controls.Add(this.btn_Them);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(0, 359);
             this.groupBox2.Name = "groupBox2";
@@ -324,7 +322,6 @@ namespace _3_GUI
             this.btn_DanhSach.TabIndex = 1;
             this.btn_DanhSach.Text = "      Danh sách";
             this.btn_DanhSach.UseVisualStyleBackColor = false;
-            this.btn_DanhSach.Click += new System.EventHandler(this.btn_DanhSach_Click);
             // 
             // btn_Xoa
             // 
@@ -629,7 +626,6 @@ namespace _3_GUI
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(0, 79);
