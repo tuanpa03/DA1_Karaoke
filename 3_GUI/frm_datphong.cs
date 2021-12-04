@@ -24,6 +24,8 @@ namespace _3_GUI
         private IBUS_KhachHang_Service _ibUS_KhachHang_Service;
 
         Label lb;
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
 
         string _tenPhong;
         int _idPhongDatPhong;
@@ -258,7 +260,7 @@ namespace _3_GUI
                 _iBUS_Phong_Service.Update(phong);
                 showRoom();
             }
-            label1.Text = counter.ToString();           
+            lbl_Timer.Text = counter.ToString();           
         }
 
         private void đătPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -423,6 +425,26 @@ namespace _3_GUI
             
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 790)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 19)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }

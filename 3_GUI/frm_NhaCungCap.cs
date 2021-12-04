@@ -17,6 +17,10 @@ namespace _3_GUI
         private IBUS_NhaCungCap_Service _nhaCungCapService;
         private int _idNhanVien;
         private int _iD;
+
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
+
         public frm_NhaCungCap()
         {
             InitializeComponent();
@@ -101,6 +105,28 @@ namespace _3_GUI
             txt_Address.Text = dgrid_DataOfNCC.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_NumberPhone.Text = dgrid_DataOfNCC.Rows[e.RowIndex].Cells[3].Value.ToString();
             txt_Email.Text = dgrid_DataOfNCC.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 713)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 12)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

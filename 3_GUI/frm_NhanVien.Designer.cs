@@ -95,7 +95,7 @@ namespace _3_GUI
             // dgr_NhanVien
             // 
             this.dgr_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgr_NhanVien.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgr_NhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgr_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgr_NhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgr_NhanVien.Location = new System.Drawing.Point(0, 40);

@@ -78,7 +78,7 @@ namespace _3_GUI
             // 
             this.btn_sua.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_sua.Location = new System.Drawing.Point(1403, 95);
+            this.btn_sua.Location = new System.Drawing.Point(1454, 53);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(156, 54);
             this.btn_sua.TabIndex = 40;
@@ -90,7 +90,7 @@ namespace _3_GUI
             // 
             this.btn_xóa.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_xóa.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_xóa.Location = new System.Drawing.Point(1403, 162);
+            this.btn_xóa.Location = new System.Drawing.Point(1261, 129);
             this.btn_xóa.Name = "btn_xóa";
             this.btn_xóa.Size = new System.Drawing.Size(156, 54);
             this.btn_xóa.TabIndex = 39;
@@ -102,7 +102,7 @@ namespace _3_GUI
             // 
             this.btn_them.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_them.Location = new System.Drawing.Point(1403, 29);
+            this.btn_them.Location = new System.Drawing.Point(1261, 54);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(156, 54);
             this.btn_them.TabIndex = 37;
@@ -167,14 +167,15 @@ namespace _3_GUI
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1610, 655);
+            this.dataGridView1.Size = new System.Drawing.Size(1610, 684);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -198,7 +199,7 @@ namespace _3_GUI
             // 
             this.btn_clear.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_clear.Location = new System.Drawing.Point(1403, 223);
+            this.btn_clear.Location = new System.Drawing.Point(1454, 127);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(156, 54);
             this.btn_clear.TabIndex = 45;
@@ -316,7 +317,7 @@ namespace _3_GUI
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1414, 172);
+            this.pictureBox5.Location = new System.Drawing.Point(1272, 139);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(47, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +327,7 @@ namespace _3_GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1416, 105);
+            this.pictureBox3.Location = new System.Drawing.Point(1467, 63);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(43, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +337,7 @@ namespace _3_GUI
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1414, 39);
+            this.pictureBox2.Location = new System.Drawing.Point(1272, 64);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -377,7 +378,7 @@ namespace _3_GUI
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(0, 79);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1616, 299);
+            this.groupBox2.Size = new System.Drawing.Size(1616, 263);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin";
@@ -385,7 +386,7 @@ namespace _3_GUI
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1416, 233);
+            this.pictureBox4.Location = new System.Drawing.Point(1467, 137);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(41, 34);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -418,9 +419,10 @@ namespace _3_GUI
             // 
             this.groupBox4.Controls.Add(this.dataGridView1);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 378);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Location = new System.Drawing.Point(0, 342);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1616, 681);
+            this.groupBox4.Size = new System.Drawing.Size(1616, 717);
             this.groupBox4.TabIndex = 57;
             this.groupBox4.TabStop = false;
             // 
