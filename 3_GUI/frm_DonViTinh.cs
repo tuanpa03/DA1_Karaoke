@@ -57,6 +57,7 @@ namespace _3_GUI_PresentationLayer
             if (!string.IsNullOrEmpty(txtDVT.Text)) // nếu text box k null
             {
                 DonViTinh dvt = new DonViTinh();
+                dvt.Id = _dvtservice.GetlstDonViTinhs().Max(c => c.Id) + 1;
                 dvt.TenDvt = txtDVT.Text;
                 dvt.NguoiTao = nhanvien;
                 dvt.NgayTao = DateTime.Now;
@@ -128,6 +129,11 @@ namespace _3_GUI_PresentationLayer
                 r = null;
                 txtDVT.Text = null;
             }
+        }
+
+        private void frm_DonViTinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_QLMatHang.loadcmbIDDVT();
         }
     }
 }

@@ -54,6 +54,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_DvTInh.Location = new System.Drawing.Point(12, 95);
             this.dgv_DvTInh.Name = "dgv_DvTInh";
             this.dgv_DvTInh.ReadOnly = true;
+            this.dgv_DvTInh.RowHeadersVisible = false;
             this.dgv_DvTInh.RowHeadersWidth = 51;
             this.dgv_DvTInh.RowTemplate.Height = 29;
             this.dgv_DvTInh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -150,6 +151,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.dgv_DvTInh);
             this.Name = "frm_DonViTinh";
             this.Text = "frm_DonViTinh";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DonViTinh_FormClosing);
             this.Load += new System.EventHandler(this.frm_DonViTinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DvTInh)).EndInit();
             this.ResumeLayout(false);

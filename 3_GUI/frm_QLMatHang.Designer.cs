@@ -40,7 +40,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.cmb_IDDvTinh = new System.Windows.Forms.ComboBox();
+            cmb_IDDvTinh = new System.Windows.Forms.ComboBox();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -178,15 +178,15 @@ namespace _3_GUI_PresentationLayer
             // 
             // cmb_IDDvTinh
             // 
-            this.cmb_IDDvTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_IDDvTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_IDDvTinh.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmb_IDDvTinh.IntegralHeight = false;
-            this.cmb_IDDvTinh.Location = new System.Drawing.Point(797, 176);
-            this.cmb_IDDvTinh.Name = "cmb_IDDvTinh";
-            this.cmb_IDDvTinh.Size = new System.Drawing.Size(255, 39);
-            this.cmb_IDDvTinh.TabIndex = 10;
-            this.cmb_IDDvTinh.Click += new System.EventHandler(this.cmb_IDDvTinh_Click);
+            cmb_IDDvTinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            cmb_IDDvTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmb_IDDvTinh.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cmb_IDDvTinh.IntegralHeight = false;
+            cmb_IDDvTinh.Location = new System.Drawing.Point(797, 176);
+            cmb_IDDvTinh.Name = "cmb_IDDvTinh";
+            cmb_IDDvTinh.Size = new System.Drawing.Size(255, 39);
+            cmb_IDDvTinh.TabIndex = 10;
+            cmb_IDDvTinh.Click += new System.EventHandler(this.cmb_IDDvTinh_Click);
             // 
             // btn_close
             // 
@@ -253,7 +253,7 @@ namespace _3_GUI_PresentationLayer
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.btn_themdvt);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.cmb_IDDvTinh);
+            this.Controls.Add(cmb_IDDvTinh);
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_Them);
@@ -283,7 +283,7 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.ComboBox cmb_IDDvTinh;
+        private static System.Windows.Forms.ComboBox cmb_IDDvTinh;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Label label4;

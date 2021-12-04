@@ -232,7 +232,7 @@ namespace _3_GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.pictureBox4);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.pictureBox5);
@@ -626,6 +626,7 @@ namespace _3_GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;

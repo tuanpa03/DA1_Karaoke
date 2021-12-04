@@ -79,6 +79,12 @@ namespace _3_GUI
         private void btn_Thongke_Click(object sender, EventArgs e)
         {
             loadform.Controls.Clear();
+            frm_thongke frmThongke = new frm_thongke();
+            frmThongke.TopLevel = false;
+            loadform.Controls.Add(frmThongke);
+            frmThongke.FormBorderStyle = FormBorderStyle.None;
+            frmThongke.Dock = DockStyle.Fill;
+            frmThongke.Show();
         }
 
         private void btn_doimk_Click(object sender, EventArgs e)

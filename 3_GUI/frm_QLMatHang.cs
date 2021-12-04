@@ -19,7 +19,7 @@ namespace _3_GUI_PresentationLayer
     public partial class frm_QLMatHang : Form
     {
         private IBUS_MatHang_Service _matHangService;
-        private IBUS_DonViTinh_Service _donViTinhService;
+        private static IBUS_DonViTinh_Service _donViTinhService;
         private List<DonViTinh> _dvt;
         public frm_QLMatHang()
         {
@@ -151,7 +151,7 @@ namespace _3_GUI_PresentationLayer
                 }).ToList();
             dgv_QLMatHang.DataSource = data;
         }
-        private void loadcmbIDDVT()
+        public static void loadcmbIDDVT()
         {
             foreach (var x in _donViTinhService.GetlstDonViTinhs())
             {
@@ -159,12 +159,6 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        private void btn_themdvt_Click(object sender, EventArgs e)
-        {
-            frm_DonViTinh frmDonViTinh = new frm_DonViTinh();
-            frmDonViTinh.ShowDialog();
-            frmDonViTinh.Dispose();
-        }
 
         private void cmb_IDDvTinh_Click(object sender, EventArgs e)
         {
@@ -186,7 +180,8 @@ namespace _3_GUI_PresentationLayer
         }
         private void btn_themdvt_Click_1(object sender, EventArgs e)
         {
-
+            frm_DonViTinh frmDonViTinh = new frm_DonViTinh();
+            frmDonViTinh.Show();
         }
     }
 }

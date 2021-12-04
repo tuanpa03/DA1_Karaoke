@@ -55,7 +55,7 @@ namespace _3_GUI
             this.btn_Phong.Name = "btn_Phong";
             this.btn_Phong.Size = new System.Drawing.Size(202, 87);
             this.btn_Phong.TabIndex = 0;
-            this.btn_Phong.Text = "Phong";
+            this.btn_Phong.Text = "Phòng";
             this.btn_Phong.UseVisualStyleBackColor = false;
             this.btn_Phong.Click += new System.EventHandler(this.btn_Phong_Click);
             // 
@@ -71,7 +71,7 @@ namespace _3_GUI
             this.btn_Nhanvien.Name = "btn_Nhanvien";
             this.btn_Nhanvien.Size = new System.Drawing.Size(202, 87);
             this.btn_Nhanvien.TabIndex = 0;
-            this.btn_Nhanvien.Text = "Nhân viên";
+            this.btn_Nhanvien.Text = "Nhân Viên";
             this.btn_Nhanvien.UseVisualStyleBackColor = false;
             this.btn_Nhanvien.Click += new System.EventHandler(this.btn_Nhanvien_Click);
             // 
@@ -174,7 +174,7 @@ namespace _3_GUI
             this.btn_loaiphong.Name = "btn_loaiphong";
             this.btn_loaiphong.Size = new System.Drawing.Size(202, 87);
             this.btn_loaiphong.TabIndex = 0;
-            this.btn_loaiphong.Text = "Loại Phong";
+            this.btn_loaiphong.Text = "Loại Phòng";
             this.btn_loaiphong.UseVisualStyleBackColor = false;
             this.btn_loaiphong.Click += new System.EventHandler(this.btn_loaiphong_Click);
             // 
