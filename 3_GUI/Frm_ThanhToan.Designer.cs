@@ -38,19 +38,19 @@ namespace _3_GUI_PresentationLayer
             this.label9 = new System.Windows.Forms.Label();
             this.dgv_MatHang = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_tongtien = new System.Windows.Forms.Label();
+            this.txt_tiendv = new System.Windows.Forms.Label();
+            this.txt_tienphong = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbx_congthucTinh = new System.Windows.Forms.ComboBox();
             this.lbl_tenPhong = new System.Windows.Forms.Label();
             this.btn_fakethanhtoan = new System.Windows.Forms.Button();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.txt_tienphong = new System.Windows.Forms.Label();
-            this.txt_tiendv = new System.Windows.Forms.Label();
-            this.txt_chiphikhac = new System.Windows.Forms.TextBox();
             this.trakhach = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_tongtien = new System.Windows.Forms.Label();
             this.txt_khachtra = new System.Windows.Forms.TextBox();
+            this.txt_chiphikhac = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chitietdichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MatHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,7 +62,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_chitietdichvu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_chitietdichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_chitietdichvu.EnableHeadersVisualStyles = false;
-            this.dgv_chitietdichvu.Location = new System.Drawing.Point(-14, 83);
+            this.dgv_chitietdichvu.Location = new System.Drawing.Point(0, 83);
             this.dgv_chitietdichvu.MultiSelect = false;
             this.dgv_chitietdichvu.Name = "dgv_chitietdichvu";
             this.dgv_chitietdichvu.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -70,7 +70,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_chitietdichvu.RowHeadersWidth = 51;
             this.dgv_chitietdichvu.RowTemplate.Height = 29;
             this.dgv_chitietdichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_chitietdichvu.Size = new System.Drawing.Size(1225, 400);
+            this.dgv_chitietdichvu.Size = new System.Drawing.Size(1212, 400);
             this.dgv_chitietdichvu.TabIndex = 0;
             this.dgv_chitietdichvu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_chitietdichvu_CellClick);
             // 
@@ -145,7 +145,8 @@ namespace _3_GUI_PresentationLayer
             this.dgv_MatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_MatHang.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_MatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MatHang.Location = new System.Drawing.Point(-1, 547);
+            this.dgv_MatHang.ColumnHeadersVisible = false;
+            this.dgv_MatHang.Location = new System.Drawing.Point(0, 547);
             this.dgv_MatHang.Name = "dgv_MatHang";
             this.dgv_MatHang.RowHeadersWidth = 51;
             this.dgv_MatHang.RowTemplate.Height = 29;
@@ -178,6 +179,56 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 864);
             this.panel1.TabIndex = 12;
+            // 
+            // txt_tongtien
+            // 
+            this.txt_tongtien.AutoSize = true;
+            this.txt_tongtien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tongtien.Location = new System.Drawing.Point(214, 413);
+            this.txt_tongtien.Name = "txt_tongtien";
+            this.txt_tongtien.Size = new System.Drawing.Size(26, 31);
+            this.txt_tongtien.TabIndex = 43;
+            this.txt_tongtien.Text = "0";
+            // 
+            // txt_tiendv
+            // 
+            this.txt_tiendv.AutoSize = true;
+            this.txt_tiendv.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tiendv.Location = new System.Drawing.Point(214, 125);
+            this.txt_tiendv.Name = "txt_tiendv";
+            this.txt_tiendv.Size = new System.Drawing.Size(82, 31);
+            this.txt_tiendv.TabIndex = 43;
+            this.txt_tiendv.Text = "dichvu";
+            // 
+            // txt_tienphong
+            // 
+            this.txt_tienphong.AutoSize = true;
+            this.txt_tienphong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_tienphong.Location = new System.Drawing.Point(214, 75);
+            this.txt_tienphong.Name = "txt_tienphong";
+            this.txt_tienphong.Size = new System.Drawing.Size(81, 31);
+            this.txt_tienphong.TabIndex = 43;
+            this.txt_tienphong.Text = "phong";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(25, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 31);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Tiền trả khác :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 31);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Tiền khách trả :";
             // 
             // label7
             // 
@@ -225,42 +276,6 @@ namespace _3_GUI_PresentationLayer
             this.btn_fakethanhtoan.UseVisualStyleBackColor = false;
             this.btn_fakethanhtoan.Click += new System.EventHandler(this.btn_fakethanhtoan_Click);
             // 
-            // txt_search
-            // 
-            this.txt_search.Location = new System.Drawing.Point(12, 496);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(372, 27);
-            this.txt_search.TabIndex = 12;
-            this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
-            // 
-            // txt_tienphong
-            // 
-            this.txt_tienphong.AutoSize = true;
-            this.txt_tienphong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tienphong.Location = new System.Drawing.Point(214, 75);
-            this.txt_tienphong.Name = "txt_tienphong";
-            this.txt_tienphong.Size = new System.Drawing.Size(81, 31);
-            this.txt_tienphong.TabIndex = 43;
-            this.txt_tienphong.Text = "phong";
-            // 
-            // txt_tiendv
-            // 
-            this.txt_tiendv.AutoSize = true;
-            this.txt_tiendv.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tiendv.Location = new System.Drawing.Point(214, 125);
-            this.txt_tiendv.Name = "txt_tiendv";
-            this.txt_tiendv.Size = new System.Drawing.Size(82, 31);
-            this.txt_tiendv.TabIndex = 43;
-            this.txt_tiendv.Text = "dichvu";
-            // 
-            // txt_chiphikhac
-            // 
-            this.txt_chiphikhac.Location = new System.Drawing.Point(199, 175);
-            this.txt_chiphikhac.Multiline = true;
-            this.txt_chiphikhac.Name = "txt_chiphikhac";
-            this.txt_chiphikhac.Size = new System.Drawing.Size(188, 31);
-            this.txt_chiphikhac.TabIndex = 32;
-            // 
             // trakhach
             // 
             this.trakhach.Location = new System.Drawing.Point(199, 325);
@@ -268,36 +283,6 @@ namespace _3_GUI_PresentationLayer
             this.trakhach.Name = "trakhach";
             this.trakhach.Size = new System.Drawing.Size(188, 31);
             this.trakhach.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 31);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Tiền khách trả :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(25, 325);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 31);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Tiền trả khác :";
-            // 
-            // txt_tongtien
-            // 
-            this.txt_tongtien.AutoSize = true;
-            this.txt_tongtien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tongtien.Location = new System.Drawing.Point(214, 413);
-            this.txt_tongtien.Name = "txt_tongtien";
-            this.txt_tongtien.Size = new System.Drawing.Size(26, 31);
-            this.txt_tongtien.TabIndex = 43;
-            this.txt_tongtien.Text = "0";
             // 
             // txt_khachtra
             // 
@@ -307,12 +292,28 @@ namespace _3_GUI_PresentationLayer
             this.txt_khachtra.Size = new System.Drawing.Size(188, 31);
             this.txt_khachtra.TabIndex = 32;
             // 
+            // txt_chiphikhac
+            // 
+            this.txt_chiphikhac.Location = new System.Drawing.Point(199, 175);
+            this.txt_chiphikhac.Multiline = true;
+            this.txt_chiphikhac.Name = "txt_chiphikhac";
+            this.txt_chiphikhac.Size = new System.Drawing.Size(188, 31);
+            this.txt_chiphikhac.TabIndex = 32;
+            // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(21, 502);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(372, 27);
+            this.txt_search.TabIndex = 12;
+            this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
+            // 
             // Frm_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1616, 1087);
+            this.ClientSize = new System.Drawing.Size(1616, 1053);
             this.Controls.Add(this.dgv_MatHang);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.panel1);

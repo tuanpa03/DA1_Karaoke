@@ -32,7 +32,7 @@ namespace _3_GUI
             this.btn_Phong = new System.Windows.Forms.Button();
             this.btn_Nhanvien = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.loadform = new System.Windows.Forms.Panel();
+            loadform = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btn_thietbi = new System.Windows.Forms.Button();
             this.btn_ctt = new System.Windows.Forms.Button();
@@ -93,10 +93,10 @@ namespace _3_GUI
             // 
             // loadform
             // 
-            this.loadform.Location = new System.Drawing.Point(0, 109);
-            this.loadform.Name = "loadform";
-            this.loadform.Size = new System.Drawing.Size(1616, 950);
-            this.loadform.TabIndex = 1;
+            loadform.Location = new System.Drawing.Point(0, 109);
+            loadform.Name = "loadform";
+            loadform.Size = new System.Drawing.Size(1616, 950);
+            loadform.TabIndex = 1;
             // 
             // btn_thietbi
             // 
@@ -200,7 +200,7 @@ namespace _3_GUI
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1616, 1059);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.loadform);
+            this.Controls.Add(loadform);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_menuDanhMuc";
@@ -215,7 +215,7 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_Phong;
         private System.Windows.Forms.Button btn_Nhanvien;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel loadform;
+        private static System.Windows.Forms.Panel loadform;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_thietbi;
         private System.Windows.Forms.Button btn_nhacungcap;

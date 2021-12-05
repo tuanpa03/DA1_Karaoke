@@ -92,6 +92,7 @@ namespace _3_GUI_PresentationLayer
                  {
                      a.Id,
                      a.TenMatHang,
+                     a.SoLuong,
                      a.DonGia,
                  }).ToList();
             dgv_MatHang.DataSource = data;
@@ -134,15 +135,24 @@ namespace _3_GUI_PresentationLayer
             newChiTietHoaDonBan.IdhoaDon = _hoaDonBanHang.IdhoaDon;
             newChiTietHoaDonBan.IdmatHang = int.Parse(r.Cells["Id"].Value.ToString());
             newChiTietHoaDonBan.DonGia = int.Parse(r.Cells["DonGia"].Value.ToString());
+            if (_matHangService.GetlstMatHangs().SingleOrDefault(c => c.Id == newChiTietHoaDonBan.IdmatHang).SoLuong == 0)
+            {
+                MessageBox.Show("hết hàng", "thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            _matHangService.banhang(newChiTietHoaDonBan.IdmatHang);
             _chiTietHoaDonBanService.Add(newChiTietHoaDonBan);
             loaddichvu();
+            showdata();
         }
         private void removedichvu(DataGridViewRow x)
         {
             //newChiTietHoaDonBan.IdhoaDon = 1;
             //newChiTietHoaDonBan.IdmatHang = int.Parse(r.Cells["Id"].Value.ToString());
+            _matHangService.hoantra(int.Parse(r.Cells["Id"].Value.ToString()));
             _chiTietHoaDonBanService.Remove(int.Parse(r.Cells["IdchiTietHoaDonBan"].Value.ToString()));
             loaddichvu();
+            showdata();
         }
         private DataGridViewRow r;
         private DataGridViewColumn c;

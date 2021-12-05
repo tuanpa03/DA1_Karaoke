@@ -24,23 +24,6 @@ namespace _3_GUI
         private string _tennhanvien;
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
-        public frm_Phong(string manv)
-        {
-            InitializeComponent();
-            _iBUS_Phong_Service = new BUS_Phong_Service();
-            _iBUS_LoaiPhong_Service = new BUS_LoaiPhong_Service();
-            _iBUS_Tang_Service = new BUS_Tang_Service();
-            _nhanVienService = new BUS_NhanVien_Service();
-            _phong = new Phong();
-            cbb_trangThai.Enabled = false;
-            LoadData();
-            loadcmbLoaiPhong();
-            loadcmbTang();
-            loadcmbTrangThai();
-            _tennhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == manv).Ten;
-            //tbx_ngayCapNhap.Visible = false;
-            //tbx_ngayTao.Visible = false;
-        }
         public frm_Phong()
         {
             InitializeComponent();

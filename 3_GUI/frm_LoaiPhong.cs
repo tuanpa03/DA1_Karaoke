@@ -2,13 +2,8 @@
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3_GUI
@@ -45,7 +40,7 @@ namespace _3_GUI
             dgv_loaiPhong.Rows.Clear();
             foreach (var x in _iBUS_LoaiPhong_Service.sendlstLoaiPhong())
             {
-                dgv_loaiPhong.Rows.Add(x.TenLoaiPhong, x.DonGia,Convert.ToInt32( x.IdtranngThai )==1 ? "Hoạt Động" : "Không Hoạt Động", x.Id );
+                dgv_loaiPhong.Rows.Add(x.TenLoaiPhong, x.DonGia, Convert.ToInt32(x.IdtranngThai) == 1 ? "Hoạt Động" : "Không Hoạt Động", x.Id);
             }
         }
         private void LoadDataTang()
@@ -64,7 +59,7 @@ namespace _3_GUI
         }
         private bool checkFormLoaiPhong()
         {
-            if (tbx_tenLoaiPhong.Text.Length == 0 || tbx_donGia.Text.Length == 0 )
+            if (tbx_tenLoaiPhong.Text.Length == 0 || tbx_donGia.Text.Length == 0)
             {
                 MessageBox.Show("Không được để trống thông tin Loại Phòng");
                 return true;
@@ -88,7 +83,7 @@ namespace _3_GUI
             var row = dgv_loaiPhong.Rows[indexRow];
             tbx_tenLoaiPhong.Text = row.Cells[0].Value + "";
             tbx_donGia.Text = row.Cells[1].Value + "";
-            _idLoaiPhong =Convert.ToInt32( row.Cells[3].Value);
+            _idLoaiPhong = Convert.ToInt32(row.Cells[3].Value);
             btn_themLoaiPhong.Enabled = false;
         }
         private void ClearFormLoaiPhong()
@@ -183,7 +178,7 @@ namespace _3_GUI
                 _tang = new Tang();
                 _tang.Idtang = Convert.ToInt32(_iBUS_Tang_Service.sendlstTang().Max(x => x.Idtang) + 1);
                 _tang.TenTang = _tang.Idtang.ToString();
-                _tang.SoLuongPhong = Convert.ToInt32( tbx_soLuongPhong.Text);
+                _tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
                 _tang.IdtrangThai = 1;
                 MessageBox.Show(_iBUS_Tang_Service.Add(_tang).ToString());
                 LoadDataTang();
@@ -201,7 +196,7 @@ namespace _3_GUI
                 var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
                 //tang.TenTang = tbx_tenTang.Text;
                 //tang.IdtrangThai = tbx_TrangThaiTang.Text;
-                tang.SoLuongPhong = Convert.ToInt32( tbx_soLuongPhong.Text);
+                tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
                 MessageBox.Show(_iBUS_Tang_Service.Update(tang).ToString());
                 LoadDataTang();
                 ClearFormTang();

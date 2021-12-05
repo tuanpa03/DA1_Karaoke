@@ -83,6 +83,16 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap confirm_accept_web_icon_correct_65993 {
+            get {
+                object obj = ResourceManager.GetObject("confirm-accept-web-icon-correct-65993", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap karaoke_party_banner_layout_95169_774 {
             get {
                 object obj = ResourceManager.GetObject("karaoke-party-banner-layout_95169-774", resourceCulture);

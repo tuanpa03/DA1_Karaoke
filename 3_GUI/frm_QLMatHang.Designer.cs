@@ -41,8 +41,6 @@ namespace _3_GUI_PresentationLayer
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.cmb_IDDvTinh = new System.Windows.Forms.ComboBox();
-            this.btn_close = new System.Windows.Forms.Button();
-            this.btn_Luu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_themdvt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLMatHang)).BeginInit();
@@ -188,35 +186,6 @@ namespace _3_GUI_PresentationLayer
             this.cmb_IDDvTinh.TabIndex = 10;
             this.cmb_IDDvTinh.Click += new System.EventHandler(this.cmb_IDDvTinh_Click);
             // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.BackColor = System.Drawing.Color.Red;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_close.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_close.Location = new System.Drawing.Point(1446, 735);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(158, 61);
-            this.btn_close.TabIndex = 11;
-            this.btn_close.Text = "Đóng";
-            this.btn_close.UseVisualStyleBackColor = false;
-            // 
-            // btn_Luu
-            // 
-            this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Luu.BackColor = System.Drawing.Color.Red;
-            this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Luu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Luu.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_Luu.Location = new System.Drawing.Point(1238, 735);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(158, 61);
-            this.btn_Luu.TabIndex = 12;
-            this.btn_Luu.Text = "Lưu";
-            this.btn_Luu.UseVisualStyleBackColor = false;
-            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -250,9 +219,7 @@ namespace _3_GUI_PresentationLayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1702, 818);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.btn_themdvt);
-            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.cmb_IDDvTinh);
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Sua);
@@ -283,8 +250,6 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_themdvt;
         private System.Windows.Forms.ComboBox cmb_IDDvTinh;

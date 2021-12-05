@@ -18,25 +18,22 @@ namespace _3_GUI
         private IBUS_NhanVien_Service _ibusNhanVien;
         private IBUS_CheckEverything _icheck;
         private NhanVien _tblNhanVien;
-        private NhanVien _newNhanVien;
         private string erorr = "Aiizaaa... Lỗi rồi kìa 😂";
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
-        public frm_NhanVien(string manv)
+        public frm_NhanVien()
         {
             InitializeComponent();
             _ibusNhanVien = new BUS_NhanVien_Service();
             _icheck = new BUS_CheckEverything();
             _tblNhanVien = new NhanVien();
             LoadCbxChucVu();
-            _newNhanVien = new NhanVien();
-            _newNhanVien = _ibusNhanVien.GetlstNhanViens().Where(c => c.MaNv == manv).SingleOrDefault();
             loadquyen();
             LoadDgrNhanVien();
         }
         void loadquyen()
         {
-            if (_newNhanVien.IdchucVu != 1)
+            if (Frm_Main.sendnhanvien().IdchucVu != 1)
             {
                 groupBox1.Visible = false;
                 groupBox2.Visible = false;

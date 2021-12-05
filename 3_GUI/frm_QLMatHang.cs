@@ -13,6 +13,7 @@ using _2_BUS.BUS_MatHang_Service;
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
+using _3_GUI;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -23,17 +24,7 @@ namespace _3_GUI_PresentationLayer
         private IBUS_NhanVien_Service _nhanVienService;
         private List<DonViTinh> _dvt;
         private string _manv;
-        private string _nhanvien;
-        public frm_QLMatHang(string manv)
-        {
-            InitializeComponent();
-            _matHangService = new BUS_MatHang_Service();
-            _donViTinhService = new BUS_DonViTinh_Service();
-            _nhanVienService = new BUS_NhanVien_Service();
-            _dvt = new List<DonViTinh>();
-            _manv = manv;
-            _nhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == manv).Ten;
-        }
+
         public frm_QLMatHang()
         {
             InitializeComponent();
@@ -56,7 +47,7 @@ namespace _3_GUI_PresentationLayer
                 matHang.TenMatHang = txt_TenMH.Text;
                 matHang.DonGia =Convert.ToInt32(txt_DonGia.Text);
                 matHang.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
-                matHang.NguoiTao = _nhanvien;
+                matHang.NguoiTao = Frm_Main.sendnhanvien().Ten;
                 matHang.NgayTao = DateTime.Now;
                 _matHangService.AddMatHangh(matHang);
                 MessageBox.Show("Thêm mặt hàng thành công", "hoàn thành", MessageBoxButtons.OK,
@@ -102,7 +93,7 @@ namespace _3_GUI_PresentationLayer
                 mh.DonGia =int.Parse(txt_DonGia.Text);
                 mh.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
                 mh.NgayCapNhap=DateTime.Now;
-                mh.NguoiCapNhap = _nhanvien;
+                mh.NguoiCapNhap = Frm_Main.sendnhanvien().Ten;
                 if (_matHangService.EditMatHang(mh))
                 {
                     MessageBox.Show("Sửa mặt hàng thành công", "thông báo", MessageBoxButtons.OK);
@@ -140,12 +131,7 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-        private void btn_Luu_Click(object sender, EventArgs e)
-        {
-            _matHangService.SaveMatHang();
-            MessageBox.Show("lưu thành công", "thông báo", MessageBoxButtons.OK);
-        }
-
+       
         
        
         private void showdata()
@@ -158,6 +144,7 @@ namespace _3_GUI_PresentationLayer
                 {
                     a.Id,
                     a.TenMatHang,
+                    a.SoLuong,
                     a.DonGia,
                     b.TenDvt,
                 }).ToList();
@@ -177,19 +164,7 @@ namespace _3_GUI_PresentationLayer
             cmb_IDDvTinh.Items.Clear();
             loadcmbIDDVT();
         }
-        private Form currentFormChild;
-        private void OpenChildForm(Form childform)
-        {
-            if (currentFormChild!=null)
-            {
-                currentFormChild.Close();
-            }
-            currentFormChild = childform;
-            childform.TopLevel = false;
-            childform.FormBorderStyle = FormBorderStyle.None;
-            childform.Dock = DockStyle.Fill;
-
-        }
+        
         private void btn_themdvt_Click_1(object sender, EventArgs e)
         {
             frm_DonViTinh frmDonViTinh = new frm_DonViTinh();

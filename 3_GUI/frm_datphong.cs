@@ -46,6 +46,7 @@ namespace _3_GUI
             _ihoaDonBanHang_Service = new BUS_HoaDonBanHang_Service();
             _ibUS_KhachHang_Service = new BUS_KhachHang_Service();
             showRoom();
+            
         }
         public frm_datphong(string idHoaDon111 /*, string khachHang111, string tgianBD111*/,string idPhong111)
         {
@@ -151,9 +152,11 @@ namespace _3_GUI
                     MessageBox.Show("Phòng chưa dọn, không thể Đặt phòng", "Thông báo");
                     return;
                 }
-                frm_DatPhongKhachHang frm_DatPhongKhachHang = new frm_DatPhongKhachHang(_idPhongDatPhong.ToString());
-                //frm_Login.MdiParent = this.MdiParent;
-                frm_DatPhongKhachHang.Show();
+                //frm_DatPhongKhachHang frm_DatPhongKhachHang = new frm_DatPhongKhachHang(_idPhongDatPhong.ToString());
+                ////frm_Login.MdiParent = this.MdiParent;
+                //frm_DatPhongKhachHang.Show();
+                frm_KhachHang frmKhachHang = new frm_KhachHang(_idPhongDatPhong);
+                frmKhachHang.Show();
             }
             catch
             {

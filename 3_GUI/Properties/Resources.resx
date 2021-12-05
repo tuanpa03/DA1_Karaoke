@@ -124,19 +124,22 @@
   <data name="CoKhachHat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\CoKhachHat2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="what-does-the-number-862-mean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\what-does-the-number-862-mean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tree.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SsDonKhach" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\SsDonKhach.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mainimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\mainimage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9d6022f153768025ad37f51d89d29ece" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9d6022f153768025ad37f51d89d29ece.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mainimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\mainimage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tree.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="what-does-the-number-862-mean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\what-does-the-number-862-mean.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SsDonKhach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\SsDonKhach.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirm-accept-web-icon-correct-65993" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\confirm-accept-web-icon-correct-65993.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

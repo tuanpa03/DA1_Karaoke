@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1_DAL.Entities;
 using _2_BUS.IBUS_MatHang_Service;
+using _3_GUI;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -22,7 +23,6 @@ namespace _3_GUI_PresentationLayer
             _dvtservice = new BUS_DonViTinh_Service();
         }
 
-        private string nhanvien = "admin";
         private void frm_DonViTinh_Load(object sender, EventArgs e)
         {
             showdata();
@@ -59,7 +59,7 @@ namespace _3_GUI_PresentationLayer
                 DonViTinh dvt = new DonViTinh();
                 dvt.Id = _dvtservice.GetlstDonViTinhs().Max(c => c.Id) + 1;
                 dvt.TenDvt = txtDVT.Text;
-                dvt.NguoiTao = nhanvien;
+                dvt.NguoiTao = Frm_Main.sendnhanvien().Ten;
                 dvt.NgayTao = DateTime.Now;
                 _dvtservice.AddDonviTinh(dvt);
                 MessageBox.Show("Thêm đơn vị tính thành công", "hoàn thành", MessageBoxButtons.OK,
@@ -96,7 +96,7 @@ namespace _3_GUI_PresentationLayer
                     .SingleOrDefault(x => x.Id ==int.Parse(r.Cells["Id"].Value.ToString()));
                 dvt.TenDvt = txtDVT.Text;
                 dvt.NgayCapNhap = DateTime.Now;
-                dvt.NguoiCapNhap = nhanvien;
+                dvt.NguoiCapNhap = Frm_Main.sendnhanvien().Ten;
                 _dvtservice.EditDonviTinh(dvt);
                 MessageBox.Show("Sửa đơn vị tính thành công", "hoàn thành", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -133,7 +133,7 @@ namespace _3_GUI_PresentationLayer
 
         private void frm_DonViTinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //frm_QLMatHang.loadcmbIDDVT();
+            frm_menuDanhMuc.loadmathang();
         }
     }
 }

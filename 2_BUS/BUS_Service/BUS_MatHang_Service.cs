@@ -26,9 +26,24 @@ namespace _2_BUS.BUS_Service
         {
             return dalMatHangService.Add(mh);
         }
+
         public bool EditMatHang(MatHang mh)
         {
             return dalMatHangService.Update(mh);
+        }
+
+        public bool banhang(int idmathang)
+        {
+            var _mathang = GetlstMatHangs().SingleOrDefault(c => c.Id == idmathang);
+            _mathang.SoLuong -=1;
+            return dalMatHangService.Update(_mathang);
+        }
+
+        public bool hoantra(int idmathang)
+        {
+            var _mathang = GetlstMatHangs().SingleOrDefault(c => c.Id == idmathang);
+            _mathang.SoLuong += 1;
+            return dalMatHangService.Update(_mathang);
         }
         public bool RemoveMatHang(MatHang mh)
         {

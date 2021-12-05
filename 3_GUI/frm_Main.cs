@@ -17,23 +17,26 @@ namespace _3_GUI
     public partial class Frm_Main : Form
     {
         private IBUS_NhanVien_Service _nhanVienService;
-        private NhanVien _nhanVien;
-        public Frm_Main()
-        {
-            InitializeComponent();
-            load();
-            IsMdiContainer = true;
-        }
+        public static NhanVien staticnhanVien;
+        //public Frm_Main()
+        //{
+        //    InitializeComponent();
+        //    load();
+        //    IsMdiContainer = true;
+        //}
         public Frm_Main(string username)
         {
-            _nhanVienService = new BUS_NhanVien_Service();
-            _nhanVien = new NhanVien();
-            _nhanVien = _nhanVienService.GetlstNhanViens().Where(c => c.Username == username).SingleOrDefault();
             InitializeComponent();
+            _nhanVienService = new BUS_NhanVien_Service();
+            staticnhanVien = new NhanVien();
+            staticnhanVien = _nhanVienService.GetlstNhanViens().Where(c => c.Username == username).SingleOrDefault();
             load();
-            IsMdiContainer = true;
         }
 
+        public static NhanVien sendnhanvien()
+        {
+            return staticnhanVien;
+        }
         public static void load()
         {
             loadform.Controls.Clear();
@@ -44,6 +47,7 @@ namespace _3_GUI
             frmDatphong.Dock = DockStyle.Fill;
             frmDatphong.Show();
         }
+        
         private void btn_Hethong_Click_1(object sender, EventArgs e)
         {
             load();
@@ -52,7 +56,7 @@ namespace _3_GUI
         private void btn_DanhMuc_Click(object sender, EventArgs e)
         {
             loadform.Controls.Clear();
-            frm_menuDanhMuc frmMenuDanhMuc = new frm_menuDanhMuc(_nhanVien.MaNv);
+            frm_menuDanhMuc frmMenuDanhMuc = new frm_menuDanhMuc();
             frmMenuDanhMuc.TopLevel = false;
             loadform.Controls.Add(frmMenuDanhMuc);
             frmMenuDanhMuc.FormBorderStyle = FormBorderStyle.None;

@@ -13,12 +13,6 @@ namespace _3_GUI
 {
     public partial class frm_menuDanhMuc : Form
     {
-        private string _manv;
-        public frm_menuDanhMuc(string manv)
-        {
-            _manv = manv;
-            InitializeComponent();
-        }
         public frm_menuDanhMuc()
         {
             InitializeComponent();
@@ -29,7 +23,7 @@ namespace _3_GUI
             buttomcolor();
             btn_Phong.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_Phong frmPhong = new frm_Phong(_manv);
+            frm_Phong frmPhong = new frm_Phong();
             frmPhong.TopLevel = false;
             loadform.Controls.Add(frmPhong);
             frmPhong.FormBorderStyle = FormBorderStyle.None;
@@ -42,7 +36,7 @@ namespace _3_GUI
             buttomcolor();
             btn_Nhanvien.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_NhanVien frmNhanVien = new frm_NhanVien(_manv);
+            frm_NhanVien frmNhanVien = new frm_NhanVien();
             frmNhanVien.TopLevel = false;
             loadform.Controls.Add(frmNhanVien);
             frmNhanVien.FormBorderStyle = FormBorderStyle.None;
@@ -56,10 +50,10 @@ namespace _3_GUI
             button3.BackColor = SystemColors.HotTrack;
             loadmathang();
         }
-        public void loadmathang()
+        public static void loadmathang()
         {
             loadform.Controls.Clear();
-            frm_QLMatHang frmQlMatHang = new frm_QLMatHang(_manv);
+            frm_QLMatHang frmQlMatHang = new frm_QLMatHang();
             frmQlMatHang.TopLevel = false;
             loadform.Controls.Add(frmQlMatHang);
             frmQlMatHang.FormBorderStyle = FormBorderStyle.None;
@@ -71,7 +65,7 @@ namespace _3_GUI
             buttomcolor();
             btn_thietbi.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
-            frm_ThietBi frmThietBi = new frm_ThietBi(_manv);
+            frm_ThietBi frmThietBi = new frm_ThietBi();
             frmThietBi.TopLevel = false;
             loadform.Controls.Add(frmThietBi);
             frmThietBi.FormBorderStyle = FormBorderStyle.None;

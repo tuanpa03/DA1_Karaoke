@@ -12,6 +12,8 @@ namespace _2_BUS.IBUS_Service
         public List<MatHang> GetlstMatHangs();
         public bool AddMatHangh(MatHang mh);
         public bool EditMatHang(MatHang mh);
+        public bool banhang(int idmathang);
+        public bool hoantra(int idmathang);
         public bool RemoveMatHang(MatHang mh);
         public bool SaveMatHang();
     }
