@@ -74,7 +74,7 @@ namespace _3_GUI
             dataGridView1.Rows.Clear();
             foreach (var x in _iBUS_Phong_Service.sendlstPhong())
             {
-                dataGridView1.Rows.Add(x.Id, _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(y => y.Id == x.IdloaiPhong).TenLoaiPhong, x.Idtang, x.TenPhong, x.TrangThai, x.SucChua, x.NguoiTao, x.NgayTao, x.NguoiCapNhap, x.NgayCapNhap, x.IdtranngThai == "1" ? "Hoạt động" : "Không hoạt động");
+                dataGridView1.Rows.Add(x.Id, _iBUS_LoaiPhong_Service.sendlstLoaiPhong().FirstOrDefault(y => y.Id == x.IdloaiPhong).TenLoaiPhong, x.Idtang, x.TenPhong, x.TrangThai, x.SucChua, x.NguoiTao, x.NgayTao, x.NguoiCapNhap, x.NgayCapNhap, Convert.ToInt32( x.IdtranngThai) == 1 ? "Hoạt động" : "Không hoạt động");
             }
         }
         private void loadcmbLoaiPhong()
