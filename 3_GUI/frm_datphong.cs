@@ -76,7 +76,7 @@ namespace _3_GUI
                     //Label
                     lb = new Label();
                     lb.Size = new Size(250, 150);
-                    string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.IdtranngThai) == 1).ToList()[j].TenPhong;
+                    string tenPhong = "Phòng " + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.IdtranngThai) == 1).ToList()[j].TenPhong;
                     lb.Name = Convert.ToString(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.IdtranngThai) == 1).ToList()[j].Id);
                     string maKh;
                     string gioVao;
@@ -84,7 +84,7 @@ namespace _3_GUI
                     lb.Text = str;
                     lb.Text = tenPhong;
                     lb.BackColor = Color.Red;
-                    lb.Font = new Font("Arial", 14, FontStyle.Regular);
+                    lb.Font = new Font("Arial", 12, FontStyle.Regular);
                     lb.Padding = new Padding(10, 10, 10, 10);
                     int _trangThai = Convert.ToInt32(_iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1).ToList()[j].TrangThai);
                     if (_trangThai == 1)
@@ -344,7 +344,7 @@ namespace _3_GUI
                 for (int j = 0; j < _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a && Convert.ToInt32(x.IdtranngThai) == 1).ToList().Count; j++)
                 {
                     Label lb = new Label();
-                    lb.Size = new Size(150, 150);
+                    lb.Size = new Size(250, 150);
                     string tenPhong = "Phòng" + _iBUS_Phong_Service.sendlstPhong().Where(x => x.Idtang == i + 1 && Convert.ToInt32(x.TrangThai) == a && Convert.ToInt32(x.IdtranngThai) == 1).ToList()[j].TenPhong;
                     string maKh = "Mã khách hàng";
                     string gioVao = "Giờ Bắt Đầu";

@@ -77,7 +77,8 @@ namespace _3_GUI
 
         private void btn_doimk_Click(object sender, EventArgs e)
         {
-
+            frm_DoiMatKhau frmDoiMatKhau = new frm_DoiMatKhau(Frm_Main.sendnhanvien().Username);
+            frmDoiMatKhau.Show();
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)
