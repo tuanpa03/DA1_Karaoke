@@ -32,8 +32,6 @@ namespace _3_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.rbt_mathang = new System.Windows.Forms.RadioButton();
-            this.rbt_phong = new System.Windows.Forms.RadioButton();
             this.btn_thongke = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,32 +70,6 @@ namespace _3_GUI
             this.comboBox1.Size = new System.Drawing.Size(291, 45);
             this.comboBox1.TabIndex = 5;
             // 
-            // rbt_mathang
-            // 
-            this.rbt_mathang.AutoSize = true;
-            this.rbt_mathang.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbt_mathang.Location = new System.Drawing.Point(828, 271);
-            this.rbt_mathang.Name = "rbt_mathang";
-            this.rbt_mathang.Size = new System.Drawing.Size(153, 41);
-            this.rbt_mathang.TabIndex = 6;
-            this.rbt_mathang.TabStop = true;
-            this.rbt_mathang.Text = "Mặt Hàng";
-            this.rbt_mathang.UseVisualStyleBackColor = true;
-            this.rbt_mathang.CheckedChanged += new System.EventHandler(this.rbt_mathang_CheckedChanged);
-            // 
-            // rbt_phong
-            // 
-            this.rbt_phong.AutoSize = true;
-            this.rbt_phong.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbt_phong.Location = new System.Drawing.Point(1009, 271);
-            this.rbt_phong.Name = "rbt_phong";
-            this.rbt_phong.Size = new System.Drawing.Size(112, 41);
-            this.rbt_phong.TabIndex = 6;
-            this.rbt_phong.TabStop = true;
-            this.rbt_phong.Text = "Phòng";
-            this.rbt_phong.UseVisualStyleBackColor = true;
-            this.rbt_phong.CheckedChanged += new System.EventHandler(this.rbt_phong_CheckedChanged);
-            // 
             // btn_thongke
             // 
             this.btn_thongke.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -128,8 +100,6 @@ namespace _3_GUI
             this.ClientSize = new System.Drawing.Size(1704, 826);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_thongke);
-            this.Controls.Add(this.rbt_phong);
-            this.Controls.Add(this.rbt_mathang);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "frm_ThongKeDoanhThu";
@@ -146,8 +116,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton rbt_mathang;
-        private System.Windows.Forms.RadioButton rbt_phong;
         private System.Windows.Forms.Button btn_thongke;
         private System.Windows.Forms.GroupBox groupBox1;
     }
