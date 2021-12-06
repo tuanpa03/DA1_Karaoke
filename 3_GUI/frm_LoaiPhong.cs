@@ -2,8 +2,13 @@
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_Service;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3_GUI
@@ -101,53 +106,80 @@ namespace _3_GUI
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn thêm không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                if (checkFormLoaiPhong()) return;
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn thêm không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    if (checkFormLoaiPhong()) return;
 
-                _loaiPhong = new LoaiPhong();
-                _loaiPhong.Id = Convert.ToInt32(_iBUS_LoaiPhong_Service.sendlstLoaiPhong().Max(x => x.Id) + 1);
-                _loaiPhong.TenLoaiPhong = tbx_tenLoaiPhong.Text;
-                _loaiPhong.DonGia = Convert.ToDouble(tbx_donGia.Text);
-                _loaiPhong.NgayTao = DateTime.Now;
-                _loaiPhong.IdtranngThai = "1";
-                MessageBox.Show(_iBUS_LoaiPhong_Service.Add(_loaiPhong).ToString());
-                LoadDataLoaiPhong();
-                ClearFormLoaiPhong();
+                    _loaiPhong = new LoaiPhong();
+                    _loaiPhong.Id = Convert.ToInt32(_iBUS_LoaiPhong_Service.sendlstLoaiPhong().Max(x => x.Id) + 1);
+                    _loaiPhong.TenLoaiPhong = tbx_tenLoaiPhong.Text;
+                    _loaiPhong.DonGia = Convert.ToDouble(tbx_donGia.Text);
+                    _loaiPhong.NgayTao = DateTime.Now;
+                    _loaiPhong.IdtranngThai = "1";
+                    _iBUS_LoaiPhong_Service.Add(_loaiPhong);
+                    MessageBox.Show("Thêm loại phòng thành công ", "Thông báo");
+                    LoadDataLoaiPhong();
+                    ClearFormLoaiPhong();
+                }
+
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn sửa không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                if (checkFormLoaiPhong()) return;
-                var loaiPhong = _iBUS_LoaiPhong_Service.Find(_idLoaiPhong).FirstOrDefault();//tìm kiếm
-                loaiPhong.TenLoaiPhong = tbx_tenLoaiPhong.Text;
-                loaiPhong.DonGia = Convert.ToDouble(tbx_donGia.Text);
-                loaiPhong.NgayCapNhap = DateTime.Now;
-                MessageBox.Show(_iBUS_LoaiPhong_Service.Update(loaiPhong).ToString());
-                LoadDataLoaiPhong();
-                ClearFormLoaiPhong();
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn sửa không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    if (checkFormLoaiPhong()) return;
+                    var loaiPhong = _iBUS_LoaiPhong_Service.Find(_idLoaiPhong).FirstOrDefault();//tìm kiếm
+                    loaiPhong.TenLoaiPhong = tbx_tenLoaiPhong.Text;
+                    loaiPhong.DonGia = Convert.ToDouble(tbx_donGia.Text);
+                    loaiPhong.NgayCapNhap = DateTime.Now;
+                    _iBUS_LoaiPhong_Service.Update(loaiPhong);
+                    MessageBox.Show("Sửa loại phòng thành công ", "Thông báo");
+                    LoadDataLoaiPhong();
+                    ClearFormLoaiPhong();
+                }
+
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                var loaiPhong = _iBUS_LoaiPhong_Service.Find(_idLoaiPhong).FirstOrDefault();//tìm kiếm
-                loaiPhong.IdtranngThai = "2";
-                MessageBox.Show(_iBUS_LoaiPhong_Service.Update(loaiPhong).ToString(), "thông báo");
-                LoadDataLoaiPhong();
-                ClearFormLoaiPhong();
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    var loaiPhong = _iBUS_LoaiPhong_Service.Find(_idLoaiPhong).FirstOrDefault();//tìm kiếm
+                    loaiPhong.IdtranngThai = "0";
+                    MessageBox.Show(_iBUS_LoaiPhong_Service.Update(loaiPhong).ToString(), "thông báo");
+
+                    MessageBox.Show("Loại phòng đã chuyển tình trạng thành không hoạt động", "Thông báo");
+                    LoadDataLoaiPhong();
+                    ClearFormLoaiPhong();
+                }
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
@@ -169,52 +201,78 @@ namespace _3_GUI
 
         private void btn_ThemTang_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn thêm không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                if (checkFormTang()) return;
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn thêm không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    if (checkFormTang()) return;
 
-                _tang = new Tang();
-                _tang.Idtang = Convert.ToInt32(_iBUS_Tang_Service.sendlstTang().Max(x => x.Idtang) + 1);
-                _tang.TenTang = _tang.Idtang.ToString();
-                _tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
-                _tang.IdtrangThai = 1;
-                MessageBox.Show(_iBUS_Tang_Service.Add(_tang).ToString());
-                LoadDataTang();
-                ClearFormTang();
+                    _tang = new Tang();
+                    _tang.Idtang = Convert.ToInt32(_iBUS_Tang_Service.sendlstTang().Max(x => x.Idtang) + 1);
+                    _tang.TenTang = _tang.Idtang.ToString();
+                    _tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
+                    _tang.IdtrangThai = 1;
+                    _iBUS_Tang_Service.Add(_tang);
+                    MessageBox.Show("Thêm tầng thành công ", "Thông báo");
+                    LoadDataTang();
+                    ClearFormTang();
+                }
+
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_SuaTang_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn sửa không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                if (checkFormTang()) return;
-                var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
-                //tang.TenTang = tbx_tenTang.Text;
-                //tang.IdtrangThai = tbx_TrangThaiTang.Text;
-                tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
-                MessageBox.Show(_iBUS_Tang_Service.Update(tang).ToString());
-                LoadDataTang();
-                ClearFormTang();
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn sửa không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    if (checkFormTang()) return;
+                    var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
+                                                                                 //tang.IdtrangThai = tbx_TrangThaiTang.Text;
+                    tang.SoLuongPhong = Convert.ToInt32(tbx_soLuongPhong.Text);
+                    _iBUS_Tang_Service.Update(tang);
+                    MessageBox.Show("Sửa tầng thành công ", "Thông báo");
+                    LoadDataTang();
+                    ClearFormTang();
+                }
+
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_XoaTang_Click(object sender, EventArgs e)
         {
-            DialogResult hoi;
-            hoi = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo);
-            if (hoi == DialogResult.Yes)
+            try
             {
-                var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
-                tang.IdtrangThai = 2;
-                MessageBox.Show(_iBUS_Tang_Service.Update(tang).ToString(), "thông báo");
-                LoadDataTang();
-                ClearFormTang();
+                DialogResult hoi;
+                hoi = MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo);
+                if (hoi == DialogResult.Yes)
+                {
+                    var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
+                    tang.IdtrangThai = 0;
+                    _iBUS_Tang_Service.Update(tang).ToString();
+                    MessageBox.Show("Tầng đã chuyển trạng thái thành không hoạt động", "Thông báo");
+                    LoadDataTang();
+                    ClearFormTang();
+                }
+
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
         private void btn_ClearTang_Click(object sender, EventArgs e)
@@ -246,3 +304,4 @@ namespace _3_GUI
         }
     }
 }
+
