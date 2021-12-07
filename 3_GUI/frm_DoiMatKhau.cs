@@ -30,6 +30,7 @@ namespace _3_GUI
             InitializeComponent();
             _ibus_Login_Service = new BUS_Login_Service();
             username = usernamee;
+            txt_taikhoan.Text = usernamee;
             button2.Visible = false;
         }
 
@@ -75,12 +76,7 @@ namespace _3_GUI
         }
         private void frm_DoiMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dn;
-            dn = MessageBox.Show("Bạn có muốn thoát không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dn == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            
         }
     }
 }

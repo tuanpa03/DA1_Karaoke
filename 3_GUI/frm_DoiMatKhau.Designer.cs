@@ -40,6 +40,7 @@ namespace _3_GUI
             this.button2 = new System.Windows.Forms.Button();
             this.cbx_Show_Pass = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_taikhoan = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@ namespace _3_GUI
             // txt_NhapLaiPassNew
             // 
             this.txt_NhapLaiPassNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_NhapLaiPassNew.Location = new System.Drawing.Point(12, 302);
+            this.txt_NhapLaiPassNew.Location = new System.Drawing.Point(12, 381);
             this.txt_NhapLaiPassNew.Name = "txt_NhapLaiPassNew";
             this.txt_NhapLaiPassNew.PasswordChar = '*';
             this.txt_NhapLaiPassNew.Size = new System.Drawing.Size(577, 34);
@@ -78,7 +79,7 @@ namespace _3_GUI
             // txt_NhapPassNew
             // 
             this.txt_NhapPassNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_NhapPassNew.Location = new System.Drawing.Point(12, 232);
+            this.txt_NhapPassNew.Location = new System.Drawing.Point(12, 311);
             this.txt_NhapPassNew.Name = "txt_NhapPassNew";
             this.txt_NhapPassNew.PasswordChar = '*';
             this.txt_NhapPassNew.Size = new System.Drawing.Size(577, 34);
@@ -89,7 +90,7 @@ namespace _3_GUI
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 271);
+            this.label6.Location = new System.Drawing.Point(12, 350);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(249, 31);
             this.label6.TabIndex = 9;
@@ -100,7 +101,7 @@ namespace _3_GUI
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 201);
+            this.label4.Location = new System.Drawing.Point(12, 280);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 31);
             this.label4.TabIndex = 10;
@@ -111,7 +112,7 @@ namespace _3_GUI
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(4, 383);
+            this.button1.Location = new System.Drawing.Point(4, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 54);
             this.button1.TabIndex = 17;
@@ -124,7 +125,7 @@ namespace _3_GUI
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(232, 383);
+            this.button2.Location = new System.Drawing.Point(232, 462);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(211, 54);
             this.button2.TabIndex = 17;
@@ -138,7 +139,7 @@ namespace _3_GUI
             this.cbx_Show_Pass.BackColor = System.Drawing.Color.Transparent;
             this.cbx_Show_Pass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbx_Show_Pass.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbx_Show_Pass.Location = new System.Drawing.Point(12, 342);
+            this.cbx_Show_Pass.Location = new System.Drawing.Point(12, 421);
             this.cbx_Show_Pass.Name = "cbx_Show_Pass";
             this.cbx_Show_Pass.Size = new System.Drawing.Size(219, 35);
             this.cbx_Show_Pass.TabIndex = 18;
@@ -157,12 +158,21 @@ namespace _3_GUI
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_taikhoan
+            // 
+            this.txt_taikhoan.Location = new System.Drawing.Point(12, 239);
+            this.txt_taikhoan.Multiline = true;
+            this.txt_taikhoan.Name = "txt_taikhoan";
+            this.txt_taikhoan.Size = new System.Drawing.Size(577, 38);
+            this.txt_taikhoan.TabIndex = 20;
+            // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(601, 448);
+            this.ClientSize = new System.Drawing.Size(601, 534);
+            this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbx_Show_Pass);
             this.Controls.Add(this.button2);
@@ -195,5 +205,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox cbx_Show_Pass;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_taikhoan;
     }
 }

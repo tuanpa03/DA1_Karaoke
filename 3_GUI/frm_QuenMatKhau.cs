@@ -72,7 +72,7 @@ namespace _3_GUI
             {
                 to = txt_EmailQuenPass.Text;
                 dn = MessageBox.Show("Mã code chính xác 👍👍👍", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frm_DoiMatKhau reset = new frm_DoiMatKhau();
+                frm_DoiMatKhau reset = new frm_DoiMatKhau(txt_EmailQuenPass.Text);
                 this.Hide();
                 reset.Show();
             }
