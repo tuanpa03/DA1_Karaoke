@@ -264,6 +264,7 @@ namespace _3_GUI
                         return;
                     }
                     phong.IdtranngThai = "0";
+                    phong.TrangThai = 1;
                     _iBUS_Phong_Service.Update(phong);
                     MessageBox.Show("Phòng đã chuyển trạng thái thành không hoạt động", "thông báo");
 

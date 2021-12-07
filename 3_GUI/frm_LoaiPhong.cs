@@ -168,6 +168,16 @@ namespace _3_GUI
                 if (hoi == DialogResult.Yes)
                 {
                     var loaiPhong = _iBUS_LoaiPhong_Service.Find(_idLoaiPhong).FirstOrDefault();//tìm kiếm
+
+                    if ((loaiPhong.IdtranngThai == "0") == true)
+                    {
+                        loaiPhong.IdtranngThai = "1";
+                        _iBUS_LoaiPhong_Service.Update(loaiPhong);
+                        LoadDataLoaiPhong();
+                        ClearFormLoaiPhong();
+                        return;
+                    }
+
                     loaiPhong.IdtranngThai = "0";
                     MessageBox.Show(_iBUS_LoaiPhong_Service.Update(loaiPhong).ToString(), "thông báo");
 
@@ -261,6 +271,16 @@ namespace _3_GUI
                 if (hoi == DialogResult.Yes)
                 {
                     var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
+
+                    if ((tang.IdtrangThai == 0) == true)
+                    {
+                        tang.IdtrangThai = 1;
+                        _iBUS_Tang_Service.Update(tang);
+                        LoadDataLoaiPhong();
+                        ClearFormLoaiPhong();
+                        return;
+                    }
+
                     tang.IdtrangThai = 0;
                     _iBUS_Tang_Service.Update(tang).ToString();
                     MessageBox.Show("Tầng đã chuyển trạng thái thành không hoạt động", "Thông báo");
