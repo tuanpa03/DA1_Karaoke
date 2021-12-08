@@ -25,9 +25,11 @@ namespace _3_GUI_PresentationLayer
         private IBUS_KhachHang_Service _ikhachHang_Service;
         private IBUS_NhanVien_Service _inhanVien_Service;
         private IBUS_Phong_Service _phong_Service;
+        private IBUS_CongThucTinh_Service _congThucTinhService;
         private IBUS_LoaiPhong_Service _loaiphong_Service;
         private List<MatHang> _dataMatHangs;
         private HoaDonBanHang _hoaDonBanHang;
+        private Phong _phong;
         public Frm_ThanhToan(int idphong)
         {
             InitializeComponent();
@@ -38,30 +40,52 @@ namespace _3_GUI_PresentationLayer
             _ikhachHang_Service = new BUS_KhachHang_Service();
             _inhanVien_Service = new BUS_NhanVien_Service();
             _phong_Service = new BUS_Phong_Service();
+            _congThucTinhService = new BUS_CongThucTinh_Service();
             _loaiphong_Service = new BUS_LoaiPhong_Service();
             _dataMatHangs = new List<MatHang>();
             _hoaDonBanHang = new HoaDonBanHang();
+            _phong = new Phong();
             _hoaDonBanHang = _ihoaDonBanHang_Service.sendlstHoaDonBanHang().Where(x => x.IdtranngThai == 1 && x.Idphong == idphong).SingleOrDefault();
             txt_chiphikhac.Text = "0";
+            loadcongthuctinh();
+            _phong = _phong_Service.sendlstPhong().SingleOrDefault(c => c.Id == idphong);
         }
         private void Frm_ThanhToan_Load(object sender, EventArgs e)
         {
             loaddichvu();
             getdata("");
             loadtien();
+            loadphong();
         }
 
+        void loadphong()
+        {
+            lbl_tenPhong.Text = _phong.TenPhong;
+            lb_loaiphong.Text = _loaiphong_Service.sendlstLoaiPhong().SingleOrDefault(c => c.Id == _phong.IdloaiPhong)
+                .TenLoaiPhong;
+            lb_dongiaphong.Text= _loaiphong_Service.sendlstLoaiPhong().SingleOrDefault(c => c.Id == _phong.IdloaiPhong)
+                .DonGia.ToString();
+            lb_timestart.Text = _hoaDonBanHang.NgayTao.Value.ToShortTimeString();
+            lb_tienphong.Text = tienphongused().ToString();
+        }
         private void loadtien()
         {
             txt_tongtien.Text = null;
-            lbl_tenPhong.Text = _phong_Service.sendlstPhong().Where(x => x.Id == _hoaDonBanHang.Idphong).SingleOrDefault().TenPhong.ToString();
-            txt_tienphong.Text = _loaiphong_Service.sendlstLoaiPhong()
+            lb_dongiaphong.Text = _loaiphong_Service.sendlstLoaiPhong()
                 .Where(x => x.Id == _phong_Service.sendlstPhong()
                     .SingleOrDefault(x => x.Id == _hoaDonBanHang.Idphong).IdloaiPhong).SingleOrDefault().DonGia
                 .ToString();
             txt_tiendv.Text = tinhtiendv().ToString();
         }
+        void loadcongthuctinh()
+        {
+            foreach (var x in _congThucTinhService.GetListCongThucTinhsFromDAL())
+            {
+                cbx_congthucTinh.Items.Add(x.IdcongThucTinh);
+            }
 
+            cbx_congthucTinh.SelectedIndex = 0;
+        }
         double tinhtiendv()
         {
             double C = 0;
@@ -193,14 +217,76 @@ namespace _3_GUI_PresentationLayer
             getdata(txt_search.Text);
         }
 
-
-
-        private void btn_fakethanhtoan_Click(object sender, EventArgs e)
+        int thoigiansudung()
         {
-            double tientheogio = (DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour + 1) * 70000;
-            txt_tongtien.Text = (double.Parse(txt_tienphong.Text) + double.Parse(txt_tiendv.Text) + tientheogio +double.Parse(txt_chiphikhac.Text)).ToString();
+            int x;
+            x = DateTime.Now.Hour - _hoaDonBanHang.ThoiGianBatDau.Value.Hour;
+            if (DateTime.Now.Minute - _hoaDonBanHang.ThoiGianBatDau.Value.Minute>=15)
+            {
+                x+=1;
+            }
+            if (x==0)
+            {
+                x = 1;
+            }
+            return x;
         }
 
+        double tienphongused()
+        {
+            int tg = thoigiansudung();
+            double tientheogio = 0;
+            var CTT = _congThucTinhService.GetListCongThucTinhsFromDAL()
+                .SingleOrDefault(c => c.IdcongThucTinh == int.Parse(cbx_congthucTinh.Text));
+            if (tg < CTT.ThoiGianNhanUuDai3)
+            {
+                if (tg<CTT.ThoiGianNhanUuDai2)
+                {
+                    if (tg<CTT.ThoiGianNhanUuDai1)
+                    {
+                        tientheogio = tg * _hoaDonBanHang.DonGiaPhong.Value;
+
+                    }
+                    else
+                    {
+                        tientheogio = tg * _hoaDonBanHang.DonGiaPhong.Value * (1-CTT.UuDai1.Value);
+
+                    }
+                }
+                else
+                {
+                    tientheogio = tg * _hoaDonBanHang.DonGiaPhong.Value * (1-CTT.UuDai2.Value);
+                }
+            }
+            else
+            {
+                tientheogio = tg * _hoaDonBanHang.DonGiaPhong.Value * (1-CTT.UuDai3.Value);
+            }
+            return tientheogio;
+        }
+        private void btn_fakethanhtoan_Click(object sender, EventArgs e)
+        {
+            //var newcongthuctinh = _congThucTinhService.GetListCongThucTinhsFromDAL()
+            //    .SingleOrDefault(c => c.IdcongThucTinh ==int.Parse(cbx_congthucTinh.Text));
+            lb_tienphong.Text = tienphongused().ToString();
+            txt_tongtien.Text = (double.Parse(txt_tiendv.Text) + tienphongused() +chiphikhac()).ToString();
+            if (txt_khachtra.Text!="")
+            {
+                if (int.Parse(txt_khachtra.Text) > int.Parse(txt_tongtien.Text))
+                {
+                    txt_trakhach.Text = (int.Parse(txt_khachtra.Text) - int.Parse(txt_tongtien.Text)).ToString();
+                }
+            }
+        }
+
+        double chiphikhac()
+        {
+            if (txt_chiphikhac.Text=="")
+            {
+                return 0;
+            }
+            return double.Parse(txt_chiphikhac.Text);
+        }
         private void btn_thanhToanHoaDon_Click(object sender, EventArgs e)
         {
             _hoaDonBanHang.IdtranngThai = 2;
@@ -208,12 +294,35 @@ namespace _3_GUI_PresentationLayer
             var phong = _phong_Service.sendlstPhong().Where(x => x.Id == _hoaDonBanHang.Idphong).SingleOrDefault();
             phong.TrangThai = 4;
             _phong_Service.Update(phong);
-            MessageBox.Show("thanh toán thành công", "thông báo", MessageBoxButtons.OK);
             Frm_Main.load();
+            double tientheogio = thoigiansudung() * _hoaDonBanHang.DonGiaPhong.Value;
+            double tienthanhtoan = (double.Parse(txt_tiendv.Text) + tientheogio + double.Parse(txt_chiphikhac.Text));
+            frm_hoadon hoadon = new frm_hoadon(_hoaDonBanHang,tienthanhtoan);
+            hoadon.Show();
         }
-        void loadcongthuctinh()
-        {
 
+        private void txt_chiphikhac_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_khachtra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_trakhach_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

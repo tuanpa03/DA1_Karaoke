@@ -26,6 +26,7 @@ namespace _3_GUI
         int x = 20, y = 9, a = 1;
         private int _idphong;
         Random ran = new Random();
+        private string getmakhbygrid;
         public frm_KhachHang(int idPhong)
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace _3_GUI
             _tblKhachHang = new KhachHang();
             _icheck = new BUS_CheckEverything();
             _idphong = idPhong;
+            getmakhbygrid = "";
             LoadDataKhachHang();
             khachquenclick();
 
@@ -67,7 +69,7 @@ namespace _3_GUI
         public bool checkLoi()
         {
             DialogResult dn;
-            if (_icheck.CheckNull(txt_MaKH.Text) || _icheck.CheckNull(txt_Ho.Text) || _icheck.CheckNull(txt_Ten.Text) ||
+            if (_icheck.CheckNull(txt_Ho.Text) || _icheck.CheckNull(txt_Ten.Text) ||
                 _icheck.CheckNull(txt_TenDem.Text) || _icheck.CheckNull(txt_DienThoai.Text))
             {
                 dn = MessageBox.Show("Dữ liệu đang để trống !!! \nVui lòng nhập lại 😉", erorr, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -87,7 +89,7 @@ namespace _3_GUI
             int rd = e.RowIndex;
             if (rd == _ibusKhachHang.GetlstKhachHangs().Count() || rd == -1) return;
             _tblKhachHang = _ibusKhachHang.GetlstKhachHangs().FirstOrDefault(c => c.MaKh == dgr_KhachHang.Rows[rd].Cells[0].Value.ToString());
-            txt_MaKH.Text = dgr_KhachHang.Rows[rd].Cells[0].Value.ToString();
+            getmakhbygrid = dgr_KhachHang.Rows[rd].Cells[0].Value.ToString();
             txt_Ho.Text = _tblKhachHang.Ho;
             txt_TenDem.Text = _tblKhachHang.TenDem;
             txt_Ten.Text = _tblKhachHang.Ten;
@@ -99,7 +101,6 @@ namespace _3_GUI
         }
         private void Clearform()
         {
-            txt_MaKH.Text = "";
             txt_Ho.Text = "";
             txt_TenDem.Text = "";
             txt_Ten.Text = "";
@@ -110,6 +111,18 @@ namespace _3_GUI
             cbx_KHĐ.Checked = false;
         }
 
+        int getmakh()
+        {
+            int max = 0;
+            foreach (var x in _ibusKhachHang.GetlstKhachHangs())
+            {
+                if (int.Parse(x.MaKh)>max)
+                {
+                    max = int.Parse(x.MaKh);
+                }
+            }
+            return max+1;
+        }
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if (checkLoi() == false)
@@ -117,7 +130,11 @@ namespace _3_GUI
                 return;
             }
             KhachHang kha = new KhachHang();
-            kha.MaKh = txt_MaKH.Text;
+            kha.MaKh = "1";
+            if (_ibusKhachHang.GetlstKhachHangs().ToList().Count!=0)
+            {
+                kha.MaKh = getmakh().ToString();
+            }
             kha.Ho = txt_Ho.Text;
             kha.TenDem = txt_TenDem.Text;
             kha.Ten = txt_Ten.Text;
@@ -127,12 +144,16 @@ namespace _3_GUI
             if (MessageBox.Show("Bạn có muốn 🤔 Thêm Khách Hàng 🤔 không ?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if(_ibusKhachHang.GetlstKhachHangs().Where(c=>c.MaKh==kha.MaKh).ToList().Count!=0) return;
+                if (_ibusKhachHang.GetlstKhachHangs().Where(c => c.MaKh == kha.MaKh).ToList().Count != 0)
+                {
+                    MessageBox.Show("MAKH đã tồn tại");
+                    return;
+                }
                 _ibusKhachHang.Add(kha);
                 LoadDataKhachHang();
                 khachquenclick();
+                getmakhbygrid = kha.MaKh;
             }
-            MessageBox.Show("MAKH đã tồn tại");
         }
 
         private void btn_khachmoi_Click(object sender, EventArgs e)
@@ -149,7 +170,6 @@ namespace _3_GUI
             pictureBox2.Visible = true;
             btn_xacnhan.Visible = false;
             pictureBox1.Visible = false;
-            txt_MaKH.Enabled = true;
             txt_Ho.Enabled = true;
             txt_TenDem.Enabled = true;
             txt_Ten.Enabled = true;
@@ -169,7 +189,6 @@ namespace _3_GUI
             pictureBox2.Visible = false;
             btn_xacnhan.Visible = true;
             pictureBox1.Visible = true;
-            txt_MaKH.Enabled = false;
             txt_Ho.Enabled = false;
             txt_TenDem.Enabled = false;
             txt_Ten.Enabled = false;
@@ -187,7 +206,7 @@ namespace _3_GUI
             hoi = MessageBox.Show("Bạn có muốn thêm không", "Thông báo", MessageBoxButtons.YesNo);
             if (hoi == DialogResult.Yes)
             {
-                if (txt_MaKH.Text==null) return;
+                if (getmakhbygrid=="") return;
                 if (_hoaDonBanHangService.sendlstHoaDonBanHang().Count == 0)
                 {
                     _hoaDonBanHang.IdhoaDon = 1;
@@ -197,7 +216,7 @@ namespace _3_GUI
                     _hoaDonBanHang.IdhoaDon = _hoaDonBanHangService.sendlstHoaDonBanHang().Max(x => x.IdhoaDon + 1);
                 }
                 _hoaDonBanHang.Idphong = _idphong;
-                _hoaDonBanHang.IdmaKh = txt_MaKH.Text;/*_ikhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == cmb_loaiPhong.Text).Id;*/
+                _hoaDonBanHang.IdmaKh = getmakhbygrid;/*_ikhachHang_Service.GetlstKhachHangs().FirstOrDefault(x => x.MaKh == cmb_loaiPhong.Text).Id;*/
                 _hoaDonBanHang.IdmaNv = Frm_Main.sendnhanvien().MaNv;
                 _hoaDonBanHang.ThoiGianBatDau = DateTime.Now;
                 _hoaDonBanHang.DonGiaPhong = _loaiPhongService.sendlstLoaiPhong().FirstOrDefault(x => x.Id == _phongService.sendlstPhong().FirstOrDefault(x => x.Id == _hoaDonBanHang.Idphong).IdloaiPhong).DonGia;

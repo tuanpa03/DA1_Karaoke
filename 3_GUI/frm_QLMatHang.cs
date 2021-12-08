@@ -46,7 +46,7 @@ namespace _3_GUI_PresentationLayer
                 matHang.Id = _matHangService.GetlstMatHangs().Max(c=>c.Id)+1;
                 matHang.TenMatHang = txt_TenMH.Text;
                 matHang.DonGia =Convert.ToInt32(txt_DonGia.Text);
-                matHang.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
+                matHang.IddonViTinh = _donViTinhService.GetlstDonViTinhs().SingleOrDefault(c=>c.TenDvt==cmb_IDDvTinh.Text).Id;
                 matHang.NguoiTao = Frm_Main.sendnhanvien().Ten;
                 matHang.NgayTao = DateTime.Now;
                 _matHangService.AddMatHangh(matHang);
@@ -91,7 +91,7 @@ namespace _3_GUI_PresentationLayer
                 var mh = findMatHang();
                 mh.TenMatHang = txt_TenMH.Text;
                 mh.DonGia =int.Parse(txt_DonGia.Text);
-                mh.IddonViTinh = _dvt[_dvt.FindIndex(x => x.TenDvt == cmb_IDDvTinh.Text)].Id;
+                mh.IddonViTinh = _donViTinhService.GetlstDonViTinhs().SingleOrDefault(c => c.TenDvt == cmb_IDDvTinh.Text).Id;
                 mh.NgayCapNhap=DateTime.Now;
                 mh.NguoiCapNhap = Frm_Main.sendnhanvien().Ten;
                 if (_matHangService.EditMatHang(mh))

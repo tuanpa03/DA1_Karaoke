@@ -38,7 +38,6 @@ namespace _3_GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgr_KhachHang = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_Ho = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Ten = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@ namespace _3_GUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rbtn_Nam = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.cbx_KHĐ = new System.Windows.Forms.CheckBox();
             this.rbtn_Nu = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -112,7 +110,6 @@ namespace _3_GUI
             // 
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.dgr_KhachHang);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txt_Ho);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_Ten);
@@ -124,7 +121,6 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.rbtn_Nam);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_MaKH);
             this.panel1.Controls.Add(this.cbx_KHĐ);
             this.panel1.Controls.Add(this.rbtn_Nu);
             this.panel1.Controls.Add(this.label8);
@@ -162,17 +158,6 @@ namespace _3_GUI
             this.dgr_KhachHang.Size = new System.Drawing.Size(410, 450);
             this.dgr_KhachHang.TabIndex = 9;
             this.dgr_KhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_KhachHang_CellClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(478, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mã KH :";
             // 
             // txt_Ho
             // 
@@ -283,14 +268,6 @@ namespace _3_GUI
             this.label5.Size = new System.Drawing.Size(135, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "Điện Thoại :";
-            // 
-            // txt_MaKH
-            // 
-            this.txt_MaKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_MaKH.Location = new System.Drawing.Point(599, 29);
-            this.txt_MaKH.Name = "txt_MaKH";
-            this.txt_MaKH.Size = new System.Drawing.Size(371, 34);
-            this.txt_MaKH.TabIndex = 4;
             // 
             // cbx_KHĐ
             // 
@@ -439,7 +416,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_khachquen;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgr_KhachHang;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Ho;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Ten;
@@ -451,7 +427,6 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton rbtn_Nam;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.CheckBox cbx_KHĐ;
         private System.Windows.Forms.RadioButton rbtn_Nu;
         private System.Windows.Forms.Label label8;

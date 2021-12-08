@@ -33,24 +33,24 @@ namespace _3_GUI
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btn_thietbi = new System.Windows.Forms.Button();
             this.btn_sanpham = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_load
             // 
+            this.pl_load.BackColor = System.Drawing.SystemColors.HighlightText;
             this.pl_load.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pl_load.Location = new System.Drawing.Point(0, 109);
+            this.pl_load.Location = new System.Drawing.Point(0, 0);
             this.pl_load.Name = "pl_load";
-            this.pl_load.Size = new System.Drawing.Size(1616, 950);
+            this.pl_load.Size = new System.Drawing.Size(1616, 1059);
             this.pl_load.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.btn_thietbi);
             this.panel2.Controls.Add(this.btn_sanpham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -60,40 +60,36 @@ namespace _3_GUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(573, 12);
+            this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(433, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(181, 77);
             this.button2.TabIndex = 0;
             this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(386, 12);
+            this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(223, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(181, 77);
             this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btn_thietbi
-            // 
-            this.btn_thietbi.Location = new System.Drawing.Point(199, 12);
-            this.btn_thietbi.Name = "btn_thietbi";
-            this.btn_thietbi.Size = new System.Drawing.Size(181, 77);
-            this.btn_thietbi.TabIndex = 0;
-            this.btn_thietbi.Text = "Thiết bị";
-            this.btn_thietbi.UseVisualStyleBackColor = true;
-            this.btn_thietbi.Click += new System.EventHandler(this.btn_thietbi_Click);
+            this.button4.Text = "Doanh thu";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // btn_sanpham
             // 
+            this.btn_sanpham.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_sanpham.Location = new System.Drawing.Point(12, 12);
             this.btn_sanpham.Name = "btn_sanpham";
             this.btn_sanpham.Size = new System.Drawing.Size(181, 77);
             this.btn_sanpham.TabIndex = 0;
             this.btn_sanpham.Text = "Sản phẩm";
-            this.btn_sanpham.UseVisualStyleBackColor = true;
+            this.btn_sanpham.UseVisualStyleBackColor = false;
             this.btn_sanpham.Click += new System.EventHandler(this.btn_sanpham_Click);
             // 
             // frm_thongke
@@ -118,7 +114,6 @@ namespace _3_GUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_thietbi;
         private System.Windows.Forms.Button btn_sanpham;
     }
 }
