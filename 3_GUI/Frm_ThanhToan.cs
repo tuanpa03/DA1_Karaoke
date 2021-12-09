@@ -65,16 +65,12 @@ namespace _3_GUI_PresentationLayer
                 .TenLoaiPhong;
             lb_dongiaphong.Text= _loaiphong_Service.sendlstLoaiPhong().SingleOrDefault(c => c.Id == _phong.IdloaiPhong)
                 .DonGia.ToString();
-            lb_timestart.Text = _hoaDonBanHang.NgayTao.Value.ToShortTimeString();
+            lb_timestart.Text = _hoaDonBanHang.NgayTao.Value.ToLongTimeString();
             lb_tienphong.Text = tienphongused().ToString();
         }
         private void loadtien()
         {
             txt_tongtien.Text = null;
-            lb_dongiaphong.Text = _loaiphong_Service.sendlstLoaiPhong()
-                .Where(x => x.Id == _phong_Service.sendlstPhong()
-                    .SingleOrDefault(x => x.Id == _hoaDonBanHang.Idphong).IdloaiPhong).SingleOrDefault().DonGia
-                .ToString();
             txt_tiendv.Text = tinhtiendv().ToString();
         }
         void loadcongthuctinh()
@@ -289,15 +285,16 @@ namespace _3_GUI_PresentationLayer
         }
         private void btn_thanhToanHoaDon_Click(object sender, EventArgs e)
         {
+            _hoaDonBanHang.IdcongThucTinh = int.Parse(cbx_congthucTinh.Text);
+            _hoaDonBanHang.NguoiBan = txt_chiphikhac.Text;
+            _hoaDonBanHang.ThoiGianKetThuc = DateTime.Now;
             _hoaDonBanHang.IdtranngThai = 2;
             _ihoaDonBanHang_Service.Update(_hoaDonBanHang);
             var phong = _phong_Service.sendlstPhong().Where(x => x.Id == _hoaDonBanHang.Idphong).SingleOrDefault();
             phong.TrangThai = 4;
             _phong_Service.Update(phong);
             Frm_Main.load();
-            double tientheogio = thoigiansudung() * _hoaDonBanHang.DonGiaPhong.Value;
-            double tienthanhtoan = (double.Parse(txt_tiendv.Text) + tientheogio + double.Parse(txt_chiphikhac.Text));
-            frm_hoadon hoadon = new frm_hoadon(_hoaDonBanHang,tienthanhtoan);
+            frm_hoadon hoadon = new frm_hoadon(_hoaDonBanHang);
             hoadon.Show();
         }
 
@@ -324,5 +321,7 @@ namespace _3_GUI_PresentationLayer
                 e.Handled = true;
             }
         }
+
+       
     }
 }
