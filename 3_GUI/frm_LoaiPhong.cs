@@ -59,7 +59,7 @@ namespace _3_GUI
             dgv_tang.Rows.Clear();
             foreach (var x in _iBUS_Tang_Service.sendlstTang())
             {
-                dgv_tang.Rows.Add(x.TenTang, x.SoLuongPhong, x.IdtrangThai == 1 ? "Hoạt Động" : "Không Hoạt Động", x.Idtang == 1);
+                dgv_tang.Rows.Add(x.TenTang, x.SoLuongPhong, x.IdtrangThai == 1 ? "Hoạt Động" : "Không Hoạt Động", x.Idtang);
             }
         }
         private bool checkFormLoaiPhong()
@@ -179,7 +179,7 @@ namespace _3_GUI
                     }
 
                     loaiPhong.IdtranngThai = "0";
-                    MessageBox.Show(_iBUS_LoaiPhong_Service.Update(loaiPhong).ToString(), "thông báo");
+                    _iBUS_LoaiPhong_Service.Update(loaiPhong);
 
                     MessageBox.Show("Loại phòng đã chuyển tình trạng thành không hoạt động", "Thông báo");
                     LoadDataLoaiPhong();
@@ -272,12 +272,12 @@ namespace _3_GUI
                 {
                     var tang = _iBUS_Tang_Service.Find(_idTang).FirstOrDefault();//tìm kiếm
 
-                    if ((tang.IdtrangThai == 0) == true)
+                    if (( Convert.ToInt32(tang.IdtrangThai) == 0) == true)
                     {
                         tang.IdtrangThai = 1;
                         _iBUS_Tang_Service.Update(tang);
-                        LoadDataLoaiPhong();
-                        ClearFormLoaiPhong();
+                        LoadDataTang();
+                        ClearFormTang();
                         return;
                     }
 
