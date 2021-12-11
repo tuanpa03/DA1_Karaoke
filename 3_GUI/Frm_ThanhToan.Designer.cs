@@ -53,6 +53,11 @@ namespace _3_GUI_PresentationLayer
             this.txt_khachtra = new System.Windows.Forms.TextBox();
             this.txt_chiphikhac = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lb_timestart = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -183,6 +188,11 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lb_timestart);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
@@ -332,7 +342,7 @@ namespace _3_GUI_PresentationLayer
             this.txt_chiphikhac.Location = new System.Drawing.Point(199, 387);
             this.txt_chiphikhac.Multiline = true;
             this.txt_chiphikhac.Name = "txt_chiphikhac";
-            this.txt_chiphikhac.Size = new System.Drawing.Size(188, 31);
+            this.txt_chiphikhac.Size = new System.Drawing.Size(148, 31);
             this.txt_chiphikhac.TabIndex = 32;
             this.txt_chiphikhac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_chiphikhac_KeyPress);
             // 
@@ -345,6 +355,56 @@ namespace _3_GUI_PresentationLayer
             this.label3.Size = new System.Drawing.Size(141, 31);
             this.label3.TabIndex = 25;
             this.label3.Text = "Tiền phòng :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(343, 445);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(57, 28);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "VND.";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(343, 389);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 28);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "VND.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(343, 286);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 28);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "VND.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(343, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 28);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "VND.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(343, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 28);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "VND.";
             // 
             // lb_timestart
             // 
@@ -438,5 +498,10 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label lb_loaiphong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
     }
 }
