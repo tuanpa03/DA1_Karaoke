@@ -15,7 +15,7 @@ namespace _3_GUI
     public partial class frm_NhaCungCap : Form
     {
         private IBUS_NhaCungCap_Service _nhaCungCapService;
-        private int _idNhanVien;
+        private string _idNhanVien;
         private int _iD;
 
         int x = 20, y = 9, a = 1;
@@ -25,6 +25,15 @@ namespace _3_GUI
         {
             InitializeComponent();
             _nhaCungCapService = new BUS_NhaCungCap_Service();
+            _idNhanVien = "admin";
+            FillDataToGrid();
+        }
+
+        public frm_NhaCungCap(string idNhanVien)
+        {
+            InitializeComponent();
+            _nhaCungCapService = new BUS_NhaCungCap_Service();
+            _idNhanVien = idNhanVien;
             FillDataToGrid();
         }
 
