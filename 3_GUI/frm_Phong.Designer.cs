@@ -68,11 +68,11 @@ namespace _3_GUI
             // 
             // btn_sua
             // 
-            this.btn_sua.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_sua.BackColor = System.Drawing.Color.Aqua;
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_sua.Location = new System.Drawing.Point(1396, 38);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(154, 54);
+            this.btn_sua.Size = new System.Drawing.Size(175, 54);
             this.btn_sua.TabIndex = 40;
             this.btn_sua.Text = "     Sửa";
             this.btn_sua.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@ namespace _3_GUI
             // 
             // btn_xóa
             // 
-            this.btn_xóa.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_xóa.BackColor = System.Drawing.Color.Aqua;
             this.btn_xóa.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_xóa.Location = new System.Drawing.Point(1203, 114);
             this.btn_xóa.Name = "btn_xóa";
@@ -92,7 +92,7 @@ namespace _3_GUI
             // 
             // btn_them
             // 
-            this.btn_them.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_them.BackColor = System.Drawing.Color.Aqua;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_them.Location = new System.Drawing.Point(1203, 39);
             this.btn_them.Name = "btn_them";
@@ -114,7 +114,7 @@ namespace _3_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(83, 73);
+            this.label1.Location = new System.Drawing.Point(51, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 23;
@@ -138,7 +138,7 @@ namespace _3_GUI
             // tbx_tenPhong
             // 
             this.tbx_tenPhong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbx_tenPhong.Location = new System.Drawing.Point(249, 68);
+            this.tbx_tenPhong.Location = new System.Drawing.Point(249, 49);
             this.tbx_tenPhong.Name = "tbx_tenPhong";
             this.tbx_tenPhong.Size = new System.Drawing.Size(338, 34);
             this.tbx_tenPhong.TabIndex = 29;
@@ -155,9 +155,10 @@ namespace _3_GUI
             // 
             this.btn_clear.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_clear.ForeColor = System.Drawing.Color.White;
             this.btn_clear.Location = new System.Drawing.Point(1396, 112);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(154, 54);
+            this.btn_clear.Size = new System.Drawing.Size(175, 54);
             this.btn_clear.TabIndex = 45;
             this.btn_clear.Text = "     Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
@@ -167,7 +168,7 @@ namespace _3_GUI
             // 
             this.cmb_loaiPhong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmb_loaiPhong.FormattingEnabled = true;
-            this.cmb_loaiPhong.Location = new System.Drawing.Point(249, 109);
+            this.cmb_loaiPhong.Location = new System.Drawing.Point(249, 90);
             this.cmb_loaiPhong.Name = "cmb_loaiPhong";
             this.cmb_loaiPhong.Size = new System.Drawing.Size(338, 33);
             this.cmb_loaiPhong.TabIndex = 50;
@@ -185,7 +186,7 @@ namespace _3_GUI
             // 
             this.cbb_trangThai.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbb_trangThai.FormattingEnabled = true;
-            this.cbb_trangThai.Location = new System.Drawing.Point(782, 133);
+            this.cbb_trangThai.Location = new System.Drawing.Point(249, 133);
             this.cbb_trangThai.Name = "cbb_trangThai";
             this.cbb_trangThai.Size = new System.Drawing.Size(338, 33);
             this.cbb_trangThai.TabIndex = 53;
@@ -194,7 +195,7 @@ namespace _3_GUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(77, 112);
+            this.label9.Location = new System.Drawing.Point(45, 94);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(141, 25);
             this.label9.TabIndex = 23;
@@ -224,7 +225,7 @@ namespace _3_GUI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(614, 137);
+            this.label13.Location = new System.Drawing.Point(49, 137);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(137, 25);
             this.label13.TabIndex = 23;
@@ -243,7 +244,7 @@ namespace _3_GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1409, 48);
+            this.pictureBox3.Location = new System.Drawing.Point(1418, 49);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +295,7 @@ namespace _3_GUI
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1409, 122);
+            this.pictureBox4.Location = new System.Drawing.Point(1420, 124);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 34);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

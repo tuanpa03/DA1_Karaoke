@@ -116,13 +116,13 @@ namespace _3_GUI
             // btn_XacNhan
             // 
             this.btn_XacNhan.BackColor = System.Drawing.Color.DimGray;
-            this.btn_XacNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_XacNhan.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_XacNhan.ForeColor = System.Drawing.Color.Black;
             this.btn_XacNhan.Location = new System.Drawing.Point(116, 139);
             this.btn_XacNhan.Name = "btn_XacNhan";
             this.btn_XacNhan.Size = new System.Drawing.Size(218, 49);
             this.btn_XacNhan.TabIndex = 3;
-            this.btn_XacNhan.Text = "Xác Nhận";
+            this.btn_XacNhan.Text = "XÁC NHẬN";
             this.btn_XacNhan.UseVisualStyleBackColor = false;
             this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 

@@ -44,7 +44,6 @@ namespace _3_GUI
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Timer = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,8 +53,8 @@ namespace _3_GUI
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_DataOfNCC)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -63,20 +62,21 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgrid_DataOfNCC
             // 
             this.dgrid_DataOfNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgrid_DataOfNCC.BackgroundColor = System.Drawing.Color.White;
+            this.dgrid_DataOfNCC.BackgroundColor = System.Drawing.Color.Gray;
             this.dgrid_DataOfNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_DataOfNCC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrid_DataOfNCC.Location = new System.Drawing.Point(3, 23);
+            this.dgrid_DataOfNCC.Location = new System.Drawing.Point(3, 30);
             this.dgrid_DataOfNCC.Name = "dgrid_DataOfNCC";
             this.dgrid_DataOfNCC.RowHeadersWidth = 51;
             this.dgrid_DataOfNCC.RowTemplate.Height = 29;
             this.dgrid_DataOfNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrid_DataOfNCC.Size = new System.Drawing.Size(1610, 924);
+            this.dgrid_DataOfNCC.Size = new System.Drawing.Size(1610, 505);
             this.dgrid_DataOfNCC.TabIndex = 0;
             this.dgrid_DataOfNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_DataOfNCC_CellClick);
             // 
@@ -102,7 +102,7 @@ namespace _3_GUI
             // 
             this.btn_Add.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Add.Location = new System.Drawing.Point(69, 26);
+            this.btn_Add.Location = new System.Drawing.Point(41, 26);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(169, 55);
             this.btn_Add.TabIndex = 3;
@@ -114,7 +114,7 @@ namespace _3_GUI
             // 
             this.btn_Update.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_Update.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Update.Location = new System.Drawing.Point(289, 26);
+            this.btn_Update.Location = new System.Drawing.Point(256, 26);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(176, 55);
             this.btn_Update.TabIndex = 3;
@@ -126,7 +126,7 @@ namespace _3_GUI
             // 
             this.btn_Delete.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_Delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Delete.Location = new System.Drawing.Point(527, 26);
+            this.btn_Delete.Location = new System.Drawing.Point(483, 26);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(157, 55);
             this.btn_Delete.TabIndex = 3;
@@ -138,7 +138,7 @@ namespace _3_GUI
             // 
             this.btn_Clear.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_Clear.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Clear.Location = new System.Drawing.Point(757, 26);
+            this.btn_Clear.Location = new System.Drawing.Point(687, 26);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(164, 55);
             this.btn_Clear.TabIndex = 3;
@@ -200,16 +200,6 @@ namespace _3_GUI
             this.label4.TabIndex = 2;
             this.label4.Text = "Email :";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgrid_DataOfNCC);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1616, 950);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
             // lbl_Timer
             // 
             this.lbl_Timer.AutoSize = true;
@@ -227,7 +217,7 @@ namespace _3_GUI
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1616, 79);
+            this.groupBox5.Size = new System.Drawing.Size(1616, 73);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
@@ -241,11 +231,11 @@ namespace _3_GUI
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(0, 79);
+            this.groupBox2.Location = new System.Drawing.Point(0, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1616, 250);
+            this.groupBox2.Size = new System.Drawing.Size(1616, 243);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin";
@@ -260,17 +250,17 @@ namespace _3_GUI
             this.groupBox3.Controls.Add(this.btn_Add);
             this.groupBox3.Controls.Add(this.btn_Delete);
             this.groupBox3.Controls.Add(this.btn_Clear);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 329);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 316);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1616, 90);
+            this.groupBox3.Size = new System.Drawing.Size(1616, 96);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(776, 40);
+            this.pictureBox4.Location = new System.Drawing.Point(706, 40);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(36, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +270,7 @@ namespace _3_GUI
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(544, 40);
+            this.pictureBox5.Location = new System.Drawing.Point(500, 40);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(36, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -290,7 +280,7 @@ namespace _3_GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(303, 40);
+            this.pictureBox3.Location = new System.Drawing.Point(270, 40);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,7 +290,7 @@ namespace _3_GUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(80, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -313,21 +303,32 @@ namespace _3_GUI
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgrid_DataOfNCC);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Location = new System.Drawing.Point(0, 412);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1616, 538);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Table view";
+            // 
             // frm_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1616, 950);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_NhaCungCap";
             this.Text = "frm_NhaCungCap";
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_DataOfNCC)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -337,6 +338,7 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -356,7 +358,6 @@ namespace _3_GUI
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_Timer;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -366,5 +367,6 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

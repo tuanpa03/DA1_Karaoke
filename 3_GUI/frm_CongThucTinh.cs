@@ -17,6 +17,9 @@ namespace _3_GUI
         private IBUS_CongThucTinh_Service _congThucTinhService;
         private int _iD;
 
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
+
         public frm_CongThucTinh()
         {
             InitializeComponent();
@@ -29,13 +32,13 @@ namespace _3_GUI
             dgrid_DataOfCTT.Columns.Clear();
             dgrid_DataOfCTT.ColumnCount = 10;
             dgrid_DataOfCTT.Columns[0].Name = "ID";
-            dgrid_DataOfCTT.Columns[1].Name = "Thời gian ưu nhận đãi 1";
+            dgrid_DataOfCTT.Columns[1].Name = "Time sale 1";
             dgrid_DataOfCTT.Columns[2].Name = "Ưu đãi 1";
-            dgrid_DataOfCTT.Columns[3].Name = "Thời gian nhận ưu đãi 2";
+            dgrid_DataOfCTT.Columns[3].Name = "Time sale 2";
             dgrid_DataOfCTT.Columns[4].Name = "Ưu đãi 2";
-            dgrid_DataOfCTT.Columns[5].Name = "Thời gian nhận ưu đãi 3";
+            dgrid_DataOfCTT.Columns[5].Name = "Time sale 3";
             dgrid_DataOfCTT.Columns[6].Name = "Ưu đãi 3";
-            dgrid_DataOfCTT.Columns[7].Name = "Giá phòng";
+            dgrid_DataOfCTT.Columns[7].Name = "Giá phòng thường";
             dgrid_DataOfCTT.Columns[8].Name = "Giá phòng VIP";
             dgrid_DataOfCTT.Columns[9].Name = "Ghi chú";
             dgrid_DataOfCTT.Columns[0].Visible = false;
@@ -150,6 +153,28 @@ namespace _3_GUI
             {
                 Console.WriteLine(exception);
                 return;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 713)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 12)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
             }
         }
     }

@@ -46,7 +46,6 @@ namespace _3_GUI
             this.btn_phongCoKhach = new System.Windows.Forms.Button();
             this.lbl_Timer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -125,7 +124,6 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.btn_phongCoKhach);
             this.panel1.Controls.Add(this.lbl_Timer);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 877);
             this.panel1.Name = "panel1";
@@ -239,22 +237,12 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(1073, 122);
+            this.label1.Location = new System.Drawing.Point(1076, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(447, 31);
+            this.label1.Size = new System.Drawing.Size(486, 62);
             this.label1.TabIndex = 0;
-            this.label1.Text = "https://www.facebook.com/musicshowvn\r\n";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(1076, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(444, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Website :           http://www.musicshow.vn\r\n";
+            this.label1.Text = "http://diadiemvui.com/karaoke-family---216-\r\nphuc-tan---hoan-kiem---ha-noi-sp136." +
+    "html";
             // 
             // label3
             // 
@@ -323,7 +311,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_phongDangDon;
         private System.Windows.Forms.Button btn_sanSangDonKhach;
         private System.Windows.Forms.Button btn_phongCoKhach;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;

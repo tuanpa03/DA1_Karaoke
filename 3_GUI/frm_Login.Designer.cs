@@ -57,7 +57,7 @@ namespace _3_GUI
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(273, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 38);
+            this.label1.Size = new System.Drawing.Size(300, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập hệ thống";
             // 
@@ -79,7 +79,7 @@ namespace _3_GUI
             this.btn_Thoat.BackColor = System.Drawing.Color.Black;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Thoat.ForeColor = System.Drawing.Color.White;
-            this.btn_Thoat.Location = new System.Drawing.Point(465, 315);
+            this.btn_Thoat.Location = new System.Drawing.Point(404, 315);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(192, 58);
             this.btn_Thoat.TabIndex = 1;

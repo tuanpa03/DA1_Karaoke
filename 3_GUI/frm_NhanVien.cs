@@ -17,6 +17,7 @@ namespace _3_GUI
     {
         private IBUS_NhanVien_Service _ibusNhanVien;
         private IBUS_CheckEverything _icheck;
+        private IBUS_Login_Service _ibus_Login_Service;
         private NhanVien _tblNhanVien;
         private string erorr = "Aiizaaa... Lỗi rồi kìa 😂";
         int x = 20, y = 9, a = 1;
@@ -27,6 +28,7 @@ namespace _3_GUI
             _ibusNhanVien = new BUS_NhanVien_Service();
             _icheck = new BUS_CheckEverything();
             _tblNhanVien = new NhanVien();
+            _ibus_Login_Service = new BUS_Login_Service();
             LoadCbxChucVu();
             loadquyen();
             LoadDgrNhanVien();
@@ -141,7 +143,7 @@ namespace _3_GUI
             nva.TenDem = txt_TenDem.Text;
             nva.Ten = txt_Ten.Text;
             nva.Username = txt_EmailLogin.Text;
-            nva.Password = "2331542419640203562132429613354120146463";
+            nva.Password = _ibus_Login_Service.MaHoaPass(_tblNhanVien.Password);
             nva.GioiTinh = rbtn_Nam.Checked ? 1 : 0;
             nva.IdchucVuNavigation = _ibusNhanVien.GetlstChucVus().FirstOrDefault(c => c.TenChucVu == cbox_ChucVu.Text);
             nva.DienThoai = txt_DienThoai.Text;
