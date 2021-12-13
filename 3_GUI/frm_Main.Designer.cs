@@ -71,9 +71,9 @@ namespace _3_GUI
             this.grb_controls.Controls.Add(this.btn_Thongke);
             this.grb_controls.Controls.Add(this.btn_DanhMuc);
             this.grb_controls.Controls.Add(this.btn_Hethong);
-            this.grb_controls.Location = new System.Drawing.Point(-5, 0);
+            this.grb_controls.Location = new System.Drawing.Point(0, 0);
             this.grb_controls.Name = "grb_controls";
-            this.grb_controls.Size = new System.Drawing.Size(297, 1053);
+            this.grb_controls.Size = new System.Drawing.Size(290, 900);
             this.grb_controls.TabIndex = 0;
             this.grb_controls.TabStop = false;
             // 
@@ -91,7 +91,7 @@ namespace _3_GUI
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.LightYellow;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(42, 894);
+            this.pictureBox7.Location = new System.Drawing.Point(43, 740);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(46, 37);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +101,7 @@ namespace _3_GUI
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(42, 833);
+            this.pictureBox6.Location = new System.Drawing.Point(43, 679);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(46, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +111,7 @@ namespace _3_GUI
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(42, 958);
+            this.pictureBox4.Location = new System.Drawing.Point(43, 804);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(46, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +152,7 @@ namespace _3_GUI
             // 
             this.btn_doimk.BackColor = System.Drawing.Color.LightYellow;
             this.btn_doimk.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_doimk.Location = new System.Drawing.Point(31, 820);
+            this.btn_doimk.Location = new System.Drawing.Point(32, 666);
             this.btn_doimk.Name = "btn_doimk";
             this.btn_doimk.Size = new System.Drawing.Size(231, 58);
             this.btn_doimk.TabIndex = 5;
@@ -165,7 +165,7 @@ namespace _3_GUI
             this.btn_dangxuat.BackColor = System.Drawing.Color.LightYellow;
             this.btn_dangxuat.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_dangxuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_dangxuat.Location = new System.Drawing.Point(31, 884);
+            this.btn_dangxuat.Location = new System.Drawing.Point(32, 730);
             this.btn_dangxuat.Name = "btn_dangxuat";
             this.btn_dangxuat.Size = new System.Drawing.Size(231, 58);
             this.btn_dangxuat.TabIndex = 4;
@@ -178,7 +178,7 @@ namespace _3_GUI
             this.btn_close.BackColor = System.Drawing.Color.LightYellow;
             this.btn_close.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_close.ForeColor = System.Drawing.Color.Red;
-            this.btn_close.Location = new System.Drawing.Point(31, 948);
+            this.btn_close.Location = new System.Drawing.Point(32, 794);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(231, 58);
             this.btn_close.TabIndex = 3;
@@ -236,9 +236,9 @@ namespace _3_GUI
             // 
             loadform.BackColor = System.Drawing.SystemColors.ScrollBar;
             loadform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            loadform.Location = new System.Drawing.Point(292, 0);
+            loadform.Location = new System.Drawing.Point(290, 0);
             loadform.Name = "loadform";
-            loadform.Size = new System.Drawing.Size(1616, 1053);
+            loadform.Size = new System.Drawing.Size(1310, 900);
             loadform.TabIndex = 1;
             // 
             // Frm_Main
@@ -246,7 +246,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1902, 1055);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.ControlBox = false;
             this.Controls.Add(loadform);
             this.Controls.Add(this.grb_controls);
