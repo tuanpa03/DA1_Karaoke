@@ -17,11 +17,18 @@ namespace _3_GUI
         {
             InitializeComponent();
         }
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
 
         private void btn_Phong_Click(object sender, EventArgs e)
         {
             buttomcolor();
             btn_Phong.BackColor = SystemColors.HotTrack;
+            loadphong();
+        }
+
+        public static void loadphong()
+        {
             loadform.Controls.Clear();
             frm_Phong frmPhong = new frm_Phong();
             frmPhong.TopLevel = false;
@@ -31,6 +38,16 @@ namespace _3_GUI
             frmPhong.Show();
         }
 
+        public static void loadloaiphong()
+        {
+            loadform.Controls.Clear();
+            frm_LoaiPhong frmLoaiPhong = new frm_LoaiPhong();
+            frmLoaiPhong.TopLevel = false;
+            loadform.Controls.Add(frmLoaiPhong);
+            frmLoaiPhong.FormBorderStyle = FormBorderStyle.None;
+            frmLoaiPhong.Dock = DockStyle.Fill;
+            frmLoaiPhong.Show();
+        }
         private void btn_Nhanvien_Click(object sender, EventArgs e)
         {
             buttomcolor();
@@ -64,6 +81,11 @@ namespace _3_GUI
         {
             buttomcolor();
             btn_thietbi.BackColor = SystemColors.HotTrack;
+            loadthietbi();
+        }
+
+        public static void loadthietbi()
+        {
             loadform.Controls.Clear();
             frm_ThietBi frmThietBi = new frm_ThietBi();
             frmThietBi.TopLevel = false;
@@ -73,23 +95,8 @@ namespace _3_GUI
             frmThietBi.Show();
         }
 
-        private void btn_nhacungcap_Click(object sender, EventArgs e)
+        public static void loadloaithietbi()
         {
-            buttomcolor();
-            btn_nhacungcap.BackColor = SystemColors.HotTrack;
-            loadform.Controls.Clear();
-            frm_NhaCungCap frmNhaCungCap = new frm_NhaCungCap();
-            frmNhaCungCap.TopLevel = false;
-            loadform.Controls.Add(frmNhaCungCap);
-            frmNhaCungCap.FormBorderStyle = FormBorderStyle.None;
-            frmNhaCungCap.Dock = DockStyle.Fill;
-            frmNhaCungCap.Show();
-        }
-
-        private void btn_loaithietbi_Click(object sender, EventArgs e)
-        {
-            buttomcolor();
-            btn_loaithietbi.BackColor = SystemColors.HotTrack;
             loadform.Controls.Clear();
             frm_LoaiThietBi frmLoaiThietBi = new frm_LoaiThietBi();
             frmLoaiThietBi.TopLevel = false;
@@ -97,6 +104,27 @@ namespace _3_GUI
             frmLoaiThietBi.FormBorderStyle = FormBorderStyle.None;
             frmLoaiThietBi.Dock = DockStyle.Fill;
             frmLoaiThietBi.Show();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 790)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 19)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         private void btn_ctt_Click(object sender, EventArgs e)
@@ -112,19 +140,7 @@ namespace _3_GUI
             frmCongThucTinh.Show();
         }
 
-        private void btn_loaiphong_Click(object sender, EventArgs e)
-        {
-            buttomcolor();
-            btn_loaiphong.BackColor = SystemColors.HotTrack;
-            loadform.Controls.Clear();
-            frm_LoaiPhong frmLoaiPhong = new frm_LoaiPhong();
-            frmLoaiPhong.TopLevel = false;
-            loadform.Controls.Add(frmLoaiPhong);
-            frmLoaiPhong.FormBorderStyle = FormBorderStyle.None;
-            frmLoaiPhong.Dock = DockStyle.Fill;
-            frmLoaiPhong.Show();
-        }
-
+        
         void buttomcolor()
         {
             panel1.BackColor = SystemColors.HotTrack;
@@ -132,10 +148,7 @@ namespace _3_GUI
             btn_Nhanvien.BackColor = SystemColors.MenuHighlight;
             button3.BackColor = SystemColors.MenuHighlight;
             btn_thietbi.BackColor = SystemColors.MenuHighlight;
-            btn_nhacungcap.BackColor = SystemColors.MenuHighlight;
-            btn_loaithietbi.BackColor = SystemColors.MenuHighlight;
             btn_ctt.BackColor = SystemColors.MenuHighlight;
-            btn_loaiphong.BackColor = SystemColors.MenuHighlight;
         }
 
        

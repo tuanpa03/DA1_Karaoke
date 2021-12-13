@@ -295,33 +295,18 @@ namespace _3_GUI
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_menuDanhMuc.loadphong();
+        }
+
         private void btn_ClearTang_Click(object sender, EventArgs e)
         {
             tbx_tenTang.Text = "";
             tbx_soLuongPhong.Text = "";
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                x += a;
-                lbl_Timer.Location = new Point(x, y);
-                if (x >= 713)
-                {
-                    a = -1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-                if (x <= 12)
-                {
-                    a = 1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
+        
     }
 }
 

@@ -41,9 +41,9 @@ namespace _3_GUI
             // 
             this.pl_load.BackColor = System.Drawing.SystemColors.HighlightText;
             this.pl_load.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pl_load.Location = new System.Drawing.Point(0, 0);
+            this.pl_load.Location = new System.Drawing.Point(0, 100);
             this.pl_load.Name = "pl_load";
-            this.pl_load.Size = new System.Drawing.Size(1616, 1059);
+            this.pl_load.Size = new System.Drawing.Size(1310, 800);
             this.pl_load.TabIndex = 0;
             // 
             // panel2
@@ -55,16 +55,19 @@ namespace _3_GUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1616, 109);
+            this.panel2.Size = new System.Drawing.Size(1310, 100);
             this.panel2.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(433, 12);
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(524, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 77);
+            this.button2.Size = new System.Drawing.Size(262, 90);
             this.button2.TabIndex = 0;
             this.button2.Text = "button1";
             this.button2.UseVisualStyleBackColor = false;
@@ -72,10 +75,13 @@ namespace _3_GUI
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(223, 12);
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(262, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(181, 77);
+            this.button4.Size = new System.Drawing.Size(262, 90);
             this.button4.TabIndex = 0;
             this.button4.Text = "Doanh thu";
             this.button4.UseVisualStyleBackColor = false;
@@ -83,10 +89,13 @@ namespace _3_GUI
             // btn_sanpham
             // 
             this.btn_sanpham.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_sanpham.FlatAppearance.BorderSize = 0;
+            this.btn_sanpham.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sanpham.Location = new System.Drawing.Point(12, 12);
+            this.btn_sanpham.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_sanpham.Location = new System.Drawing.Point(0, 0);
             this.btn_sanpham.Name = "btn_sanpham";
-            this.btn_sanpham.Size = new System.Drawing.Size(181, 77);
+            this.btn_sanpham.Size = new System.Drawing.Size(262, 90);
             this.btn_sanpham.TabIndex = 0;
             this.btn_sanpham.Text = "Sản phẩm";
             this.btn_sanpham.UseVisualStyleBackColor = false;
@@ -97,7 +106,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1616, 1059);
+            this.ClientSize = new System.Drawing.Size(1310, 900);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pl_load);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

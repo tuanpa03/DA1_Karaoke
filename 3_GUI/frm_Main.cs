@@ -52,8 +52,12 @@ namespace _3_GUI
         {
             load();
         }
-        
-        private void btn_DanhMuc_Click(object sender, EventArgs e)
+        private void pic_hethong_Click(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        void loaddanhmuc()
         {
             loadform.Controls.Clear();
             frm_menuDanhMuc frmMenuDanhMuc = new frm_menuDanhMuc();
@@ -63,8 +67,16 @@ namespace _3_GUI
             frmMenuDanhMuc.Dock = DockStyle.Fill;
             frmMenuDanhMuc.Show();
         }
+        private void btn_DanhMuc_Click(object sender, EventArgs e)
+        {
+           loaddanhmuc();
+        }
+        private void pic_danhmuc_Click(object sender, EventArgs e)
+        {
+            loaddanhmuc();
+        }
 
-        private void btn_Thongke_Click(object sender, EventArgs e)
+        void loadthongke()
         {
             loadform.Controls.Clear();
             frm_thongke frmThongke = new frm_thongke();
@@ -74,21 +86,44 @@ namespace _3_GUI
             frmThongke.Dock = DockStyle.Fill;
             frmThongke.Show();
         }
-
+        private void btn_Thongke_Click(object sender, EventArgs e)
+        {
+            loadthongke();
+        }
+        private void pic_thongke_Click(object sender, EventArgs e)
+        {
+            loadthongke();
+        }
         private void btn_doimk_Click(object sender, EventArgs e)
         {
             frm_DoiMatKhau frmDoiMatKhau = new frm_DoiMatKhau(Frm_Main.sendnhanvien().Username);
             frmDoiMatKhau.Show();
         }
-
+        private void pic_dmk_Click(object sender, EventArgs e)
+        {
+            frm_DoiMatKhau frmDoiMatKhau = new frm_DoiMatKhau(Frm_Main.sendnhanvien().Username);
+            frmDoiMatKhau.Show();
+        }
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             frm_Login frmlogin = new frm_Login();
             this.Hide();
             frmlogin.Show();
         }
-
+        private void pic_logout_Click(object sender, EventArgs e)
+        {
+            frm_Login frmlogin = new frm_Login();
+            this.Hide();
+            frmlogin.Show();
+        }
         private void btn_close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("are you sure", "cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void pic_out_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("are you sure", "cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -105,5 +140,26 @@ namespace _3_GUI
             frmThanhToan.Dock = DockStyle.Fill;
             frmThanhToan.Show();
         }
+        void loadnhap()
+        {
+            loadform.Controls.Clear();
+            frm_HoaDonNhap frmHoaDonNhap = new frm_HoaDonNhap();
+            frmHoaDonNhap.TopLevel = false;
+            loadform.Controls.Add(frmHoaDonNhap);
+            frmHoaDonNhap.FormBorderStyle = FormBorderStyle.None;
+            frmHoaDonNhap.Dock = DockStyle.Fill;
+            frmHoaDonNhap.Show();
+        }
+        private void btn_nhaphang_Click(object sender, EventArgs e)
+        {
+            loadnhap();
+        }
+
+        private void pic_nhap_Click(object sender, EventArgs e)
+        {
+            loadnhap();
+        }
+
+        
     }
 }

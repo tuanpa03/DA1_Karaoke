@@ -68,48 +68,53 @@ namespace _3_GUI
             // 
             // gbx_HoaDon
             // 
+            this.gbx_HoaDon.BackColor = System.Drawing.SystemColors.Control;
             this.gbx_HoaDon.Controls.Add(this.btn_AddHoaDon);
             this.gbx_HoaDon.Controls.Add(this.dgrid_HoaDonNhap);
             this.gbx_HoaDon.Dock = System.Windows.Forms.DockStyle.Left;
             this.gbx_HoaDon.Location = new System.Drawing.Point(0, 0);
             this.gbx_HoaDon.Name = "gbx_HoaDon";
-            this.gbx_HoaDon.Size = new System.Drawing.Size(643, 1055);
+            this.gbx_HoaDon.Size = new System.Drawing.Size(430, 900);
             this.gbx_HoaDon.TabIndex = 2;
             this.gbx_HoaDon.TabStop = false;
             this.gbx_HoaDon.Text = "Hóa đơn nhập";
             // 
             // btn_AddHoaDon
             // 
-            this.btn_AddHoaDon.Location = new System.Drawing.Point(0, 26);
+            this.btn_AddHoaDon.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_AddHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_AddHoaDon.Location = new System.Drawing.Point(3, 23);
             this.btn_AddHoaDon.Name = "btn_AddHoaDon";
-            this.btn_AddHoaDon.Size = new System.Drawing.Size(637, 43);
+            this.btn_AddHoaDon.Size = new System.Drawing.Size(424, 43);
             this.btn_AddHoaDon.TabIndex = 1;
             this.btn_AddHoaDon.Text = "Tạo hóa đơn mới";
-            this.btn_AddHoaDon.UseVisualStyleBackColor = true;
+            this.btn_AddHoaDon.UseVisualStyleBackColor = false;
             this.btn_AddHoaDon.Click += new System.EventHandler(this.btn_AddHoaDon_Click);
             // 
             // dgrid_HoaDonNhap
             // 
             this.dgrid_HoaDonNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrid_HoaDonNhap.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgrid_HoaDonNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_HoaDonNhap.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgrid_HoaDonNhap.Location = new System.Drawing.Point(3, 75);
+            this.dgrid_HoaDonNhap.Location = new System.Drawing.Point(3, 72);
             this.dgrid_HoaDonNhap.Name = "dgrid_HoaDonNhap";
             this.dgrid_HoaDonNhap.RowHeadersWidth = 51;
             this.dgrid_HoaDonNhap.RowTemplate.Height = 29;
             this.dgrid_HoaDonNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrid_HoaDonNhap.Size = new System.Drawing.Size(637, 977);
+            this.dgrid_HoaDonNhap.Size = new System.Drawing.Size(424, 825);
             this.dgrid_HoaDonNhap.TabIndex = 0;
             this.dgrid_HoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_HoaDonNhap_CellClick);
             this.dgrid_HoaDonNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_HoaDonNhap_CellContentClick);
             // 
             // gbx_MatHang
             // 
+            this.gbx_MatHang.BackColor = System.Drawing.SystemColors.Control;
             this.gbx_MatHang.Controls.Add(this.dgrid_MatHang);
             this.gbx_MatHang.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbx_MatHang.Location = new System.Drawing.Point(1131, 0);
+            this.gbx_MatHang.Location = new System.Drawing.Point(880, 0);
             this.gbx_MatHang.Name = "gbx_MatHang";
-            this.gbx_MatHang.Size = new System.Drawing.Size(435, 1055);
+            this.gbx_MatHang.Size = new System.Drawing.Size(430, 900);
             this.gbx_MatHang.TabIndex = 3;
             this.gbx_MatHang.TabStop = false;
             this.gbx_MatHang.Text = "Mặt hàng";
@@ -117,19 +122,21 @@ namespace _3_GUI
             // dgrid_MatHang
             // 
             this.dgrid_MatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrid_MatHang.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgrid_MatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_MatHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_MatHang.Location = new System.Drawing.Point(3, 23);
             this.dgrid_MatHang.Name = "dgrid_MatHang";
             this.dgrid_MatHang.RowHeadersWidth = 51;
             this.dgrid_MatHang.RowTemplate.Height = 29;
-            this.dgrid_MatHang.Size = new System.Drawing.Size(429, 1029);
+            this.dgrid_MatHang.Size = new System.Drawing.Size(424, 874);
             this.dgrid_MatHang.TabIndex = 0;
             this.dgrid_MatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_MatHang_CellClick);
             this.dgrid_MatHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_MatHang_CellContentClick);
             // 
             // gbx_ChiTietHoaDon
             // 
+            this.gbx_ChiTietHoaDon.BackColor = System.Drawing.SystemColors.Window;
             this.gbx_ChiTietHoaDon.Controls.Add(this.label8);
             this.gbx_ChiTietHoaDon.Controls.Add(this.dtp_NgayTao);
             this.gbx_ChiTietHoaDon.Controls.Add(this.label2);
@@ -144,9 +151,9 @@ namespace _3_GUI
             this.gbx_ChiTietHoaDon.Controls.Add(this.txt_MaHoaDon);
             this.gbx_ChiTietHoaDon.Controls.Add(this.dgrid_ChiTietHoaDonNhap);
             this.gbx_ChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbx_ChiTietHoaDon.Location = new System.Drawing.Point(643, 0);
+            this.gbx_ChiTietHoaDon.Location = new System.Drawing.Point(430, 0);
             this.gbx_ChiTietHoaDon.Name = "gbx_ChiTietHoaDon";
-            this.gbx_ChiTietHoaDon.Size = new System.Drawing.Size(488, 1055);
+            this.gbx_ChiTietHoaDon.Size = new System.Drawing.Size(450, 900);
             this.gbx_ChiTietHoaDon.TabIndex = 4;
             this.gbx_ChiTietHoaDon.TabStop = false;
             this.gbx_ChiTietHoaDon.Text = "Chi tiết hóa đơn nhập";
@@ -170,7 +177,7 @@ namespace _3_GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 92);
+            this.label2.Location = new System.Drawing.Point(26, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 13;
@@ -187,9 +194,9 @@ namespace _3_GUI
             this.gbx_NhaCungCap.Controls.Add(this.txt_DiaChi);
             this.gbx_NhaCungCap.Controls.Add(this.txt_SoDienThoai);
             this.gbx_NhaCungCap.Controls.Add(this.txt_TenNhaCungCap);
-            this.gbx_NhaCungCap.Location = new System.Drawing.Point(17, 183);
+            this.gbx_NhaCungCap.Location = new System.Drawing.Point(6, 169);
             this.gbx_NhaCungCap.Name = "gbx_NhaCungCap";
-            this.gbx_NhaCungCap.Size = new System.Drawing.Size(462, 267);
+            this.gbx_NhaCungCap.Size = new System.Drawing.Size(438, 293);
             this.gbx_NhaCungCap.TabIndex = 10;
             this.gbx_NhaCungCap.TabStop = false;
             this.gbx_NhaCungCap.Text = "Thông tin nhà cung cấp";
@@ -242,6 +249,7 @@ namespace _3_GUI
             // 
             // txt_Email
             // 
+            this.txt_Email.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_Email.Location = new System.Drawing.Point(171, 178);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(186, 27);
@@ -249,6 +257,7 @@ namespace _3_GUI
             // 
             // txt_DiaChi
             // 
+            this.txt_DiaChi.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_DiaChi.Location = new System.Drawing.Point(171, 135);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(186, 27);
@@ -256,6 +265,7 @@ namespace _3_GUI
             // 
             // txt_SoDienThoai
             // 
+            this.txt_SoDienThoai.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_SoDienThoai.Location = new System.Drawing.Point(171, 86);
             this.txt_SoDienThoai.Name = "txt_SoDienThoai";
             this.txt_SoDienThoai.Size = new System.Drawing.Size(186, 27);
@@ -263,6 +273,7 @@ namespace _3_GUI
             // 
             // txt_TenNhaCungCap
             // 
+            this.txt_TenNhaCungCap.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_TenNhaCungCap.Location = new System.Drawing.Point(171, 42);
             this.txt_TenNhaCungCap.Name = "txt_TenNhaCungCap";
             this.txt_TenNhaCungCap.Size = new System.Drawing.Size(186, 27);
@@ -271,7 +282,7 @@ namespace _3_GUI
             // chk_NhaCungCap
             // 
             this.chk_NhaCungCap.AutoSize = true;
-            this.chk_NhaCungCap.Location = new System.Drawing.Point(392, 138);
+            this.chk_NhaCungCap.Location = new System.Drawing.Point(375, 127);
             this.chk_NhaCungCap.Name = "chk_NhaCungCap";
             this.chk_NhaCungCap.Size = new System.Drawing.Size(63, 24);
             this.chk_NhaCungCap.TabIndex = 9;
@@ -282,7 +293,7 @@ namespace _3_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 45);
+            this.label1.Location = new System.Drawing.Point(26, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 14;
@@ -291,7 +302,7 @@ namespace _3_GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 138);
+            this.label3.Location = new System.Drawing.Point(26, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 8;
@@ -299,8 +310,9 @@ namespace _3_GUI
             // 
             // cbx_NhaCungCap
             // 
+            this.cbx_NhaCungCap.BackColor = System.Drawing.SystemColors.Menu;
             this.cbx_NhaCungCap.FormattingEnabled = true;
-            this.cbx_NhaCungCap.Location = new System.Drawing.Point(188, 136);
+            this.cbx_NhaCungCap.Location = new System.Drawing.Point(171, 125);
             this.cbx_NhaCungCap.Name = "cbx_NhaCungCap";
             this.cbx_NhaCungCap.Size = new System.Drawing.Size(186, 28);
             this.cbx_NhaCungCap.TabIndex = 7;
@@ -308,34 +320,38 @@ namespace _3_GUI
             // 
             // txt_TienThanhToan
             // 
-            this.txt_TienThanhToan.Location = new System.Drawing.Point(188, 88);
+            this.txt_TienThanhToan.BackColor = System.Drawing.SystemColors.Menu;
+            this.txt_TienThanhToan.Location = new System.Drawing.Point(171, 77);
             this.txt_TienThanhToan.Name = "txt_TienThanhToan";
             this.txt_TienThanhToan.Size = new System.Drawing.Size(186, 27);
             this.txt_TienThanhToan.TabIndex = 11;
             // 
             // btn_Huy
             // 
-            this.btn_Huy.Location = new System.Drawing.Point(265, 521);
+            this.btn_Huy.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Huy.Location = new System.Drawing.Point(239, 521);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(199, 38);
             this.btn_Huy.TabIndex = 1;
             this.btn_Huy.Text = "Hủy đơn";
-            this.btn_Huy.UseVisualStyleBackColor = true;
+            this.btn_Huy.UseVisualStyleBackColor = false;
             this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // btn_XacNhan
             // 
+            this.btn_XacNhan.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_XacNhan.Location = new System.Drawing.Point(17, 521);
             this.btn_XacNhan.Name = "btn_XacNhan";
             this.btn_XacNhan.Size = new System.Drawing.Size(201, 38);
             this.btn_XacNhan.TabIndex = 1;
             this.btn_XacNhan.Text = "Xác nhận";
-            this.btn_XacNhan.UseVisualStyleBackColor = true;
+            this.btn_XacNhan.UseVisualStyleBackColor = false;
             this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
             // txt_MaHoaDon
             // 
-            this.txt_MaHoaDon.Location = new System.Drawing.Point(188, 42);
+            this.txt_MaHoaDon.BackColor = System.Drawing.SystemColors.Menu;
+            this.txt_MaHoaDon.Location = new System.Drawing.Point(171, 31);
             this.txt_MaHoaDon.Name = "txt_MaHoaDon";
             this.txt_MaHoaDon.Size = new System.Drawing.Size(186, 27);
             this.txt_MaHoaDon.TabIndex = 12;
@@ -343,13 +359,14 @@ namespace _3_GUI
             // dgrid_ChiTietHoaDonNhap
             // 
             this.dgrid_ChiTietHoaDonNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrid_ChiTietHoaDonNhap.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgrid_ChiTietHoaDonNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_ChiTietHoaDonNhap.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgrid_ChiTietHoaDonNhap.Location = new System.Drawing.Point(3, 583);
+            this.dgrid_ChiTietHoaDonNhap.Location = new System.Drawing.Point(3, 577);
             this.dgrid_ChiTietHoaDonNhap.Name = "dgrid_ChiTietHoaDonNhap";
             this.dgrid_ChiTietHoaDonNhap.RowHeadersWidth = 51;
             this.dgrid_ChiTietHoaDonNhap.RowTemplate.Height = 29;
-            this.dgrid_ChiTietHoaDonNhap.Size = new System.Drawing.Size(482, 469);
+            this.dgrid_ChiTietHoaDonNhap.Size = new System.Drawing.Size(444, 320);
             this.dgrid_ChiTietHoaDonNhap.TabIndex = 0;
             this.dgrid_ChiTietHoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_ChiTietHoaDonNhap_CellClick);
             this.dgrid_ChiTietHoaDonNhap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_ChiTietHoaDonNhap_CellContentClick);
@@ -358,10 +375,12 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1566, 1055);
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ClientSize = new System.Drawing.Size(1310, 900);
             this.Controls.Add(this.gbx_ChiTietHoaDon);
             this.Controls.Add(this.gbx_MatHang);
             this.Controls.Add(this.gbx_HoaDon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_HoaDonNhap";
             this.Text = "frm_HoaDonNhap";
             this.gbx_HoaDon.ResumeLayout(false);

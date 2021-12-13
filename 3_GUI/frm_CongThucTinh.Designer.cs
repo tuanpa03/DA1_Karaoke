@@ -29,7 +29,6 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_CongThucTinh));
             this.dgrid_DataOfCTT = new System.Windows.Forms.DataGridView();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -54,37 +53,36 @@ namespace _3_GUI
             this.txt_PriceOfVIPRoom = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_Clear = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbl_Timer = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_DataOfCTT)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgrid_DataOfCTT
             // 
+            this.dgrid_DataOfCTT.AllowUserToAddRows = false;
+            this.dgrid_DataOfCTT.AllowUserToDeleteRows = false;
+            this.dgrid_DataOfCTT.AllowUserToResizeColumns = false;
+            this.dgrid_DataOfCTT.AllowUserToResizeRows = false;
             this.dgrid_DataOfCTT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_DataOfCTT.BackgroundColor = System.Drawing.Color.White;
             this.dgrid_DataOfCTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_DataOfCTT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgrid_DataOfCTT.Location = new System.Drawing.Point(3, 34);
+            this.dgrid_DataOfCTT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgrid_DataOfCTT.Location = new System.Drawing.Point(0, 367);
             this.dgrid_DataOfCTT.Name = "dgrid_DataOfCTT";
+            this.dgrid_DataOfCTT.RowHeadersVisible = false;
             this.dgrid_DataOfCTT.RowHeadersWidth = 51;
             this.dgrid_DataOfCTT.RowTemplate.Height = 29;
             this.dgrid_DataOfCTT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrid_DataOfCTT.Size = new System.Drawing.Size(1592, 444);
+            this.dgrid_DataOfCTT.Size = new System.Drawing.Size(1310, 373);
             this.dgrid_DataOfCTT.TabIndex = 0;
             this.dgrid_DataOfCTT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_DataOfCTT_CellClick);
             // 
@@ -138,7 +136,7 @@ namespace _3_GUI
             // txt_TGUD2
             // 
             this.txt_TGUD2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_TGUD2.Location = new System.Drawing.Point(693, 50);
+            this.txt_TGUD2.Location = new System.Drawing.Point(652, 50);
             this.txt_TGUD2.Name = "txt_TGUD2";
             this.txt_TGUD2.Size = new System.Drawing.Size(268, 34);
             this.txt_TGUD2.TabIndex = 2;
@@ -146,7 +144,7 @@ namespace _3_GUI
             // txt_UD2
             // 
             this.txt_UD2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_UD2.Location = new System.Drawing.Point(693, 101);
+            this.txt_UD2.Location = new System.Drawing.Point(652, 101);
             this.txt_UD2.Name = "txt_UD2";
             this.txt_UD2.Size = new System.Drawing.Size(268, 34);
             this.txt_UD2.TabIndex = 2;
@@ -155,7 +153,7 @@ namespace _3_GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(552, 55);
+            this.label3.Location = new System.Drawing.Point(511, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 3;
@@ -165,7 +163,7 @@ namespace _3_GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(577, 106);
+            this.label4.Location = new System.Drawing.Point(536, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 25);
             this.label4.TabIndex = 3;
@@ -174,24 +172,24 @@ namespace _3_GUI
             // txt_TGUD3
             // 
             this.txt_TGUD3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_TGUD3.Location = new System.Drawing.Point(1178, 48);
+            this.txt_TGUD3.Location = new System.Drawing.Point(1064, 48);
             this.txt_TGUD3.Name = "txt_TGUD3";
-            this.txt_TGUD3.Size = new System.Drawing.Size(268, 34);
+            this.txt_TGUD3.Size = new System.Drawing.Size(234, 34);
             this.txt_TGUD3.TabIndex = 2;
             // 
             // txt_UD3
             // 
             this.txt_UD3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_UD3.Location = new System.Drawing.Point(1178, 99);
+            this.txt_UD3.Location = new System.Drawing.Point(1064, 99);
             this.txt_UD3.Name = "txt_UD3";
-            this.txt_UD3.Size = new System.Drawing.Size(268, 34);
+            this.txt_UD3.Size = new System.Drawing.Size(234, 34);
             this.txt_UD3.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(1040, 53);
+            this.label5.Location = new System.Drawing.Point(926, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 25);
             this.label5.TabIndex = 3;
@@ -201,7 +199,7 @@ namespace _3_GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(1066, 104);
+            this.label6.Location = new System.Drawing.Point(952, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 25);
             this.label6.TabIndex = 3;
@@ -209,17 +207,17 @@ namespace _3_GUI
             // 
             // txt_Note
             // 
-            this.txt_Note.Location = new System.Drawing.Point(693, 157);
+            this.txt_Note.Location = new System.Drawing.Point(652, 157);
             this.txt_Note.Multiline = true;
             this.txt_Note.Name = "txt_Note";
-            this.txt_Note.Size = new System.Drawing.Size(753, 78);
+            this.txt_Note.Size = new System.Drawing.Size(646, 78);
             this.txt_Note.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(582, 157);
+            this.label7.Location = new System.Drawing.Point(541, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 25);
             this.label7.TabIndex = 3;
@@ -294,17 +292,6 @@ namespace _3_GUI
             this.btn_Clear.UseVisualStyleBackColor = false;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgrid_DataOfCTT);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(0, 422);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1598, 481);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -334,11 +321,11 @@ namespace _3_GUI
             this.groupBox2.Controls.Add(this.txt_UD2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_UD3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(0, 73);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1598, 349);
+            this.groupBox2.Size = new System.Drawing.Size(1310, 349);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
@@ -383,54 +370,23 @@ namespace _3_GUI
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lbl_Timer);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1598, 73);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            // 
-            // lbl_Timer
-            // 
-            this.lbl_Timer.AutoSize = true;
-            this.lbl_Timer.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Timer.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Timer.Location = new System.Drawing.Point(358, 18);
-            this.lbl_Timer.Name = "lbl_Timer";
-            this.lbl_Timer.Size = new System.Drawing.Size(882, 42);
-            this.lbl_Timer.TabIndex = 1;
-            this.lbl_Timer.Text = "KARAOKE FAMILY - 216 Phúc Tân - Hoàn Kiếm - Hà Nội";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // frm_CongThucTinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1598, 903);
+            this.ClientSize = new System.Drawing.Size(1310, 740);
+            this.Controls.Add(this.dgrid_DataOfCTT);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_CongThucTinh";
             this.Text = "frm_CongThucTinh";
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_DataOfCTT)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -460,14 +416,10 @@ namespace _3_GUI
         private System.Windows.Forms.TextBox txt_PriceOfVIPRoom;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_Clear;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbl_Timer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Timer timer1;
     }
 }

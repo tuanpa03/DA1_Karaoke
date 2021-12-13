@@ -227,7 +227,6 @@ namespace _3_GUI
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBox1.Image = global::_3_GUI.Properties.Resources.confirm_accept_web_icon_correct_65993;
             this.pictureBox1.Location = new System.Drawing.Point(742, 356);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 37);

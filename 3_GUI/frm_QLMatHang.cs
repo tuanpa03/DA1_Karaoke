@@ -23,7 +23,7 @@ namespace _3_GUI_PresentationLayer
         private static IBUS_DonViTinh_Service _donViTinhService;
         private IBUS_NhanVien_Service _nhanVienService;
         private List<DonViTinh> _dvt;
-        private string _manv;
+        private string _nhanvien;
 
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
@@ -34,6 +34,8 @@ namespace _3_GUI_PresentationLayer
             _matHangService = new BUS_MatHang_Service();
             _donViTinhService = new BUS_DonViTinh_Service();
             _dvt = new List<DonViTinh>();
+            lb_nhanvien.Text = Frm_Main.sendnhanvien().Ho + " " + Frm_Main.sendnhanvien().TenDem + " " +
+                          Frm_Main.sendnhanvien().Ten;
         }
         private void frm_QLMatHang_Load(object sender, EventArgs e)
         {
@@ -158,28 +160,6 @@ namespace _3_GUI_PresentationLayer
             foreach (var x in _donViTinhService.GetlstDonViTinhs())
             {
                 cmb_IDDvTinh.Items.Add(x.TenDvt);
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                x += a;
-                lbl_Timer.Location = new Point(x, y);
-                if (x >= 713)
-                {
-                    a = -1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-                if (x <= 12)
-                {
-                    a = 1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-            }
-            catch (Exception ex)
-            {
             }
         }
 

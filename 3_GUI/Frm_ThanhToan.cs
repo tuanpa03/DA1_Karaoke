@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using _1_DAL.Entities;
+﻿using _1_DAL.Entities;
 using _2_BUS.BUS_MatHang_Service;
 using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
 using _3_GUI;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -49,15 +46,22 @@ namespace _3_GUI_PresentationLayer
             txt_chiphikhac.Text = "0";
             loadcongthuctinh();
             _phong = _phong_Service.sendlstPhong().SingleOrDefault(c => c.Id == idphong);
+            
         }
         private void Frm_ThanhToan_Load(object sender, EventArgs e)
         {
-            loaddichvu();
             getdata("");
-            loadtien();
+            loaddichvu();
             loadphong();
+            loadtien();
+            reload();
         }
 
+        void reload()
+        {
+            showdata();
+            loaddichvu();
+        }
         void loadphong()
         {
             lbl_tenPhong.Text = _phong.TenPhong;
@@ -94,7 +98,7 @@ namespace _3_GUI_PresentationLayer
         }
         private void getdata(string tenMH)
         {
-            _dataMatHangs = _matHangService.GetlstMatHangs().Where(c => c.TenMatHang.StartsWith(tenMH)).ToList();
+            _dataMatHangs = _matHangService.GetlstMatHangs().Where(c => (c.TenMatHang.ToLower()).Contains(tenMH)).ToList();
             showdata();
         }
 
@@ -112,12 +116,22 @@ namespace _3_GUI_PresentationLayer
                  {
                      a.Id,
                      a.TenMatHang,
-                     a.SoLuong,
                      a.DonGia,
+                     a.SoLuong,
                  }).ToList();
             dgv_MatHang.DataSource = data;
             dgv_MatHang.Columns["Id"].Visible = false;
             dgv_MatHang.Columns.Add(btnthem);
+            dgv_MatHang.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
+            dgv_MatHang.Columns["SoLuong"].HeaderText = "Số lượng";
+            dgv_MatHang.Columns["DonGia"].HeaderText = "Đơn giá(VND.)";
+            dgv_MatHang.Columns["SoLuong"].Width = 100;
+            dgv_MatHang.Columns["DonGia"].Width = 100;
+            dgv_MatHang.Columns[4].Width = 80;
+            dgv_MatHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_MatHang.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_MatHang.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
 
         private List<MatHang> _newlstmathang = new List<MatHang>();
@@ -147,7 +161,15 @@ namespace _3_GUI_PresentationLayer
             dgv_chitietdichvu.Columns["Id"].Visible = false;
             dgv_chitietdichvu.Columns["IdchiTietHoaDonBan"].Visible = false;
             dgv_chitietdichvu.Columns.Add(btnxoa);
-
+            dgv_chitietdichvu.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
+            dgv_chitietdichvu.Columns["SoLuong"].HeaderText = "Số lượng";
+            dgv_chitietdichvu.Columns["DonGia"].HeaderText = "Đơn giá(VND.)";
+            dgv_chitietdichvu.Columns["SoLuong"].Width = 100;
+            dgv_chitietdichvu.Columns["DonGia"].Width = 100;
+            dgv_chitietdichvu.Columns[5].Width = 80;
+            dgv_chitietdichvu.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_chitietdichvu.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_chitietdichvu.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
         private void adddichvu(DataGridViewRow x)
         {
@@ -176,13 +198,7 @@ namespace _3_GUI_PresentationLayer
         }
         private DataGridViewRow r;
         private DataGridViewColumn c;
-        private void dgv_MatHang_Click(object sender, EventArgs e)
-        {
-            //textBox1.Text = dgv_MatHang.CurrentCell.Value.ToString();
-        }
-
-
-
+        
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Frm_Main.load();
@@ -192,8 +208,9 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_MatHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex==-1)return;
             r = dgv_MatHang.Rows[e.RowIndex];
-            if (e.ColumnIndex != 2&&e.ColumnIndex != 3)
+            if (e.ColumnIndex == 4 || e.ColumnIndex==0)
             {
                 adddichvu(r);
             }
@@ -201,8 +218,9 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_chitietdichvu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex==-1)return;
             r = dgv_chitietdichvu.Rows[e.RowIndex];
-            if (e.ColumnIndex != 4&& e.ColumnIndex != 3&& e.ColumnIndex != 2)
+            if (e.ColumnIndex == 5 || e.ColumnIndex==0)
             {
                 removedichvu(r);
             }
@@ -322,6 +340,29 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
-       
+        private List<MatHang> _newlstMatHang;
+        private void btn_sxtang_Click(object sender, EventArgs e)
+        {
+            _newlstMatHang = new List<MatHang>();
+            txt_search.Text = "";
+            btn_sxtang.BackColor=Color.GreenYellow;
+            btn_sxgiam.BackColor = SystemColors.Window;
+            _newlstMatHang = _dataMatHangs.OrderBy(c => c.DonGia).ToList();
+            _dataMatHangs.Clear();
+            _dataMatHangs = _newlstMatHang;
+            showdata();
+        }
+
+        private void btn_sxgiam_Click(object sender, EventArgs e)
+        {
+            _newlstMatHang = new List<MatHang>();
+            txt_search.Text = "";
+            btn_sxgiam.BackColor = Color.GreenYellow;
+            btn_sxtang.BackColor = SystemColors.Window;
+            _newlstMatHang = _dataMatHangs.OrderByDescending(c => c.DonGia).ToList();
+            _dataMatHangs.Clear();
+            _dataMatHangs = _newlstMatHang;
+            showdata();
+        }
     }
 }

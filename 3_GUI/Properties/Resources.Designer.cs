@@ -63,39 +63,19 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _ {
+            get {
+                object obj = ResourceManager.GetObject("+", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9d6022f153768025ad37f51d89d29ece {
             get {
                 object obj = ResourceManager.GetObject("9d6022f153768025ad37f51d89d29ece", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CoKhachHat2 {
-            get {
-                object obj = ResourceManager.GetObject("CoKhachHat2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap confirm_accept_web_icon_correct_65993 {
-            get {
-                object obj = ResourceManager.GetObject("confirm-accept-web-icon-correct-65993", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap karaoke_party_banner_layout_95169_774 {
-            get {
-                object obj = ResourceManager.GetObject("karaoke-party-banner-layout_95169-774", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +93,19 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SsDonKhach {
+        internal static System.Drawing.Bitmap nhap {
             get {
-                object obj = ResourceManager.GetObject("SsDonKhach", resourceCulture);
+                object obj = ResourceManager.GetObject("nhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuayLai {
+            get {
+                object obj = ResourceManager.GetObject("QuayLai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,16 +116,6 @@ namespace _3_GUI.Properties {
         internal static System.Drawing.Bitmap tree {
             get {
                 object obj = ResourceManager.GetObject("tree", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap what_does_the_number_862_mean {
-            get {
-                object obj = ResourceManager.GetObject("what-does-the-number-862-mean", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
