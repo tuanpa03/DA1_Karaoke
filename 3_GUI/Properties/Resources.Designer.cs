@@ -63,6 +63,16 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _ {
+            get {
+                object obj = ResourceManager.GetObject("+", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9d6022f153768025ad37f51d89d29ece {
             get {
                 object obj = ResourceManager.GetObject("9d6022f153768025ad37f51d89d29ece", resourceCulture);
@@ -93,6 +103,16 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap karaoke_family {
+            get {
+                object obj = ResourceManager.GetObject("karaoke-family", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap karaoke_party_banner_layout_95169_774 {
             get {
                 object obj = ResourceManager.GetObject("karaoke-party-banner-layout_95169-774", resourceCulture);
@@ -106,6 +126,26 @@ namespace _3_GUI.Properties {
         internal static System.Drawing.Bitmap mainimage {
             get {
                 object obj = ResourceManager.GetObject("mainimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuayLai {
+            get {
+                object obj = ResourceManager.GetObject("QuayLai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuayLai1 {
+            get {
+                object obj = ResourceManager.GetObject("QuayLai1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

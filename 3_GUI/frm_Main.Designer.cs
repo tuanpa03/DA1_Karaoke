@@ -80,9 +80,9 @@ namespace _3_GUI
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(17, 227);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 230);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -91,29 +91,31 @@ namespace _3_GUI
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.LightYellow;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(43, 740);
+            this.pictureBox7.Location = new System.Drawing.Point(40, 820);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(46, 37);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
+            this.pictureBox6.BackColor = System.Drawing.Color.LightYellow;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(43, 679);
+            this.pictureBox6.Location = new System.Drawing.Point(40, 700);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(46, 37);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 7;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.LightYellow;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(43, 804);
+            this.pictureBox4.Location = new System.Drawing.Point(40, 760);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 39);
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -121,9 +123,9 @@ namespace _3_GUI
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(17, 363);
+            this.pictureBox5.Location = new System.Drawing.Point(10, 374);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
@@ -131,9 +133,9 @@ namespace _3_GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(17, 294);
+            this.pictureBox3.Location = new System.Drawing.Point(10, 302);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
@@ -143,8 +145,8 @@ namespace _3_GUI
             this.pictureBox1.Image = global::_3_GUI.Properties.Resources.mainimage;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 221);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(290, 221);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -152,9 +154,9 @@ namespace _3_GUI
             // 
             this.btn_doimk.BackColor = System.Drawing.Color.LightYellow;
             this.btn_doimk.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_doimk.Location = new System.Drawing.Point(32, 666);
+            this.btn_doimk.Location = new System.Drawing.Point(30, 690);
             this.btn_doimk.Name = "btn_doimk";
-            this.btn_doimk.Size = new System.Drawing.Size(231, 58);
+            this.btn_doimk.Size = new System.Drawing.Size(230, 60);
             this.btn_doimk.TabIndex = 5;
             this.btn_doimk.Text = "    Đổi mật khẩu";
             this.btn_doimk.UseVisualStyleBackColor = false;
@@ -165,9 +167,9 @@ namespace _3_GUI
             this.btn_dangxuat.BackColor = System.Drawing.Color.LightYellow;
             this.btn_dangxuat.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btn_dangxuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_dangxuat.Location = new System.Drawing.Point(32, 730);
+            this.btn_dangxuat.Location = new System.Drawing.Point(30, 750);
             this.btn_dangxuat.Name = "btn_dangxuat";
-            this.btn_dangxuat.Size = new System.Drawing.Size(231, 58);
+            this.btn_dangxuat.Size = new System.Drawing.Size(230, 60);
             this.btn_dangxuat.TabIndex = 4;
             this.btn_dangxuat.Text = "Đăng xuất";
             this.btn_dangxuat.UseVisualStyleBackColor = false;
@@ -178,9 +180,9 @@ namespace _3_GUI
             this.btn_close.BackColor = System.Drawing.Color.LightYellow;
             this.btn_close.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_close.ForeColor = System.Drawing.Color.Red;
-            this.btn_close.Location = new System.Drawing.Point(32, 794);
+            this.btn_close.Location = new System.Drawing.Point(30, 810);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(231, 58);
+            this.btn_close.Size = new System.Drawing.Size(230, 60);
             this.btn_close.TabIndex = 3;
             this.btn_close.Text = "   EXIT";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -193,9 +195,9 @@ namespace _3_GUI
             this.btn_Thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Thongke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Thongke.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Thongke.Location = new System.Drawing.Point(6, 360);
+            this.btn_Thongke.Location = new System.Drawing.Point(0, 364);
             this.btn_Thongke.Name = "btn_Thongke";
-            this.btn_Thongke.Size = new System.Drawing.Size(292, 64);
+            this.btn_Thongke.Size = new System.Drawing.Size(290, 70);
             this.btn_Thongke.TabIndex = 2;
             this.btn_Thongke.Text = "           Báo cáo thống kê";
             this.btn_Thongke.UseVisualStyleBackColor = false;
@@ -208,9 +210,9 @@ namespace _3_GUI
             this.btn_DanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DanhMuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_DanhMuc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_DanhMuc.Location = new System.Drawing.Point(5, 291);
+            this.btn_DanhMuc.Location = new System.Drawing.Point(0, 292);
             this.btn_DanhMuc.Name = "btn_DanhMuc";
-            this.btn_DanhMuc.Size = new System.Drawing.Size(292, 66);
+            this.btn_DanhMuc.Size = new System.Drawing.Size(290, 70);
             this.btn_DanhMuc.TabIndex = 1;
             this.btn_DanhMuc.Text = "Danh Mục";
             this.btn_DanhMuc.UseVisualStyleBackColor = false;
@@ -224,9 +226,9 @@ namespace _3_GUI
             this.btn_Hethong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Hethong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Hethong.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Hethong.Location = new System.Drawing.Point(5, 217);
+            this.btn_Hethong.Location = new System.Drawing.Point(0, 220);
             this.btn_Hethong.Name = "btn_Hethong";
-            this.btn_Hethong.Size = new System.Drawing.Size(292, 71);
+            this.btn_Hethong.Size = new System.Drawing.Size(290, 70);
             this.btn_Hethong.TabIndex = 0;
             this.btn_Hethong.Text = "Hệ Thống";
             this.btn_Hethong.UseVisualStyleBackColor = false;
@@ -247,10 +249,9 @@ namespace _3_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.ControlBox = false;
             this.Controls.Add(loadform);
             this.Controls.Add(this.grb_controls);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Main";
             this.Text = "Frm_Main";
             this.grb_controls.ResumeLayout(false);
@@ -281,6 +282,6 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private static System.Windows.Forms.Panel loadform;
+        public static System.Windows.Forms.Panel loadform;
     }
 }

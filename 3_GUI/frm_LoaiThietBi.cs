@@ -133,7 +133,7 @@ namespace _3_GUI
 
         private void btn_dong_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frm_menuDanhMuc.loadthietbi();
         }
     }
 }

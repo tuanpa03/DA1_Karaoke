@@ -173,5 +173,9 @@ namespace _3_GUI
             MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
         }
 
+        private void btn_themloaithietbi_Click(object sender, EventArgs e)
+        {
+            frm_menuDanhMuc.loadloaithietbi();
+        }
     }
 }

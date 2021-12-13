@@ -24,23 +24,6 @@ namespace _3_GUI
         private string _tennhanvien;
         int x = 20, y = 9, a = 1;
         Random ran = new Random();
-        public frm_Phong(string manv)
-        {
-            InitializeComponent();
-            _iBUS_Phong_Service = new BUS_Phong_Service();
-            _iBUS_LoaiPhong_Service = new BUS_LoaiPhong_Service();
-            _iBUS_Tang_Service = new BUS_Tang_Service();
-            _nhanVienService = new BUS_NhanVien_Service();
-            _phong = new Phong();
-            cbb_trangThai.Enabled = false;
-            LoadData();
-            loadcmbLoaiPhong();
-            loadcmbTang();
-            loadcmbTrangThai();
-            _tennhanvien = _nhanVienService.GetlstNhanViens().SingleOrDefault(c => c.MaNv == manv).Ten;
-            //tbx_ngayCapNhap.Visible = false;
-            //tbx_ngayTao.Visible = false;
-        }
         public frm_Phong()
         {
             InitializeComponent();
@@ -53,6 +36,8 @@ namespace _3_GUI
             loadcmbLoaiPhong();
             loadcmbTang();
             loadcmbTrangThai();
+            groupBox2.Text = Frm_Main.sendnhanvien().Ho + " " + Frm_Main.sendnhanvien().TenDem + " " +
+                               Frm_Main.sendnhanvien().Ten;
             //tbx_ngayCapNhap.Visible = false;
             //tbx_ngayTao.Visible = false;
         }
@@ -277,6 +262,11 @@ namespace _3_GUI
             }
         }
 
+        private void btn_loaiphong_Click(object sender, EventArgs e)
+        {
+            frm_menuDanhMuc.loadloaiphong();
+        }
+
         private void btn_clear_Click(object sender, EventArgs e)
         {
             ClearForm();
@@ -285,28 +275,6 @@ namespace _3_GUI
         private void frm_Phong_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                x += a;
-                lbl_Timer.Location = new Point(x, y);
-                if (x >= 713)
-                {
-                    a = -1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-                if (x <= 12)
-                {
-                    a = 1;
-                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
-                }
-            }
-            catch (Exception ex)
-            {
-            }
         }
     }
 }

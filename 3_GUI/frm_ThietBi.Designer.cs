@@ -29,10 +29,9 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThietBi));
-            this.dgv_QLThietBi = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_matb = new System.Windows.Forms.TextBox();
             this.txt_tentb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,59 +48,26 @@ namespace _3_GUI
             this.txt_soluong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_tinhtrang = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_Timer = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_QLThietBi)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.dgv_QLThietBi = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_themloaithietbi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_QLThietBi)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_QLThietBi
-            // 
-            this.dgv_QLThietBi.AllowUserToResizeColumns = false;
-            this.dgv_QLThietBi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dgv_QLThietBi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_QLThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_QLThietBi.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_QLThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_QLThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_QLThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv_QLThietBi.Location = new System.Drawing.Point(3, 30);
-            this.dgv_QLThietBi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.dgv_QLThietBi.MultiSelect = false;
-            this.dgv_QLThietBi.Name = "dgv_QLThietBi";
-            this.dgv_QLThietBi.RowHeadersVisible = false;
-            this.dgv_QLThietBi.RowHeadersWidth = 51;
-            this.dgv_QLThietBi.RowTemplate.Height = 29;
-            this.dgv_QLThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_QLThietBi.Size = new System.Drawing.Size(1610, 424);
-            this.dgv_QLThietBi.TabIndex = 0;
-            this.dgv_QLThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_QLThietBi_CellContentClick);
             // 
             // txt_matb
             // 
+            this.txt_matb.BackColor = System.Drawing.SystemColors.Control;
             this.txt_matb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_matb.Location = new System.Drawing.Point(225, 54);
             this.txt_matb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -112,6 +78,7 @@ namespace _3_GUI
             // 
             // txt_tentb
             // 
+            this.txt_tentb.BackColor = System.Drawing.SystemColors.Control;
             this.txt_tentb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_tentb.Location = new System.Drawing.Point(225, 140);
             this.txt_tentb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -159,25 +126,31 @@ namespace _3_GUI
             // btn_Them
             // 
             this.btn_Them.BackColor = System.Drawing.Color.Aqua;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Them.Location = new System.Drawing.Point(28, 33);
+            this.btn_Them.FlatAppearance.BorderSize = 0;
+            this.btn_Them.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Them.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Them.Location = new System.Drawing.Point(220, 10);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(155, 54);
+            this.btn_Them.Size = new System.Drawing.Size(200, 60);
             this.btn_Them.TabIndex = 7;
-            this.btn_Them.Text = "      Thêm";
+            this.btn_Them.Text = "    Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Sua
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Sua.FlatAppearance.BorderSize = 0;
+            this.btn_Sua.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Sua.Location = new System.Drawing.Point(393, 33);
+            this.btn_Sua.Location = new System.Drawing.Point(660, 10);
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(148, 54);
+            this.btn_Sua.Size = new System.Drawing.Size(200, 60);
             this.btn_Sua.TabIndex = 8;
             this.btn_Sua.Text = "      Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
@@ -186,11 +159,14 @@ namespace _3_GUI
             // btn_Xoa
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Xoa.FlatAppearance.BorderSize = 0;
+            this.btn_Xoa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Xoa.Location = new System.Drawing.Point(203, 33);
+            this.btn_Xoa.Location = new System.Drawing.Point(440, 10);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(166, 54);
+            this.btn_Xoa.Size = new System.Drawing.Size(200, 60);
             this.btn_Xoa.TabIndex = 9;
             this.btn_Xoa.Text = "      Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
@@ -198,24 +174,28 @@ namespace _3_GUI
             // 
             // cmb_mltb
             // 
+            this.cmb_mltb.BackColor = System.Drawing.SystemColors.Control;
             this.cmb_mltb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_mltb.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_mltb.FormattingEnabled = true;
             this.cmb_mltb.Location = new System.Drawing.Point(225, 97);
             this.cmb_mltb.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cmb_mltb.Name = "cmb_mltb";
-            this.cmb_mltb.Size = new System.Drawing.Size(415, 34);
+            this.cmb_mltb.Size = new System.Drawing.Size(317, 34);
             this.cmb_mltb.TabIndex = 10;
             // 
             // btn_Luu
             // 
-            this.btn_Luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Luu.BackColor = System.Drawing.Color.Aqua;
+            this.btn_Luu.FlatAppearance.BorderSize = 0;
+            this.btn_Luu.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Luu.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Luu.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_Luu.Location = new System.Drawing.Point(565, 33);
+            this.btn_Luu.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_Luu.Location = new System.Drawing.Point(880, 10);
             this.btn_Luu.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(157, 54);
+            this.btn_Luu.Size = new System.Drawing.Size(200, 60);
             this.btn_Luu.TabIndex = 12;
             this.btn_Luu.Text = "      Lưu";
             this.btn_Luu.UseVisualStyleBackColor = false;
@@ -223,6 +203,7 @@ namespace _3_GUI
             // 
             // txt_dongia
             // 
+            this.txt_dongia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_dongia.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_dongia.Location = new System.Drawing.Point(225, 183);
             this.txt_dongia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -257,6 +238,7 @@ namespace _3_GUI
             // 
             // txt_soluong
             // 
+            this.txt_soluong.BackColor = System.Drawing.SystemColors.Control;
             this.txt_soluong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_soluong.Location = new System.Drawing.Point(225, 226);
             this.txt_soluong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -279,6 +261,7 @@ namespace _3_GUI
             // 
             // txt_tinhtrang
             // 
+            this.txt_tinhtrang.BackColor = System.Drawing.SystemColors.Control;
             this.txt_tinhtrang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_tinhtrang.Location = new System.Drawing.Point(225, 269);
             this.txt_tinhtrang.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -287,51 +270,12 @@ namespace _3_GUI
             this.txt_tinhtrang.Size = new System.Drawing.Size(415, 34);
             this.txt_tinhtrang.TabIndex = 18;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgv_QLThietBi);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(0, 493);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1616, 457);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            // 
-            // lbl_Timer
-            // 
-            this.lbl_Timer.AutoSize = true;
-            this.lbl_Timer.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Timer.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Timer.Location = new System.Drawing.Point(277, 22);
-            this.lbl_Timer.Name = "lbl_Timer";
-            this.lbl_Timer.Size = new System.Drawing.Size(882, 42);
-            this.lbl_Timer.TabIndex = 21;
-            this.lbl_Timer.Text = "KARAOKE FAMILY - 216 Phúc Tân - Hoàn Kiếm - Hà Nội";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Controls.Add(this.pictureBox5);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.btn_Luu);
-            this.groupBox2.Controls.Add(this.btn_Xoa);
-            this.groupBox2.Controls.Add(this.btn_Sua);
-            this.groupBox2.Controls.Add(this.btn_Them);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 389);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1616, 104);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(587, 45);
+            this.pictureBox4.Location = new System.Drawing.Point(890, 20);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 20;
             this.pictureBox4.TabStop = false;
@@ -339,9 +283,9 @@ namespace _3_GUI
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(411, 45);
+            this.pictureBox3.Location = new System.Drawing.Point(670, 20);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
@@ -349,35 +293,17 @@ namespace _3_GUI
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(225, 45);
+            this.pictureBox5.Location = new System.Drawing.Point(450, 20);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 20;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(43, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lbl_Timer);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1616, 75);
-            this.groupBox3.TabIndex = 23;
-            this.groupBox3.TabStop = false;
-            // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox4.Controls.Add(this.btn_themloaithietbi);
             this.groupBox4.Controls.Add(this.cmb_mltb);
             this.groupBox4.Controls.Add(this.txt_matb);
             this.groupBox4.Controls.Add(this.txt_tentb);
@@ -390,49 +316,111 @@ namespace _3_GUI
             this.groupBox4.Controls.Add(this.txt_dongia);
             this.groupBox4.Controls.Add(this.txt_soluong);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(0, 75);
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1616, 314);
+            this.groupBox4.Size = new System.Drawing.Size(1310, 340);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin ";
+            // 
+            // dgv_QLThietBi
+            // 
+            this.dgv_QLThietBi.AllowUserToResizeColumns = false;
+            this.dgv_QLThietBi.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.NullValue = null;
+            this.dgv_QLThietBi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_QLThietBi.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_QLThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_QLThietBi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_QLThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dgv_QLThietBi.Location = new System.Drawing.Point(0, 420);
+            this.dgv_QLThietBi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dgv_QLThietBi.MultiSelect = false;
+            this.dgv_QLThietBi.Name = "dgv_QLThietBi";
+            this.dgv_QLThietBi.RowHeadersVisible = false;
+            this.dgv_QLThietBi.RowHeadersWidth = 51;
+            this.dgv_QLThietBi.RowTemplate.Height = 29;
+            this.dgv_QLThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_QLThietBi.Size = new System.Drawing.Size(1310, 320);
+            this.dgv_QLThietBi.TabIndex = 0;
+            this.dgv_QLThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_QLThietBi_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.btn_Them);
+            this.panel1.Controls.Add(this.btn_Luu);
+            this.panel1.Controls.Add(this.btn_Sua);
+            this.panel1.Controls.Add(this.btn_Xoa);
+            this.panel1.Location = new System.Drawing.Point(0, 340);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1310, 80);
+            this.panel1.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::_3_GUI.Properties.Resources._;
+            this.pictureBox1.Location = new System.Drawing.Point(230, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_themloaithietbi
+            // 
+            this.btn_themloaithietbi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_themloaithietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themloaithietbi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_themloaithietbi.Location = new System.Drawing.Point(550, 97);
+            this.btn_themloaithietbi.Name = "btn_themloaithietbi";
+            this.btn_themloaithietbi.Size = new System.Drawing.Size(90, 34);
+            this.btn_themloaithietbi.TabIndex = 20;
+            this.btn_themloaithietbi.Text = "Thêm";
+            this.btn_themloaithietbi.UseVisualStyleBackColor = false;
+            this.btn_themloaithietbi.Click += new System.EventHandler(this.btn_themloaithietbi_Click);
             // 
             // frm_ThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1616, 950);
+            this.ClientSize = new System.Drawing.Size(1310, 740);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dgv_QLThietBi);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "frm_ThietBi";
             this.Text = "frm_QLMatHang";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_QLThietBi)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_QLThietBi)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_QLThietBi;
         private System.Windows.Forms.TextBox txt_matb;
         private System.Windows.Forms.TextBox txt_tentb;
         private System.Windows.Forms.Label label1;
@@ -449,14 +437,13 @@ namespace _3_GUI
         private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_tinhtrang;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbl_Timer;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridView dgv_QLThietBi;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_themloaithietbi;
     }
 }
