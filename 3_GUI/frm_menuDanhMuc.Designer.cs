@@ -33,6 +33,7 @@ namespace _3_GUI
             this.btn_Nhanvien = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             loadform = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btn_thietbi = new System.Windows.Forms.Button();
             this.btn_ctt = new System.Windows.Forms.Button();
             this.btn_loaithietbi = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@ namespace _3_GUI
             this.btn_Phong.ForeColor = System.Drawing.Color.Black;
             this.btn_Phong.Location = new System.Drawing.Point(0, 0);
             this.btn_Phong.Name = "btn_Phong";
-            this.btn_Phong.Size = new System.Drawing.Size(163, 90);
+            this.btn_Phong.Size = new System.Drawing.Size(202, 87);
             this.btn_Phong.TabIndex = 0;
             this.btn_Phong.Text = "Phòng";
             this.btn_Phong.UseVisualStyleBackColor = false;
@@ -66,9 +67,9 @@ namespace _3_GUI
             this.btn_Nhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Nhanvien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Nhanvien.ForeColor = System.Drawing.Color.Black;
-            this.btn_Nhanvien.Location = new System.Drawing.Point(326, 0);
+            this.btn_Nhanvien.Location = new System.Drawing.Point(404, 0);
             this.btn_Nhanvien.Name = "btn_Nhanvien";
-            this.btn_Nhanvien.Size = new System.Drawing.Size(163, 90);
+            this.btn_Nhanvien.Size = new System.Drawing.Size(202, 87);
             this.btn_Nhanvien.TabIndex = 0;
             this.btn_Nhanvien.Text = "Nhân Viên";
             this.btn_Nhanvien.UseVisualStyleBackColor = false;
@@ -82,9 +83,9 @@ namespace _3_GUI
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(489, 0);
+            this.button3.Location = new System.Drawing.Point(606, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 90);
+            this.button3.Size = new System.Drawing.Size(202, 87);
             this.button3.TabIndex = 0;
             this.button3.Text = "Mặt Hàng";
             this.button3.UseVisualStyleBackColor = false;
@@ -92,9 +93,9 @@ namespace _3_GUI
             // 
             // loadform
             // 
-            loadform.Location = new System.Drawing.Point(0, 110);
+            loadform.Location = new System.Drawing.Point(0, 109);
             loadform.Name = "loadform";
-            loadform.Size = new System.Drawing.Size(1310, 790);
+            loadform.Size = new System.Drawing.Size(1616, 950);
             loadform.TabIndex = 1;
             // 
             // btn_thietbi
@@ -105,9 +106,9 @@ namespace _3_GUI
             this.btn_thietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_thietbi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_thietbi.ForeColor = System.Drawing.Color.Black;
-            this.btn_thietbi.Location = new System.Drawing.Point(978, 0);
+            this.btn_thietbi.Location = new System.Drawing.Point(1212, 0);
             this.btn_thietbi.Name = "btn_thietbi";
-            this.btn_thietbi.Size = new System.Drawing.Size(163, 90);
+            this.btn_thietbi.Size = new System.Drawing.Size(202, 87);
             this.btn_thietbi.TabIndex = 1;
             this.btn_thietbi.Text = "Thiết bị";
             this.btn_thietbi.UseVisualStyleBackColor = false;
@@ -121,9 +122,9 @@ namespace _3_GUI
             this.btn_ctt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ctt.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ctt.ForeColor = System.Drawing.Color.Black;
-            this.btn_ctt.Location = new System.Drawing.Point(815, 0);
+            this.btn_ctt.Location = new System.Drawing.Point(1010, 0);
             this.btn_ctt.Name = "btn_ctt";
-            this.btn_ctt.Size = new System.Drawing.Size(163, 90);
+            this.btn_ctt.Size = new System.Drawing.Size(202, 87);
             this.btn_ctt.TabIndex = 1;
             this.btn_ctt.Text = "Công thức tính";
             this.btn_ctt.UseVisualStyleBackColor = false;
@@ -137,9 +138,9 @@ namespace _3_GUI
             this.btn_loaithietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_loaithietbi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_loaithietbi.ForeColor = System.Drawing.Color.Black;
-            this.btn_loaithietbi.Location = new System.Drawing.Point(1141, 0);
+            this.btn_loaithietbi.Location = new System.Drawing.Point(1414, 0);
             this.btn_loaithietbi.Name = "btn_loaithietbi";
-            this.btn_loaithietbi.Size = new System.Drawing.Size(168, 90);
+            this.btn_loaithietbi.Size = new System.Drawing.Size(202, 87);
             this.btn_loaithietbi.TabIndex = 1;
             this.btn_loaithietbi.Text = "Loại thiết bị";
             this.btn_loaithietbi.UseVisualStyleBackColor = false;
@@ -153,9 +154,9 @@ namespace _3_GUI
             this.btn_nhacungcap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nhacungcap.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_nhacungcap.ForeColor = System.Drawing.Color.Black;
-            this.btn_nhacungcap.Location = new System.Drawing.Point(652, 0);
+            this.btn_nhacungcap.Location = new System.Drawing.Point(808, 0);
             this.btn_nhacungcap.Name = "btn_nhacungcap";
-            this.btn_nhacungcap.Size = new System.Drawing.Size(163, 90);
+            this.btn_nhacungcap.Size = new System.Drawing.Size(202, 87);
             this.btn_nhacungcap.TabIndex = 1;
             this.btn_nhacungcap.Text = "Nhà cung cấp";
             this.btn_nhacungcap.UseVisualStyleBackColor = false;
@@ -169,9 +170,9 @@ namespace _3_GUI
             this.btn_loaiphong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_loaiphong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_loaiphong.ForeColor = System.Drawing.Color.Black;
-            this.btn_loaiphong.Location = new System.Drawing.Point(163, 0);
+            this.btn_loaiphong.Location = new System.Drawing.Point(202, 0);
             this.btn_loaiphong.Name = "btn_loaiphong";
-            this.btn_loaiphong.Size = new System.Drawing.Size(163, 90);
+            this.btn_loaiphong.Size = new System.Drawing.Size(202, 87);
             this.btn_loaiphong.TabIndex = 0;
             this.btn_loaiphong.Text = "Loại Phòng";
             this.btn_loaiphong.UseVisualStyleBackColor = false;
@@ -189,7 +190,7 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1310, 110);
+            this.panel1.Size = new System.Drawing.Size(1616, 109);
             this.panel1.TabIndex = 2;
             // 
             // frm_menuDanhMuc
@@ -197,7 +198,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1310, 900);
+            this.ClientSize = new System.Drawing.Size(1616, 1059);
             this.Controls.Add(this.panel1);
             this.Controls.Add(loadform);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -214,12 +215,13 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_Phong;
         private System.Windows.Forms.Button btn_Nhanvien;
         private System.Windows.Forms.Button button3;
+        private static System.Windows.Forms.Panel loadform;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_thietbi;
         private System.Windows.Forms.Button btn_nhacungcap;
         private System.Windows.Forms.Button btn_ctt;
         private System.Windows.Forms.Button btn_loaithietbi;
         private System.Windows.Forms.Button btn_loaiphong;
         private System.Windows.Forms.Panel panel1;
-        public static System.Windows.Forms.Panel loadform;
     }
 }

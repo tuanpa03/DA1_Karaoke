@@ -13,7 +13,6 @@ using _2_BUS.BUS_Service;
 using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
 using _3_GUI;
-using ContentAlignment = System.Windows.Forms.VisualStyles.ContentAlignment;
 
 namespace _3_GUI_PresentationLayer
 {
@@ -119,15 +118,6 @@ namespace _3_GUI_PresentationLayer
             dgv_MatHang.DataSource = data;
             dgv_MatHang.Columns["Id"].Visible = false;
             dgv_MatHang.Columns.Add(btnthem);
-            //tên tiêu đề cột dgv mặt hàng
-            dgv_MatHang.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
-            dgv_MatHang.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgv_MatHang.Columns["DonGia"].HeaderText = "Đơn giá(VND.)";
-            dgv_MatHang.Columns["DonGia"].Width = 150;
-            dgv_MatHang.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_MatHang.Columns["SoLuong"].Width = 100;
-            dgv_MatHang.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_MatHang.Columns[4].Width = 120;
         }
 
         private List<MatHang> _newlstmathang = new List<MatHang>();
@@ -154,19 +144,10 @@ namespace _3_GUI_PresentationLayer
                                a.SoLuong
                            }).ToList();
             dgv_chitietdichvu.DataSource = datanew;
-            dgv_chitietdichvu.Columns.Add(btnxoa);
             dgv_chitietdichvu.Columns["Id"].Visible = false;
             dgv_chitietdichvu.Columns["IdchiTietHoaDonBan"].Visible = false;
-            dgv_chitietdichvu.Columns["DonGia"].Width = 150;
-            dgv_chitietdichvu.Columns["DonGia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_chitietdichvu.Columns["SoLuong"].Width = 100;
-            dgv_chitietdichvu.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_chitietdichvu.Columns[5].Width = 120;
+            dgv_chitietdichvu.Columns.Add(btnxoa);
 
-            //tên tiêu đề cột dgv chitietdichvu
-            dgv_chitietdichvu.Columns["TenMatHang"].HeaderText = "Tên mặt hàng";
-            dgv_chitietdichvu.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgv_chitietdichvu.Columns["DonGia"].HeaderText = "Đơn giá(VND.)";
         }
         private void adddichvu(DataGridViewRow x)
         {
@@ -211,9 +192,8 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_MatHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex==-1) return;
             r = dgv_MatHang.Rows[e.RowIndex];
-            if (e.ColumnIndex != 1 && e.ColumnIndex != 2&&e.ColumnIndex != 3)
+            if (e.ColumnIndex != 2&&e.ColumnIndex != 3)
             {
                 adddichvu(r);
             }
@@ -221,7 +201,6 @@ namespace _3_GUI_PresentationLayer
 
         private void dgv_chitietdichvu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex==-1) return;
             r = dgv_chitietdichvu.Rows[e.RowIndex];
             if (e.ColumnIndex != 4&& e.ColumnIndex != 3&& e.ColumnIndex != 2)
             {
@@ -343,5 +322,6 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
+       
     }
 }
