@@ -29,6 +29,10 @@ namespace _3_GUI_PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_chitietdichvu = new System.Windows.Forms.DataGridView();
             this.btn_thanhToanHoaDon = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
@@ -60,6 +64,8 @@ namespace _3_GUI_PresentationLayer
             this.label6 = new System.Windows.Forms.Label();
             this.lb_timestart = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_chitietdichvu)).BeginInit();
@@ -71,7 +77,23 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dgv_chitietdichvu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_chitietdichvu.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_chitietdichvu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_chitietdichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_chitietdichvu.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_chitietdichvu.EnableHeadersVisualStyles = false;
             this.dgv_chitietdichvu.Location = new System.Drawing.Point(0, 83);
             this.dgv_chitietdichvu.MultiSelect = false;
@@ -79,7 +101,7 @@ namespace _3_GUI_PresentationLayer
             this.dgv_chitietdichvu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgv_chitietdichvu.RowHeadersVisible = false;
             this.dgv_chitietdichvu.RowHeadersWidth = 51;
-            this.dgv_chitietdichvu.RowTemplate.Height = 29;
+            this.dgv_chitietdichvu.RowTemplate.Height = 35;
             this.dgv_chitietdichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv_chitietdichvu.Size = new System.Drawing.Size(1212, 400);
             this.dgv_chitietdichvu.TabIndex = 0;
@@ -103,19 +125,24 @@ namespace _3_GUI_PresentationLayer
             // 
             // btn_thoat
             // 
+            this.btn_thoat.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_thoat.BackgroundImage = global::_3_GUI.Properties.Resources.QuayLai;
+            this.btn_thoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_thoat.FlatAppearance.BorderSize = 0;
+            this.btn_thoat.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_thoat.Location = new System.Drawing.Point(12, 12);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(162, 65);
+            this.btn_thoat.Size = new System.Drawing.Size(90, 60);
             this.btn_thoat.TabIndex = 34;
-            this.btn_thoat.Text = "Back";
-            this.btn_thoat.UseVisualStyleBackColor = true;
+            this.btn_thoat.UseVisualStyleBackColor = false;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(32, 387);
+            this.label13.Location = new System.Drawing.Point(32, 363);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 31);
             this.label13.TabIndex = 28;
@@ -135,7 +162,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(32, 231);
+            this.label10.Location = new System.Drawing.Point(32, 207);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(150, 31);
             this.label10.TabIndex = 25;
@@ -155,12 +182,28 @@ namespace _3_GUI_PresentationLayer
             // 
             this.dgv_MatHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_MatHang.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_MatHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_MatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MatHang.ColumnHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_MatHang.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_MatHang.Location = new System.Drawing.Point(0, 547);
             this.dgv_MatHang.Name = "dgv_MatHang";
+            this.dgv_MatHang.RowHeadersVisible = false;
             this.dgv_MatHang.RowHeadersWidth = 51;
-            this.dgv_MatHang.RowTemplate.Height = 29;
+            this.dgv_MatHang.RowTemplate.Height = 35;
             this.dgv_MatHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgv_MatHang.Size = new System.Drawing.Size(1212, 400);
             this.dgv_MatHang.TabIndex = 11;
@@ -195,6 +238,8 @@ namespace _3_GUI_PresentationLayer
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lb_timestart);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(1217, 83);
@@ -216,7 +261,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.lb_tienphong.AutoSize = true;
             this.lb_tienphong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_tienphong.Location = new System.Drawing.Point(214, 283);
+            this.lb_tienphong.Location = new System.Drawing.Point(214, 259);
             this.lb_tienphong.Name = "lb_tienphong";
             this.lb_tienphong.Size = new System.Drawing.Size(81, 31);
             this.lb_tienphong.TabIndex = 43;
@@ -226,7 +271,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_tiendv.AutoSize = true;
             this.txt_tiendv.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_tiendv.Location = new System.Drawing.Point(214, 231);
+            this.txt_tiendv.Location = new System.Drawing.Point(214, 207);
             this.txt_tiendv.Name = "txt_tiendv";
             this.txt_tiendv.Size = new System.Drawing.Size(82, 31);
             this.txt_tiendv.TabIndex = 43;
@@ -276,7 +321,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(5, 334);
+            this.label7.Location = new System.Drawing.Point(5, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 31);
             this.label7.TabIndex = 38;
@@ -287,7 +332,7 @@ namespace _3_GUI_PresentationLayer
             this.cbx_congthucTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_congthucTinh.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_congthucTinh.FormattingEnabled = true;
-            this.cbx_congthucTinh.Location = new System.Drawing.Point(199, 336);
+            this.cbx_congthucTinh.Location = new System.Drawing.Point(199, 312);
             this.cbx_congthucTinh.Name = "cbx_congthucTinh";
             this.cbx_congthucTinh.Size = new System.Drawing.Size(188, 33);
             this.cbx_congthucTinh.TabIndex = 37;
@@ -295,13 +340,13 @@ namespace _3_GUI_PresentationLayer
             // lbl_tenPhong
             // 
             this.lbl_tenPhong.AutoSize = true;
-            this.lbl_tenPhong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_tenPhong.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_tenPhong.ForeColor = System.Drawing.Color.Green;
-            this.lbl_tenPhong.Location = new System.Drawing.Point(117, 10);
+            this.lbl_tenPhong.Location = new System.Drawing.Point(166, 0);
             this.lbl_tenPhong.Name = "lbl_tenPhong";
-            this.lbl_tenPhong.Size = new System.Drawing.Size(166, 41);
+            this.lbl_tenPhong.Size = new System.Drawing.Size(74, 45);
             this.lbl_tenPhong.TabIndex = 42;
-            this.lbl_tenPhong.Text = "Tên Phòng";
+            this.lbl_tenPhong.Text = "Tên";
             // 
             // btn_fakethanhtoan
             // 
@@ -311,7 +356,7 @@ namespace _3_GUI_PresentationLayer
             this.btn_fakethanhtoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_fakethanhtoan.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_fakethanhtoan.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_fakethanhtoan.Location = new System.Drawing.Point(0, 625);
+            this.btn_fakethanhtoan.Location = new System.Drawing.Point(1, 625);
             this.btn_fakethanhtoan.Name = "btn_fakethanhtoan";
             this.btn_fakethanhtoan.Size = new System.Drawing.Size(216, 63);
             this.btn_fakethanhtoan.TabIndex = 7;
@@ -339,7 +384,7 @@ namespace _3_GUI_PresentationLayer
             // 
             // txt_chiphikhac
             // 
-            this.txt_chiphikhac.Location = new System.Drawing.Point(199, 387);
+            this.txt_chiphikhac.Location = new System.Drawing.Point(199, 363);
             this.txt_chiphikhac.Multiline = true;
             this.txt_chiphikhac.Name = "txt_chiphikhac";
             this.txt_chiphikhac.Size = new System.Drawing.Size(148, 31);
@@ -350,7 +395,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(41, 283);
+            this.label3.Location = new System.Drawing.Point(41, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 31);
             this.label3.TabIndex = 25;
@@ -370,7 +415,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(343, 389);
+            this.label14.Location = new System.Drawing.Point(343, 365);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(57, 28);
             this.label14.TabIndex = 24;
@@ -380,7 +425,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(343, 286);
+            this.label12.Location = new System.Drawing.Point(343, 262);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 28);
             this.label12.TabIndex = 24;
@@ -390,7 +435,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(343, 231);
+            this.label8.Location = new System.Drawing.Point(343, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 28);
             this.label8.TabIndex = 24;
@@ -426,6 +471,26 @@ namespace _3_GUI_PresentationLayer
             this.label4.TabIndex = 24;
             this.label4.Text = "loại phòng :";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(1, 400);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(401, 31);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "-------------------------------------------";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(1, 164);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(401, 31);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "-------------------------------------------";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -440,6 +505,7 @@ namespace _3_GUI_PresentationLayer
             // 
             this.txt_search.Location = new System.Drawing.Point(21, 502);
             this.txt_search.Name = "txt_search";
+            this.txt_search.PlaceholderText = "nhập tên mặt hàng";
             this.txt_search.Size = new System.Drawing.Size(372, 27);
             this.txt_search.TabIndex = 12;
             this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
@@ -503,5 +569,7 @@ namespace _3_GUI_PresentationLayer
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

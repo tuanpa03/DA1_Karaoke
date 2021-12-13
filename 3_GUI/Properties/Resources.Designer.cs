@@ -63,6 +63,16 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _544990 {
+            get {
+                object obj = ResourceManager.GetObject("544990", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9d6022f153768025ad37f51d89d29ece {
             get {
                 object obj = ResourceManager.GetObject("9d6022f153768025ad37f51d89d29ece", resourceCulture);
@@ -106,6 +116,16 @@ namespace _3_GUI.Properties {
         internal static System.Drawing.Bitmap mainimage {
             get {
                 object obj = ResourceManager.GetObject("mainimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QuayLai {
+            get {
+                object obj = ResourceManager.GetObject("QuayLai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
