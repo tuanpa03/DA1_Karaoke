@@ -44,7 +44,7 @@ namespace _3_GUI
             this.btn_Thongke = new System.Windows.Forms.Button();
             this.btn_DanhMuc = new System.Windows.Forms.Button();
             this.btn_Hethong = new System.Windows.Forms.Button();
-            this.loadform = new System.Windows.Forms.Panel();
+            loadform = new System.Windows.Forms.Panel();
             this.grb_controls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -234,12 +234,12 @@ namespace _3_GUI
             // 
             // loadform
             // 
-            this.loadform.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.loadform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loadform.Location = new System.Drawing.Point(290, 0);
-            this.loadform.Name = "loadform";
-            this.loadform.Size = new System.Drawing.Size(1310, 900);
-            this.loadform.TabIndex = 1;
+            loadform.BackColor = System.Drawing.SystemColors.ScrollBar;
+            loadform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            loadform.Location = new System.Drawing.Point(290, 0);
+            loadform.Name = "loadform";
+            loadform.Size = new System.Drawing.Size(1310, 900);
+            loadform.TabIndex = 1;
             // 
             // Frm_Main
             // 
@@ -248,7 +248,7 @@ namespace _3_GUI
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.ControlBox = false;
-            this.Controls.Add(this.loadform);
+            this.Controls.Add(loadform);
             this.Controls.Add(this.grb_controls);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Main";
@@ -281,6 +281,6 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel loadform;
+        private static System.Windows.Forms.Panel loadform;
     }
 }
