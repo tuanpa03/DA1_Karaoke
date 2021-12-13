@@ -41,16 +41,26 @@ namespace _3_GUI
             this.btn_suaLoaiPhong = new System.Windows.Forms.Button();
             this.btn_clearLoaiPhong = new System.Windows.Forms.Button();
             this.gbx_loaiPhong = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbx_TrangThaiLoaiPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbx_tang = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_tang = new System.Windows.Forms.DataGridView();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbx_TrangThaiTang = new System.Windows.Forms.TextBox();
             this.btn_ClearTang = new System.Windows.Forms.Button();
             this.btn_XoaTang = new System.Windows.Forms.Button();
             this.btn_SuaTang = new System.Windows.Forms.Button();
             this.btn_ThemTang = new System.Windows.Forms.Button();
-            this.dgv_tang = new System.Windows.Forms.DataGridView();
             this.tbx_soLuongPhong = new System.Windows.Forms.TextBox();
             this.tbx_tenTang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,27 +68,21 @@ namespace _3_GUI
             this.lbl_Timer = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiPhong)).BeginInit();
             this.gbx_loaiPhong.SuspendLayout();
-            this.gbx_tang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbx_tang.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_loaiPhong
@@ -86,13 +90,13 @@ namespace _3_GUI
             this.dgv_loaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_loaiPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgv_loaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_loaiPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_loaiPhong.Location = new System.Drawing.Point(3, 176);
+            this.dgv_loaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_loaiPhong.Location = new System.Drawing.Point(3, 30);
             this.dgv_loaiPhong.Name = "dgv_loaiPhong";
             this.dgv_loaiPhong.RowHeadersWidth = 51;
             this.dgv_loaiPhong.RowTemplate.Height = 29;
             this.dgv_loaiPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_loaiPhong.Size = new System.Drawing.Size(1610, 262);
+            this.dgv_loaiPhong.Size = new System.Drawing.Size(1604, 232);
             this.dgv_loaiPhong.TabIndex = 2;
             this.dgv_loaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -100,7 +104,7 @@ namespace _3_GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(21, 54);
+            this.label1.Location = new System.Drawing.Point(55, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 31);
             this.label1.TabIndex = 3;
@@ -119,7 +123,7 @@ namespace _3_GUI
             // tbx_tenLoaiPhong
             // 
             this.tbx_tenLoaiPhong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_tenLoaiPhong.Location = new System.Drawing.Point(221, 52);
+            this.tbx_tenLoaiPhong.Location = new System.Drawing.Point(245, 52);
             this.tbx_tenLoaiPhong.Name = "tbx_tenLoaiPhong";
             this.tbx_tenLoaiPhong.Size = new System.Drawing.Size(333, 34);
             this.tbx_tenLoaiPhong.TabIndex = 9;
@@ -134,7 +138,7 @@ namespace _3_GUI
             // 
             // btn_themLoaiPhong
             // 
-            this.btn_themLoaiPhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_themLoaiPhong.BackColor = System.Drawing.Color.Aqua;
             this.btn_themLoaiPhong.Location = new System.Drawing.Point(245, 118);
             this.btn_themLoaiPhong.Name = "btn_themLoaiPhong";
             this.btn_themLoaiPhong.Size = new System.Drawing.Size(168, 49);
@@ -145,7 +149,7 @@ namespace _3_GUI
             // 
             // btn_xoaLoaiPhong
             // 
-            this.btn_xoaLoaiPhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_xoaLoaiPhong.BackColor = System.Drawing.Color.Aqua;
             this.btn_xoaLoaiPhong.Location = new System.Drawing.Point(715, 118);
             this.btn_xoaLoaiPhong.Name = "btn_xoaLoaiPhong";
             this.btn_xoaLoaiPhong.Size = new System.Drawing.Size(168, 49);
@@ -156,7 +160,7 @@ namespace _3_GUI
             // 
             // btn_suaLoaiPhong
             // 
-            this.btn_suaLoaiPhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_suaLoaiPhong.BackColor = System.Drawing.Color.Aqua;
             this.btn_suaLoaiPhong.Location = new System.Drawing.Point(480, 118);
             this.btn_suaLoaiPhong.Name = "btn_suaLoaiPhong";
             this.btn_suaLoaiPhong.Size = new System.Drawing.Size(168, 49);
@@ -168,6 +172,7 @@ namespace _3_GUI
             // btn_clearLoaiPhong
             // 
             this.btn_clearLoaiPhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_clearLoaiPhong.ForeColor = System.Drawing.Color.White;
             this.btn_clearLoaiPhong.Location = new System.Drawing.Point(950, 118);
             this.btn_clearLoaiPhong.Name = "btn_clearLoaiPhong";
             this.btn_clearLoaiPhong.Size = new System.Drawing.Size(168, 49);
@@ -178,6 +183,7 @@ namespace _3_GUI
             // 
             // gbx_loaiPhong
             // 
+            this.gbx_loaiPhong.Controls.Add(this.groupBox2);
             this.gbx_loaiPhong.Controls.Add(this.pictureBox7);
             this.gbx_loaiPhong.Controls.Add(this.pictureBox6);
             this.gbx_loaiPhong.Controls.Add(this.pictureBox4);
@@ -189,7 +195,6 @@ namespace _3_GUI
             this.gbx_loaiPhong.Controls.Add(this.label4);
             this.gbx_loaiPhong.Controls.Add(this.btn_clearLoaiPhong);
             this.gbx_loaiPhong.Controls.Add(this.label1);
-            this.gbx_loaiPhong.Controls.Add(this.dgv_loaiPhong);
             this.gbx_loaiPhong.Controls.Add(this.tbx_tenLoaiPhong);
             this.gbx_loaiPhong.Controls.Add(this.label6);
             this.gbx_loaiPhong.Controls.Add(this.tbx_donGia);
@@ -202,10 +207,61 @@ namespace _3_GUI
             this.gbx_loaiPhong.TabStop = false;
             this.gbx_loaiPhong.Text = "Loại Phòng";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgv_loaiPhong);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(3, 173);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1610, 265);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(971, 128);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 32;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(739, 128);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 31;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(509, 128);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 29;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(260, 128);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // tbx_TrangThaiLoaiPhong
             // 
             this.tbx_TrangThaiLoaiPhong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_TrangThaiLoaiPhong.Location = new System.Drawing.Point(1257, 52);
+            this.tbx_TrangThaiLoaiPhong.Location = new System.Drawing.Point(1246, 52);
             this.tbx_TrangThaiLoaiPhong.Name = "tbx_TrangThaiLoaiPhong";
             this.tbx_TrangThaiLoaiPhong.Size = new System.Drawing.Size(333, 34);
             this.tbx_TrangThaiLoaiPhong.TabIndex = 26;
@@ -222,6 +278,7 @@ namespace _3_GUI
             // 
             // gbx_tang
             // 
+            this.gbx_tang.Controls.Add(this.groupBox1);
             this.gbx_tang.Controls.Add(this.pictureBox8);
             this.gbx_tang.Controls.Add(this.pictureBox2);
             this.gbx_tang.Controls.Add(this.pictureBox5);
@@ -232,7 +289,6 @@ namespace _3_GUI
             this.gbx_tang.Controls.Add(this.btn_XoaTang);
             this.gbx_tang.Controls.Add(this.btn_SuaTang);
             this.gbx_tang.Controls.Add(this.btn_ThemTang);
-            this.gbx_tang.Controls.Add(this.dgv_tang);
             this.gbx_tang.Controls.Add(this.tbx_soLuongPhong);
             this.gbx_tang.Controls.Add(this.tbx_tenTang);
             this.gbx_tang.Controls.Add(this.label3);
@@ -244,7 +300,73 @@ namespace _3_GUI
             this.gbx_tang.Size = new System.Drawing.Size(1616, 430);
             this.gbx_tang.TabIndex = 23;
             this.gbx_tang.TabStop = false;
-            this.gbx_tang.Text = "Tầng Phòng";
+            this.gbx_tang.Text = "Tầng ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv_tang);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(3, 149);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1610, 278);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            // 
+            // dgv_tang
+            // 
+            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_tang.Location = new System.Drawing.Point(3, 30);
+            this.dgv_tang.Name = "dgv_tang";
+            this.dgv_tang.RowHeadersWidth = 51;
+            this.dgv_tang.RowTemplate.Height = 29;
+            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tang.Size = new System.Drawing.Size(1604, 245);
+            this.dgv_tang.TabIndex = 22;
+            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(971, 104);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 33;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(260, 104);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 25;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(739, 104);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 30;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(509, 104);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
             // 
             // label2
             // 
@@ -259,7 +381,7 @@ namespace _3_GUI
             // tbx_TrangThaiTang
             // 
             this.tbx_TrangThaiTang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_TrangThaiTang.Location = new System.Drawing.Point(1257, 38);
+            this.tbx_TrangThaiTang.Location = new System.Drawing.Point(1248, 38);
             this.tbx_TrangThaiTang.Name = "tbx_TrangThaiTang";
             this.tbx_TrangThaiTang.Size = new System.Drawing.Size(333, 34);
             this.tbx_TrangThaiTang.TabIndex = 23;
@@ -267,6 +389,7 @@ namespace _3_GUI
             // btn_ClearTang
             // 
             this.btn_ClearTang.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_ClearTang.ForeColor = System.Drawing.Color.White;
             this.btn_ClearTang.Location = new System.Drawing.Point(950, 94);
             this.btn_ClearTang.Name = "btn_ClearTang";
             this.btn_ClearTang.Size = new System.Drawing.Size(168, 49);
@@ -277,7 +400,7 @@ namespace _3_GUI
             // 
             // btn_XoaTang
             // 
-            this.btn_XoaTang.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_XoaTang.BackColor = System.Drawing.Color.Aqua;
             this.btn_XoaTang.Location = new System.Drawing.Point(715, 94);
             this.btn_XoaTang.Name = "btn_XoaTang";
             this.btn_XoaTang.Size = new System.Drawing.Size(168, 49);
@@ -288,7 +411,7 @@ namespace _3_GUI
             // 
             // btn_SuaTang
             // 
-            this.btn_SuaTang.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_SuaTang.BackColor = System.Drawing.Color.Aqua;
             this.btn_SuaTang.Location = new System.Drawing.Point(480, 94);
             this.btn_SuaTang.Name = "btn_SuaTang";
             this.btn_SuaTang.Size = new System.Drawing.Size(168, 49);
@@ -299,7 +422,7 @@ namespace _3_GUI
             // 
             // btn_ThemTang
             // 
-            this.btn_ThemTang.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_ThemTang.BackColor = System.Drawing.Color.Aqua;
             this.btn_ThemTang.Location = new System.Drawing.Point(245, 94);
             this.btn_ThemTang.Name = "btn_ThemTang";
             this.btn_ThemTang.Size = new System.Drawing.Size(168, 49);
@@ -307,21 +430,6 @@ namespace _3_GUI
             this.btn_ThemTang.Text = "      Thêm";
             this.btn_ThemTang.UseVisualStyleBackColor = false;
             this.btn_ThemTang.Click += new System.EventHandler(this.btn_ThemTang_Click);
-            // 
-            // dgv_tang
-            // 
-            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_tang.Location = new System.Drawing.Point(3, 165);
-            this.dgv_tang.Name = "dgv_tang";
-            this.dgv_tang.RowHeadersWidth = 51;
-            this.dgv_tang.RowTemplate.Height = 29;
-            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tang.Size = new System.Drawing.Size(1610, 262);
-            this.dgv_tang.TabIndex = 22;
-            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
             // 
             // tbx_soLuongPhong
             // 
@@ -334,7 +442,7 @@ namespace _3_GUI
             // tbx_tenTang
             // 
             this.tbx_tenTang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbx_tenTang.Location = new System.Drawing.Point(130, 38);
+            this.tbx_tenTang.Location = new System.Drawing.Point(152, 38);
             this.tbx_tenTang.Name = "tbx_tenTang";
             this.tbx_tenTang.Size = new System.Drawing.Size(333, 34);
             this.tbx_tenTang.TabIndex = 10;
@@ -353,7 +461,7 @@ namespace _3_GUI
             // 
             this.laaaa.AutoSize = true;
             this.laaaa.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.laaaa.Location = new System.Drawing.Point(37, 40);
+            this.laaaa.Location = new System.Drawing.Point(68, 40);
             this.laaaa.Name = "laaaa";
             this.laaaa.Size = new System.Drawing.Size(78, 31);
             this.laaaa.TabIndex = 0;
@@ -387,86 +495,6 @@ namespace _3_GUI
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(260, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(260, 104);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(509, 104);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(509, 128);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 29;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(739, 104);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 30;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(739, 128);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 31;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(971, 128);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 32;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(971, 104);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 33;
-            this.pictureBox8.TabStop = false;
-            // 
             // frm_LoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -482,19 +510,21 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiPhong)).EndInit();
             this.gbx_loaiPhong.ResumeLayout(false);
             this.gbx_loaiPhong.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbx_tang.ResumeLayout(false);
             this.gbx_tang.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -535,5 +565,7 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

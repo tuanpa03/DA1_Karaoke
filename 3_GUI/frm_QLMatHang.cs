@@ -25,6 +25,9 @@ namespace _3_GUI_PresentationLayer
         private List<DonViTinh> _dvt;
         private string _manv;
 
+        int x = 20, y = 9, a = 1;
+        Random ran = new Random();
+
         public frm_QLMatHang()
         {
             InitializeComponent();
@@ -158,6 +161,27 @@ namespace _3_GUI_PresentationLayer
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                x += a;
+                lbl_Timer.Location = new Point(x, y);
+                if (x >= 713)
+                {
+                    a = -1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+                if (x <= 12)
+                {
+                    a = 1;
+                    lbl_Timer.ForeColor = Color.FromArgb(ran.Next(0, 255), ran.Next(0, 255), ran.Next(0, 255));
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
         private void cmb_IDDvTinh_Click(object sender, EventArgs e)
         {

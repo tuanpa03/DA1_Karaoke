@@ -43,12 +43,10 @@ namespace _3_GUI
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Luu = new System.Windows.Forms.Button();
-            this.btn_DanhSach = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -82,7 +80,6 @@ namespace _3_GUI
             this.panel_dgr_NhanVien.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,7 +100,7 @@ namespace _3_GUI
             this.dgr_NhanVien.RowHeadersWidth = 51;
             this.dgr_NhanVien.RowTemplate.Height = 29;
             this.dgr_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgr_NhanVien.Size = new System.Drawing.Size(1616, 450);
+            this.dgr_NhanVien.Size = new System.Drawing.Size(1616, 466);
             this.dgr_NhanVien.TabIndex = 0;
             this.dgr_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_NhanVien_CellClick);
             // 
@@ -117,10 +114,10 @@ namespace _3_GUI
             this.panel_dgr_NhanVien.Controls.Add(this.rbtn_LocNone);
             this.panel_dgr_NhanVien.Controls.Add(this.label11);
             this.panel_dgr_NhanVien.Controls.Add(this.dgr_NhanVien);
-            this.panel_dgr_NhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.panel_dgr_NhanVien.Location = new System.Drawing.Point(0, 460);
+            this.panel_dgr_NhanVien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel_dgr_NhanVien.Location = new System.Drawing.Point(0, 444);
             this.panel_dgr_NhanVien.Name = "panel_dgr_NhanVien";
-            this.panel_dgr_NhanVien.Size = new System.Drawing.Size(1616, 490);
+            this.panel_dgr_NhanVien.Size = new System.Drawing.Size(1616, 506);
             this.panel_dgr_NhanVien.TabIndex = 1;
             // 
             // rbtn_BoiBan
@@ -219,7 +216,7 @@ namespace _3_GUI
             // 
             // btn_Them
             // 
-            this.btn_Them.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Them.BackColor = System.Drawing.Color.Aqua;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Them.Location = new System.Drawing.Point(28, 36);
             this.btn_Them.Name = "btn_Them";
@@ -233,19 +230,17 @@ namespace _3_GUI
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.pictureBox5);
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.btn_Luu);
-            this.groupBox2.Controls.Add(this.btn_DanhSach);
             this.groupBox2.Controls.Add(this.btn_Xoa);
             this.groupBox2.Controls.Add(this.btn_Sua);
             this.groupBox2.Controls.Add(this.btn_Them);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(0, 359);
+            this.groupBox2.Location = new System.Drawing.Point(0, 337);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1616, 101);
+            this.groupBox2.Size = new System.Drawing.Size(1616, 104);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHỨC NĂNG";
@@ -253,22 +248,12 @@ namespace _3_GUI
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(819, 47);
+            this.pictureBox4.Location = new System.Drawing.Point(590, 47);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(36, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(586, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -304,7 +289,8 @@ namespace _3_GUI
             // 
             this.btn_Luu.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_Luu.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Luu.Location = new System.Drawing.Point(804, 36);
+            this.btn_Luu.ForeColor = System.Drawing.Color.White;
+            this.btn_Luu.Location = new System.Drawing.Point(575, 36);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(159, 54);
             this.btn_Luu.TabIndex = 1;
@@ -312,20 +298,9 @@ namespace _3_GUI
             this.btn_Luu.UseVisualStyleBackColor = false;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
-            // btn_DanhSach
-            // 
-            this.btn_DanhSach.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_DanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_DanhSach.Location = new System.Drawing.Point(576, 36);
-            this.btn_DanhSach.Name = "btn_DanhSach";
-            this.btn_DanhSach.Size = new System.Drawing.Size(184, 54);
-            this.btn_DanhSach.TabIndex = 1;
-            this.btn_DanhSach.Text = "      Danh sách";
-            this.btn_DanhSach.UseVisualStyleBackColor = false;
-            // 
             // btn_Xoa
             // 
-            this.btn_Xoa.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Xoa.BackColor = System.Drawing.Color.Aqua;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Xoa.Location = new System.Drawing.Point(209, 36);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -337,7 +312,7 @@ namespace _3_GUI
             // 
             // btn_Sua
             // 
-            this.btn_Sua.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Sua.BackColor = System.Drawing.Color.Aqua;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Sua.Location = new System.Drawing.Point(391, 36);
             this.btn_Sua.Name = "btn_Sua";
@@ -353,7 +328,7 @@ namespace _3_GUI
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1616, 79);
+            this.groupBox5.Size = new System.Drawing.Size(1616, 61);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             // 
@@ -628,9 +603,9 @@ namespace _3_GUI
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(0, 79);
+            this.groupBox1.Location = new System.Drawing.Point(0, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1616, 280);
+            this.groupBox1.Size = new System.Drawing.Size(1616, 292);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN CÁ NHÂN";
@@ -673,7 +648,6 @@ namespace _3_GUI
             this.panel_dgr_NhanVien.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -702,12 +676,10 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Luu;
-        private System.Windows.Forms.Button btn_DanhSach;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.GroupBox groupBox5;

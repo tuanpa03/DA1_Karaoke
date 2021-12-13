@@ -36,7 +36,7 @@ namespace _3_GUI
         //string _giodonphong;
         List<Phong> _lstPhong = new List<Phong>();
         private System.Windows.Forms.Timer aTimer;
-        private int counter = 10;
+        private int counter = 60;
         public frm_datphong()
         {
             InitializeComponent();
@@ -113,8 +113,39 @@ namespace _3_GUI
                     {
                         //string thoiGian = counter.ToString();
                         DateTime thoiGianbg = DateTime.Now;
-                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 10 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 60 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                     }
+                    if (_lstPhong.FirstOrDefault(x => x.TrangThai == 2) == null)
+                    {
+                        
+                    }else
+                    {
+                        var phongDon = _lstPhong.FirstOrDefault(x => x.TrangThai == 2);
+                        if (lb.Name == phongDon.Id.ToString())
+                        {
+                            lb.Text = phongDon.TenPhong + "\n" + "Tgian bắt đầu dọn:" + phongDon.NgayCapNhap + "\n" + "Thời gian dọn:" + 60 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                            var tongthoigianDaDon = DateTime.Now - phongDon.NgayCapNhap.Value;
+                            //MessageBox.Show(thoigianDon.ToString());
+                            int soGiayDaDon = (tongthoigianDaDon.Hours * 60 * 60) + (tongthoigianDaDon.Minutes * 60 )+ tongthoigianDaDon.Seconds;
+                            if (60 < soGiayDaDon)
+                            {
+                                phongDon.TrangThai = 1;
+                                _iBUS_Phong_Service.Update(phongDon);
+                                MessageBox.Show("Phòng " + phongDon.TenPhong.ToString() + "đã dọn xong");
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+
+                    }
+                    //if (_lstPhong.Where(x=>x.Id == Convert.ToInt32(lb.Name)).FirstOrDefault().TrangThai == 2)//dọn phòng
+                    //{
+                    //   // DateTime thoiGianbg = DateTime.Now;
+                    //    lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 600 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                    //}
                     //tableLayoutPanel1.RowCount++;
                     foreach (var x in _lstPhong)
                     {
@@ -141,7 +172,7 @@ namespace _3_GUI
                 }
                 _idPhongDatPhong = Convert.ToInt32(tableLayoutPanel1.GetControlFromPosition(index.X, index.Y).Name);
 
-                MessageBox.Show(_idPhongDatPhong.ToString());
+                //MessageBox.Show(_idPhongDatPhong.ToString());
 
                 var phongload = _lstPhong.FirstOrDefault(x => x.Id == _idPhongDatPhong);
                 if (phongload.TrangThai == 2)
@@ -251,6 +282,7 @@ namespace _3_GUI
                 }
                 var phong = _iBUS_Phong_Service.Find(_idPhongDonPhong).FirstOrDefault();
                 phong.TrangThai = 2;
+                phong.NgayCapNhap = DateTime.Now;
                 _iBUS_Phong_Service.Update(phong);
                 //showRoom();
                 aTimer = new System.Windows.Forms.Timer();
@@ -262,9 +294,9 @@ namespace _3_GUI
                 aTimer.Start();
 
                 // label1.Text = counter.ToString();
-                counter = 10;
+                counter = 60;
                 showRoom();
-                counter = 10;
+                counter = 60;
                 //_tgianChayNguoc = 10.ToString();
             }
             catch
@@ -277,7 +309,7 @@ namespace _3_GUI
 
         {
             counter--;
-            if (counter == 0 || counter == -10 || counter == -20)
+            if (counter == 0 || counter == -600 || counter == -1200)
             {
                 aTimer.Stop();
                 MessageBox.Show("Phòng" + _lstPhong.FirstOrDefault(x => x.Id == _idPhongDonPhong).TenPhong + "đã dọn phòng xong", "Thông báo");
@@ -286,7 +318,7 @@ namespace _3_GUI
                 _iBUS_Phong_Service.Update(phong);
                 showRoom();
             }
-            lbl_Timer.Text = counter.ToString();
+            btn_phongDangDon.Text = "Phòng đang dọn: " + counter.ToString()/* + "giây"*/;
         }
 
         private void đătPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -303,7 +335,15 @@ namespace _3_GUI
                 Console.WriteLine("Error");
             }
         }
+        private void loadDonPhong()
+        {
+            var phongDon = _lstPhong.FirstOrDefault(x => x.TrangThai == 2);
+            if (phongDon.TrangThai == 2)
+            {
+                //int thoigianDon = DateTime.Now - phongDon.NgayCapNhap;
+            }
 
+        }
         private void tableLayoutPanel1_Click(object sender, EventArgs e)
         {
             var index = GetRowColIndex(tableLayoutPanel1, tableLayoutPanel1.PointToClient(Cursor.Position));
@@ -378,7 +418,7 @@ namespace _3_GUI
                     {
                         //string thoiGian = counter.ToString();
                         DateTime thoiGianbg = DateTime.Now;
-                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + counter /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
+                        lb.Text = tenPhong + "\n" + "Tgian bắt đầu dọn:" + thoiGianbg + "\n" + "Thời gian dọn:" + 600 /*counter*/ + "giây" /*+ "\n" + "Thời gian còn lại:"+_giodonphong*/;
                     }
                     foreach (var x in _lstPhong)
                     {

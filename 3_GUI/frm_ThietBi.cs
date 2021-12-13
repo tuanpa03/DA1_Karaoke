@@ -173,9 +173,5 @@ namespace _3_GUI
             MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK);
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
