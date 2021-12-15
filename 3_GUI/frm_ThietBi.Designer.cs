@@ -29,9 +29,10 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThietBi));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ThietBi));
+            this.dgv_QLThietBi = new System.Windows.Forms.DataGridView();
             this.txt_matb = new System.Windows.Forms.TextBox();
             this.txt_tentb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +53,9 @@ namespace _3_GUI
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_themloaithietbi = new System.Windows.Forms.Button();
-            this.dgv_QLThietBi = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_QLThietBi)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -324,78 +324,6 @@ namespace _3_GUI
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin ";
-            // 
-            // btn_themloaithietbi
-            // 
-            this.btn_themloaithietbi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_themloaithietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themloaithietbi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_themloaithietbi.Location = new System.Drawing.Point(550, 97);
-            this.btn_themloaithietbi.Name = "btn_themloaithietbi";
-            this.btn_themloaithietbi.Size = new System.Drawing.Size(90, 34);
-            this.btn_themloaithietbi.TabIndex = 20;
-            this.btn_themloaithietbi.Text = "Thêm";
-            this.btn_themloaithietbi.UseVisualStyleBackColor = false;
-            this.btn_themloaithietbi.Click += new System.EventHandler(this.btn_themloaithietbi_Click);
-            // 
-            // dgv_QLThietBi
-            // 
-            this.dgv_QLThietBi.AllowUserToAddRows = false;
-            this.dgv_QLThietBi.AllowUserToDeleteRows = false;
-            this.dgv_QLThietBi.AllowUserToResizeColumns = false;
-            this.dgv_QLThietBi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.NullValue = null;
-            this.dgv_QLThietBi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_QLThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_QLThietBi.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_QLThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_QLThietBi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_QLThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv_QLThietBi.Location = new System.Drawing.Point(0, 420);
-            this.dgv_QLThietBi.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.dgv_QLThietBi.MultiSelect = false;
-            this.dgv_QLThietBi.Name = "dgv_QLThietBi";
-            this.dgv_QLThietBi.RowHeadersVisible = false;
-            this.dgv_QLThietBi.RowHeadersWidth = 51;
-            this.dgv_QLThietBi.RowTemplate.Height = 29;
-            this.dgv_QLThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_QLThietBi.Size = new System.Drawing.Size(1310, 320);
-            this.dgv_QLThietBi.TabIndex = 0;
-            this.dgv_QLThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_QLThietBi_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.btn_Them);
-            this.panel1.Controls.Add(this.btn_Luu);
-            this.panel1.Controls.Add(this.btn_Sua);
-            this.panel1.Controls.Add(this.btn_Xoa);
-            this.panel1.Location = new System.Drawing.Point(0, 340);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1310, 80);
-            this.panel1.TabIndex = 25;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::_3_GUI.Properties.Resources._;
-            this.pictureBox1.Location = new System.Drawing.Point(230, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // frm_ThietBi
             // 

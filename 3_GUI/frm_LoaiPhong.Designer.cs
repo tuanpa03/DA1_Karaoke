@@ -47,6 +47,8 @@ namespace _3_GUI
             this.tbx_TrangThaiLoaiPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbx_tang = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_tang = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -61,8 +63,9 @@ namespace _3_GUI
             this.tbx_tenTang = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.laaaa = new System.Windows.Forms.Label();
-            this.dgv_tang = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_Timer = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiPhong)).BeginInit();
             this.gbx_loaiPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -70,11 +73,13 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_tang.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_loaiPhong
@@ -292,6 +297,32 @@ namespace _3_GUI
             this.gbx_tang.TabStop = false;
             this.gbx_tang.Text = "Tầng ";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv_tang);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(3, 149);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1610, 278);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            // 
+            // dgv_tang
+            // 
+            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_tang.Location = new System.Drawing.Point(3, 30);
+            this.dgv_tang.Name = "dgv_tang";
+            this.dgv_tang.RowHeadersWidth = 51;
+            this.dgv_tang.RowTemplate.Height = 29;
+            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tang.Size = new System.Drawing.Size(1604, 245);
+            this.dgv_tang.TabIndex = 22;
+            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -434,22 +465,29 @@ namespace _3_GUI
             this.laaaa.TabIndex = 0;
             this.laaaa.Text = "Tầng :";
             // 
-            // dgv_tang
+            // lbl_Timer
             // 
-            this.dgv_tang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_tang.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_tang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tang.Location = new System.Drawing.Point(0, 555);
-            this.dgv_tang.Name = "dgv_tang";
-            this.dgv_tang.RowHeadersVisible = false;
-            this.dgv_tang.RowHeadersWidth = 51;
-            this.dgv_tang.RowTemplate.Height = 29;
-            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tang.Size = new System.Drawing.Size(1310, 185);
-            this.dgv_tang.TabIndex = 22;
-            this.dgv_tang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellClick);
+            this.lbl_Timer.AutoSize = true;
+            this.lbl_Timer.Font = new System.Drawing.Font("Showcard Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Timer.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Timer.Location = new System.Drawing.Point(722, 23);
+            this.lbl_Timer.Name = "lbl_Timer";
+            this.lbl_Timer.Size = new System.Drawing.Size(882, 42);
+            this.lbl_Timer.TabIndex = 1;
+            this.lbl_Timer.Text = "KARAOKE FAMILY - 216 Phúc Tân - Hoàn Kiếm - Hà Nội";
             // 
-            // button1
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.Controls.Add(this.lbl_Timer);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1616, 79);
+            this.groupBox3.TabIndex = 57;
+            this.groupBox3.TabStop = false;
+            // 
+            // timer1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Menu;
             this.button1.BackgroundImage = global::_3_GUI.Properties.Resources.QuayLai;
@@ -486,11 +524,14 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbx_tang.ResumeLayout(false);
             this.gbx_tang.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_tang)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

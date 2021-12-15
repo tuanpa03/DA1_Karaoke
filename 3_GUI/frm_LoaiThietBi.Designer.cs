@@ -187,10 +187,7 @@ namespace _3_GUI
             // 
             // btn_dong
             // 
-            this.btn_dong.BackColor = System.Drawing.SystemColors.Menu;
-            this.btn_dong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_dong.FlatAppearance.BorderSize = 0;
-            this.btn_dong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dong.BackColor = System.Drawing.Color.Aqua;
             this.btn_dong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_dong.Location = new System.Drawing.Point(20, 10);
             this.btn_dong.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);

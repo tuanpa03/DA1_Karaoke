@@ -63,7 +63,7 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _ {
+        internal static System.Drawing.Bitmap _9d6022f153768025ad37f51d89d29ece {
             get {
                 object obj = ResourceManager.GetObject("+", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace _3_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nhap {
+        internal static System.Drawing.Bitmap karaoke_party_banner_layout_95169_774 {
             get {
                 object obj = ResourceManager.GetObject("nhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -106,6 +106,16 @@ namespace _3_GUI.Properties {
         internal static System.Drawing.Bitmap QuayLai {
             get {
                 object obj = ResourceManager.GetObject("QuayLai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SsDonKhach {
+            get {
+                object obj = ResourceManager.GetObject("SsDonKhach", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

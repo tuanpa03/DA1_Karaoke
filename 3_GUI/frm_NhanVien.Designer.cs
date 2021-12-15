@@ -66,9 +66,7 @@ namespace _3_GUI
             this.txt_DienThoai = new System.Windows.Forms.TextBox();
             this.txt_CCCD = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_Them = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_NhanVien)).BeginInit();
             this.panel_dgr_NhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -520,43 +518,24 @@ namespace _3_GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN CÁ NHÂN";
             // 
-            // panel1
+            // groupBox4
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.btn_Luu);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.btn_Them);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.btn_Sua);
-            this.panel1.Controls.Add(this.btn_Xoa);
-            this.panel1.Location = new System.Drawing.Point(0, 270);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1310, 90);
-            this.panel1.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::_3_GUI.Properties.Resources._;
-            this.pictureBox1.Location = new System.Drawing.Point(170, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.BackColor = System.Drawing.Color.Aqua;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Them.Location = new System.Drawing.Point(160, 15);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(170, 60);
-            this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "      Thêm";
-            this.btn_Them.UseVisualStyleBackColor = false;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.cbox_ChucVu);
+            this.groupBox4.Controls.Add(this.txt_CCCD);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.txt_DienThoai);
+            this.groupBox4.Controls.Add(this.txt_DiaChi);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.rbtn_Nam);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.rbtn_Nu);
+            this.groupBox4.Location = new System.Drawing.Point(638, 34);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(598, 230);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
             // 
             // frm_NhanVien
             // 
