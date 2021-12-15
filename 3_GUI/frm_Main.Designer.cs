@@ -84,83 +84,64 @@ namespace _3_GUI
             // 
             // pic_hethong
             // 
-            this.pic_hethong.Image = ((System.Drawing.Image)(resources.GetObject("pic_hethong.Image")));
-            this.pic_hethong.Location = new System.Drawing.Point(10, 230);
-            this.pic_hethong.Name = "pic_hethong";
-            this.pic_hethong.Size = new System.Drawing.Size(50, 50);
-            this.pic_hethong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_hethong.TabIndex = 7;
-            this.pic_hethong.TabStop = false;
-            this.pic_hethong.Click += new System.EventHandler(this.pic_hethong_Click);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(17, 227);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // pic_out
             // 
-            this.pic_out.BackColor = System.Drawing.Color.LightYellow;
-            this.pic_out.Image = ((System.Drawing.Image)(resources.GetObject("pic_out.Image")));
-            this.pic_out.Location = new System.Drawing.Point(40, 820);
-            this.pic_out.Name = "pic_out";
-            this.pic_out.Size = new System.Drawing.Size(40, 40);
-            this.pic_out.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_out.TabIndex = 7;
-            this.pic_out.TabStop = false;
-            this.pic_out.Click += new System.EventHandler(this.pic_out_Click);
+            this.pictureBox7.BackColor = System.Drawing.Color.LightYellow;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(43, 740);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(46, 37);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 7;
+            this.pictureBox7.TabStop = false;
             // 
             // pic_dmk
             // 
-            this.pic_dmk.BackColor = System.Drawing.Color.LightYellow;
-            this.pic_dmk.Image = ((System.Drawing.Image)(resources.GetObject("pic_dmk.Image")));
-            this.pic_dmk.Location = new System.Drawing.Point(40, 700);
-            this.pic_dmk.Name = "pic_dmk";
-            this.pic_dmk.Size = new System.Drawing.Size(40, 40);
-            this.pic_dmk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_dmk.TabIndex = 7;
-            this.pic_dmk.TabStop = false;
-            this.pic_dmk.Click += new System.EventHandler(this.pic_dmk_Click);
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(43, 679);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(46, 37);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 7;
+            this.pictureBox6.TabStop = false;
             // 
             // pic_logout
             // 
-            this.pic_logout.BackColor = System.Drawing.Color.LightYellow;
-            this.pic_logout.Image = ((System.Drawing.Image)(resources.GetObject("pic_logout.Image")));
-            this.pic_logout.Location = new System.Drawing.Point(40, 760);
-            this.pic_logout.Name = "pic_logout";
-            this.pic_logout.Size = new System.Drawing.Size(40, 40);
-            this.pic_logout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_logout.TabIndex = 7;
-            this.pic_logout.TabStop = false;
-            this.pic_logout.Click += new System.EventHandler(this.pic_logout_Click);
-            // 
-            // pic_nhap
-            // 
-            this.pic_nhap.Image = global::_3_GUI.Properties.Resources.nhap;
-            this.pic_nhap.Location = new System.Drawing.Point(10, 375);
-            this.pic_nhap.Name = "pic_nhap";
-            this.pic_nhap.Size = new System.Drawing.Size(50, 50);
-            this.pic_nhap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_nhap.TabIndex = 7;
-            this.pic_nhap.TabStop = false;
-            this.pic_nhap.Click += new System.EventHandler(this.pic_nhap_Click);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(43, 804);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 39);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
             // 
             // pic_thongke
             // 
-            this.pic_thongke.Image = ((System.Drawing.Image)(resources.GetObject("pic_thongke.Image")));
-            this.pic_thongke.Location = new System.Drawing.Point(10, 445);
-            this.pic_thongke.Name = "pic_thongke";
-            this.pic_thongke.Size = new System.Drawing.Size(50, 50);
-            this.pic_thongke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_thongke.TabIndex = 7;
-            this.pic_thongke.TabStop = false;
-            this.pic_thongke.Click += new System.EventHandler(this.pic_thongke_Click);
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(17, 363);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
             // 
             // pic_danhmuc
             // 
-            this.pic_danhmuc.Image = ((System.Drawing.Image)(resources.GetObject("pic_danhmuc.Image")));
-            this.pic_danhmuc.Location = new System.Drawing.Point(10, 302);
-            this.pic_danhmuc.Name = "pic_danhmuc";
-            this.pic_danhmuc.Size = new System.Drawing.Size(50, 50);
-            this.pic_danhmuc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_danhmuc.TabIndex = 7;
-            this.pic_danhmuc.TabStop = false;
-            this.pic_danhmuc.Click += new System.EventHandler(this.pic_danhmuc_Click);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(17, 294);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(66, 56);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -232,7 +213,7 @@ namespace _3_GUI
             this.btn_Thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Thongke.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Thongke.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Thongke.Location = new System.Drawing.Point(0, 436);
+            this.btn_Thongke.Location = new System.Drawing.Point(6, 360);
             this.btn_Thongke.Name = "btn_Thongke";
             this.btn_Thongke.Size = new System.Drawing.Size(290, 70);
             this.btn_Thongke.TabIndex = 2;
@@ -314,14 +295,12 @@ namespace _3_GUI
         private System.Windows.Forms.Button btn_DanhMuc;
         private System.Windows.Forms.Button btn_Hethong;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pic_logout;
-        private System.Windows.Forms.PictureBox pic_danhmuc;
-        private System.Windows.Forms.PictureBox pic_hethong;
-        private System.Windows.Forms.PictureBox pic_out;
-        private System.Windows.Forms.PictureBox pic_dmk;
-        private System.Windows.Forms.PictureBox pic_thongke;
-        private System.Windows.Forms.PictureBox pic_nhap;
-        private System.Windows.Forms.Button btn_nhaphang;
-        public static System.Windows.Forms.Panel loadform;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private static System.Windows.Forms.Panel loadform;
     }
 }
