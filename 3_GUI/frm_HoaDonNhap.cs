@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _2_BUS.BUS_MatHang_Service;
 using _2_BUS.BUS_Service;
+using _2_BUS.IBUS_MatHang_Service;
 using _2_BUS.IBUS_Service;
 
 namespace _3_GUI
@@ -18,11 +20,13 @@ namespace _3_GUI
         private IBUS_HoaDonNhap_Service _hoaDonNhapService;
         private IBUS_RE_MatHang_Service _reMatHangService;
         private IBUS_NhaCungCap_Service _nhaCungCapService;
+        private IBUS_DonViTinh_Service _donViTinhService;
         private string _iDNhanVien;
         private int _iDHoaDon;
         private int _iDChiTietHoaDon;
         private int _idMatHang;
         private int _idChiTietHoaDonNhap;
+        private bool _flagOfUpdate;
 
         //tạo form không có tham số
         public frm_HoaDonNhap()
@@ -32,6 +36,7 @@ namespace _3_GUI
             _hoaDonNhapService = new BUS_HoaDonNhap_Service();
             _reMatHangService = new BUS_RE_MatHang_Service();
             _nhaCungCapService = new BUS_NhaCungCap_Service();
+            _donViTinhService = new BUS_DonViTinh_Service();
             _iDNhanVien = "admin";
             txt_TienThanhToan.Text = "0";
             gbx_ChiTietHoaDon.Enabled = false;
@@ -53,6 +58,7 @@ namespace _3_GUI
             _hoaDonNhapService = new BUS_HoaDonNhap_Service();
             _reMatHangService = new BUS_RE_MatHang_Service();
             _nhaCungCapService = new BUS_NhaCungCap_Service();
+            _donViTinhService = new BUS_DonViTinh_Service();
             txt_TienThanhToan.Text = "0";
             gbx_ChiTietHoaDon.Enabled = false;
             gbx_NhaCungCap.Enabled = false;
@@ -136,7 +142,7 @@ namespace _3_GUI
             dgrid_MatHang.Columns[0].Visible = false;
             foreach (var x in _reMatHangService.GetListMatHangs())
             {
-                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia, x.SoLuong);
+                dgrid_MatHang.Rows.Add(x.Id, x.TenMatHang, x.DonGia, x.SoLuong, _donViTinhService.GetlstDonViTinhs().FirstOrDefault(c=> c.Id == x.IddonViTinh)?.TenDvt);
             }
 
             var btnThem = new DataGridViewButtonColumn();
@@ -151,8 +157,7 @@ namespace _3_GUI
             _hoaDonNhapService.AddHoaDonNhapTo(_iDNhanVien, null, Convert.ToInt64(txt_TienThanhToan.Text), _iDNhanVien,
                 _iDNhanVien);
             var ngayHoaDonNhap = _hoaDonNhapService.GetListHoaDonNhaps().Max(c => c.NgayTao);
-            if (_hoaDonNhapService != null)
-                _iDHoaDon = _hoaDonNhapService.GetListHoaDonNhaps().FirstOrDefault(c => c.NgayTao == ngayHoaDonNhap).Id;
+            _iDHoaDon = _hoaDonNhapService.GetListHoaDonNhaps().FirstOrDefault(c => c.NgayTao == ngayHoaDonNhap).Id;
             gbx_ChiTietHoaDon.Enabled = true;
             gbx_HoaDon.Enabled = false;
             gbx_MatHang.Enabled = true;
@@ -213,6 +218,7 @@ namespace _3_GUI
             if (dgrid_HoaDonNhap.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
                 dgrid_HoaDonNhap.Columns[e.ColumnIndex].Name == "Update")
             {
+                _flagOfUpdate = true;
                 gbx_ChiTietHoaDon.Enabled = true;
                 gbx_HoaDon.Enabled = false;
                 gbx_MatHang.Enabled = true;
@@ -229,12 +235,18 @@ namespace _3_GUI
             foreach (var x in _chiTietHoaDonNhapService.GetListChiTietHoaDonNhaps().Where(c => c.IdhoaDon == _iDHoaDon))
             {
                 var matHang = _reMatHangService.GetListMatHangs().FirstOrDefault(c => c.Id == x.IdmatHang);
-                if (matHang != null)
+                if (matHang != null && !_flagOfUpdate)
                 {
-                    _reMatHangService.ReUpdateMatHang(matHang.Id, matHang.TenMatHang, matHang.IddonViTinh,
-                        matHang.DonGia, matHang.SoLuong + x.SoLuong, _iDNhanVien);
+                    if (!_reMatHangService.ReUpdateMatHang(matHang.Id, matHang.TenMatHang, matHang.IddonViTinh,
+                        matHang.DonGia, matHang.SoLuong + x.SoLuong, _iDNhanVien))
+                    {
+                        MessageBox.Show("Cập nhật dữ liệu thất bại mời bạn kiểm tra lại", "Admin said", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
+
+            MessageBox.Show("Xác nhận thành công hóa đơn mới", "Admin said", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FillDataHoaDontoGrid();
             FillDataMatHangToGrid();
         }
@@ -297,12 +309,17 @@ namespace _3_GUI
 
         private void dgrid_ChiTietHoaDonNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if(e.RowIndex == _chiTietHoaDonNhapService.GetListChiTietHoaDonNhaps().Count || e.RowIndex == -1) return;
+            _iDChiTietHoaDon = Convert.ToInt32(dgrid_ChiTietHoaDonNhap.Rows[e.RowIndex].Cells[0].Value);
         }
 
         private void dgrid_ChiTietHoaDonNhap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgrid_ChiTietHoaDonNhap.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected &&
+                dgrid_ChiTietHoaDonNhap.Columns[e.ColumnIndex].Name == "Xóa mặt hàng")
+            {
 
+            }
         }
     }
 }
